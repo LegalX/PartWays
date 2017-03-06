@@ -1,4 +1,4 @@
-<form (ngSubmit)="onSubmit()" #userForm="ngForm">
+<form fxLayout="column" (ngSubmit)="onSubmit()" #userForm="ngForm">
     <md-input-container>
         <input mdInput placeholder="What is your family name as used now?" type="text" required [(ngModel)]="userData.familyName"
             name="familyName">
