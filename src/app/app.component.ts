@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MdDialog, MdDialogRef, MdSnackBar } from '@angular/material';
+import { Router } from '@angular/router';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
@@ -11,7 +12,7 @@ export class AppComponent {
   items: FirebaseListObservable<any[]>;
   title: string;
 
-  constructor(public af: AngularFire) {
+  constructor(public af: AngularFire, private router: Router) {
     this.title = 'Part - Ways';
     this.items = af.database.list('/items');
   }
@@ -22,6 +23,6 @@ export class AppComponent {
 
   logout() {
     this.af.auth.logout();
+    this.router.navigate(['/']);
   }
-
 }

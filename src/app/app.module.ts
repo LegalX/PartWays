@@ -7,6 +7,9 @@ import { AngularFireModule, AuthMethods, AuthProviders } from 'angularfire2';
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
+import { AppRouting } from './app.routing';
+import { HomeComponent } from './home/home';
+import { PageNotFoundComponent } from './page.not.found';
 
 // Must export the config
 export const firebaseConfig = {
@@ -28,8 +31,13 @@ const firebaseAuthConfig = {
     MaterialModule.forRoot(),
     FlexLayoutModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
+    AppRouting,
   ],
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    PageNotFoundComponent,
+  ],
   bootstrap: [AppComponent],
 })
 
