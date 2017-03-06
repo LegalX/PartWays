@@ -9,6 +9,8 @@ import 'hammerjs';
 
 import { AppComponent } from './app.component';
 import { AppRouting } from './app.routing';
+import { AuthGuard } from './auth/auth-guard.service';
+import { LoginComponent } from './auth/login';
 import { HomeComponent } from './home/home';
 import { PageNotFoundComponent } from './page.not.found';
 import { PartyComponent } from './party/party';
@@ -36,9 +38,13 @@ const firebaseAuthConfig = {
     AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
     AppRouting,
   ],
+  providers: [
+    AuthGuard,
+  ],
   declarations: [
     AppComponent,
     HomeComponent,
+    LoginComponent,
     PartyComponent,
     PageNotFoundComponent,
   ],

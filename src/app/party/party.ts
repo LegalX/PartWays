@@ -16,24 +16,20 @@ export class PartyComponent {
     }
 
     ngOnInit() {
-        this.af.auth.subscribe((auth) => {
-            this.userAuth = auth;
-            this.user = this.af.database.object('/user/' + this.userAuth.uid);
-            this.user.subscribe((item) => {
-                if (item.$exists()) {
-                    this.userData = item;
-                } else {
-                    this.userData = {
-                        authName: this.userAuth.auth.displayName,
-                        email: this.userAuth.auth.email,
-                    };
-                    const newUser = this.af.database.object(`/user/${this.userAuth.uid}`);
-                    newUser.set(this.userData);
-                }
-                return item;
-            });
+        const currentUser = localStorage.getItem('currentUser');
+        this.user = this.af.database.object(`/user/${currentUser}`);
+        this.user.subscribe((item) => {
+            if (item.$exists()) {
+                this.userData = item;
+            } else {
+                this.userData = {};
+                const newUser = this.af.database.object(`/user/${currentUser}`);
+                newUser.set(this.userData);
+            }
+            return item;
         });
     }
+
     onSubmit() {
         this.user.set(this.userData);
     }
