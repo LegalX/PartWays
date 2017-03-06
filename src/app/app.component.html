@@ -35,17 +35,6 @@
     <button md-icon-button [mdMenuTriggerFor]="menu">Login</button>
   </md-toolbar>
 
-  <ul>
-    <li class="text" *ngFor="let item of items | async">
-      {{item.$value}}
-    </li>
-  </ul>
-  <div> {{ (af.auth | async)?.uid }} </div>
-
-  <div fxLayout="row" fxLayoutAlign="end end">
-    <button md-fab><md-icon>add</md-icon></button>
-  </div>
-
   <router-outlet></router-outlet>
 </md-sidenav-container>
 

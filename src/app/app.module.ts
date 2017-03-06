@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule, AuthMethods, AuthProviders } from 'angularfire2';
@@ -10,6 +11,7 @@ import { AppComponent } from './app.component';
 import { AppRouting } from './app.routing';
 import { HomeComponent } from './home/home';
 import { PageNotFoundComponent } from './page.not.found';
+import { PartyComponent } from './party/party';
 
 // Must export the config
 export const firebaseConfig = {
@@ -28,6 +30,7 @@ const firebaseAuthConfig = {
 @NgModule({
   imports: [
     BrowserModule,
+    FormsModule,
     MaterialModule.forRoot(),
     FlexLayoutModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
@@ -36,6 +39,7 @@ const firebaseAuthConfig = {
   declarations: [
     AppComponent,
     HomeComponent,
+    PartyComponent,
     PageNotFoundComponent,
   ],
   bootstrap: [AppComponent],
