@@ -9,11 +9,14 @@ import 'hammerjs';
 
 import { AppComponent } from './app.component';
 import { AppRouting } from './app.routing';
+import { ApplicationComponent } from './application/application.component';
+import { ApplicationResolver } from './application/application.resolver.service';
 import { AuthGuard } from './auth/auth-guard.service';
 import { LoginComponent } from './auth/login';
 import { HomeComponent } from './home/home';
 import { PageNotFoundComponent } from './page.not.found';
 import { PartyComponent } from './party/party';
+import { PartyResolver } from './party/party.resolver.service';
 
 // Must export the config
 export const firebaseConfig = {
@@ -40,9 +43,12 @@ const firebaseAuthConfig = {
   ],
   providers: [
     AuthGuard,
+    ApplicationResolver,
+    PartyResolver,
   ],
   declarations: [
     AppComponent,
+    ApplicationComponent,
     HomeComponent,
     LoginComponent,
     PartyComponent,

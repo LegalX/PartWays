@@ -1,0 +1,10 @@
+<h3>
+    <p>
+        Applicant:
+        <a [routerLink]="['/Parties', application.applicant.id]">{{application.applicant.name}}</a>
+    </p>
+    <p>
+        Respondent:
+        <a [routerLink]="['/Parties', application.respondent.id]">{{application.respondent.name}}</a>
+    </p>
+</h3>

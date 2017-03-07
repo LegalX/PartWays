@@ -53,7 +53,7 @@
     <md-checkbox [(ngModel)]="isAboriginal" name="isAboriginal">Aboriginal</md-checkbox>
     <md-checkbox [(ngModel)]="isTorresStraitIslander" name="isTorresStraitIslander">Torres Strait Islander</md-checkbox>
 
-    <div fxLayout="row" fxLayoutAlign="end end">
+    <div *ngIf="!isReadOnly" fxLayout="row" fxLayoutAlign="end end">
         <button md-raised-button type="submit">Save</button>
     </div>
 </form>

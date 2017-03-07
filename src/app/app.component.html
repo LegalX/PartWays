@@ -3,19 +3,22 @@
     <md-toolbar>
       <button md-menu-item routerLink="/">Part - Ways</button>
       <md-toolbar-row>
-        <button md-menu-item routerLink="/Parties">Parties</button>
+        <button md-menu-item routerLink="/Parties" (click)="sidenav.toggle()">Parties</button>
       </md-toolbar-row>
       <md-toolbar-row>
-        <button md-menu-item routerLink="/Children">Children</button>
+        <button md-menu-item routerLink="/Application" (click)="sidenav.toggle()">Application</button>
       </md-toolbar-row>
       <md-toolbar-row>
-        <button md-menu-item routerLink="/Property">Property</button>
+        <button disabled md-menu-item routerLink="/Children">Children</button>
       </md-toolbar-row>
       <md-toolbar-row>
-        <button md-menu-item routerLink="/Liabilities">Liabilities</button>
+        <button disabled md-menu-item routerLink="/Property">Property</button>
       </md-toolbar-row>
       <md-toolbar-row>
-        <button md-menu-item routerLink="/ConsentOrders">Consent Orders</button>
+        <button disabled md-menu-item routerLink="/Liabilities">Liabilities</button>
+      </md-toolbar-row>
+      <md-toolbar-row>
+        <button disabled md-menu-item routerLink="/ConsentOrders">Consent Orders</button>
       </md-toolbar-row>
       <md-toolbar-row *ngIf="currentUser">
         <button md-menu-item (click)="logout()">Logout</button>
@@ -36,6 +39,10 @@
       <button *ngIf="!currentUser" md-icon-button [mdMenuTriggerFor]="menu">Login</button>
     </div>
   </md-toolbar>
+
+  <div class="loading-overlay" *ngIf="isLoading">
+    <md-spinner></md-spinner>
+  </div>
 
   <router-outlet></router-outlet>
 </md-sidenav-container>

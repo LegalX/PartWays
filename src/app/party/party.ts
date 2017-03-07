@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { AngularFire, FirebaseAuthState, FirebaseObjectObservable } from 'angularfire2';
+import { ActivatedRoute } from '@angular/router';
+import { AngularFire } from 'angularfire2';
+import { FirebaseObjectObservable } from 'angularfire2';
+import 'rxjs/add/operator/switchMap';
 
 @Component({
     selector: 'app-party',
@@ -8,37 +11,36 @@ import { AngularFire, FirebaseAuthState, FirebaseObjectObservable } from 'angula
 
 export class PartyComponent {
     user: FirebaseObjectObservable<any>;
-    userAuth: FirebaseAuthState;
     userData: any;
+    private isReadOnly = true;
 
-    constructor(private af: AngularFire) {
-        this.userData = {};
+    constructor(private route: ActivatedRoute, private af: AngularFire) {
     }
 
     ngOnInit() {
+        this.userData = this.route.snapshot.data['userData'];
         const currentUser = localStorage.getItem('currentUser');
-        this.user = this.af.database.object(`/user/${currentUser}`);
-        this.user.subscribe((item) => {
-            if (item.$exists()) {
-                this.userData = item;
-            } else {
-                this.userData = {};
-                const newUser = this.af.database.object(`/user/${currentUser}`);
-                newUser.set(this.userData);
-            }
-            return item;
-        });
+        if (currentUser === this.userData.$key) {
+            this.user = this.af.database.object(`/user/${currentUser}`);
+            this.isReadOnly = false;
+        }
     }
 
     onSubmit() {
-        this.user.set(this.userData);
+        if (!this.isReadOnly) {
+            this.user.set(this.userData);
+        }
     }
 
     save(updatedUser: any) {
-        this.user.set(updatedUser);
+        if (!this.isReadOnly) {
+            this.user.set(updatedUser);
+        }
     }
 
     update(newSize: string) {
-        this.user.update({ size: newSize });
+        if (!this.isReadOnly) {
+            this.user.update({ size: newSize });
+        }
     }
 }
