@@ -20,7 +20,7 @@
       <md-toolbar-row>
         <button disabled md-menu-item routerLink="/ConsentOrders">Consent Orders</button>
       </md-toolbar-row>
-      <md-toolbar-row *ngIf="currentUser">
+      <md-toolbar-row *ngIf="currentUserId">
         <button md-menu-item (click)="logout()">Logout</button>
       </md-toolbar-row>
     </md-toolbar>
@@ -36,7 +36,7 @@
     </button>
     <span class="fill-remaining-space"></span>
     <div>
-      <button *ngIf="!currentUser" md-icon-button [mdMenuTriggerFor]="menu">Login</button>
+      <button *ngIf="!currentUserId" md-icon-button [mdMenuTriggerFor]="menu">Login</button>
     </div>
   </md-toolbar>
 

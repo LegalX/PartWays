@@ -19,9 +19,9 @@ export class PartyComponent {
 
     ngOnInit() {
         this.userData = this.route.snapshot.data['userData'];
-        const currentUser = localStorage.getItem('currentUser');
-        if (currentUser === this.userData.$key) {
-            this.user = this.af.database.object(`/user/${currentUser}`);
+        const currentUserId = localStorage.getItem('currentUserId');
+        if (currentUserId === this.userData.$key) {
+            this.user = this.af.database.object(`/user/${currentUserId}`);
             this.isReadOnly = false;
         }
     }

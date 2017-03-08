@@ -11,21 +11,14 @@ export class PartyResolver implements Resolve<any> {
     constructor(private af: AngularFire) { }
 
     resolve(route: ActivatedRouteSnapshot): Observable<any> | Promise<any> {
-        let currentUser = route.params['id'];
-        if (!currentUser) {
-            currentUser = localStorage.getItem('currentUser');
+        let currentUserId = route.params['id'];
+        if (!currentUserId) {
+            currentUserId = localStorage.getItem('currentUserId');
         }
 
-        this.user = this.af.database.object(`/user/${currentUser}`);
+        this.user = this.af.database.object(`/user/${currentUserId}`);
         return this.user.map((item) => {
-            if (item.$exists()) {
-                return item;
-            } else {
-                const userData = {};
-                const newUser = this.af.database.object(`/user/${currentUser}`);
-                newUser.set(userData);
-                return userData;
-            }
+            return item;
         }).first();
     }
 }

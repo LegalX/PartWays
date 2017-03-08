@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MdDialog, MdDialogRef, MdSnackBar } from '@angular/material';
 import {
+  ActivatedRouteSnapshot,
   Event as RouterEvent,
   NavigationCancel,
   NavigationEnd,
@@ -18,21 +19,42 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class AppComponent {
   title: string;
-  currentUser: string;
+  currentUserId: string;
+  currentUserName: string;
   isLoading = true;
 
   constructor(public af: AngularFire, private router: Router) {
-    this.title = 'Part - Ways';
-    localStorage.removeItem('currentUser');
-    this.currentUser = null;
+    localStorage.removeItem('currentUserId');
+    localStorage.removeItem('currentUserName');
+    this.currentUserId = null;
 
     router.events.subscribe((event: RouterEvent) => {
       this.navigationInterceptor(event);
     });
 
     this.af.auth.subscribe((auth) => {
-      this.currentUser = auth.uid;
-      localStorage.setItem('currentUser', this.currentUser);
+      if (!auth) {
+        return;
+      }
+      this.currentUserId = auth.uid;
+      this.currentUserName = auth.auth.displayName;
+      const user = this.af.database.object(`/user/${this.currentUserId}`);
+      user.subscribe((item) => {
+        if (!item.$exists()) {
+          this.createNewUserAndApplication();
+        }
+      });
+
+      localStorage.setItem('currentUserId', this.currentUserId);
+      localStorage.setItem('currentUserName', auth.auth.displayName);
+    });
+  }
+
+  ngOnInit() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.title = this.getDeepestTitle(this.router.routerState.snapshot.root);
+      }
     });
   }
 
@@ -59,15 +81,34 @@ export class AppComponent {
 
   login() {
     this.af.auth.login();
-    this.currentUser = this.af.auth.getAuth().uid;
-    localStorage.setItem('currentUser', this.currentUser);
-    this.router.navigate(['/']);
   }
 
   logout() {
     this.af.auth.logout();
-    this.currentUser = null;
-    localStorage.removeItem('currentUser');
+    this.currentUserId = null;
+    localStorage.removeItem('currentUserId');
     this.router.navigate(['/']);
   }
+
+  private createNewUserAndApplication() {
+    const newApplication = { applicant: { id: this.currentUserId, name: this.currentUserName } };
+    const newApplicationRef = this.af.database.list(`/application`);
+    newApplicationRef.push(newApplication).then((application) => {
+      const userData = {
+        authName: this.currentUserName,
+        applicationId: application.key,
+      };
+      const newUser = this.af.database.object(`/user/${this.currentUserId}`);
+      newUser.set(userData);
+    });
+  }
+
+  private getDeepestTitle(routeSnapshot: ActivatedRouteSnapshot) {
+    let title = routeSnapshot.data ? routeSnapshot.data['title'] : '';
+    if (routeSnapshot.firstChild) {
+      title = this.getDeepestTitle(routeSnapshot.firstChild) || title;
+    }
+    return title;
+  }
+
 }

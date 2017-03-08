@@ -16,6 +16,7 @@ const appRoutes: Routes = [
         path: 'Parties',
         component: PartyComponent,
         canActivate: [AuthGuard],
+        data: { title: 'Party' },
         resolve: {
             userData: PartyResolver,
         },
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
         path: 'Parties/:id',
         component: PartyComponent,
         canActivate: [AuthGuard],
+        data: { title: 'Party' },
         resolve: {
             userData: PartyResolver,
         },
@@ -31,11 +33,36 @@ const appRoutes: Routes = [
         path: 'Application',
         component: ApplicationComponent,
         canActivate: [AuthGuard],
+        data: { title: 'Application' },
         resolve: {
             applicationData: ApplicationResolver,
         },
-    }, { path: '', component: HomeComponent },
-    { path: '**', component: PageNotFoundComponent },
+    }, {
+        path: 'respondent/:id',
+        component: ApplicationComponent,
+        canActivate: [AuthGuard],
+        data: { title: 'Application' },
+        resolve: {
+            applicationData: ApplicationResolver,
+        },
+    }, {
+        path: 'mediator/:id',
+        component: ApplicationComponent,
+        canActivate: [AuthGuard],
+        data: { title: 'Application' },
+        resolve: {
+            applicationData: ApplicationResolver,
+        },
+    }, {
+        path: '',
+        component: HomeComponent,
+        data: { title: 'PartWays' },
+    },
+    {
+        path: '**',
+        component: PageNotFoundComponent,
+        data: { title: 'Page Not Found' },
+    },
 ];
 
 export const AppRouting: ModuleWithProviders = RouterModule.forRoot(appRoutes);

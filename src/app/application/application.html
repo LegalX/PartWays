@@ -1,10 +1,14 @@
-<h3>
-    <p>
-        Applicant:
-        <a [routerLink]="['/Parties', application.applicant.id]">{{application.applicant.name}}</a>
-    </p>
-    <p>
-        Respondent:
-        <a [routerLink]="['/Parties', application.respondent.id]">{{application.respondent.name}}</a>
-    </p>
-</h3>
+<div>
+    Applicant:
+    <a md-button [routerLink]="['/Parties', application.applicant.id]">{{application.applicant.name}}</a>
+</div>
+<div>
+    Respondent:
+    <a md-button *ngIf="application.respondent" [routerLink]="['/Parties', application.respondent.id]">{{application.respondent.name}}</a>
+    <a md-button *ngIf="!application.respondent" href="mailto:?Subject=PartWays%20invitation&body=Please%20click%20to%20join%20https://partways-dev.firebaseapp.com/respondent/test" target="_top">Invite respondent</a>
+</div>
+<div>
+    Mediator:
+    <a md-button *ngIf="application.mediator" [routerLink]="['/Parties', application.mediator.id]">{{application.mediator.name}}</a>
+    <a md-button *ngIf="!application.mediator" href="mailto:?Subject=PartWays%20invitation&body=Please%20click%20to%20join%20https://partways-dev.firebaseapp.com/mediator/test" target="_top">Invite mediator</a>
+</div>
