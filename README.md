@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/LegalX/PartWays.svg?branch=master)](https://travis-ci.org/LegalX/PartWays)
 # PartWays
 For project description please see our [wiki](https://github.com/LegalX/PartWays/wiki)
 
