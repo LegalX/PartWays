@@ -44,5 +44,8 @@ We use [Angular Material](https://material.angular.io) to develop UI following [
 [Angular Flex Layout](https://github.com/angular/flex-layout)
 [Layout Demos](https://tburleson-layouts-demos.firebaseapp.com/#/docs)
 
+## CI/CD
+We use [Travis CI](https://travis-ci.org) for continuous integration and deployment to Firebase.
+
 ## Further help
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
