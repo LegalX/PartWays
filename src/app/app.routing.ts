@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home';
 import { PageNotFoundComponent } from './page.not.found';
 import { PartyComponent } from './party/party';
 import { PartyResolver } from './party/party.resolver.service';
+import { RelationshipComponent } from './relationship/relationship.component';
+import { RelationshipResolver } from './relationship/relationship.resolver.service';
 
 const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -52,6 +54,14 @@ const appRoutes: Routes = [
         data: { title: 'Application' },
         resolve: {
             applicationData: ApplicationResolver,
+        },
+    }, {
+        path: 'Relationship',
+        component: RelationshipComponent,
+        canActivate: [AuthGuard],
+        data: { title: 'Relationship' },
+        resolve: {
+            relationship: RelationshipResolver,
         },
     }, {
         path: '',

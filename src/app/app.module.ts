@@ -17,6 +17,8 @@ import { HomeComponent } from './home/home';
 import { PageNotFoundComponent } from './page.not.found';
 import { PartyComponent } from './party/party';
 import { PartyResolver } from './party/party.resolver.service';
+import { RelationshipComponent } from './relationship/relationship.component';
+import { RelationshipResolver } from './relationship/relationship.resolver.service';
 
 // Must export the config
 export const firebaseConfig = {
@@ -45,6 +47,7 @@ const firebaseAuthConfig = {
     AuthGuard,
     ApplicationResolver,
     PartyResolver,
+    RelationshipResolver,
   ],
   declarations: [
     AppComponent,
@@ -53,6 +56,7 @@ const firebaseAuthConfig = {
     LoginComponent,
     PartyComponent,
     PageNotFoundComponent,
+    RelationshipComponent,
   ],
   bootstrap: [AppComponent],
 })

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AngularFire } from 'angularfire2';
 import { FirebaseObjectObservable } from 'angularfire2';
@@ -9,7 +9,7 @@ import 'rxjs/add/operator/switchMap';
     templateUrl: 'party.html',
 })
 
-export class PartyComponent {
+export class PartyComponent implements OnInit {
     user: FirebaseObjectObservable<any>;
     userData: any;
     private isReadOnly = true;

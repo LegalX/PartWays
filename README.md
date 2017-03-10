@@ -1,10 +1,7 @@
-https://github.com/jelbourn/material2-app
-https://coryrylan.com/blog/deploy-angular-cli-apps-to-firebase
-https://material.angular.io/
-https://material.io/icons/
-https://tburleson-layouts-demos.firebaseapp.com
-
+[![Build Status](https://travis-ci.org/LegalX/PartWays.svg?branch=master)](https://travis-ci.org/LegalX/PartWays)
 # PartWays
+[Demo app](https://partways-dev.firebaseapp.com)
+For project description please see our [wiki](https://github.com/LegalX/PartWays/wiki)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.1.
 
@@ -37,6 +34,20 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ng build --prod
 firebase deploy
 
-## Further help
+## Firebase
+We use [Firebase](https://firebase.google.com) for hosting, backend and database.
+[How to deploy Angular CLI apps to Firebase](https://coryrylan.com/blog/deploy-angular-cli-apps-to-firebase)
 
+## Material Design
+We use [Angular Material](https://material.angular.io) to develop UI following [Material design guidelines](https://material.io/guidelines)
+[Material icons](https://material.io/icons)
+
+## Responsive layout
+[Angular Flex Layout](https://github.com/angular/flex-layout)
+[Layout Demos](https://tburleson-layouts-demos.firebaseapp.com/#/docs)
+
+## CI/CD
+We use [Travis CI](https://travis-ci.org) for continuous integration and deployment to Firebase.
+
+## Further help
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
