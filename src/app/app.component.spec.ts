@@ -1,12 +1,28 @@
 import { async, TestBed } from '@angular/core/testing';
-
+import { MaterialModule } from '@angular/material';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AngularFireModule } from 'angularfire2';
+import { Observable } from 'rxjs/Observable';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
+    const firebaseConfig = {
+      apiKey: 'AIzaSyBo41ERx8-sWyLWx56WvFc-RH6-nCvpFTI',
+      authDomain: 'partways-dev.firebaseapp.com',
+      databaseURL: 'https://partways-dev.firebaseio.com',
+      storageBucket: 'partways-dev.appspot.com',
+      messagingSenderId: '1727367456',
+    };
+
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
+      ],
+      imports: [
+        MaterialModule.forRoot(),
+        RouterTestingModule,
+        AngularFireModule.initializeApp(firebaseConfig),
       ],
     }).compileComponents();
   }));
