@@ -51,16 +51,12 @@
 </md-sidenav-container>
 
 <md-menu #menu="mdMenu">
-  <button md-menu-item (click)="login()">
+  <button md-menu-item (click)="loginGoogle()">
       <i class="fa fa-google" aria-hidden="true"></i> 
       <span>Google</span>
    </button>
-  <button md-menu-item disabled>
+  <button md-menu-item (click)="loginFacebook()">
       <i class="fa fa-facebook" aria-hidden="true"></i> 
       <span>Facebook</span>
-   </button>
-  <button md-menu-item disabled>
-      <i class="fa fa-windows" aria-hidden="true"></i> 
-      <span>Microsoft</span>
    </button>
 </md-menu>

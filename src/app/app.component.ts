@@ -10,7 +10,7 @@ import {
   Router,
 } from '@angular/router';
 
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFire, AuthMethods, AuthProviders, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +21,7 @@ export class AppComponent {
   title: string;
   currentUserId: string;
   currentUserName: string;
+  currentUserEmail: string;
   isLoading = true;
 
   constructor(public af: AngularFire, private router: Router) {
@@ -38,6 +39,7 @@ export class AppComponent {
       }
       this.currentUserId = auth.uid;
       this.currentUserName = auth.auth.displayName;
+      this.currentUserEmail = auth.auth.email;
       const user = this.af.database.object(`/user/${this.currentUserId}`);
       user.subscribe((item) => {
         if (!item.$exists()) {
@@ -79,8 +81,15 @@ export class AppComponent {
     }
   }
 
-  login() {
+  loginGoogle() {
     this.af.auth.login();
+  }
+
+  loginFacebook() {
+    this.af.auth.login({
+      provider: AuthProviders.Facebook,
+      method: AuthMethods.Redirect,
+    });
   }
 
   logout() {
@@ -96,6 +105,7 @@ export class AppComponent {
     newApplicationRef.push(newApplication).then((application) => {
       const userData = {
         authName: this.currentUserName,
+        authEmail: this.currentUserEmail,
         applicationId: application.key,
       };
       const newUser = this.af.database.object(`/user/${this.currentUserId}`);
