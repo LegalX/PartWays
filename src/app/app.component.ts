@@ -18,7 +18,7 @@ import { AngularFire, AuthMethods, AuthProviders, FirebaseListObservable } from 
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title: string;
+  title = 'PartWays';
   currentUserId: string;
   currentUserName: string;
   currentUserEmail: string;
