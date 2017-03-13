@@ -3,25 +3,40 @@
     <md-toolbar>
       <button md-menu-item routerLink="/">Part - Ways</button>
       <md-toolbar-row>
-        <button md-menu-item routerLink="/Parties" (click)="sidenav.toggle()">Parties</button>
+        <button md-menu-item routerLink="/Application" (click)="sidenav.toggle()">Application for Consent Orders</button>
       </md-toolbar-row>
       <md-toolbar-row>
-        <button md-menu-item routerLink="/Application" (click)="sidenav.toggle()">Application</button>
+        <button md-menu-item routerLink="/Parties" (click)="sidenav.toggle()"><md-icon>A</md-icon>About the parties</button>
       </md-toolbar-row>
       <md-toolbar-row>
-        <button md-menu-item routerLink="/Relationship" (click)="sidenav.toggle()">Relationship</button>
+        <button md-menu-item routerLink="/Relationship" (click)="sidenav.toggle()"><md-icon>B</md-icon>About the relationship of the parties</button>
       </md-toolbar-row>
       <md-toolbar-row>
-        <button disabled md-menu-item routerLink="/Children">Children</button>
+        <button md-menu-item routerLink="/CourtCases" (click)="sidenav.toggle()"><md-icon>C</md-icon>About other Court cases and orders</button>
       </md-toolbar-row>
       <md-toolbar-row>
-        <button disabled md-menu-item routerLink="/Property">Property</button>
+        <button md-menu-item routerLink="/Children" (click)="sidenav.toggle()"><md-icon>D</md-icon>About the children</button>
       </md-toolbar-row>
       <md-toolbar-row>
-        <button disabled md-menu-item routerLink="/Liabilities">Liabilities</button>
+        <button md-menu-item routerLink="/Parenting" (click)="sidenav.toggle()"><md-icon>F</md-icon>Details for parenting orders</button>
       </md-toolbar-row>
       <md-toolbar-row>
-        <button disabled md-menu-item routerLink="/ConsentOrders">Consent Orders</button>
+        <button md-menu-item routerLink="/Defacto" (click)="sidenav.toggle()"><md-icon>G</md-icon>De facto relationship jurisdiction – financial causes</button>
+      </md-toolbar-row>
+      <md-toolbar-row>
+        <button md-menu-item routerLink="/Maintenance" (click)="sidenav.toggle()"><md-icon>H</md-icon>Details for property or maintenance orders</button>
+      </md-toolbar-row>
+      <md-toolbar-row>
+        <button md-menu-item routerLink="/Property" (click)="sidenav.toggle()"><md-icon>I</md-icon>Effect of property orders sought</button>
+      </md-toolbar-row>
+      <md-toolbar-row>
+        <button md-menu-item routerLink="/StatementOfTruth" (click)="sidenav.toggle()">Statement of Truth</button>
+      </md-toolbar-row>
+      <md-toolbar-row>
+        <button md-menu-item routerLink="/LegalAdvice" (click)="sidenav.toggle()">Statement of independent legal advice</button>
+      </md-toolbar-row>
+      <md-toolbar-row>
+        <button md-menu-item routerLink="/ConsentOrders" (click)="sidenav.toggle()">Generate Consent Orders</button>
       </md-toolbar-row>
       <md-toolbar-row *ngIf="currentUserId">
         <button md-menu-item (click)="logout()">Logout</button>

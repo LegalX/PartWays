@@ -12,6 +12,25 @@ import { PartyResolver } from './party/party.resolver.service';
 import { RelationshipComponent } from './relationship/relationship.component';
 import { RelationshipResolver } from './relationship/relationship.resolver.service';
 
+import { ChildrenComponent } from './children/children.component';
+import { ChildrenResolver } from './children/children.resolver.service';
+import { CourtCasesComponent } from './court-cases/court-cases.component';
+import { CourtCasesResolver } from './court-cases/court-cases.resolver.service';
+import { DefactoComponent } from './defacto/defacto.component';
+import { DefactoResolver } from './defacto/defacto.resolver.service';
+import { GenerateConsentOrdersComponent } from './generate-consent-orders/generate-consent-orders.component';
+import { ConsentOrdersResolver } from './generate-consent-orders/generate-consent-orders.resolver.service';
+import { LegalAdviceComponent } from './legal-advice/legal-advice.component';
+import { LegalAdviceResolver } from './legal-advice/legal-advice.resolver.service';
+import { MaintenanceComponent } from './maintenance/maintenance.component';
+import { MaintenanceResolver } from './maintenance/maintenance.resolver.service';
+import { ParentingComponent } from './parenting/parenting.component';
+import { ParentingResolver } from './parenting/parenting.resolver.service';
+import { PropertyComponent } from './property/property.component';
+import { PropertyResolver } from './property/property.resolver.service';
+import { StatementOfTruthComponent } from './statement-of-truth/statement-of-truth.component';
+import { StatementOfTruthResolver } from './statement-of-truth/statement-of-truth.resolver.service';
+
 const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     {
@@ -62,6 +81,54 @@ const appRoutes: Routes = [
         data: { title: 'Relationship' },
         resolve: {
             relationship: RelationshipResolver,
+        },
+    }, {
+        path: 'CourtCases',
+        component: CourtCasesComponent,
+        canActivate: [AuthGuard],
+        data: { title: 'Court Cases' },
+        resolve: {
+            relationship: CourtCasesResolver,
+        },
+    }, {
+        path: 'Children',
+        component: ChildrenComponent,
+        canActivate: [AuthGuard],
+        data: { title: 'Children' },
+        resolve: {
+            relationship: ChildrenResolver,
+        },
+    }, {
+        path: 'Defacto',
+        component: DefactoComponent,
+        canActivate: [AuthGuard],
+        data: { title: 'Defacto' },
+        resolve: {
+            relationship: DefactoResolver,
+        },
+    }, {
+        path: 'Property',
+        component: PropertyComponent,
+        canActivate: [AuthGuard],
+        data: { title: 'Property' },
+        resolve: {
+            relationship: PropertyResolver,
+        },
+    }, {
+        path: 'LegalAdvice',
+        component: LegalAdviceComponent,
+        canActivate: [AuthGuard],
+        data: { title: 'LegalAdvice' },
+        resolve: {
+            relationship: LegalAdviceResolver,
+        },
+    }, {
+        path: 'ConsentOrders',
+        component: GenerateConsentOrdersComponent,
+        canActivate: [AuthGuard],
+        data: { title: 'ConsentOrders' },
+        resolve: {
+            relationship: ConsentOrdersResolver,
         },
     }, {
         path: '',

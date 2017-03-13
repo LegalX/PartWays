@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { MdDialog, MdDialogRef, MdSnackBar } from '@angular/material';
+import { MdDialog, MdDialogRef, MdIconRegistry, MdSnackBar } from '@angular/material';
+import { DomSanitizer } from '@angular/platform-browser';
 import {
   ActivatedRouteSnapshot,
   Event as RouterEvent,
@@ -24,10 +25,12 @@ export class AppComponent {
   currentUserEmail: string;
   isLoading = true;
 
-  constructor(public af: AngularFire, private router: Router) {
+  constructor(public af: AngularFire, private router: Router, iconRegistry: MdIconRegistry, sanitizer: DomSanitizer) {
     localStorage.removeItem('currentUserId');
     localStorage.removeItem('currentUserName');
     this.currentUserId = null;
+
+    iconRegistry.addSvgIcon('A', sanitizer.bypassSecurityTrustResourceUrl('assets/img/a.svg'));
 
     router.events.subscribe((event: RouterEvent) => {
       this.navigationInterceptor(event);
