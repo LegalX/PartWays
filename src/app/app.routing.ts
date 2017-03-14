@@ -5,13 +5,6 @@ import { ApplicationComponent } from './application/application.component';
 import { ApplicationResolver } from './application/application.resolver.service';
 import { AuthGuard } from './auth/auth-guard.service';
 import { LoginComponent } from './auth/login';
-import { HomeComponent } from './home/home';
-import { PageNotFoundComponent } from './page.not.found';
-import { PartyComponent } from './party/party';
-import { PartyResolver } from './party/party.resolver.service';
-import { RelationshipComponent } from './relationship/relationship.component';
-import { RelationshipResolver } from './relationship/relationship.resolver.service';
-
 import { ChildrenComponent } from './children/children.component';
 import { ChildrenResolver } from './children/children.resolver.service';
 import { CourtCasesComponent } from './court-cases/court-cases.component';
@@ -20,14 +13,21 @@ import { DefactoComponent } from './defacto/defacto.component';
 import { DefactoResolver } from './defacto/defacto.resolver.service';
 import { GenerateConsentOrdersComponent } from './generate-consent-orders/generate-consent-orders.component';
 import { ConsentOrdersResolver } from './generate-consent-orders/generate-consent-orders.resolver.service';
+import { HomeComponent } from './home/home';
 import { LegalAdviceComponent } from './legal-advice/legal-advice.component';
 import { LegalAdviceResolver } from './legal-advice/legal-advice.resolver.service';
 import { MaintenanceComponent } from './maintenance/maintenance.component';
 import { MaintenanceResolver } from './maintenance/maintenance.resolver.service';
+import { PageNotFoundComponent } from './page.not.found';
 import { ParentingComponent } from './parenting/parenting.component';
 import { ParentingResolver } from './parenting/parenting.resolver.service';
+import { PartyComponent } from './party/party';
+import { PartyResolver } from './party/party.resolver.service';
+import { PrintFormComponent } from './print-form/print-form.component';
 import { PropertyComponent } from './property/property.component';
 import { PropertyResolver } from './property/property.resolver.service';
+import { RelationshipComponent } from './relationship/relationship.component';
+import { RelationshipResolver } from './relationship/relationship.resolver.service';
 import { StatementOfTruthComponent } from './statement-of-truth/statement-of-truth.component';
 import { StatementOfTruthResolver } from './statement-of-truth/statement-of-truth.resolver.service';
 
@@ -118,18 +118,15 @@ const appRoutes: Routes = [
         path: 'LegalAdvice',
         component: LegalAdviceComponent,
         canActivate: [AuthGuard],
-        data: { title: 'LegalAdvice' },
+        data: { title: 'Legal Advice' },
         resolve: {
             relationship: LegalAdviceResolver,
         },
     }, {
         path: 'ConsentOrders',
-        component: GenerateConsentOrdersComponent,
+        component: PrintFormComponent,
         canActivate: [AuthGuard],
-        data: { title: 'ConsentOrders' },
-        resolve: {
-            relationship: ConsentOrdersResolver,
-        },
+        data: { title: 'Consent Orders' },
     }, {
         path: '',
         component: HomeComponent,
