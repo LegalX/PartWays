@@ -119,9 +119,6 @@ const appRoutes: Routes = [
         component: LegalAdviceComponent,
         canActivate: [AuthGuard],
         data: { title: 'Legal Advice' },
-        resolve: {
-            relationship: LegalAdviceResolver,
-        },
     }, {
         path: 'ConsentOrders',
         component: PrintFormComponent,
