@@ -1,3 +1,22 @@
-<p>
-  legal-advice works!
-</p>
+<h1>Part B. About the relationship of the parties</h1>
+<div fxLayout="column">
+  <md-input-container fxFlex>
+    <input mdInput placeholder="When did you begin living together?" type="text" [ngModel]="(item|async)?.beganLivingTogether"
+      (ngModelChange)="item.update({beganLivingTogether: $event})" name="beganLivingTogether">
+  </md-input-container>
+
+  <md-input-container fxFlex>
+    <input mdInput placeholder="If married, when and where did you get married?" type="text" [ngModel]="(item|async)?.whenAndWhereMarried"
+      (ngModelChange)="item.update({whenAndWhereMarried: $event})" name="whenAndWhereMarried">
+  </md-input-container>
+
+  <md-input-container fxFlex>
+    <input mdInput placeholder="When did you finally separate?" type="text" [ngModel]="(item|async)?.whenSeparated" (ngModelChange)="item.update({whenSeparated: $event})"
+      name="whenSeparated">
+  </md-input-container>
+
+  <md-input-container fxFlex>
+    <input mdInput placeholder="When and where did you get divorced?" type="text" [ngModel]="(item|async)?.whenAndWhereDivorced"
+      (ngModelChange)="item.update({whenAndWhereDivorced: $event})" name="whenAndWhereDivorced">
+  </md-input-container>
+</div>
