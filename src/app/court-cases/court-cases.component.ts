@@ -6,16 +6,15 @@ import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
   templateUrl: './court-cases.component.html',
   styleUrls: ['./court-cases.component.css'],
 })
+
 export class CourtCasesComponent implements OnInit {
   item: FirebaseObjectObservable<any>;
-  abc: boolean = true;
 
   constructor(private af: AngularFire) {
-    this.item = af.database.object('/court-cases/dev-data');
-    console.log(this.item);
   }
 
   ngOnInit() {
+    this.item = this.af.database.object(`/application/${localStorage.getItem('applicationId')}/courtCases`);
   }
 
 }
