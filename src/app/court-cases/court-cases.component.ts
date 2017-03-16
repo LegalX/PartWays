@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-court-cases',
@@ -6,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./court-cases.component.css'],
 })
 export class CourtCasesComponent implements OnInit {
+  item: FirebaseObjectObservable<any>;
+  abc: boolean = true;
 
-  constructor() { }
+  constructor(private af: AngularFire) {
+    this.item = af.database.object('/court-cases/dev-data');
+    console.log(this.item);
+  }
 
   ngOnInit() {
   }

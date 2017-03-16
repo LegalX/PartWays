@@ -6,3 +6,7 @@
 body {
  font-family: Roboto;
 }
+
+.doc_container {
+  margin: 8px;
+}
