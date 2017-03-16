@@ -16,7 +16,6 @@ import { LoginComponent } from './auth/login';
 import { ChildrenComponent } from './children/children.component';
 import { ChildrenResolver } from './children/children.resolver.service';
 import { CourtCasesComponent } from './court-cases/court-cases.component';
-import { CourtCasesResolver } from './court-cases/court-cases.resolver.service';
 import { DefactoComponent } from './defacto/defacto.component';
 import { DefactoResolver } from './defacto/defacto.resolver.service';
 import { GenerateConsentOrdersComponent } from './generate-consent-orders/generate-consent-orders.component';
@@ -68,7 +67,6 @@ const firebaseAuthConfig = {
     PartyResolver,
     RelationshipResolver,
     ChildrenResolver,
-    CourtCasesResolver,
     DefactoResolver,
     ConsentOrdersResolver,
     LegalAdviceResolver,
