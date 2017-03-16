@@ -45,7 +45,9 @@ export class AppComponent {
       this.currentUserEmail = auth.auth.email;
       const user = this.af.database.object(`/user/${this.currentUserId}`);
       user.subscribe((item) => {
-        if (!item.$exists()) {
+        if (item.$exists()) {
+          localStorage.setItem('applicationId', item.applicationId);
+        } else {
           this.createNewUserAndApplication();
         }
       });
