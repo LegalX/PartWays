@@ -1,0 +1,13 @@
+.child_block {
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.children_cases div{
+  margin-top: 15px;
+}
+
+.other_persons_block {
+  background-color: #E0E0E0;
+}
