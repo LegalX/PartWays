@@ -92,7 +92,7 @@ const appRoutes: Routes = [
         canActivate: [AuthGuard],
         data: { title: 'Children' },
         resolve: {
-            relationship: ChildrenResolver,
+            children: ChildrenResolver,
         },
     }, {
         path: 'Defacto',
