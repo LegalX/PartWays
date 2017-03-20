@@ -126,7 +126,6 @@ const appRoutes: Routes = [
     }, {
         path: 'ConsentOrders',
         component: PrintFormComponent,
-        canActivate: [AuthGuard],
         data: { title: 'Consent Orders' },
     }, {
         path: '',
