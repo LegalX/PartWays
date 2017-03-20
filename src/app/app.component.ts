@@ -126,4 +126,8 @@ export class AppComponent {
     return title;
   }
 
+  openPrintForm() {
+    window.open('/assets/printform/index.html', '_blank');
+  }
+
 }

@@ -36,7 +36,7 @@
         <button md-menu-item routerLink="/LegalAdvice" (click)="sidenav.toggle()">Statement of independent legal advice</button>
       </md-toolbar-row>
       <md-toolbar-row>
-        <button md-menu-item routerLink="/ConsentOrders" (click)="sidenav.toggle()">Generate Consent Orders</button>
+        <button md-menu-item (click)="openPrintForm()">Generate Consent Orders</button>
       </md-toolbar-row>
       <md-toolbar-row *ngIf="currentUserId">
         <button md-menu-item (click)="logout()">Logout</button>
@@ -49,7 +49,7 @@
       <md-icon>menu</md-icon>
     </button>
     <button md-button routerLink="/">
-      <md-icon>home</md-icon> 
+      <md-icon>home</md-icon>
       {{title}}
     </button>
     <span class="fill-remaining-space"></span>
@@ -67,11 +67,11 @@
 
 <md-menu #menu="mdMenu">
   <button md-menu-item (click)="loginGoogle()">
-      <i class="fa fa-google" aria-hidden="true"></i> 
+      <i class="fa fa-google" aria-hidden="true"></i>
       <span>Google</span>
    </button>
   <button md-menu-item (click)="loginFacebook()">
-      <i class="fa fa-facebook" aria-hidden="true"></i> 
+      <i class="fa fa-facebook" aria-hidden="true"></i>
       <span>Facebook</span>
    </button>
 </md-menu>
