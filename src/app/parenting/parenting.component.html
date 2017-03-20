@@ -1,3 +1,146 @@
-<p>
-  parenting works!
-</p>
+<div class="doc_container">
+  <h1>Part F Details for parenting orders</h1>
+  <form fxLayout="column" #f="ngForm">
+    <span>
+      You must attach a completed Annexure to Proposed Consent Parenting Order form if you are applying for parenting orders.
+    </span>
+    <div id="23">
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+           <h3 fxLayoutAlign="center center">APPLICANT 1</h3>
+           <span fxLayoutAlign="center center">Which of the following applies?</span>
+           <div fxLayout="row">
+              <md-checkbox class="example-margin" [ngModel]="(parenting|async)?.applicantInAU" (ngModelChange)="parenting.update({applicantInAU: $event})" [ngModelOptions]="{standalone: true}">
+                I am present in Australia
+              </md-checkbox>
+           </div>
+           <div fxLayout="row">
+              <md-checkbox class="example-margin" [ngModel]="(parenting|async)?.applicantOrdinaryResInAU" (ngModelChange)="parenting.update({applicantOrdinaryResInAU: $event})" [ngModelOptions]="{standalone: true}">
+                I am ordinarily resident in Australia
+              </md-checkbox>
+           </div>
+           <div fxLayout="row">
+              <md-checkbox class="example-margin" [ngModel]="(parenting|async)?.applicantCitizenAU" (ngModelChange)="parenting.update({applicantCitizenAU: $event})" [ngModelOptions]="{standalone: true}">
+                I am an Australian citizen
+              </md-checkbox>
+           </div>
+           <div fxLayout="row">
+              <md-checkbox class="example-margin" [ngModel]="(parenting|async)?.applicantChildInAU" (ngModelChange)="parenting.update({applicantChildInAU: $event})" [ngModelOptions]="{standalone: true}">
+                The child (or children) is present in Australia/
+ordinarily resident in Australia/
+is an Australian citizen
+              </md-checkbox>
+           </div>
+        </div>
+        <div fxLayout="column" fxFlex="48">
+           <h3 fxLayoutAlign="center center">RESPONDENT 1</h3>
+           <span fxLayoutAlign="center center">Which of the following applies?</span>
+           <div fxLayout="row">
+              <md-checkbox class="example-margin" [ngModel]="(parenting|async)?.respondentInAU" (ngModelChange)="parenting.update({respondentInAU: $event})" [ngModelOptions]="{standalone: true}">
+                Present in Australia
+              </md-checkbox>
+           </div>
+           <div fxLayout="row">
+              <md-checkbox class="example-margin" [ngModel]="(parenting|async)?.respondentOrdinaryResInAU" (ngModelChange)="parenting.update({respondentOrdinaryResInAU: $event})" [ngModelOptions]="{standalone: true}">
+                Ordinarily resident in Australia
+              </md-checkbox>
+           </div>
+           <div fxLayout="row">
+              <md-checkbox class="example-margin" [ngModel]="(parenting|async)?.respondenttCitizenAU" (ngModelChange)="parenting.update({respondenttCitizenAU: $event})" [ngModelOptions]="{standalone: true}">
+                Ordinarily resident in Australia
+              </md-checkbox>
+           </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="24" fxLayout="row" fxLayoutAlign="space-between" >
+      <div fxLayout="column" fxFlex="48" *ngFor="let child of children; let i=index; trackBy: index">
+        <div >
+          <h3>Child {{i + 1}}</h3>
+          <span>
+            Proposed arrangements for the child:
+          </span>
+          <div>
+            <span>
+              <strong>Housing</strong> (e.g. 3 bedroom house – child has own room).
+            </span>
+            <div fxLayout="row">
+              <md-input-container fxFlex="100">
+                <textarea mdInput
+                    [ngModel]="(child|async)?.housing"
+                    (ngModelChange)="child.update({housing: $event})"
+                    name="housing_{{i}}"></textarea>
+              </md-input-container>
+            </div>
+          </div>
+          <div>
+            <span>
+              <strong>Supervision</strong> (who looks after the child? e.g. If the parent who lives with the child is working outside the home who looks after the child during the parent’s absence).
+            </span>
+            <div fxLayout="row">
+              <md-input-container fxFlex="100">
+                <textarea mdInput
+                    [ngModel]="(child|async)?.supervision"
+                    (ngModelChange)="child.update({supervision: $event})"
+                    name="supervision_{{i}}"></textarea>
+              </md-input-container>
+            </div>
+          </div>
+          <div>
+            <span>
+              <strong>Financial support</strong> (details about maintenance and child support, including details of maintenance orders or child support assessments and what is actually being paid or proposed to be paid by any parent or party to the marriage who does not live with the child).
+            </span>
+            <div fxLayout="row">
+              <md-input-container fxFlex="100">
+                <textarea mdInput
+                    [ngModel]="(child|async)?.financialSupport"
+                    (ngModelChange)="child.update({financialSupport: $event})"
+                    name="financialSupport_{{i}}"></textarea>
+              </md-input-container>
+            </div>
+          </div>
+          <div>
+            <span>
+              <strong>Health</strong> (details of the health of the child and any treatment or ongoing medication needs).
+            </span>
+            <div fxLayout="row">
+              <md-input-container fxFlex="100">
+                <textarea mdInput
+                    [ngModel]="(child|async)?.health"
+                    (ngModelChange)="child.update({health: $event})"
+                    name="health_{{i}}"></textarea>
+              </md-input-container>
+            </div>
+          </div>
+          <div>
+            <span>
+              <strong>Education</strong> (details about what school the child attends, what year he/she is in and what progress is being made).
+            </span>
+            <div fxLayout="row">
+              <md-input-container fxFlex="100">
+                <textarea mdInput
+                    [ngModel]="(child|async)?.education"
+                    (ngModelChange)="child.update({education: $event})"
+                    name="education_{{i}}"></textarea>
+              </md-input-container>
+            </div>
+          </div>
+          <div>
+            <span>
+              <strong>Any other matters</strong> (under subsection 60CC of the Family Law Act).
+            </span>
+            <div fxLayout="row">
+              <md-input-container fxFlex="100">
+                <textarea mdInput
+                    [ngModel]="(child|async)?.otherMatters"
+                    (ngModelChange)="child.update({otherMatters: $event})"
+                    name="otherMatters_{{i}}"></textarea>
+              </md-input-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

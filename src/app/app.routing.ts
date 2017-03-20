@@ -95,6 +95,14 @@ const appRoutes: Routes = [
             children: ChildrenResolver,
         },
     }, {
+        path: 'Parenting',
+        component: ParentingComponent,
+        canActivate: [AuthGuard],
+        data: { title: 'Parenting' },
+        resolve: {
+            children: ChildrenResolver
+        },
+    }, {
         path: 'Defacto',
         component: DefactoComponent,
         canActivate: [AuthGuard],
