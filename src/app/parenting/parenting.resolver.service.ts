@@ -10,7 +10,7 @@ export class ParentingResolver implements Resolve<any> {
     constructor(private af: AngularFire) { }
 
     resolve(route: ActivatedRouteSnapshot): Observable<any> | Promise<any> {
-        const data = this.af.database.object(`/parenting/dev-data`);
+        const data = this.af.database.object(`/application/${localStorage.getItem('applicationId')}/parenting`);
         return data.map((item) => {
             return item;
         }).first();
