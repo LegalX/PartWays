@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 import { ActivatedRoute } from '@angular/router';
+import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-children',
@@ -10,15 +10,17 @@ import { ActivatedRoute } from '@angular/router';
 export class ChildrenComponent implements OnInit {
   items: FirebaseListObservable<any>;
   children: Array<FirebaseObjectObservable<any>>;
+  private firebaseDataPath = `/application/${localStorage.getItem('applicationId')}/children`;
 
   constructor(private route: ActivatedRoute, private af: AngularFire) {
-    this.items = this.af.database.list(`/children/dev-data`);
+    console.log(this.firebaseDataPath);
+    this.items = this.af.database.list(this.firebaseDataPath);
   }
 
   addChild() {
     if (confirm('Do you want to add new child?')) {
       this.items.push({}).then((item) => {
-        this.children.push(this.af.database.object(`/children/dev-data/` + item.key));
+        this.children.push(this.af.database.object(`${this.firebaseDataPath}/${item.key}`));
       });
     }
   }
