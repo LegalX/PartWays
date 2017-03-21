@@ -10,17 +10,22 @@ export class ChildrenResolver implements Resolve<any> {
   constructor(private af: AngularFire) { }
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> | Promise<any> {
-    const data = this.af.database.object(`/children/dev-data`);
+    const firebaseDataPath = `/application/${localStorage.getItem('applicationId')}/children`;
+    console.log(firebaseDataPath);
+    const data = this.af.database.object(firebaseDataPath);
     return data
       .map((children) => {
-        let childKeys = Object.keys(children);
+        const childKeys = Object.keys(children);
+        // ToDo refactor
+        childKeys.splice(childKeys.indexOf('$key'), 1);
+        childKeys.splice(childKeys.indexOf('$exists'), 1);
         return childKeys.map((childKey) => {
-          return this.af.database.object(`/children/dev-data/` + childKey)
+          console.log(childKey);
+          return this.af.database.object(`${firebaseDataPath}/${childKey}`)
             .map((it) => {
               return it;
             }).first();
         });
-      }).first()
-    ;
+      }).first();
   }
 }
