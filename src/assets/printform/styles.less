@@ -378,12 +378,12 @@ ol {
 }
 .page11 {}
 .page15 {
- .inputs-list {
-   .fake-input {
-     height: 25px;
-     padding-top: 4px;
-   }
- }
+  .inputs-list {
+    .fake-input {
+      height: 25px;
+      padding-top: 4px;
+    }
+  }
 }
 .page21 {
   .input-group {
@@ -645,7 +645,6 @@ ol {
     .state-name-col{
       float: left;
       width: 80px;
-      margin-right: 10px;
     }
     .state-name {
       background: @court-block-title-bg;
@@ -657,10 +656,20 @@ ol {
       font-weight: bold;
       height: 22px;
     }
+    .registry-col {
+      float: left;
+      width: 100%;
+      padding-left: 90px;
+    }
+    .state-name-col + .registry-col {
+      margin-left: -80px;
+    }
+
     .registry-name-col {
       float: left;
       width: 20%;
     }
+
     .registry-name {
       margin-right: 20px;
       padding: 7px 0;
@@ -668,7 +677,7 @@ ol {
     }
     .registry-address-col {
       float: left;
-      width: 50%;
+      width: 60%;
     }
     .registry-address {
       padding: 7px 0;
