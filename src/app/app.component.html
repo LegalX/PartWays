@@ -36,7 +36,7 @@
         <button md-menu-item routerLink="/LegalAdvice" (click)="sidenav.toggle()">Statement of independent legal advice</button>
       </md-toolbar-row>
       <md-toolbar-row>
-        <button md-menu-item (click)="openPrintForm()">Generate Consent Orders</button>
+        <button md-menu-item routerLink="/ConsentOrders" (click)="sidenav.toggle()">Generate Consent Orders</button>
       </md-toolbar-row>
       <md-toolbar-row *ngIf="currentUserId">
         <button md-menu-item (click)="logout()">Logout</button>
