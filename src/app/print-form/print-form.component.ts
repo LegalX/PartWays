@@ -1,5 +1,5 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {PrintDirective} from "../shared/print.directive";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { PrintDirective } from '../shared/print.directive';
 
 @Component({
   selector: 'app-print-form',
@@ -8,13 +8,13 @@ import {PrintDirective} from "../shared/print.directive";
 })
 export class PrintFormComponent implements OnInit {
   @ViewChild(PrintDirective) form: PrintDirective;
-  clientID: number =  123123456;
-  firstName: string =  "FName";
-  lastName: string = "LName";
+  clientID = 123123456;
+  firstName = 'Alexander';
+  lastName = 'Zhidkov';
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   print() {
     this.form.print();

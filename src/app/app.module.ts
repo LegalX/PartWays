@@ -30,14 +30,14 @@ import { ParentingComponent } from './parenting/parenting.component';
 import { ParentingResolver } from './parenting/parenting.resolver.service';
 import { PartyComponent } from './party/party';
 import { PartyResolver } from './party/party.resolver.service';
+import { PrintFormComponent } from './print-form/print-form.component';
 import { PropertyComponent } from './property/property.component';
 import { PropertyResolver } from './property/property.resolver.service';
 import { RelationshipComponent } from './relationship/relationship.component';
 import { RelationshipResolver } from './relationship/relationship.resolver.service';
+import { PrintDirective } from './shared/print.directive';
 import { StatementOfTruthComponent } from './statement-of-truth/statement-of-truth.component';
 import { StatementOfTruthResolver } from './statement-of-truth/statement-of-truth.resolver.service';
-import { PrintFormComponent } from './print-form/print-form.component';
-import { PrintDirective } from "./shared/print.directive";
 
 // Must export the config
 export const firebaseConfig = {
@@ -94,7 +94,7 @@ const firebaseAuthConfig = {
     LegalAdviceComponent,
     GenerateConsentOrdersComponent,
     PrintFormComponent,
-    PrintDirective
+    PrintDirective,
   ],
   bootstrap: [AppComponent],
 })
