@@ -37,6 +37,7 @@ import { RelationshipResolver } from './relationship/relationship.resolver.servi
 import { StatementOfTruthComponent } from './statement-of-truth/statement-of-truth.component';
 import { StatementOfTruthResolver } from './statement-of-truth/statement-of-truth.resolver.service';
 import { PrintFormComponent } from './print-form/print-form.component';
+import { PrintDirective } from "./shared/print.directive";
 
 // Must export the config
 export const firebaseConfig = {
@@ -93,6 +94,7 @@ const firebaseAuthConfig = {
     LegalAdviceComponent,
     GenerateConsentOrdersComponent,
     PrintFormComponent,
+    PrintDirective
   ],
   bootstrap: [AppComponent],
 })
