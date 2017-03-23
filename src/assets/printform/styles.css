@@ -2645,7 +2645,6 @@ ol li {
 .states-contacts-list .state .state-name-col {
   float: left;
   width: 80px;
-  margin-right: 10px;
 }
 .states-contacts-list .state .state-name {
   background: #4e79a3;
@@ -2656,6 +2655,14 @@ ol li {
   text-align: center;
   font-weight: bold;
   height: 22px;
+}
+.states-contacts-list .state .registry-col {
+  float: left;
+  width: 100%;
+  padding-left: 90px;
+}
+.states-contacts-list .state .state-name-col + .registry-col {
+  margin-left: -80px;
 }
 .states-contacts-list .state .registry-name-col {
   float: left;
@@ -2668,7 +2675,7 @@ ol li {
 }
 .states-contacts-list .state .registry-address-col {
   float: left;
-  width: 50%;
+  width: 60%;
 }
 .states-contacts-list .state .registry-address {
   padding: 7px 0;
