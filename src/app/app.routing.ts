@@ -23,6 +23,7 @@ import { ParentingResolver } from './parenting/parenting.resolver.service';
 import { PartyComponent } from './party/party';
 import { PartyResolver } from './party/party.resolver.service';
 import { PrintFormComponent } from './print-form/print-form.component';
+import { PrintFormResolver } from './print-form/print-form.resolver.service';
 import { PropertyComponent } from './property/property.component';
 import { PropertyResolver } from './property/property.resolver.service';
 import { RelationshipComponent } from './relationship/relationship.component';
@@ -85,7 +86,7 @@ const appRoutes: Routes = [
         path: 'CourtCases',
         component: CourtCasesComponent,
         canActivate: [AuthGuard],
-        data: { title: 'Court Cases' }
+        data: { title: 'Court Cases' },
     }, {
         path: 'Children',
         component: ChildrenComponent,
@@ -100,7 +101,7 @@ const appRoutes: Routes = [
         canActivate: [AuthGuard],
         data: { title: 'Parenting' },
         resolve: {
-            children: ChildrenResolver
+            children: ChildrenResolver,
         },
     }, {
         path: 'Defacto',
@@ -127,6 +128,9 @@ const appRoutes: Routes = [
         path: 'ConsentOrders',
         component: PrintFormComponent,
         data: { title: 'Consent Orders' },
+        resolve: {
+            application: PrintFormResolver,
+        },
     }, {
         path: '',
         component: HomeComponent,

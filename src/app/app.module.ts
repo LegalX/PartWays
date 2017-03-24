@@ -31,6 +31,7 @@ import { ParentingResolver } from './parenting/parenting.resolver.service';
 import { PartyComponent } from './party/party';
 import { PartyResolver } from './party/party.resolver.service';
 import { PrintFormComponent } from './print-form/print-form.component';
+import { PrintFormResolver } from './print-form/print-form.resolver.service';
 import { PropertyComponent } from './property/property.component';
 import { PropertyResolver } from './property/property.resolver.service';
 import { RelationshipComponent } from './relationship/relationship.component';
@@ -75,6 +76,7 @@ const firebaseAuthConfig = {
     ParentingResolver,
     PropertyResolver,
     StatementOfTruthResolver,
+    PrintFormResolver,
   ],
   declarations: [
     AppComponent,

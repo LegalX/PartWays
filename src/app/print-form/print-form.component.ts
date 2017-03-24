@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { PrintDirective } from '../shared/print.directive';
 
 @Component({
@@ -7,14 +8,17 @@ import { PrintDirective } from '../shared/print.directive';
   styleUrls: ['./print-form.component.less'],
 })
 export class PrintFormComponent implements OnInit {
+  appData: any;
   @ViewChild(PrintDirective) form: PrintDirective;
   clientID = 123123456;
   firstName = 'Alexander';
   lastName = 'Zhidkov';
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.appData = this.route.snapshot.data['application'];
+  }
 
   print() {
     this.form.print();
