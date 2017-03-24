@@ -29,7 +29,7 @@ import { PageNotFoundComponent } from './page.not.found';
 import { ParentingComponent } from './parenting/parenting.component';
 import { ParentingResolver } from './parenting/parenting.resolver.service';
 import { PartyComponent } from './party/party';
-import { PartyResolver } from './party/party.resolver.service';
+import { PartiesResolver } from './party/party.resolver.service';
 import { PrintFormComponent } from './print-form/print-form.component';
 import { PrintFormResolver } from './print-form/print-form.resolver.service';
 import { PropertyComponent } from './property/property.component';
@@ -66,7 +66,7 @@ const firebaseAuthConfig = {
   providers: [
     AuthGuard,
     ApplicationResolver,
-    PartyResolver,
+    PartiesResolver,
     RelationshipResolver,
     ChildrenResolver,
     DefactoResolver,

@@ -1,53 +1,53 @@
 <form fxLayout="column" (ngSubmit)="onSubmit()" #userForm="ngForm">
     <md-input-container>
-        <input mdInput placeholder="What is your family name as used now?" type="text" required [(ngModel)]="userData.familyName"
+        <input mdInput placeholder="What is your family name as used now?" type="text" [(ngModel)]="parties.applicant.familyName"
             name="familyName">
     </md-input-container>
     <md-input-container>
-        <input mdInput placeholder="Given names?" type="text" required [(ngModel)]="userData.givenNames" name="givenNames">
+        <input mdInput placeholder="Given names?" type="text" [(ngModel)]="parties.applicant.givenNames" name="givenNames">
     </md-input-container>
-    <md-radio-group class="example-radio-group" [(ngModel)]="userData.gender" name="gender">
+    <md-radio-group class="example-radio-group" [(ngModel)]="parties.applicant.gender" name="gender">
         <md-radio-button value="male">Male</md-radio-button>
         <md-radio-button value="female">Female</md-radio-button>
     </md-radio-group>
     <md-input-container>
-        <input mdInput placeholder="What is your usual occupation?" type="text" required [(ngModel)]="userData.occupation" name="occupation">
+        <input mdInput placeholder="What is your usual occupation?" type="text" [(ngModel)]="parties.applicant.occupation" name="occupation">
     </md-input-container>
 
     <p>What is your contact address (address for service) in Australia? If you give a lawyer’s address, include the name of
         the law firm.</p>
     <md-input-container>
-        <input mdInput type="text" required [(ngModel)]="userData.addressLine1" name="addressLine1">
+        <input mdInput type="text" [(ngModel)]="parties.applicant.addressLine1" name="addressLine1">
     </md-input-container>
     <md-input-container>
-        <input mdInput type="text" [(ngModel)]="userData.addressLine2" name="addressLine2">
+        <input mdInput type="text" [(ngModel)]="parties.applicant.addressLine2" name="addressLine2">
     </md-input-container>
     <md-input-container>
-        <input mdInput placeholder="State" type="text" required [(ngModel)]="userData.addressState" name="addressState">
+        <input mdInput placeholder="State" type="text" [(ngModel)]="parties.applicant.addressState" name="addressState">
     </md-input-container>
     <md-input-container>
-        <input mdInput placeholder="Postcode" type="number" required [(ngModel)]="userData.addressPostcode" name="addressPostcode">
+        <input mdInput placeholder="Postcode" type="number" [(ngModel)]="parties.applicant.addressPostcode" name="addressPostcode">
     </md-input-container>
     <md-input-container>
-        <input mdInput placeholder="Phone" type="number" [(ngModel)]="userData.phone" name="phone">
+        <input mdInput placeholder="Phone" type="number" [(ngModel)]="parties.applicant.phone" name="phone">
     </md-input-container>
     <md-input-container>
-        <input mdInput placeholder="Fax" type="number" [(ngModel)]="userData.fax" name="fax">
+        <input mdInput placeholder="Fax" type="number" [(ngModel)]="parties.applicant.fax" name="fax">
     </md-input-container>
     <md-input-container>
-        <input mdInput placeholder="DX" type="number" [(ngModel)]="userData.dx" name="dx">
+        <input mdInput placeholder="DX" type="number" [(ngModel)]="parties.applicant.dx" name="dx">
     </md-input-container>
     <md-input-container>
-        <input mdInput placeholder="Lawyer’s code" type="number" [(ngModel)]="userData.lawyerCode" name="lawyerCode">
+        <input mdInput placeholder="Lawyer’s code" type="number" [(ngModel)]="parties.applicant.lawyerCode" name="lawyerCode">
     </md-input-container>
     <md-input-container>
-        <input mdInput placeholder="Email" type="number" [(ngModel)]="userData.email" name="email">
+        <input mdInput placeholder="Email" type="number" [(ngModel)]="parties.applicant.email" name="email">
     </md-input-container>
     <md-input-container>
-        <input mdInput placeholder="When were you born?" type="text" required [(ngModel)]="userData.birthday" name="birthday">
+        <input mdInput placeholder="When were you born?" type="text" [(ngModel)]="parties.applicant.birthday" name="birthday">
     </md-input-container>
     <md-input-container>
-        <input mdInput placeholder="In what country were you born?" type="text" required [(ngModel)]="userData.birthCountry" name="birthCountry">
+        <input mdInput placeholder="In what country were you born?" type="text" [(ngModel)]="parties.applicant.birthCountry" name="birthCountry">
     </md-input-container>
     <p>Are you of Aboriginal and/or of Torres Strait Islander origin?</p>
     <md-checkbox [(ngModel)]="isAboriginal" name="isAboriginal">Aboriginal</md-checkbox>

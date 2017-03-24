@@ -10,37 +10,33 @@ import 'rxjs/add/operator/switchMap';
 })
 
 export class PartyComponent implements OnInit {
-    user: FirebaseObjectObservable<any>;
-    userData: any;
-    private isReadOnly = true;
+    partiesRef: FirebaseObjectObservable<any>;
+    parties: any;
+    private isReadOnly = false;
 
     constructor(private route: ActivatedRoute, private af: AngularFire) {
     }
 
     ngOnInit() {
-        this.userData = this.route.snapshot.data['userData'];
-        const currentUserId = localStorage.getItem('currentUserId');
-        if (currentUserId === this.userData.$key) {
-            this.user = this.af.database.object(`/user/${currentUserId}`);
-            this.isReadOnly = false;
-        }
+        this.parties = this.route.snapshot.data['parties'];
+        this.partiesRef = this.af.database.object(`/application/${localStorage.getItem('applicationId')}`);
     }
 
     onSubmit() {
         if (!this.isReadOnly) {
-            this.user.set(this.userData);
+            this.partiesRef.set(this.parties);
         }
     }
 
-    save(updatedUser: any) {
+    save(parties: any) {
         if (!this.isReadOnly) {
-            this.user.set(updatedUser);
+            this.partiesRef.set(parties);
         }
     }
 
-    update(newSize: string) {
+    update(parties: string) {
         if (!this.isReadOnly) {
-            this.user.update({ size: newSize });
+            this.partiesRef.update({ size: parties });
         }
     }
 }

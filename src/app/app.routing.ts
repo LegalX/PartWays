@@ -21,7 +21,7 @@ import { PageNotFoundComponent } from './page.not.found';
 import { ParentingComponent } from './parenting/parenting.component';
 import { ParentingResolver } from './parenting/parenting.resolver.service';
 import { PartyComponent } from './party/party';
-import { PartyResolver } from './party/party.resolver.service';
+import { PartiesResolver } from './party/party.resolver.service';
 import { PrintFormComponent } from './print-form/print-form.component';
 import { PrintFormResolver } from './print-form/print-form.resolver.service';
 import { PropertyComponent } from './property/property.component';
@@ -37,18 +37,18 @@ const appRoutes: Routes = [
         path: 'Parties',
         component: PartyComponent,
         canActivate: [AuthGuard],
-        data: { title: 'Party' },
+        data: { title: 'Parties' },
         resolve: {
-            userData: PartyResolver,
+            parties: PartiesResolver,
         },
     },
     {
         path: 'Parties/:id',
         component: PartyComponent,
         canActivate: [AuthGuard],
-        data: { title: 'Party' },
+        data: { title: 'Parties' },
         resolve: {
-            userData: PartyResolver,
+            parties: PartiesResolver,
         },
     }, {
         path: 'Application',

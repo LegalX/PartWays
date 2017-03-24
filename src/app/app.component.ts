@@ -105,7 +105,15 @@ export class AppComponent {
   }
 
   private createNewUserAndApplication() {
-    const newApplication = { applicant: { id: this.currentUserId, name: this.currentUserName } };
+    const newApplication = {
+      parties: {
+        applicant: {
+          id: this.currentUserId,
+          name: this.currentUserName,
+        },
+        respondent: {},
+      },
+    };
     const newApplicationRef = this.af.database.list(`/application`);
     newApplicationRef.push(newApplication).then((application) => {
       const userData = {
