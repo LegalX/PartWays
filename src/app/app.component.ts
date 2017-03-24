@@ -111,7 +111,6 @@ export class AppComponent {
           id: this.currentUserId,
           name: this.currentUserName,
         },
-        respondent: {},
       },
     };
     const newApplicationRef = this.af.database.list(`/application`);
