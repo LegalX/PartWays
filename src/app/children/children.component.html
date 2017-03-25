@@ -104,7 +104,7 @@ the respondent? <strong>Do not include the other children listed in previous que
           <h3 fxLayout="row" fxLayoutAlign="center center">APPLICANT</h3>
           <h3>Child {{i + 1}}</h3>
           <md-radio-group [ngModel]="(child|async)?.applicantParent"
-            [ngModelOptions]="{standalone: true}"
+            name="applicantParent"
             (ngModelChange)="child.update({applicantParent: $event})"
             fxLayout="row" fxLayoutAlign="space-between"
           >
@@ -117,7 +117,7 @@ the respondent? <strong>Do not include the other children listed in previous que
           </md-radio-group>
           <div class="other_persons_block">
             <div fxLayout="row" fxLayoutAlign="space-between">
-              <md-checkbox class="example-margin" fxFlex="48" [ngModel]="(child|async)?.applicantOtherPerson" (ngModelChange)="item.update({applicantOtherPerson: $event})" [ngModelOptions]="{standalone: true}">
+              <md-checkbox class="example-margin" fxFlex="48" [ngModel]="(child|async)?.applicantOtherPerson" (ngModelChange)="child.update({applicantOtherPerson: $event})" name="applicantOtherPerson">
                 OTHER PERSON
               </md-checkbox>
               <md-input-container fxFlex="48">
@@ -132,7 +132,7 @@ the respondent? <strong>Do not include the other children listed in previous que
             </div>
             <div>
               <md-radio-group [ngModel]="(child|async)?.applicantSex"
-                [ngModelOptions]="{standalone: true}"
+                name="applicantSex"
                 (ngModelChange)="child.update({applicantSex: $event})"
                 fxLayout="row" fxLayoutAlign="space-between"
               >
@@ -163,7 +163,7 @@ the respondent? <strong>Do not include the other children listed in previous que
           <h3 fxLayoutAlign="center center">RESPONDENT</h3>
           <h3>Child {{i + 1}}</h3>
           <md-radio-group [ngModel]="(child|async)?.respondentParent"
-              [ngModelOptions]="{standalone: true}"
+              name="respondentParent"
               (ngModelChange)="child.update({respondentParent: $event})"
               fxLayout="row" fxLayoutAlign="space-between"
           >
@@ -176,7 +176,7 @@ the respondent? <strong>Do not include the other children listed in previous que
           </md-radio-group>
           <div class="other_persons_block">
             <div fxLayout="row" fxLayoutAlign="space-between">
-              <md-checkbox class="example-margin" fxFlex="48" [ngModel]="(child|async)?.respondentOtherPerson" (ngModelChange)="item.update({applicantOtherPerson: $event})" [ngModelOptions]="{standalone: true}">
+              <md-checkbox class="example-margin" fxFlex="48" [ngModel]="(child|async)?.respondentOtherPerson" (ngModelChange)="child.update({applicantOtherPerson: $event})" name="applicantOtherPerson">
                 OTHER PERSON
               </md-checkbox>
               <md-input-container fxFlex="48">
@@ -191,7 +191,7 @@ the respondent? <strong>Do not include the other children listed in previous que
             </div>
             <div>
               <md-radio-group [ngModel]="(child|async)?.respondentSex"
-                [ngModelOptions]="{standalone: true}"
+                name="respondentSex"
                 (ngModelChange)="child.update({respondentSex: $event})"
                 fxLayout="row" fxLayoutAlign="space-between"
               >
