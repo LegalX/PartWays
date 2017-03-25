@@ -15,14 +15,19 @@ export class ChildrenResolver implements Resolve<any> {
     const data = this.af.database.object(firebaseDataPath);
     return data
       .map((children) => {
-        const childKeys = Object.keys(children);
-        return childKeys.map((childKey) => {
-          console.log(childKey);
-          return this.af.database.object(`${firebaseDataPath}/${childKey}`)
-            .map((it) => {
-              return it;
-            }).first();
-        });
+        //empty database always has an empty $value property
+        if (!children.hasOwnProperty('$value')) {
+          let childKeys = Object.keys(children);
+          return childKeys.map((childKey) => {
+            console.log(childKey);
+            return this.af.database.object(`${firebaseDataPath}/${childKey}`)
+              .map((it) => {
+                return it;
+              }).first();
+          });
+        } else {
+          return [];
+        }
       }).first();
   }
 }
