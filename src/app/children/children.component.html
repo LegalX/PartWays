@@ -176,7 +176,7 @@ the respondent? <strong>Do not include the other children listed in previous que
           </md-radio-group>
           <div class="other_persons_block">
             <div fxLayout="row" fxLayoutAlign="space-between">
-              <md-checkbox class="example-margin" fxFlex="48" [ngModel]="(child|async)?.respondentOtherPerson" (ngModelChange)="child.update({respondentOtherPerson: $event})" name="respondentOtherPerson">
+              <md-checkbox class="example-margin" fxFlex="48" [ngModel]="(child|async)?.respondentOtherPerson" (ngModelChange)="child.update({respondentOtherPerson: $event})" [ngModelOptions]="{standalone: true}">
                 OTHER PERSON
               </md-checkbox>
               <md-input-container fxFlex="48">

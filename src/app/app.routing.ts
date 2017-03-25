@@ -104,6 +104,14 @@ const appRoutes: Routes = [
             children: ChildrenResolver,
         },
     }, {
+        path: 'Maintenance',
+        component: MaintenanceComponent,
+        canActivate: [AuthGuard],
+        data: { title: 'Maintenance' },
+        resolve: {
+            maintenance: MaintenanceResolver
+        },
+    }, {
         path: 'Defacto',
         component: DefactoComponent,
         canActivate: [AuthGuard],
