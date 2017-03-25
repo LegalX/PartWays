@@ -11,6 +11,10 @@ npm cache clean
 npm install -g @angular/cli@latest
 
 ## Development server
+Install Node.js 
+Navigate to the project folder. And run the following commands:
+    `npm install -g @angular/cli` 
+    `ng install` 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
