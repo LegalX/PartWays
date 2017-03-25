@@ -19,7 +19,8 @@ export class ChildrenComponent implements OnInit {
 
   addChild() {
     if (confirm('Do you want to add new child?')) {
-      this.items.push({}).then((item) => {
+      let obj = new Object();
+      this.items.push(obj).then((item) => {
         this.children.push(this.af.database.object(`${this.firebaseDataPath}/${item.key}`));
       });
     }
@@ -28,7 +29,7 @@ export class ChildrenComponent implements OnInit {
   removeChild(id: string) {
     if (confirm('Are you sure?')) {
       this.children[id].remove();
-      delete this.children[id];
+      this.children.splice(parseInt(id), 1);
     }
   }
 

@@ -16,9 +16,6 @@ export class ChildrenResolver implements Resolve<any> {
     return data
       .map((children) => {
         const childKeys = Object.keys(children);
-        // ToDo refactor
-        childKeys.splice(childKeys.indexOf('$key'), 1);
-        childKeys.splice(childKeys.indexOf('$exists'), 1);
         return childKeys.map((childKey) => {
           console.log(childKey);
           return this.af.database.object(`${firebaseDataPath}/${childKey}`)
