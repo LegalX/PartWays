@@ -17,6 +17,7 @@ import { LegalAdviceComponent } from './legal-advice/legal-advice.component';
 import { LegalAdviceResolver } from './legal-advice/legal-advice.resolver.service';
 import { MaintenanceComponent } from './maintenance/maintenance.component';
 import { MaintenanceResolver } from './maintenance/maintenance.resolver.service';
+import { RealEstateResolver } from './maintenance/shared/real-estate.resolver.service';
 import { PageNotFoundComponent } from './page.not.found';
 import { ParentingComponent } from './parenting/parenting.component';
 import { ParentingResolver } from './parenting/parenting.resolver.service';
@@ -102,6 +103,14 @@ const appRoutes: Routes = [
         data: { title: 'Parenting' },
         resolve: {
             children: ChildrenResolver,
+        },
+    }, {
+        path: 'Maintenance',
+        component: MaintenanceComponent,
+        canActivate: [AuthGuard],
+        data: { title: 'Maintenance' },
+        resolve: {
+            realEstates: RealEstateResolver
         },
     }, {
         path: 'Defacto',

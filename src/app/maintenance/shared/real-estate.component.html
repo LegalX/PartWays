@@ -1,0 +1,110 @@
+
+  <div id="41">
+    <span>41. Real estate</span>
+    <div fxLayout="row" fxLayoutAlign="space-between" *ngFor="let item of realEstates; let i=index; trackBy: index">
+      <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+        <h3 fxLayoutAlign="center center">APPLICANT</h3>
+        <div class="group">
+          <div>
+            <span>
+              Address
+            </span>
+            <md-input-container >
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantAddress"
+                     (ngModelChange)="item.update({applicantAddress: $event})"
+                     name="nextCourtDate">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              State
+            </span>
+            <md-input-container >
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantState"
+                     (ngModelChange)="item.update({applicantState: $event})"
+                     name="nextCourtDate">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Your % share
+            </span>
+            <md-input-container >
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantPercentShare"
+                     (ngModelChange)="item.update({applicantPercentShare: $event})"
+                     name="nextCourtDate">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Value of your share $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantValueOfShare"
+                     (ngModelChange)="item.update({applicantValueOfShare: $event})"
+                     name="nextCourtDate">
+            </md-input-container>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+         <h3 fxLayoutAlign="center center">RESONDENT</h3>
+        <div class="group">
+          <div fxLayout="row" fxLayoutAlign="end end">
+            <button md-mini-fab mdTooltip="Remove item" [mdTooltipPosition]="'left'" (click)="removeItem(i)"><md-icon>remove</md-icon></button>
+          </div>
+          <div>
+            <span>
+              Address
+            </span>
+            <md-input-container >
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentAddress"
+                     (ngModelChange)="item.update({respondentAddress: $event})"
+                     name="nextCourtDate">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              State
+            </span>
+            <md-input-container >
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentState"
+                     (ngModelChange)="item.update({respondentState: $event})"
+                     name="nextCourtDate">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Your % share
+            </span>
+            <md-input-container >
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentPercentShare"
+                     (ngModelChange)="item.update({respondentPercentShare: $event})"
+                     name="nextCourtDate">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Value of your share $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentValueOfShare"
+                     (ngModelChange)="item.update({respondentValueOfShare: $event})"
+                     name="nextCourtDate">
+            </md-input-container>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end end">
+      <button md-mini-fab mdTooltip="Add item" [mdTooltipPosition]="'left'" (click)="addItem()"><md-icon>add</md-icon></button>
+    </div>
+  </div>
