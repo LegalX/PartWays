@@ -1,19 +1,22 @@
-
   <div id="41">
     <span>41. Real estate</span>
-    <div fxLayout="row" fxLayoutAlign="space-between" *ngFor="let item of realEstates; let i=index; trackBy: index">
+    <div fxLayout="row" fxLayoutAlign="space-between">
       <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
-        <h3 fxLayoutAlign="center center">APPLICANT</h3>
-        <div class="group">
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <h3>APPLICANT</h3>
+          <button md-mini-fab mdTooltip="Add item" [mdTooltipPosition]="'left'" (click)="addItem('applicant')"><md-icon>add</md-icon></button>
+        </div>
+        <div *ngFor="let item of applicantRealEstates; let i=index; trackBy: index" class="group">
+          <button md-mini-fab mdTooltip="Remove item" [mdTooltipPosition]="'left'" (click)="removeItem(i, 'applicant')"><md-icon>remove</md-icon></button>
           <div>
             <span>
               Address
             </span>
             <md-input-container >
-              <input mdInput type="number"
+              <input mdInput type="text"
                      [ngModel]="(item|async)?.applicantAddress"
                      (ngModelChange)="item.update({applicantAddress: $event})"
-                     name="nextCourtDate">
+                     name="applicantAddress_{{i}}">
             </md-input-container>
           </div>
           <div>
@@ -21,10 +24,10 @@
               State
             </span>
             <md-input-container >
-              <input mdInput type="number"
+              <input mdInput type="text"
                      [ngModel]="(item|async)?.applicantState"
                      (ngModelChange)="item.update({applicantState: $event})"
-                     name="nextCourtDate">
+                     name="applicantState_{{i}}">
             </md-input-container>
           </div>
           <div>
@@ -35,7 +38,7 @@
               <input mdInput type="number"
                      [ngModel]="(item|async)?.applicantPercentShare"
                      (ngModelChange)="item.update({applicantPercentShare: $event})"
-                     name="nextCourtDate">
+                     name="applicantPercentShare_{{i}}">
             </md-input-container>
           </div>
           <div>
@@ -46,17 +49,18 @@
               <input mdInput type="number"
                      [ngModel]="(item|async)?.applicantValueOfShare"
                      (ngModelChange)="item.update({applicantValueOfShare: $event})"
-                     name="nextCourtDate">
+                     name="applicantValueOfShare_{{i}}">
             </md-input-container>
           </div>
         </div>
       </div>
       <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
-         <h3 fxLayoutAlign="center center">RESONDENT</h3>
-        <div class="group">
-          <div fxLayout="row" fxLayoutAlign="end end">
-            <button md-mini-fab mdTooltip="Remove item" [mdTooltipPosition]="'left'" (click)="removeItem(i)"><md-icon>remove</md-icon></button>
-          </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <h3>RESONDENT</h3>
+          <button md-mini-fab mdTooltip="Add item" [mdTooltipPosition]="'left'" (click)="addItem('respondent')"><md-icon>add</md-icon></button>
+        </div>
+        <div *ngFor="let item of respondentRealEstates; let i=index; trackBy: index" class="group">
+          <button md-mini-fab mdTooltip="Remove item" [mdTooltipPosition]="'left'" (click)="removeItem(i, 'respondent')"><md-icon>remove</md-icon></button>
           <div>
             <span>
               Address
@@ -65,7 +69,7 @@
               <input mdInput type="number"
                      [ngModel]="(item|async)?.respondentAddress"
                      (ngModelChange)="item.update({respondentAddress: $event})"
-                     name="nextCourtDate">
+                     name="respondentAddress_{{i}}">
             </md-input-container>
           </div>
           <div>
@@ -76,7 +80,7 @@
               <input mdInput type="number"
                      [ngModel]="(item|async)?.respondentState"
                      (ngModelChange)="item.update({respondentState: $event})"
-                     name="nextCourtDate">
+                     name="respondentState_{{i}}">
             </md-input-container>
           </div>
           <div>
@@ -87,7 +91,7 @@
               <input mdInput type="number"
                      [ngModel]="(item|async)?.respondentPercentShare"
                      (ngModelChange)="item.update({respondentPercentShare: $event})"
-                     name="nextCourtDate">
+                     name="respondentPercentShare_{{i}}">
             </md-input-container>
           </div>
           <div>
@@ -98,13 +102,10 @@
               <input mdInput type="number"
                      [ngModel]="(item|async)?.respondentValueOfShare"
                      (ngModelChange)="item.update({respondentValueOfShare: $event})"
-                     name="nextCourtDate">
+                     name="respondentValueOfShare_{{i}}">
             </md-input-container>
           </div>
         </div>
       </div>
-    </div>
-    <div fxLayout="row" fxLayoutAlign="end end">
-      <button md-mini-fab mdTooltip="Add item" [mdTooltipPosition]="'left'" (click)="addItem()"><md-icon>add</md-icon></button>
     </div>
   </div>

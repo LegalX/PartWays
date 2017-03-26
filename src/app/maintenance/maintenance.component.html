@@ -10,14 +10,11 @@ equitable.
     </p>
     <h3>INCOME</h3>
     <div id="37">
+    <span>37. Gross weekly income</span>
       <div fxLayout="row" fxLayoutAlign="space-between">
         <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
           <h3 fxLayoutAlign="center center">APPLICANT</h3>
-          <div>
-            <span>
-              Gross weekly income
-            </span>
-            <md-input-container>
+          <div>            <md-input-container>
               <input mdInput type="text"
                      [ngModel]="(item|async)?.applicantGrossWeeklyIncome"
                      (ngModelChange)="item.update({applicantGrossWeeklyIncome: $event})"
@@ -41,8 +38,8 @@ equitable.
         </div>
       </div>
     </div>
-    <app-real-estate [realEstates]="realEstates"></app-real-estate>
-   <!--  <div id="38">
+    <div id="38">
+    <span>38. Do the orders sought affect your earning capacity? (e.g. are you isposing of or acquiring an investment or business?)</span>
       <div fxLayout="row" fxLayoutAlign="space-between">
         <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
           <div class="group">
@@ -51,8 +48,6 @@ equitable.
                 [ngModelOptions]="{standalone: true}"
                 (ngModelChange)="item.update({applicantOrdersAffectCapacity: $event})"
             >
-              <label>Do the orders sought affect your earning capacity? (e.g. are you isposing of or acquiring an investment or business?)
-              </label>
               <md-radio-button [value]="false" fxLayout="row">
                 No
               </md-radio-button>
@@ -77,8 +72,6 @@ equitable.
                 [ngModelOptions]="{standalone: true}"
                 (ngModelChange)="item.update({respondentOrdersAffectCapacity: $event})"
             >
-              <label>Do the orders sought affect your earning capacity? (e.g. are you isposing of or acquiring an investment or business?)
-              </label>
               <md-radio-button [value]="false" fxLayout="row">
                 No
               </md-radio-button>
@@ -100,6 +93,7 @@ equitable.
     </div>
     <h3>CHILD SUPPORT</h3>
     <div id="39">
+    <span>39. Are you paying child support?</span>
       <div fxLayout="row" fxLayoutAlign="space-between">
         <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
           <div class="group">
@@ -108,9 +102,6 @@ equitable.
                 [ngModelOptions]="{standalone: true}"
                 (ngModelChange)="item.update({applicantPayingChildSupport: $event})"
             >
-              <label>
-                Are you paying child support?
-              </label>
               <md-radio-button [value]="false" fxLayout="row">
                 No
               </md-radio-button>
@@ -149,9 +140,6 @@ equitable.
                 [ngModelOptions]="{standalone: true}"
                 (ngModelChange)="item.update({replicantPayingChildSupport: $event})"
             >
-              <label>
-                Are you paying child support?
-              </label>
               <md-radio-button [value]="false" fxLayout="row">
                 No
               </md-radio-button>
@@ -186,18 +174,15 @@ equitable.
       </div>
     </div>
     <div id="40">
-      <div fxLayout="row" fxLayoutAlign="space-between"ба>
+    <span>40. Are you receiving child support?</span>
+      <div fxLayout="row" fxLayoutAlign="space-between">
         <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
           <div class="group">
             <md-radio-group [ngModel]="(item|async)?.applicantReceivingChildSupport"
                 name="applicantReceivingChildSupport"
                 [ngModelOptions]="{standalone: true}"
                 (ngModelChange)="item.update({applicantReceivingChildSupport: $event})"
-            >
-              <label>
-                Are you receiving child support?
-              </label>
-              <md-radio-button [value]="false" fxLayout="row">
+            >              <md-radio-button [value]="false" fxLayout="row">
                 No
               </md-radio-button>
               <md-radio-button [value]="true" fxLayout="row">
@@ -235,9 +220,6 @@ equitable.
                 [ngModelOptions]="{standalone: true}"
                 (ngModelChange)="item.update({replicantReceivingChildSupport: $event})"
             >
-              <label>
-                Are you paying child support?
-              </label>
               <md-radio-button [value]="false" fxLayout="row">
                 No
               </md-radio-button>
@@ -278,519 +260,115 @@ equitable.
         If you own any property jointly with the other party to this application or any other person, then show the market
         value of your individual share in that property.
       </p>
-    </span> -->
-<!--     <div id="41">
+    </span>
+    <!-- 41 -->
+    <app-real-estate
+      [applicantRealEstates]="applicantRealEstates"
+      [respondentRealEstates]="respondentRealEstates"
+    ></app-real-estate>
+    <!-- 42 -->
+    <app-motor-vehicles
+      [applicantMotorVehicles]="applicantMotorVehicles"
+      [respondentMotorVehicles]="respondentMotorVehicles"
+    ></app-motor-vehicles>
+    <div id="43">
+    <span>43. Furniture, furnishings and effects</span>
       <div fxLayout="row" fxLayoutAlign="space-between">
         <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
-          <h3 fxLayoutAlign="center center">APPLICANT</h3>
-          <div class="group">
-            <label>41. Real estate</label>
-            <div>
-              <span>
-                Address
-              </span>
-              <md-input-container >
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.applicantAddress"
-                       (ngModelChange)="item.update({applicantAddress: $event})"
-                       name="nextCourtDate">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                State
-              </span>
-              <md-input-container >
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.applicantState"
-                       (ngModelChange)="item.update({applicantState: $event})"
-                       name="nextCourtDate">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                Your % share
-              </span>
-              <md-input-container >
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.applicantPercentShare"
-                       (ngModelChange)="item.update({applicantPercentShare: $event})"
-                       name="nextCourtDate">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                Value of your share $
-              </span>
-              <md-input-container>
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.applicantValueOfShare"
-                       (ngModelChange)="item.update({applicantValueOfShare: $event})"
-                       name="nextCourtDate">
-              </md-input-container>
-            </div>
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <h3>APPLICANT</h3>
+          </div>
+          <div>
+            <span>
+              Value of your share $
+            </span>
+            <md-input-container >
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantValueOfFurniture"
+                     (ngModelChange)="item.update({applicantValueOfFurniture: $event})"
+                     name="applicantValueOfFurniture">
+            </md-input-container>
           </div>
         </div>
         <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
-           <h3 fxLayoutAlign="center center">RESONDENT</h3>
-          <div class="group">
-            <div>
-              <span>
-                Address
-              </span>
-              <md-input-container >
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.respondentAddress"
-                       (ngModelChange)="item.update({respondentAddress: $event})"
-                       name="nextCourtDate">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                State
-              </span>
-              <md-input-container >
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.respondentState"
-                       (ngModelChange)="item.update({respondentState: $event})"
-                       name="nextCourtDate">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                Your % share
-              </span>
-              <md-input-container >
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.respondentPercentShare"
-                       (ngModelChange)="item.update({respondentPercentShare: $event})"
-                       name="nextCourtDate">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                Value of your share $
-              </span>
-              <md-input-container>
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.respondentValueOfShare"
-                       (ngModelChange)="item.update({respondentValueOfShare: $event})"
-                       name="nextCourtDate">
-              </md-input-container>
-            </div>
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <h3>RESPONDENT</h3>
+          </div>
+          <div>
+            <span>
+              Value of your share $
+            </span>
+            <md-input-container >
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentValueOfFurniture"
+                     (ngModelChange)="item.update({respondentValueOfFurniture: $event})"
+                     name="respondentValueOfFurniture">
+            </md-input-container>
           </div>
         </div>
       </div>
     </div>
-    <div id="42">
+    <!-- 44 -->
+    <app-financial-institutions
+      [applicantFincancialInstitutions]="applicantFincancialInstitutions"
+      [respondentFincancialInstitutions]="respondentFincancialInstitutions"
+    ></app-financial-institutions>
+    <!-- 45 -->
+    <app-interest-in-business
+      [applicantInterestInBusiness]="applicantInterestInBusiness"
+      [respondentInterestInBusiness]="respondentInterestInBusiness"
+    ></app-interest-in-business>
+    <!-- 46 -->
+    <app-investments
+      [applicantInvestments]="applicantInvestments"
+      [respondentInvestments]="respondentInvestments"
+    ></app-investments>
+    <!-- 47 -->
+    <app-life-insurance
+      [applicantLifeInsurance]="applicantLifeInsurance"
+      [respondentLifeInsurance]="respondentLifeInsurance"
+    ></app-life-insurance>
+    <!-- 48 -->
+    <app-other-interest
+      [applicantOtherInterest]="applicantOtherInterest"
+      [respondentOtherInterest]="respondentOtherInterest"
+    ></app-other-interest>
+    <div id="49">
+    <span>49. <strong>TOTAL VALUE OF PROPERTY OWNED BY YOU</strong></span>
       <div fxLayout="row" fxLayoutAlign="space-between">
         <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
-          <div class="group">
-            <label></label>
-            <div>
-              <span>
-                Address
-              </span>
-              <md-input-container >
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.applicantAddress"
-                       (ngModelChange)="item.update({applicantAddress: $event})"
-                       name="nextCourtDate">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                State
-              </span>
-              <md-input-container >
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.applicantState"
-                       (ngModelChange)="item.update({applicantState: $event})"
-                       name="nextCourtDate">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                Your % share
-              </span>
-              <md-input-container >
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.applicantPercentShare"
-                       (ngModelChange)="item.update({applicantPercentShare: $event})"
-                       name="nextCourtDate">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                Value of your share $
-              </span>
-              <md-input-container>
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.applicantValueOfShare"
-                       (ngModelChange)="item.update({applicantValueOfShare: $event})"
-                       name="nextCourtDate">
-              </md-input-container>
-            </div>
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <h3>APPLICANT</h3>
+          </div>
+          <div>
+            <span>
+              $
+            </span>
+            <md-input-container >
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantTotalValueOfProperyOwned"
+                     (ngModelChange)="item.update({applicantTotalValueOfProperyOwned: $event})"
+                     name="applicantTotalValueOfProperyOwned">
+            </md-input-container>
           </div>
         </div>
         <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
-           <h3 fxLayoutAlign="center center">RESONDENT</h3>
-          <div class="group">
-            <div>
-              <span>
-                Address
-              </span>
-              <md-input-container >
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.respondentAddress"
-                       (ngModelChange)="item.update({respondentAddress: $event})"
-                       name="nextCourtDate">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                State
-              </span>
-              <md-input-container >
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.respondentState"
-                       (ngModelChange)="item.update({respondentState: $event})"
-                       name="nextCourtDate">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                Your % share
-              </span>
-              <md-input-container >
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.respondentPercentShare"
-                       (ngModelChange)="item.update({respondentPercentShare: $event})"
-                       name="nextCourtDate">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                Value of your share $
-              </span>
-              <md-input-container>
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.respondentValueOfShare"
-                       (ngModelChange)="item.update({respondentValueOfShare: $event})"
-                       name="nextCourtDate">
-              </md-input-container>
-            </div>
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <h3>RESPONDENT</h3>
+          </div>
+          <div>
+            <span>
+              $
+            </span>
+            <md-input-container >
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentTotalValueOfProperyOwned"
+                     (ngModelChange)="item.update({respondentTotalValueOfProperyOwned: $event})"
+                     name="respondentTotalValueOfProperyOwned">
+            </md-input-container>
           </div>
         </div>
       </div>
     </div>
-    <div id="50">
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
-          <h3 fxLayoutAlign="center center">APPLICANT</h3>
-          <div class="group">
-            <label>50. Amount owing on home mortgage</label>
-            <div>
-              <span>
-                Name of lender
-              </span>
-              <md-input-container >
-                <input mdInput type="text"
-                       [ngModel]="(item|async)?.applicantNameOfLenderHomeMortgage"
-                       (ngModelChange)="item.update({applicantNameOfLenderHomeMortgage: $event})"
-                       name="applicantNameOfLenderHomeMortgage">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                Address of property
-              </span>
-              <md-input-container >
-                <input mdInput type="text"
-                       [ngModel]="(item|async)?.applicantAddressOfPropertyHomeMortgage"
-                       (ngModelChange)="item.update({applicantAddressOfPropertyHomeMortgage: $event})"
-                       name="applicantAddressOfPropertyHomeMortgage">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                State
-              </span>
-              <md-input-container >
-                <input mdInput type="text"
-                       [ngModel]="(item|async)?.applicantOwingStateHomeMortgage"
-                       (ngModelChange)="item.update({applicantOwingStateHomeMortgage: $event})"
-                       name="applicantOwingStateHomeMortgage">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                Your share of amount owing $
-              </span>
-              <md-input-container>
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.applicantShareOfAmountOwingHomeMortgage"
-                       (ngModelChange)="item.update({applicantShareOfAmountOwingHomeMortgage: $event})"
-                       name="applicantShareOfAmountOwingHomeMortgage">
-              </md-input-container>
-            </div>
-          </div>
-        </div>
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
-           <h3 fxLayoutAlign="center center">RESONDENT</h3>
-          <div class="group">
-            <label>50. Amount owing on home mortgage</label>
-            <div>
-              <span>
-                Name of lender
-              </span>
-              <md-input-container >
-                <input mdInput type="text"
-                       [ngModel]="(item|async)?.respondentNameOfLenderHomeMortgage"
-                       (ngModelChange)="item.update({respondentNameOfLenderHomeMortgage: $event})"
-                       name="respondentNameOfLenderHomeMortgage">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                Address of property
-              </span>
-              <md-input-container >
-                <input mdInput type="text"
-                       [ngModel]="(item|async)?.respondentAddressOfPropertyHomeMortgage"
-                       (ngModelChange)="item.update({respondentAddressOfPropertyHomeMortgage: $event})"
-                       name="respondentAddressOfPropertyHomeMortgage">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                State
-              </span>
-              <md-input-container >
-                <input mdInput type="text"
-                       [ngModel]="(item|async)?.respondentOwingStateHomeMortgage"
-                       (ngModelChange)="item.update({respondentOwingStateHomeMortgage: $event})"
-                       name="respondentOwingStateHomeMortgage">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                Your share of amount owing $
-              </span>
-              <md-input-container>
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.respondentShareOfAmountOwingHomeMortgage"
-                       (ngModelChange)="item.update({respondentShareOfAmountOwingHomeMortgage: $event})"
-                       name="respondentShareOfAmountOwingHomeMortgage">
-              </md-input-container>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="51">
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
-          <div class="group">
-            <label>51. Amount owing on any other mortgage</label>
-            <div>
-              <span>
-                Name of lender
-              </span>
-              <md-input-container >
-                <input mdInput type="text"
-                       [ngModel]="(item|async)?.applicantNameOfLenderOtherMortgage"
-                       (ngModelChange)="item.update({applicantNameOfLenderOtherMortgage: $event})"
-                       name="applicantNameOfLenderOtherMortgage">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                Address of property
-              </span>
-              <md-input-container >
-                <input mdInput type="text"
-                       [ngModel]="(item|async)?.applicantAddressOfPropertyOtherMortgage"
-                       (ngModelChange)="item.update({applicantAddressOfPropertyOtherMortgage: $event})"
-                       name="applicantAddressOfPropertyOtherMortgage">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                State
-              </span>
-              <md-input-container >
-                <input mdInput type="text"
-                       [ngModel]="(item|async)?.applicantOwingStateOtherMortgage"
-                       (ngModelChange)="item.update({applicantOwingStateOtherMortgage: $event})"
-                       name="applicantOwingStateOtherMortgage">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                Your share of amount owing $
-              </span>
-              <md-input-container>
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.applicantShareOfAmountOwingOtherMortgage"
-                       (ngModelChange)="item.update({applicantShareOfAmountOwingOtherMortgage: $event})"
-                       name="applicantShareOfAmountOwingOtherMortgage">
-              </md-input-container>
-            </div>
-          </div>
-        </div>
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
-          <div class="group">
-            <label>50. Amount owing on home mortgage</label>
-            <div>
-              <span>
-                Name of lender
-              </span>
-              <md-input-container >
-                <input mdInput type="text"
-                       [ngModel]="(item|async)?.respondentNameOfLenderOtherMortgage"
-                       (ngModelChange)="item.update({respondentNameOfLenderOtherMortgage: $event})"
-                       name="respondentNameOfLenderOtherMortgage">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                Address of property
-              </span>
-              <md-input-container >
-                <input mdInput type="text"
-                       [ngModel]="(item|async)?.respondentAddressOfPropertyOtherMortgage"
-                       (ngModelChange)="item.update({respondentAddressOfPropertyOtherMortgage: $event})"
-                       name="respondentAddressOfPropertyOtherMortgage">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                State
-              </span>
-              <md-input-container >
-                <input mdInput type="text"
-                       [ngModel]="(item|async)?.respondentOwingStateOtherMortgage"
-                       (ngModelChange)="item.update({respondentOwingStateOtherMortgage: $event})"
-                       name="respondentOwingStateOtherMortgage">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                Your share of amount owing $
-              </span>
-              <md-input-container>
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.respondentShareOfAmountOwingOtherMortgage"
-                       (ngModelChange)="item.update({respondentShareOfAmountOwingOtherMortgage: $event})"
-                       name="respondentShareOfAmountOwingOtherMortgage">
-              </md-input-container>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="52">
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
-          <div class="group">
-            <label>52. Amount owing on any credit/charge cards</label>
-            <div>
-              <span>
-                Type of card
-              </span>
-              <md-input-container >
-                <input mdInput type="text"
-                       [ngModel]="(item|async)?.applicantTypeOfCard"
-                       (ngModelChange)="item.update({applicantTypeOfCard: $event})"
-                       name="applicantTypeOfCard">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                Your share of amount owing $
-              </span>
-              <md-input-container >
-                <input mdInput type="text"
-                       [ngModel]="(item|async)?.applicantShareOfAmountOwingCreditCard"
-                       (ngModelChange)="item.update({applicantShareOfAmountOwingCreditCard: $event})"
-                       name="applicantShareOfAmountOwingCreditCard">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                State
-              </span>
-              <md-input-container >
-                <input mdInput type="text"
-                       [ngModel]="(item|async)?.applicantOwingStateOtherMortgage"
-                       (ngModelChange)="item.update({applicantOwingStateOtherMortgage: $event})"
-                       name="applicantOwingStateOtherMortgage">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                Your share of amount owing $
-              </span>
-              <md-input-container>
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.applicantShareOfAmountOwingOtherMortgage"
-                       (ngModelChange)="item.update({applicantShareOfAmountOwingOtherMortgage: $event})"
-                       name="applicantShareOfAmountOwingOtherMortgage">
-              </md-input-container>
-            </div>
-          </div>
-        </div>
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
-          <div class="group">
-            <label>50. Amount owing on home mortgage</label>
-            <div>
-              <span>
-                Name of lender
-              </span>
-              <md-input-container >
-                <input mdInput type="text"
-                       [ngModel]="(item|async)?.respondentNameOfLenderOtherMortgage"
-                       (ngModelChange)="item.update({respondentNameOfLenderOtherMortgage: $event})"
-                       name="respondentNameOfLenderOtherMortgage">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                Address of property
-              </span>
-              <md-input-container >
-                <input mdInput type="text"
-                       [ngModel]="(item|async)?.respondentAddressOfPropertyOtherMortgage"
-                       (ngModelChange)="item.update({respondentAddressOfPropertyOtherMortgage: $event})"
-                       name="respondentAddressOfPropertyOtherMortgage">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                State
-              </span>
-              <md-input-container >
-                <input mdInput type="text"
-                       [ngModel]="(item|async)?.respondentOwingStateOtherMortgage"
-                       (ngModelChange)="item.update({respondentOwingStateOtherMortgage: $event})"
-                       name="respondentOwingStateOtherMortgage">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                Your share of amount owing $
-              </span>
-              <md-input-container>
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.respondentShareOfAmountOwingOtherMortgage"
-                       (ngModelChange)="item.update({respondentShareOfAmountOwingOtherMortgage: $event})"
-                       name="respondentShareOfAmountOwingOtherMortgage">
-              </md-input-container>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
   </form>
 </div>

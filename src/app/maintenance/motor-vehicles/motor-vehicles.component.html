@@ -1,0 +1,89 @@
+  <div id="42">
+    <span>42. Motor vehicles</span>
+    <div fxLayout="row" fxLayoutAlign="space-between">
+      <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <h3>APPLICANT</h3>
+          <button md-mini-fab mdTooltip="Add item" [mdTooltipPosition]="'left'" (click)="addItem('applicant')"><md-icon>add</md-icon></button>
+        </div>
+        <div *ngFor="let item of applicantMotorVehicles; let i=index; trackBy: index" class="group">
+          <button md-mini-fab mdTooltip="Remove item" [mdTooltipPosition]="'left'" (click)="removeItem(i, 'applicant')"><md-icon>remove</md-icon></button>
+          <div>
+            <span>
+              Make
+            </span>
+            <md-input-container >
+              <input mdInput type="text"
+                     [ngModel]="(item|async)?.applicantMotorVehiclesMake"
+                     (ngModelChange)="item.update({applicantMotorVehiclesMake: $event})"
+                     name="applicantMotorVehiclesMake_{{i}}">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Model
+            </span>
+            <md-input-container >
+              <input mdInput type="text"
+                     [ngModel]="(item|async)?.applicantMotorVehiclesModel"
+                     (ngModelChange)="item.update({applicantMotorVehiclesModel: $event})"
+                     name="applicantMotorVehiclesModel_{{i}}">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Value of your share $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantMotorVehiclesValueOfShare"
+                     (ngModelChange)="item.update({applicantMotorVehiclesValueOfShare: $event})"
+                     name="applicantMotorVehiclesValueOfShare_{{i}}">
+            </md-input-container>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <h3>RESONDENT</h3>
+          <button md-mini-fab mdTooltip="Add item" [mdTooltipPosition]="'left'" (click)="addItem('respondent')"><md-icon>add</md-icon></button>
+        </div>
+        <div *ngFor="let item of respondentMotorVehicles; let i=index; trackBy: index" class="group">
+          <button md-mini-fab mdTooltip="Remove item" [mdTooltipPosition]="'left'" (click)="removeItem(i, 'respondent')"><md-icon>remove</md-icon></button>
+          <div>
+            <span>
+              Make
+            </span>
+            <md-input-container >
+              <input mdInput type="text"
+                     [ngModel]="(item|async)?.respondentMotorVehiclesMake"
+                     (ngModelChange)="item.update({respondentMotorVehiclesMake: $event})"
+                     name="respondentMotorVehiclesMake_{{i}}">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Model
+            </span>
+            <md-input-container >
+              <input mdInput type="text"
+                     [ngModel]="(item|async)?.respondentMotorVehiclesModel"
+                     (ngModelChange)="item.update({respondentMotorVehiclesModel: $event})"
+                     name="respondentMotorVehiclesModel_{{i}}">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Value of your share $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentMotorVehiclesValueOfShare"
+                     (ngModelChange)="item.update({respondentMotorVehiclesValueOfShare: $event})"
+                     name="respondentMotorVehiclesValueOfShare_{{i}}">
+            </md-input-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

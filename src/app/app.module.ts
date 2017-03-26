@@ -37,10 +37,30 @@ import { PropertyResolver } from './property/property.resolver.service';
 import { RelationshipComponent } from './relationship/relationship.component';
 import { RelationshipResolver } from './relationship/relationship.resolver.service';
 import { PrintDirective } from './shared/print.directive';
-import { RealEstateComponent } from './maintenance/shared/real-estate.component';
-import { RealEstateResolver } from './maintenance/shared/real-estate.resolver.service';
 import { StatementOfTruthComponent } from './statement-of-truth/statement-of-truth.component';
 import { StatementOfTruthResolver } from './statement-of-truth/statement-of-truth.resolver.service';
+import { FirebaseArrayProcessingService } from './shared/firebaseArrayProcessing.service';
+import { RealEstateComponent } from './maintenance/real-estate/real-estate.component';
+import { ApplicantRealEstateResolver } from './maintenance/real-estate/applicant-real-estate.resolver.service';
+import { RespondentRealEstateResolver } from './maintenance/real-estate/respondent-real-estate.resolver.service';
+import { MotorVehiclesComponent } from './maintenance/motor-vehicles/motor-vehicles.component';
+import { RespondentMotorVehiclesResolver } from './maintenance/motor-vehicles/respondent-motor-vehicles.resolver.service';
+import { ApplicantMotorVehiclesResolver } from './maintenance/motor-vehicles/applicant-motor-vehicles.resolver.service';
+import { ApplicantFincancialInstitutionsResolver } from './maintenance/financial-institutions/applicant-financial-institutions.resolver.service';
+import { RespondentFincancialInstitutionsResolver } from './maintenance/financial-institutions/respondent-financial-institutions.resolver.service';
+import { ApplicantInterestInBusinessResolver } from './maintenance/interest-in-business/applicant-interest-in-business.resolver.service';
+import { RespondentInterestInBusinessResolver } from './maintenance/interest-in-business/respondent-interest-in-business.resolver.service';
+import { ApplicantInvestmentsResolver } from './maintenance/investments/applicant-investments.resolver.service';
+import { RespondentInvestmentsResolver } from './maintenance/investments/respondent-investments.resolver.service';
+import { ApplicantLifeInsuranceResolver } from './maintenance/life-insurance/applicant-life-insurance.resolver.service';
+import { RespondentLifeInsuranceResolver } from './maintenance/life-insurance/respondent-life-insurance.resolver.service';
+import { ApplicantOtherInterestResolver } from './maintenance/other-interest/applicant-other-interest.resolver.service';
+import { RespondentOtherInterestResolver } from './maintenance/other-interest/respondent-other-interest.resolver.service';
+import { FincancialInstitutionsComponent } from './maintenance/financial-institutions/financial-institutions.component';
+import { InterestInBusinessComponent } from './maintenance/interest-in-business/interest-in-business.component';
+import { InvestmentsComponent } from './maintenance/investments/investments.component';
+import { LifeInsuranceComponent } from './maintenance/life-insurance/life-insurance.component';
+import { OtherInterestComponent } from './maintenance/other-interest/other-interest.component';
 
 // Must export the config
 export const firebaseConfig = {
@@ -79,7 +99,21 @@ const firebaseAuthConfig = {
     PropertyResolver,
     StatementOfTruthResolver,
     PrintFormResolver,
-    RealEstateResolver
+    FirebaseArrayProcessingService,
+    ApplicantRealEstateResolver,
+    RespondentRealEstateResolver,
+    RespondentMotorVehiclesResolver,
+    ApplicantMotorVehiclesResolver,
+    ApplicantFincancialInstitutionsResolver,
+    RespondentFincancialInstitutionsResolver,
+    ApplicantInterestInBusinessResolver,
+    RespondentInterestInBusinessResolver,
+    ApplicantInvestmentsResolver,
+    RespondentInvestmentsResolver,
+    ApplicantLifeInsuranceResolver,
+    RespondentLifeInsuranceResolver,
+    ApplicantOtherInterestResolver,
+    RespondentOtherInterestResolver
   ],
   declarations: [
     AppComponent,
@@ -100,7 +134,13 @@ const firebaseAuthConfig = {
     GenerateConsentOrdersComponent,
     PrintFormComponent,
     PrintDirective,
-    RealEstateComponent
+    RealEstateComponent,
+    MotorVehiclesComponent,
+    FincancialInstitutionsComponent,
+    InterestInBusinessComponent,
+    InvestmentsComponent,
+    LifeInsuranceComponent,
+    OtherInterestComponent
   ],
   bootstrap: [AppComponent],
 })

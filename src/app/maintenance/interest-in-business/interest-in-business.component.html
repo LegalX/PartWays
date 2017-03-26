@@ -1,0 +1,90 @@
+  <div id="45">
+    <span>45. Interest in any business give your best estimate of the gross market value)</span>
+    <div fxLayout="row" fxLayoutAlign="space-between">
+      <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <h3>APPLICANT</h3>
+          <button md-mini-fab mdTooltip="Add item" [mdTooltipPosition]="'left'" (click)="addItem('applicant')"><md-icon>add</md-icon></button>
+        </div>
+        <div *ngFor="let item of applicantInterestInBusiness; let i=index; trackBy: index" class="group">
+          <button md-mini-fab mdTooltip="Remove item" [mdTooltipPosition]="'left'" (click)="removeItem(i, 'applicant')"><md-icon>remove</md-icon></button>
+          <div>
+            <span>
+              Name of business
+            </span>
+            <md-input-container >
+              <input mdInput type="text"
+                     [ngModel]="(item|async)?.applicantInterestInBusinessName"
+                     (ngModelChange)="item.update({applicantInterestInBusinessName: $event})"
+                     name="applicantInterestInBusinessName{{i}}">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Your % share
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantInterestInBusinessPercentOfShare"
+                     (ngModelChange)="item.update({applicantInterestInBusinessPercentOfShare: $event})"
+                     name="applicantInterestInBusinessPercentOfShare_{{i}}">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Value of your share $
+            </span>
+            <md-input-container >
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantInterestInBusinessValueOfShare"
+                     (ngModelChange)="item.update({applicantInterestInBusinessValueOfShare: $event})"
+                     name="applicantInterestInBusinessValueOfShare_{{i}}">
+            </md-input-container>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <h3>RESONDENT</h3>
+          <button md-mini-fab mdTooltip="Add item" [mdTooltipPosition]="'left'" (click)="addItem('respondent')"><md-icon>add</md-icon></button>
+        </div>
+        <div *ngFor="let item of respondentInterestInBusiness; let i=index; trackBy: index" class="group">
+          <button md-mini-fab mdTooltip="Remove item" [mdTooltipPosition]="'left'" (click)="removeItem(i, 'respondent')"><md-icon>remove</md-icon></button>
+          <div>
+            <span>
+              Name of business
+            </span>
+            <md-input-container >
+              <input mdInput type="text"
+                     [ngModel]="(item|async)?.respondentInterestInBusinessName"
+                     (ngModelChange)="item.update({respondentInterestInBusinessName: $event})"
+                     name="respondentInterestInBusinessName{{i}}">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Your % share
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentInterestInBusinessPercentOfShare"
+                     (ngModelChange)="item.update({respondentInterestInBusinessPercentOfShare: $event})"
+                     name="respondentInterestInBusinessPercentOfShare_{{i}}">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Value of your share $
+            </span>
+            <md-input-container >
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentInterestInBusinessValueOfShare"
+                     (ngModelChange)="item.update({respondentInterestInBusinessValueOfShare: $event})"
+                     name="respondentInterestInBusinessValueOfShare_{{i}}">
+            </md-input-container>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>

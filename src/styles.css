@@ -22,3 +22,16 @@ body {
   border-radius: 50%;
   font-size: 22px;
 }
+
+.group {
+  margin-top: 10px;
+  border: solid 2px lightgray;
+  position: relative;
+}
+
+.group button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
