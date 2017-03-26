@@ -37,6 +37,8 @@ import { PropertyResolver } from './property/property.resolver.service';
 import { RelationshipComponent } from './relationship/relationship.component';
 import { RelationshipResolver } from './relationship/relationship.resolver.service';
 import { PrintDirective } from './shared/print.directive';
+import { RealEstateComponent } from './maintenance/shared/real-estate.component';
+import { RealEstateResolver } from './maintenance/shared/real-estate.resolver.service';
 import { StatementOfTruthComponent } from './statement-of-truth/statement-of-truth.component';
 import { StatementOfTruthResolver } from './statement-of-truth/statement-of-truth.resolver.service';
 
@@ -77,6 +79,7 @@ const firebaseAuthConfig = {
     PropertyResolver,
     StatementOfTruthResolver,
     PrintFormResolver,
+    RealEstateResolver
   ],
   declarations: [
     AppComponent,
@@ -97,6 +100,7 @@ const firebaseAuthConfig = {
     GenerateConsentOrdersComponent,
     PrintFormComponent,
     PrintDirective,
+    RealEstateComponent
   ],
   bootstrap: [AppComponent],
 })
