@@ -1,3 +1,519 @@
-<p>
-  property works!
-</p>
+<div class="doc_container">
+  <h1>Part I Effect of property orders sought</h1>
+  <form fxLayout="column" #f="ngForm">
+    <p>
+      Omit all of Part I if no property or maintenance orders are sought.
+    </p>
+    <div id="72">
+      <p>
+        72
+      </p>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+          <div fxLayoutAlign="center center" fxLayout="row">
+            <h3 >APPLICANT</h3>
+          </div>
+            <p>Value of the <strong>property</strong> the applicant will receive</p>
+          <div>
+            <span>
+              Real estate $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantRealEstate"
+                     (ngModelChange)="item.update({applicantRealEstate: $event})"
+                     name="applicantRealEstate">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Motor vehicles $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantMotorVehicles"
+                     (ngModelChange)="item.update({applicantMotorVehicles: $event})"
+                     name="applicantMotorVehicles">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Furniture, furnishings and effects $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantFurniture"
+                     (ngModelChange)="item.update({applicantFurniture: $event})"
+                     name="applicantFurniture">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Funds in banks, building societies, credit unions or other financial institutions $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantFinancialInstitutions"
+                     (ngModelChange)="item.update({applicantFinancialInstitutions: $event})"
+                     name="applicantFinancialInstitutions">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Interest in any business $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantInterestInBusiness"
+                     (ngModelChange)="item.update({applicantInterestInBusiness: $event})"
+                     name="applicantInterestInBusiness">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Investments including shares in public companies $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantInvestments"
+                     (ngModelChange)="item.update({applicantInvestments: $event})"
+                     name="applicantInvestments">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Life insurance policies $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantLifeInsurance"
+                     (ngModelChange)="item.update({applicantLifeInsurance: $event})"
+                     name="applicantLifeInsurance">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Other property $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantOtherProperty"
+                     (ngModelChange)="item.update({applicantOtherProperty: $event})"
+                     name="applicantOtherProperty">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Total $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantTotal"
+                     (ngModelChange)="item.update({applicantTotal: $event})"
+                     name="applicantTotal">
+            </md-input-container>
+          </div>
+        </div>
+        <div fxLayout="column" fxFlex="48">
+          <div fxLayoutAlign="center center" fxLayout="row">
+            <h3 >RESPONDENT</h3>
+          </div>
+            <p>Value of the <strong>property</strong> the respondent will receive</p>
+          <div>
+            <span>
+              Real estate $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentRealEstate"
+                     (ngModelChange)="item.update({respondentRealEstate: $event})"
+                     name="respondentRealEstate">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Motor vehicles $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentMotorVehicles"
+                     (ngModelChange)="item.update({respondentMotorVehicles: $event})"
+                     name="respondentMotorVehicles">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Furniture, furnishings and effects $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentFurniture"
+                     (ngModelChange)="item.update({respondentFurniture: $event})"
+                     name="respondentFurniture">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Funds in banks, building societies, credit unions or other financial institutions $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentFinancialInstitutions"
+                     (ngModelChange)="item.update({respondentFinancialInstitutions: $event})"
+                     name="respondentFinancialInstitutions">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Interest in any business $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentInterestInBusiness"
+                     (ngModelChange)="item.update({respondentInterestInBusiness: $event})"
+                     name="respondentInterestInBusiness">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Investments including shares in public companies $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentInvestments"
+                     (ngModelChange)="item.update({respondentInvestments: $event})"
+                     name="respondentInvestments">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Life insurance policies $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentLifeInsurance"
+                     (ngModelChange)="item.update({respondentLifeInsurance: $event})"
+                     name="respondentLifeInsurance">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Other property $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentOtherProperty"
+                     (ngModelChange)="item.update({respondentOtherProperty: $event})"
+                     name="respondentOtherProperty">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Total $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentTotal"
+                     (ngModelChange)="item.update({respondentTotal: $event})"
+                     name="respondentTotal">
+            </md-input-container>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="73">
+      <span>
+        73
+      </span>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+          <div fxLayoutAlign="center center" fxLayout="row">
+            <h3 >APPLICANT</h3>
+          </div>
+            <p><strong>Liabilities</strong> for which the applicant will be responsible</p>
+          <div>
+            <span>
+              Home mortgage $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantHomeMortrage"
+                     (ngModelChange)="item.update({applicantHomeMortrage: $event})"
+                     name="applicantHomeMortrage">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Other mortgage $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantOtherMortrage"
+                     (ngModelChange)="item.update({applicantOtherMortrage: $event})"
+                     name="applicantOtherMortrage">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Loans (total from bank, building society, credit union or other financial institutions) $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantLoans"
+                     (ngModelChange)="item.update({applicantLoans: $event})"
+                     name="applicantLoans">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Credit cards $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantCreditCards"
+                     (ngModelChange)="item.update({applicantCreditCards: $event})"
+                     name="applicantCreditCards">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Hire purchase $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantHirePurchase"
+                     (ngModelChange)="item.update({applicantHirePurchase: $event})"
+                     name="applicantHirePurchase">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Other liabilities – specify $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantOtherLiabilities"
+                     (ngModelChange)="item.update({applicantOtherLiabilities: $event})"
+                     name="applicantOtherLiabilities">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Total $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantLiabilitiesTotal"
+                     (ngModelChange)="item.update({applicantLiabilitiesTotal: $event})"
+                     name="applicantLiabilitiesTotal">
+            </md-input-container>
+          </div>
+        </div>
+        <div fxLayout="column" fxFlex="48">
+          <div fxLayoutAlign="center center" fxLayout="row">
+            <h3 >RESPONDENT</h3>
+          </div>
+            <p><strong>Liabilities</strong> for which the respondent will be responsible</p>
+          <div>
+            <span>
+              Home mortgage $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentHomeMortrage"
+                     (ngModelChange)="item.update({respondentHomeMortrage: $event})"
+                     name="respondentHomeMortrage">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Other mortgage $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentOtherMortrage"
+                     (ngModelChange)="item.update({respondentOtherMortrage: $event})"
+                     name="respondentOtherMortrage">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Loans (total from bank, building society, credit union or other financial institutions) $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentLoans"
+                     (ngModelChange)="item.update({respondentLoans: $event})"
+                     name="respondentLoans">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Credit cards $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentCreditCards"
+                     (ngModelChange)="item.update({respondentCreditCards: $event})"
+                     name="respondentCreditCards">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Hire purchase $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentHirePurchase"
+                     (ngModelChange)="item.update({respondentHirePurchase: $event})"
+                     name="respondentHirePurchase">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Other liabilities – specify $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentOtherLiabilities"
+                     (ngModelChange)="item.update({respondentOtherLiabilities: $event})"
+                     name="respondentOtherLiabilities">
+            </md-input-container>
+          </div>
+          <div>
+            <span>
+              Total $
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentLiabilitiesTotal"
+                     (ngModelChange)="item.update({respondentLiabilitiesTotal: $event})"
+                     name="respondentLiabilitiesTotal">
+            </md-input-container>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="74">
+      <span>
+        74. <strong>TOTAL</strong>
+      </span>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+          <div fxLayoutAlign="center center" fxLayout="row">
+            <h3 >APPLICANT</h3>
+          </div>
+          <div>
+            <span>
+              <strong>NET VALUE OF PROPERTY THAT THE APPLICANT WILL RECEIVE</strong>
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantNetValue"
+                     (ngModelChange)="item.update({applicantNetValue: $event})"
+                     name="applicantNetValue">
+            </md-input-container>
+          </div>
+        </div>
+        <div fxLayout="column" fxFlex="48">
+          <div fxLayoutAlign="center center" fxLayout="row">
+            <h3 >RESPONDENT</h3>
+          </div>
+          <div>
+            <span>
+              <strong>NET VALUE OF PROPERTY THAT THE RESPONDENT WILL RECEIVE</strong>
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentNetValue"
+                     (ngModelChange)="item.update({respondentNetValue: $event})"
+                     name="respondentNetValue">
+            </md-input-container>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="75">
+      <span>
+        75. Superannuation
+      </span>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+          <div fxLayoutAlign="center center" fxLayout="row">
+            <h3 >APPLICANT</h3>
+          </div>
+          <div>
+            <span>
+              <strong>GROSS VALUE OF THE SUPERANNUATION. THE APPLICANT WILL RECEIVE</strong>
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.applicantGrossValue"
+                     (ngModelChange)="item.update({applicantGrossValue: $event})"
+                     name="applicantGrossValue">
+            </md-input-container>
+          </div>
+        </div>
+        <div fxLayout="column" fxFlex="48">
+          <div fxLayoutAlign="center center" fxLayout="row">
+            <h3 >RESPONDENT</h3>
+          </div>
+          <div>
+            <span>
+              <strong>GROSS VALUE OF THE SUPERANNUATION. THE RESPONDENT WILL RECEIVE</strong>
+            </span>
+            <md-input-container>
+              <input mdInput type="number"
+                     [ngModel]="(item|async)?.respondentGrossValue"
+                     (ngModelChange)="item.update({respondentGrossValue: $event})"
+                     name="respondentGrossValue">
+            </md-input-container>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="76">
+      <span>
+        76. What are the taxation consequencesof any order sought in relation to any interest in superannuation?
+      </span>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+          <div fxLayoutAlign="center center" fxLayout="row">
+            <h3 >APPLICANT</h3>
+          </div>
+          <div>
+            <span>
+              Give details
+            </span>
+            <div fxLayout="row">
+              <md-input-container fxFlex="100">
+              <textarea mdInput
+                        [ngModel]="(item|async)?.applicantDetails"
+                        (ngModelChange)="item.update({applicantDetails: $event})"
+                        name="applicantDetails"></textarea>
+              </md-input-container>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="column" fxFlex="48">
+          <div fxLayoutAlign="center center" fxLayout="row">
+            <h3 >RESPONDENT</h3>
+          </div>
+          <div>
+            <span>
+              Give details
+            </span>
+            <div fxLayout="row">
+              <md-input-container fxFlex="100">
+              <textarea mdInput
+                        [ngModel]="(item|async)?.respondentDetails"
+                        (ngModelChange)="item.update({respondentDetails: $event})"
+                        name="respondentDetails"></textarea>
+              </md-input-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
