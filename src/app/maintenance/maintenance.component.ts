@@ -9,14 +9,38 @@ import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 })
 export class MaintenanceComponent implements OnInit {
   item: FirebaseObjectObservable<any>;
-  realEstates: Array<FirebaseObjectObservable<any>>;
+  applicantRealEstates: Array<FirebaseObjectObservable<any>>;
+  respondentRealEstates: Array<FirebaseObjectObservable<any>>;
+  applicantMotorVehicles: Array<FirebaseObjectObservable<any>>;
+  applicantFincancialInstitutions: Array<FirebaseObjectObservable<any>>;
+  respondentFincancialInstitutions: Array<FirebaseObjectObservable<any>>;
+  applicantInterestInBusiness: Array<FirebaseObjectObservable<any>>;
+  respondentInterestInBusiness: Array<FirebaseObjectObservable<any>>;
+  applicantInvestments: Array<FirebaseObjectObservable<any>>;
+  respondentInvestments: Array<FirebaseObjectObservable<any>>;
+  applicantLifeInsurance: Array<FirebaseObjectObservable<any>>;
+  respondentLifeInsurance: Array<FirebaseObjectObservable<any>>;
+  applicantOtherInterest: Array<FirebaseObjectObservable<any>>;
+  respondentOtherInterest: Array<FirebaseObjectObservable<any>>;
 
   constructor(private route: ActivatedRoute, private af: AngularFire) { }
 
   ngOnInit() {
     this.item = this.af.database.object(`/application/${localStorage.getItem('applicationId')}/maintenance`);
-    this.realEstates = this.route.snapshot.data['realEstates'];
-    console.log(this.realEstates);
+    this.applicantRealEstates = this.route.snapshot.data['applicantRealEstates'];
+    this.respondentRealEstates = this.route.snapshot.data['respondentRealEstates'];
+    this.applicantMotorVehicles = this.route.snapshot.data['applicantMotorVehicles'];
+    this.respondentMotorVehicles = this.route.snapshot.data['respondentMotorVehicles'];
+    this.applicantFincancialInstitutions = this.route.snapshot.data['applicantFincancialInstitutions'];
+    this.respondentFincancialInstitutions = this.route.snapshot.data['respondentFincancialInstitutions'];
+    this.applicantInterestInBusiness = this.route.snapshot.data['applicantInterestInBusiness'];
+    this.respondentInterestInBusiness = this.route.snapshot.data['respondentInterestInBusiness'];
+    this.applicantInvestments = this.route.snapshot.data['applicantInvestments'];
+    this.respondentInvestments = this.route.snapshot.data['respondentInvestments'];
+    this.applicantLifeInsurance = this.route.snapshot.data['applicantLifeInsurance'];
+    this.respondentLifeInsurance = this.route.snapshot.data['respondentLifeInsurance'];
+    this.applicantOtherInterest = this.route.snapshot.data['applicantOtherInterest'];
+    this.respondentOtherInterest = this.route.snapshot.data['respondentOtherInterest'];
   }
 
 }

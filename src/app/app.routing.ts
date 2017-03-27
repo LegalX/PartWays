@@ -17,7 +17,6 @@ import { LegalAdviceComponent } from './legal-advice/legal-advice.component';
 import { LegalAdviceResolver } from './legal-advice/legal-advice.resolver.service';
 import { MaintenanceComponent } from './maintenance/maintenance.component';
 import { MaintenanceResolver } from './maintenance/maintenance.resolver.service';
-import { RealEstateResolver } from './maintenance/shared/real-estate.resolver.service';
 import { PageNotFoundComponent } from './page.not.found';
 import { ParentingComponent } from './parenting/parenting.component';
 import { ParentingResolver } from './parenting/parenting.resolver.service';
@@ -27,10 +26,24 @@ import { PrintFormComponent } from './print-form/print-form.component';
 import { PrintFormResolver } from './print-form/print-form.resolver.service';
 import { PropertyComponent } from './property/property.component';
 import { PropertyResolver } from './property/property.resolver.service';
-import { RelationshipComponent } from './relationship/relationship.component';
-import { RelationshipResolver } from './relationship/relationship.resolver.service';
 import { StatementOfTruthComponent } from './statement-of-truth/statement-of-truth.component';
 import { StatementOfTruthResolver } from './statement-of-truth/statement-of-truth.resolver.service';
+import { RelationshipComponent } from './relationship/relationship.component';
+import { RelationshipResolver } from './relationship/relationship.resolver.service';
+import { RespondentRealEstateResolver } from './maintenance/real-estate/respondent-real-estate.resolver.service';
+import { ApplicantRealEstateResolver } from './maintenance/real-estate/applicant-real-estate.resolver.service';
+import { RespondentMotorVehiclesResolver } from './maintenance/motor-vehicles/respondent-motor-vehicles.resolver.service';
+import { ApplicantMotorVehiclesResolver } from './maintenance/motor-vehicles/applicant-motor-vehicles.resolver.service';
+import { ApplicantFincancialInstitutionsResolver } from './maintenance/financial-institutions/applicant-financial-institutions.resolver.service';
+import { RespondentFincancialInstitutionsResolver } from './maintenance/financial-institutions/respondent-financial-institutions.resolver.service';
+import { ApplicantInterestInBusinessResolver } from './maintenance/interest-in-business/applicant-interest-in-business.resolver.service';
+import { RespondentInterestInBusinessResolver } from './maintenance/interest-in-business/respondent-interest-in-business.resolver.service';
+import { ApplicantInvestmentsResolver } from './maintenance/investments/applicant-investments.resolver.service';
+import { RespondentInvestmentsResolver } from './maintenance/investments/respondent-investments.resolver.service';
+import { ApplicantLifeInsuranceResolver } from './maintenance/life-insurance/applicant-life-insurance.resolver.service';
+import { RespondentLifeInsuranceResolver } from './maintenance/life-insurance/respondent-life-insurance.resolver.service';
+import { ApplicantOtherInterestResolver } from './maintenance/other-interest/applicant-other-interest.resolver.service';
+import { RespondentOtherInterestResolver } from './maintenance/other-interest/respondent-other-interest.resolver.service';
 
 const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -110,7 +123,20 @@ const appRoutes: Routes = [
         canActivate: [AuthGuard],
         data: { title: 'Maintenance' },
         resolve: {
-            realEstates: RealEstateResolver
+            applicantRealEstates: ApplicantRealEstateResolver,
+            respondentRealEstates: RespondentRealEstateResolver,
+            applicantMotorVehicles: ApplicantMotorVehiclesResolver,
+            respondentMotorVehicles: RespondentMotorVehiclesResolver,
+            applicantFincancialInstitutions: ApplicantFincancialInstitutionsResolver,
+            respondentFincancialInstitutions: RespondentFincancialInstitutionsResolver,
+            applicantInterestInBusiness: ApplicantInterestInBusinessResolver,
+            respondentInterestInBusiness: RespondentInterestInBusinessResolver,
+            applicantInvestments: ApplicantInvestmentsResolver,
+            respondentInvestments: RespondentInvestmentsResolver,
+            applicantLifeInsurance: ApplicantLifeInsuranceResolver,
+            respondentLifeInsurance: RespondentLifeInsuranceResolver,
+            applicantOtherInterest: ApplicantOtherInterestResolver,
+            respondentOtherInterest: RespondentOtherInterestResolver,
         },
     }, {
         path: 'Defacto',
