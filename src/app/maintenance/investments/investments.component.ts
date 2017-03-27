@@ -12,7 +12,6 @@ import 'rxjs/add/operator/first';
 export class InvestmentsComponent implements OnInit {
   @Input('applicantInvestments') applicantInvestments: Array<FirebaseObjectObservable<any>>;
   @Input('respondentInvestments') respondentInvestments: Array<FirebaseObjectObservable<any>>;
-  items: FirebaseListObservable<any>;
 
   constructor(private processingService: FirebaseArrayProcessingService) {}
 

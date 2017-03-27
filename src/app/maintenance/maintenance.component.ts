@@ -12,6 +12,7 @@ export class MaintenanceComponent implements OnInit {
   applicantRealEstates: Array<FirebaseObjectObservable<any>>;
   respondentRealEstates: Array<FirebaseObjectObservable<any>>;
   applicantMotorVehicles: Array<FirebaseObjectObservable<any>>;
+  respondentMotorVehicles: Array<FirebaseObjectObservable<any>>;
   applicantFincancialInstitutions: Array<FirebaseObjectObservable<any>>;
   respondentFincancialInstitutions: Array<FirebaseObjectObservable<any>>;
   applicantInterestInBusiness: Array<FirebaseObjectObservable<any>>;
