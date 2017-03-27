@@ -69,7 +69,6 @@
       </ul>
 
     </div>
-    <pre>{{appData | json}}</pre>
 
     <div class="part-title-wrapper mb5">
       <div class="part-name fl-left">Part A</div>
@@ -100,10 +99,10 @@
 
           <div class="input-group-checkboxes">
             <div class="left-col">
-              <div class="checkbox">{{appData.applicant.gender == 'male' ? 'X' : ''}}</div> Male
+              <div class="checkbox">{{appData.applicant.gender === 'male' ? 'X' : ''}}</div> Male
             </div>
             <div class="right-col">
-              <div class="checkbox">{{appData.applicant.gender == 'female' ? 'X' : ''}}</div> Female
+              <div class="checkbox">{{appData.applicant.gender === 'female' ? 'X' : ''}}</div> Female
             </div>
           </div>
 
@@ -121,10 +120,10 @@
 
           <div class="input-group-checkboxes">
             <div class="left-col">
-              <div class="checkbox">{{appData.respondent.gender == 'male' ? 'X' : ''}}</div> Male
+              <div class="checkbox">{{appData.respondent.gender === 'male' ? 'X' : ''}}</div> Male
             </div>
             <div class="right-col">
-              <div class="checkbox">{{appData.respondent.gender == 'female' ? 'X' : ''}}</div> Female
+              <div class="checkbox">{{appData.respondent.gender === 'female' ? 'X' : ''}}</div> Female
             </div>
           </div>
         </div>
