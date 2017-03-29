@@ -1,13 +1,11 @@
 <div class="doc_container">
   <h1>Part C. About other Court cases and orders</h1>
+  <pre>{{item|async|json}}</pre>
   <form fxLayout="column" #f="ngForm" class="court_cases">
 
     <div id="10">
       <div>
-        <md-radio-group [ngModel]="(item|async)?.ongoingCases"
-            [ngModelOptions]="{standalone: true}"
-            (ngModelChange)="item.update({ongoingCases: $event})"
-        >
+        <md-radio-group [ngModel]="(item|async)?.ongoingCases" [ngModelOptions]="{standalone: true}" (ngModelChange)="item.update({ongoingCases: $event})">
           <label>Are there any <strong>ongoing</strong> cases in this or any other court about family law, child support, family violence or
             child welfare that involve any of the parties or any of the children listed on this form?
           </label>
@@ -25,12 +23,8 @@
             Court name and place
           </span>
           <md-input-container>
-            <input mdInput
-                   type="text"
-                   [ngModel]="(item|async)?.ongoingNameAndPlace"
-                   (ngModelChange)="item.update({ongoingNameAndPlace: $event})"
-                   name="nameAndPlace"
-            >
+            <input mdInput type="text" [ngModel]="(item|async)?.ongoingNameAndPlace" (ngModelChange)="item.update({ongoingNameAndPlace: $event})"
+              name="nameAndPlace">
           </md-input-container>
         </div>
         <!--should be the datepicker-->
@@ -39,10 +33,8 @@
             Next Court date
           </span>
           <md-input-container>
-            <input mdInput type="text"
-                   [ngModel]="(item|async)?.ongoingNextCourtDate"
-                   (ngModelChange)="item.update({ongoingNextCourtDate: $event})"
-                   name="nextCourtDate">
+            <input mdInput type="text" [ngModel]="(item|async)?.ongoingNextCourtDate" (ngModelChange)="item.update({ongoingNextCourtDate: $event})"
+              name="nextCourtDate">
           </md-input-container>
         </div>
       </div>
@@ -51,10 +43,7 @@
       </span>
       <div fxLayout="row">
         <md-input-container fxFlex="100">
-          <textarea mdInput
-            [ngModel]="(item|async)?.namesOfParties"
-            (ngModelChange)="item.update({namesOfParties: $event})"
-            name="nameAndPlace"></textarea>
+          <textarea mdInput [ngModel]="(item|async)?.namesOfParties" (ngModelChange)="item.update({namesOfParties: $event})" name="nameAndPlace"></textarea>
         </md-input-container>
       </div>
       <span>
@@ -62,35 +51,28 @@
       </span>
       <div fxLayout="row">
         <md-input-container fxFlex="100">
-          <textarea mdInput
-                [ngModel]="(item|async)?.natureOfOrders"
-                (ngModelChange)="item.update({natureOfOrders: $event})"
-                name="nameAndPlace"></textarea>
+          <textarea mdInput [ngModel]="(item|async)?.natureOfOrders" (ngModelChange)="item.update({natureOfOrders: $event})" name="nameAndPlace"></textarea>
         </md-input-container>
       </div>
     </div>
 
     <div id="11">
-      <div><md-radio-group [ngModel]="(item|async)?.anyExistingOrders"
-                      [ngModelOptions]="{standalone: true}"
-                      (ngModelChange)="item.update({anyExistingOrders: $event})"
-      >
-        <label>Are there any <strong>existing orders</strong>, agreements, parenting plans or undertakings to a court about family law, child
+      <div>
+        <md-radio-group [ngModel]="(item|async)?.anyExistingOrders" [ngModelOptions]="{standalone: true}" (ngModelChange)="item.update({anyExistingOrders: $event})">
+          <label>Are there any <strong>existing orders</strong>, agreements, parenting plans or undertakings to a court about family law, child
           support, family violence or abuse in relation to a child (including orders which have applied to a child or a
           member of the child’s family), or child welfare, concerning any of the parties or children listed on this form?
         </label>
-        <md-radio-button [value]="false" fxLayout="row">
-          No
-        </md-radio-button>
-        <md-radio-button [value]="true" fxLayout="row">
-          Yes
-        </md-radio-button>
-      </md-radio-group></div>
+          <md-radio-button [value]="false" fxLayout="row">
+            No
+          </md-radio-button>
+          <md-radio-button [value]="true" fxLayout="row">
+            Yes
+          </md-radio-button>
+        </md-radio-group>
+      </div>
       <div *ngIf="(item|async)?.anyExistingOrders" class="additional_details" fxFlex="100">
-        <md-radio-group [ngModel]="(item|async)?.attached"
-                        [ngModelOptions]="{standalone: true}"
-                        (ngModelChange)="item.update({attached: $event})"
-        >
+        <md-radio-group [ngModel]="(item|async)?.attached" [ngModelOptions]="{standalone: true}" (ngModelChange)="item.update({attached: $event})">
           <label>
             <strong>EITHER</strong> attach a full copy of the order, agreement, parenting plan <strong>or</strong> undertaking or set out
             details below (attach an extra page if you need more space, numbering the page/s Item 11 page 2
@@ -104,16 +86,20 @@
           </md-radio-button>
         </md-radio-group>
         <div fxLayout="row" fxLayoutAlign="space-between" *ngIf="(item|async)?.attached" class="additional_details">
-          <md-checkbox class="example-margin" [ngModel]="(item|async)?.attachedOrder" (ngModelChange)="item.update({attachedOrder: $event})" [ngModelOptions]="{standalone: true}">
+          <md-checkbox class="example-margin" [ngModel]="(item|async)?.attachedOrder" (ngModelChange)="item.update({attachedOrder: $event})"
+            [ngModelOptions]="{standalone: true}">
             order
           </md-checkbox>
-          <md-checkbox class="example-margin" [ngModel]="(item|async)?.attachedUndertalking" (ngModelChange)="item.update({attachedUndertalking: $event})" [ngModelOptions]="{standalone: true}">
+          <md-checkbox class="example-margin" [ngModel]="(item|async)?.attachedUndertalking" (ngModelChange)="item.update({attachedUndertalking: $event})"
+            [ngModelOptions]="{standalone: true}">
             undertalking
           </md-checkbox>
-          <md-checkbox class="example-margin" [ngModel]="(item|async)?.attachedParentingPlan" (ngModelChange)="item.update({attachedParentingPlan: $event})" [ngModelOptions]="{standalone: true}">
+          <md-checkbox class="example-margin" [ngModel]="(item|async)?.attachedParentingPlan" (ngModelChange)="item.update({attachedParentingPlan: $event})"
+            [ngModelOptions]="{standalone: true}">
             parenting plan
           </md-checkbox>
-          <md-checkbox class="example-margin" [ngModel]="(item|async)?.attachedAgreement" (ngModelChange)="item.update({attachedAgreement: $event})" [ngModelOptions]="{standalone: true}">
+          <md-checkbox class="example-margin" [ngModel]="(item|async)?.attachedAgreement" (ngModelChange)="item.update({attachedAgreement: $event})"
+            [ngModelOptions]="{standalone: true}">
             agreement
           </md-checkbox>
         </div>
@@ -126,13 +112,9 @@
               <span>
                 Court name and place
               </span>
-              <md-input-container >
-                <input mdInput
-                       type="text"
-                       [ngModel]="(item|async)?.existingNameAndPlace"
-                       (ngModelChange)="item.update({existingNameAndPlace: $event})"
-                       name="nameAndPlace"
-                >
+              <md-input-container>
+                <input mdInput type="text" [ngModel]="(item|async)?.existingNameAndPlace" (ngModelChange)="item.update({existingNameAndPlace: $event})"
+                  name="nameAndPlace">
               </md-input-container>
             </div>
             <!--should be the datepicker-->
@@ -140,11 +122,9 @@
               <span>
                 Date
               </span>
-              <md-input-container >
-                <input mdInput type="text"
-                       [ngModel]="(item|async)?.existingNextCourtDate"
-                       (ngModelChange)="item.update({existingDate: $event})"
-                       name="nextCourtDate">
+              <md-input-container>
+                <input mdInput type="text" [ngModel]="(item|async)?.existingNextCourtDate" (ngModelChange)="item.update({existingDate: $event})"
+                  name="nextCourtDate">
               </md-input-container>
             </div>
           </div>
@@ -153,9 +133,7 @@
           </span>
           <div fxLayout="row">
             <md-input-container fxFlex="100">
-              <textarea mdInput
-                [ngModel]="(item|async)?.namesOfPartiesToOrder"
-                (ngModelChange)="item.update({namesOfPartiesToOrder: $event})"
+              <textarea mdInput [ngModel]="(item|async)?.namesOfPartiesToOrder" (ngModelChange)="item.update({namesOfPartiesToOrder: $event})"
                 name="nameAndPlace"></textarea>
             </md-input-container>
           </div>
@@ -164,10 +142,7 @@
     </div>
 
     <div id="12">
-      <md-radio-group [ngModel]="(item|async)?.familyViolenceOrder"
-        [ngModelOptions]="{standalone: true}"
-        (ngModelChange)="item.update({familyViolenceOrder: $event})"
-      >
+      <md-radio-group [ngModel]="(item|async)?.familyViolenceOrder" [ngModelOptions]="{standalone: true}" (ngModelChange)="item.update({familyViolenceOrder: $event})">
         <label>
           Is there is a family violence order?
         </label>
@@ -180,10 +155,7 @@
       </md-radio-group>
       <div class="additional_details" *ngIf="(item|async)?.familyViolenceOrder">
         <div>
-          <md-radio-group [ngModel]="(item|async)?.ordersAreConsistrentFVO"
-                          [ngModelOptions]="{standalone: true}"
-                          (ngModelChange)="item.update({ordersAreConsistrentFVO: $event})"
-          >
+          <md-radio-group [ngModel]="(item|async)?.ordersAreConsistrentFVO" [ngModelOptions]="{standalone: true}" (ngModelChange)="item.update({ordersAreConsistrentFVO: $event})">
             <label>
               Are the orders sought in this application consistent with that family violence order?
             </label>
@@ -201,10 +173,7 @@
           </span>
           <div fxLayout="row">
             <md-input-container fxFlex="100">
-          <textarea mdInput
-                    [ngModel]="(item|async)?.detailsOfFV"
-                    (ngModelChange)="item.update({detailsOfFV: $event})"
-                    name="detailsOfFV"></textarea>
+              <textarea mdInput [ngModel]="(item|async)?.detailsOfFV" (ngModelChange)="item.update({detailsOfFV: $event})" name="detailsOfFV"></textarea>
             </md-input-container>
           </div>
         </div>
@@ -212,10 +181,7 @@
     </div>
 
     <div id="12A">
-      <md-radio-group [ngModel]="(item|async)?.anyDepContact"
-        [ngModelOptions]="{standalone: true}"
-        (ngModelChange)="item.update({anyDepContact: $event})"
-      >
+      <md-radio-group [ngModel]="(item|async)?.anyDepContact" [ngModelOptions]="{standalone: true}" (ngModelChange)="item.update({anyDepContact: $event})">
         <label>
           Has there been any contact with the department responsible for child safety with respect to the
           children named in this application or any other child of the household?
@@ -233,20 +199,15 @@
         </span>
         <div fxLayout="row">
           <md-input-container fxFlex="100">
-          <textarea mdInput
-            [ngModel]="(item|async)?.anyDepContactDetails"
-            (ngModelChange)="item.update({anyDepContactDetails: $event})"
-            name="anyDepContactDetails"></textarea>
+            <textarea mdInput [ngModel]="(item|async)?.anyDepContactDetails" (ngModelChange)="item.update({anyDepContactDetails: $event})"
+              name="anyDepContactDetails"></textarea>
           </md-input-container>
         </div>
       </div>
     </div>
 
     <div id="13">
-      <md-radio-group [ngModel]="(item|async)?.seekingParentingResp"
-        [ngModelOptions]="{standalone: true}"
-        (ngModelChange)="item.update({seekingParentingResp: $event})"
-      >
+      <md-radio-group [ngModel]="(item|async)?.seekingParentingResp" [ngModelOptions]="{standalone: true}" (ngModelChange)="item.update({seekingParentingResp: $event})">
         <label>
           Are you seeking a parenting order that provides for the child’s parents to have equal shared parental
           responsibility for the child?
@@ -260,10 +221,7 @@
       </md-radio-group>
       <div class="additional_details" *ngIf="!(item|async)?.seekingParentingResp">
         <div>
-          <md-radio-group [ngModel]="(item|async)?.presumptionDoesNotApply"
-                          [ngModelOptions]="{standalone: true}"
-                          (ngModelChange)="item.update({presumptionDoesNotApply: $event})"
-          >
+          <md-radio-group [ngModel]="(item|async)?.presumptionDoesNotApply" [ngModelOptions]="{standalone: true}" (ngModelChange)="item.update({presumptionDoesNotApply: $event})">
             <label>
               Is this a case where all parties accept that the presumption in Section 61DA(1) does not apply?
             </label>
@@ -281,10 +239,7 @@
           </span>
           <div fxLayout="row">
             <md-input-container fxFlex="100">
-            <textarea mdInput
-                      [ngModel]="(item|async)?.whyPresumpFalse"
-                      (ngModelChange)="item.update({whyPresumpFalse: $event})"
-                      name="anyDepContactDetails"></textarea>
+              <textarea mdInput [ngModel]="(item|async)?.whyPresumpFalse" (ngModelChange)="item.update({whyPresumpFalse: $event})" name="anyDepContactDetails"></textarea>
             </md-input-container>
           </div>
         </div>
@@ -296,10 +251,7 @@
           </span>
           <div fxLayout="row">
             <md-input-container fxFlex="100">
-          <textarea mdInput
-                    [ngModel]="(item|async)?.whyPresumpTrue"
-                    (ngModelChange)="item.update({whyPresumpTrue: $event})"
-                    name="anyDepContactDetails"></textarea>
+              <textarea mdInput [ngModel]="(item|async)?.whyPresumpTrue" (ngModelChange)="item.update({whyPresumpTrue: $event})" name="anyDepContactDetails"></textarea>
             </md-input-container>
           </div>
         </div>
@@ -308,10 +260,7 @@
 
     <div id="13A" class="additional_details" *ngIf="(item|async)?.seekingParentingResp">
       <div>
-        <md-radio-group [ngModel]="(item|async)?.seekingParentingSpendTime"
-                        [ngModelOptions]="{standalone: true}"
-                        (ngModelChange)="item.update({seekingParentingSpendTime: $event})"
-        >
+        <md-radio-group [ngModel]="(item|async)?.seekingParentingSpendTime" [ngModelOptions]="{standalone: true}" (ngModelChange)="item.update({seekingParentingSpendTime: $event})">
           <label>
             Are you seeking a parenting order that provides for the child’s parent to spend time with the child?
           </label>
@@ -330,10 +279,8 @@
         </span>
         <div fxLayout="row">
           <md-input-container fxFlex="100">
-          <textarea mdInput
-                    [ngModel]="(item|async)?.whySeekingParentingRespTrue"
-                    (ngModelChange)="item.update({whySeekingParentingRespTrue: $event})"
-                    name="anyDepContactDetails"></textarea>
+            <textarea mdInput [ngModel]="(item|async)?.whySeekingParentingRespTrue" (ngModelChange)="item.update({whySeekingParentingRespTrue: $event})"
+              name="anyDepContactDetails"></textarea>
           </md-input-container>
         </div>
       </div>
@@ -343,20 +290,15 @@
         </span>
         <div fxLayout="row">
           <md-input-container fxFlex="100">
-          <textarea mdInput
-                    [ngModel]="(item|async)?.whySeekingParentingRespFalse"
-                    (ngModelChange)="item.update({whySeekingParentingRespFalse: $event})"
-                    name="anyDepContactDetails"></textarea>
+            <textarea mdInput [ngModel]="(item|async)?.whySeekingParentingRespFalse" (ngModelChange)="item.update({whySeekingParentingRespFalse: $event})"
+              name="anyDepContactDetails"></textarea>
           </md-input-container>
         </div>
       </div>
     </div>
 
     <div id="14">
-      <md-radio-group [ngModel]="(item|async)?.previouslyEnteredIntoFA"
-        [ngModelOptions]="{standalone: true}"
-        (ngModelChange)="item.update({previouslyEnteredIntoFA: $event})"
-      >
+      <md-radio-group [ngModel]="(item|async)?.previouslyEnteredIntoFA" [ngModelOptions]="{standalone: true}" (ngModelChange)="item.update({previouslyEnteredIntoFA: $event})">
         <label>
           Have the parties previously entered into a <strong>financial agreement</strong>, a <strong>Part VIIIAB financial agreement</strong> or a
           <strong>superannuation agreement</strong> under the Family Law Act or under any relevant State or Territory legislation?
@@ -371,10 +313,7 @@
     </div>
 
     <div id="15">
-      <md-radio-group [ngModel]="(item|async)?.servedWaiverNotice"
-        [ngModelOptions]="{standalone: true}"
-        (ngModelChange)="item.update({servedWaiverNotice: $event})"
-      >
+      <md-radio-group [ngModel]="(item|async)?.servedWaiverNotice" [ngModelOptions]="{standalone: true}" (ngModelChange)="item.update({servedWaiverNotice: $event})">
         <label>
           If either party has a superannuation interest, has the non-member spouse or former de facto partner
           served a waiver notice on the Trustee of the eligible superannuation plan under section 90MZA of the
@@ -390,10 +329,7 @@
     </div>
 
     <div id="16">
-      <md-radio-group [ngModel]="(item|async)?.paymentFlagExist"
-        [ngModelOptions]="{standalone: true}"
-        (ngModelChange)="item.update({paymentFlagExist: $event})"
-      >
+      <md-radio-group [ngModel]="(item|async)?.paymentFlagExist" [ngModelOptions]="{standalone: true}" (ngModelChange)="item.update({paymentFlagExist: $event})">
         <label>
           If either party has a superannuation interest, is there a payment flag in operation in relation to that interest?
         </label>
@@ -407,10 +343,7 @@
     </div>
 
     <div id="17">
-      <md-radio-group [ngModel]="(item|async)?.bankruptOrDebtor"
-        [ngModelOptions]="{standalone: true}"
-        (ngModelChange)="item.update({bankruptOrDebtor: $event})"
-      >
+      <md-radio-group [ngModel]="(item|async)?.bankruptOrDebtor" [ngModelOptions]="{standalone: true}" (ngModelChange)="item.update({bankruptOrDebtor: $event})">
         <label>
           Is any party currently bankrupt or currently a debtor in bankruptcy proceedings started by either a creditor’s
           petition or a debtor’s petition or currently a debtor subject to a personal insolvency agreement?
@@ -425,10 +358,7 @@
     </div>
 
     <div id="18">
-      <md-radio-group [ngModel]="(item|async)?.proceedsOfConfiscation"
-        [ngModelOptions]="{standalone: true}"
-        (ngModelChange)="item.update({proceedsOfConfiscation: $event})"
-      >
+      <md-radio-group [ngModel]="(item|async)?.proceedsOfConfiscation" [ngModelOptions]="{standalone: true}" (ngModelChange)="item.update({proceedsOfConfiscation: $event})">
         <label>
           Is there a proceeds of crime order or current forfeiture application in relation to any of the property of
           any of the parties (see Proceeds of Crime Act 2002 (C’wlth))?
@@ -443,10 +373,7 @@
     </div>
 
     <div id="19">
-      <md-radio-group [ngModel]="(item|async)?.partyOfTheCase"
-        [ngModelOptions]="{standalone: true}"
-        (ngModelChange)="item.update({partyOfTheCase: $event})"
-      >
+      <md-radio-group [ngModel]="(item|async)?.partyOfTheCase" [ngModelOptions]="{standalone: true}" (ngModelChange)="item.update({partyOfTheCase: $event})">
         <label>
           Is there any person who may be entitled to become a party to the case under Subsection 79(10) or
           subsection 90SM(10) of the Act?
@@ -459,10 +386,7 @@
         </md-radio-button>
       </md-radio-group>
       <div class="additional_details" *ngIf="(item|async)?.partyOfTheCase">
-        <md-radio-group [ngModel]="(item|async)?.writtenNotice"
-          [ngModelOptions]="{standalone: true}"
-          (ngModelChange)="item.update({writtenNotice: $event})"
-        >
+        <md-radio-group [ngModel]="(item|async)?.writtenNotice" [ngModelOptions]="{standalone: true}" (ngModelChange)="item.update({writtenNotice: $event})">
           <label>
             Has written notice been given to that person?
           </label>

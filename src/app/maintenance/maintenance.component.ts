@@ -5,7 +5,7 @@ import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 @Component({
   selector: 'app-maintenance',
   templateUrl: './maintenance.component.html',
-  styleUrls: ['./maintenance.component.css']
+  styleUrls: ['./maintenance.component.css'],
 })
 export class MaintenanceComponent implements OnInit {
   item: FirebaseObjectObservable<any>;
@@ -13,8 +13,8 @@ export class MaintenanceComponent implements OnInit {
   respondentRealEstates: Array<FirebaseObjectObservable<any>>;
   applicantMotorVehicles: Array<FirebaseObjectObservable<any>>;
   respondentMotorVehicles: Array<FirebaseObjectObservable<any>>;
-  applicantFincancialInstitutions: Array<FirebaseObjectObservable<any>>;
-  respondentFincancialInstitutions: Array<FirebaseObjectObservable<any>>;
+  applicantFinancialInstitutions: Array<FirebaseObjectObservable<any>>;
+  respondentFinancialInstitutions: Array<FirebaseObjectObservable<any>>;
   applicantInterestInBusiness: Array<FirebaseObjectObservable<any>>;
   respondentInterestInBusiness: Array<FirebaseObjectObservable<any>>;
   applicantInvestments: Array<FirebaseObjectObservable<any>>;
@@ -32,8 +32,8 @@ export class MaintenanceComponent implements OnInit {
     this.respondentRealEstates = this.route.snapshot.data['respondentRealEstates'];
     this.applicantMotorVehicles = this.route.snapshot.data['applicantMotorVehicles'];
     this.respondentMotorVehicles = this.route.snapshot.data['respondentMotorVehicles'];
-    this.applicantFincancialInstitutions = this.route.snapshot.data['applicantFincancialInstitutions'];
-    this.respondentFincancialInstitutions = this.route.snapshot.data['respondentFincancialInstitutions'];
+    this.applicantFinancialInstitutions = this.route.snapshot.data['applicantFinancialInstitutions'];
+    this.respondentFinancialInstitutions = this.route.snapshot.data['respondentFinancialInstitutions'];
     this.applicantInterestInBusiness = this.route.snapshot.data['applicantInterestInBusiness'];
     this.respondentInterestInBusiness = this.route.snapshot.data['respondentInterestInBusiness'];
     this.applicantInvestments = this.route.snapshot.data['applicantInvestments'];

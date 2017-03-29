@@ -1,89 +1,77 @@
-  <div id="44">
-    <span>44. Funds in banks, building societies, credit unions or other financial institutions</span>
-    <div fxLayout="row" fxLayoutAlign="space-between">
-      <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
-        <div fxLayout="row" fxLayoutAlign="center center">
-          <h3>APPLICANT</h3>
-          <button md-mini-fab mdTooltip="Add item" [mdTooltipPosition]="'left'" (click)="addItem('applicant')"><md-icon>add</md-icon></button>
-        </div>
-        <div *ngFor="let item of applicantFincancialInstitutions; let i=index; trackBy: index" class="group">
-          <button md-mini-fab mdTooltip="Remove item" [mdTooltipPosition]="'left'" (click)="removeItem(i, 'applicant')"><md-icon>remove</md-icon></button>
-          <div>
-            <span>
+<div id="44">
+  <span>44. Funds in banks, building societies, credit unions or other financial institutions</span>
+  <div fxLayout="row" fxLayoutAlign="space-between">
+    <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <h3>APPLICANT</h3>
+        <button md-mini-fab mdTooltip="Add item" [mdTooltipPosition]="'left'" (click)="addItem('applicant')"><md-icon>add</md-icon></button>
+      </div>
+      <div *ngFor="let item of applicantFinancialInstitutions; let i=index; trackBy: index" class="group">
+        <button md-mini-fab mdTooltip="Remove item" [mdTooltipPosition]="'left'" (click)="removeItem(i, 'applicant')"><md-icon>remove</md-icon></button>
+        <div>
+          <span>
               Name of Institution
             </span>
-            <md-input-container >
-              <input mdInput type="text"
-                     [ngModel]="(item|async)?.applicantFincancialInstitutionsName"
-                     (ngModelChange)="item.update({applicantFincancialInstitutionsName: $event})"
-                     name="applicantFincancialInstitutionsName_{{i}}">
-            </md-input-container>
-          </div>
-          <div>
-            <span>
+          <md-input-container>
+            <input mdInput type="text" [ngModel]="(item|async)?.applicantFinancialInstitutionsName" (ngModelChange)="item.update({applicantFinancialInstitutionsName: $event})"
+              name="applicantFinancialInstitutionsName_{{i}}">
+          </md-input-container>
+        </div>
+        <div>
+          <span>
               Your share $
             </span>
-            <md-input-container>
-              <input mdInput type="number"
-                     [ngModel]="(item|async)?.applicantFincancialInstitutionsValueOfShare"
-                     (ngModelChange)="item.update({applicantFincancialInstitutionsValueOfShare: $event})"
-                     name="applicantFincancialInstitutionsValueOfShare_{{i}}">
-            </md-input-container>
-          </div>
-          <div>
-            <span>
+          <md-input-container>
+            <input mdInput type="number" [ngModel]="(item|async)?.applicantFinancialInstitutionsValueOfShare" (ngModelChange)="item.update({applicantFinancialInstitutionsValueOfShare: $event})"
+              name="applicantFinancialInstitutionsValueOfShare_{{i}}">
+          </md-input-container>
+        </div>
+        <div>
+          <span>
               Account Number
             </span>
-            <md-input-container >
-              <input mdInput type="text"
-                     [ngModel]="(item|async)?.applicantFincancialInstitutionsAccountNumber"
-                     (ngModelChange)="item.update({applicantFincancialInstitutionsAccountNumber: $event})"
-                     name="applicantFincancialInstitutionsAccountNumber_{{i}}">
-            </md-input-container>
-          </div>
+          <md-input-container>
+            <input mdInput type="text" [ngModel]="(item|async)?.applicantFinancialInstitutionsAccountNumber" (ngModelChange)="item.update({applicantFinancialInstitutionsAccountNumber: $event})"
+              name="applicantFinancialInstitutionsAccountNumber_{{i}}">
+          </md-input-container>
         </div>
       </div>
-      <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
-        <div fxLayout="row" fxLayoutAlign="center center">
-          <h3>RESONDENT</h3>
-          <button md-mini-fab mdTooltip="Add item" [mdTooltipPosition]="'left'" (click)="addItem('respondent')"><md-icon>add</md-icon></button>
-        </div>
-        <div *ngFor="let item of respondentFincancialInstitutions; let i=index; trackBy: index" class="group">
-          <button md-mini-fab mdTooltip="Remove item" [mdTooltipPosition]="'left'" (click)="removeItem(i, 'respondent')"><md-icon>remove</md-icon></button>
-          <div>
-            <span>
+    </div>
+    <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <h3>RESONDENT</h3>
+        <button md-mini-fab mdTooltip="Add item" [mdTooltipPosition]="'left'" (click)="addItem('respondent')"><md-icon>add</md-icon></button>
+      </div>
+      <div *ngFor="let item of respondentFinancialInstitutions; let i=index; trackBy: index" class="group">
+        <button md-mini-fab mdTooltip="Remove item" [mdTooltipPosition]="'left'" (click)="removeItem(i, 'respondent')"><md-icon>remove</md-icon></button>
+        <div>
+          <span>
               Name of Institution
             </span>
-            <md-input-container >
-              <input mdInput type="text"
-                     [ngModel]="(item|async)?.respondentFincancialInstitutionsName"
-                     (ngModelChange)="item.update({respondentFincancialInstitutionsName: $event})"
-                     name="respondentFincancialInstitutionsName_{{i}}">
-            </md-input-container>
-          </div>
-          <div>
-            <span>
+          <md-input-container>
+            <input mdInput type="text" [ngModel]="(item|async)?.respondentFinancialInstitutionsName" (ngModelChange)="item.update({respondentFinancialInstitutionsName: $event})"
+              name="respondentFinancialInstitutionsName_{{i}}">
+          </md-input-container>
+        </div>
+        <div>
+          <span>
               Your share $
             </span>
-            <md-input-container>
-              <input mdInput type="number"
-                     [ngModel]="(item|async)?.respondentFincancialInstitutionsValueOfShare"
-                     (ngModelChange)="item.update({respondentFincancialInstitutionsValueOfShare: $event})"
-                     name="respondentFincancialInstitutionsValueOfShare_{{i}}">
-            </md-input-container>
-          </div>
-          <div>
-            <span>
+          <md-input-container>
+            <input mdInput type="number" [ngModel]="(item|async)?.respondentFinancialInstitutionsValueOfShare" (ngModelChange)="item.update({respondentFinancialInstitutionsValueOfShare: $event})"
+              name="respondentFinancialInstitutionsValueOfShare_{{i}}">
+          </md-input-container>
+        </div>
+        <div>
+          <span>
               Account Number
             </span>
-            <md-input-container >
-              <input mdInput type="text"
-                     [ngModel]="(item|async)?.respondentFincancialInstitutionsAccountNumber"
-                     (ngModelChange)="item.update({respondentFincancialInstitutionsAccountNumber: $event})"
-                     name="respondentFincancialInstitutionsAccountNumber_{{i}}">
-            </md-input-container>
-          </div>
+          <md-input-container>
+            <input mdInput type="text" [ngModel]="(item|async)?.respondentFinancialInstitutionsAccountNumber" (ngModelChange)="item.update({respondentFinancialInstitutionsAccountNumber: $event})"
+              name="respondentFinancialInstitutionsAccountNumber_{{i}}">
+          </md-input-container>
         </div>
       </div>
     </div>
   </div>
+</div>

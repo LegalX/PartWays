@@ -5,49 +5,42 @@
       Omit all of Part H if no property or maintenance orders are sought.
     </span>
     <p>
-      The Court may refuse to make the property orders you seek if the proposed orders are not just and
-equitable.
+      The Court may refuse to make the property orders you seek if the proposed orders are not just and equitable.
     </p>
     <h3>INCOME</h3>
     <div id="37">
-    <span>37. Gross weekly income</span>
+      <span>37. Gross weekly income</span>
       <div fxLayout="row" fxLayoutAlign="space-between">
         <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
           <h3 fxLayoutAlign="center center">APPLICANT</h3>
-          <div>            <md-input-container>
-              <input mdInput type="text"
-                     [ngModel]="(item|async)?.applicantGrossWeeklyIncome"
-                     (ngModelChange)="item.update({applicantGrossWeeklyIncome: $event})"
-                     name="applicantGrossWeeklyIncome">
+          <div>
+            <md-input-container>
+              <input mdInput type="text" [ngModel]="(item|async)?.applicantGrossWeeklyIncome" (ngModelChange)="item.update({applicantGrossWeeklyIncome: $event})"
+                name="applicantGrossWeeklyIncome">
             </md-input-container>
           </div>
         </div>
         <div fxLayout="column" fxFlex="48">
-           <h3 fxLayoutAlign="center center">RESPONDENT</h3>
+          <h3 fxLayoutAlign="center center">RESPONDENT</h3>
           <div>
             <span>
               Gross weekly income
             </span>
             <md-input-container>
-              <input mdInput type="text"
-                     [ngModel]="(item|async)?.respondentGrossWeeklyIncome"
-                     (ngModelChange)="item.update({respondentGrossWeeklyIncome: $event})"
-                     name="respondentGrossWeeklyIncome">
+              <input mdInput type="text" [ngModel]="(item|async)?.respondentGrossWeeklyIncome" (ngModelChange)="item.update({respondentGrossWeeklyIncome: $event})"
+                name="respondentGrossWeeklyIncome">
             </md-input-container>
           </div>
         </div>
       </div>
     </div>
     <div id="38">
-    <span>38. Do the orders sought affect your earning capacity? (e.g. are you isposing of or acquiring an investment or business?)</span>
+      <span>38. Do the orders sought affect your earning capacity? (e.g. are you isposing of or acquiring an investment or business?)</span>
       <div fxLayout="row" fxLayoutAlign="space-between">
         <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
           <div class="group">
-            <md-radio-group [ngModel]="(item|async)?.applicantOrdersAffectCapacity"
-                name="applicantOrdersAffectCapacity"
-                [ngModelOptions]="{standalone: true}"
-                (ngModelChange)="item.update({applicantOrdersAffectCapacity: $event})"
-            >
+            <md-radio-group [ngModel]="(item|async)?.applicantOrdersAffectCapacity" name="applicantOrdersAffectCapacity" [ngModelOptions]="{standalone: true}"
+              (ngModelChange)="item.update({applicantOrdersAffectCapacity: $event})">
               <md-radio-button [value]="false" fxLayout="row">
                 No
               </md-radio-button>
@@ -57,21 +50,16 @@ equitable.
             </md-radio-group>
             <div fxLayout="row">
               <md-input-container fxFlex="100">
-              <textarea mdInput
-                        [ngModel]="(item|async)?.applicantOrdersAffectCapacityText"
-                        (ngModelChange)="item.update({applicantOrdersAffectCapacityText: $event})"
-                        name="applicantOrdersAffectCapacityText"></textarea>
+                <textarea mdInput [ngModel]="(item|async)?.applicantOrdersAffectCapacityText" (ngModelChange)="item.update({applicantOrdersAffectCapacityText: $event})"
+                  name="applicantOrdersAffectCapacityText"></textarea>
               </md-input-container>
             </div>
           </div>
         </div>
         <div fxLayout="column" fxFlex="48">
           <div class="group">
-            <md-radio-group [ngModel]="(item|async)?.respondentOrdersAffectCapacity"
-                name="respondentOrdersAffectCapacity"
-                [ngModelOptions]="{standalone: true}"
-                (ngModelChange)="item.update({respondentOrdersAffectCapacity: $event})"
-            >
+            <md-radio-group [ngModel]="(item|async)?.respondentOrdersAffectCapacity" name="respondentOrdersAffectCapacity" [ngModelOptions]="{standalone: true}"
+              (ngModelChange)="item.update({respondentOrdersAffectCapacity: $event})">
               <md-radio-button [value]="false" fxLayout="row">
                 No
               </md-radio-button>
@@ -81,10 +69,8 @@ equitable.
             </md-radio-group>
             <div fxLayout="row">
               <md-input-container fxFlex="100">
-              <textarea mdInput
-                        [ngModel]="(item|async)?.respondentOrdersAffectCapacityText"
-                        (ngModelChange)="item.update({respondentOrdersAffectCapacityText: $event})"
-                        name="respondentOrdersAffectCapacityText"></textarea>
+                <textarea mdInput [ngModel]="(item|async)?.respondentOrdersAffectCapacityText" (ngModelChange)="item.update({respondentOrdersAffectCapacityText: $event})"
+                  name="respondentOrdersAffectCapacityText"></textarea>
               </md-input-container>
             </div>
           </div>
@@ -93,15 +79,12 @@ equitable.
     </div>
     <h3>CHILD SUPPORT</h3>
     <div id="39">
-    <span>39. Are you paying child support?</span>
+      <span>39. Are you paying child support?</span>
       <div fxLayout="row" fxLayoutAlign="space-between">
         <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
           <div class="group">
-            <md-radio-group [ngModel]="(item|async)?.applicantPayingChildSupport"
-                name="applicantPayingChildSupport"
-                [ngModelOptions]="{standalone: true}"
-                (ngModelChange)="item.update({applicantPayingChildSupport: $event})"
-            >
+            <md-radio-group [ngModel]="(item|async)?.applicantPayingChildSupport" name="applicantPayingChildSupport" [ngModelOptions]="{standalone: true}"
+              (ngModelChange)="item.update({applicantPayingChildSupport: $event})">
               <md-radio-button [value]="false" fxLayout="row">
                 No
               </md-radio-button>
@@ -113,33 +96,26 @@ equitable.
               <span>
                 Amount paid per week  $
               </span>
-              <md-input-container >
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.applicantPayingChildPerWeek"
-                       (ngModelChange)="item.update({applicantPayingChildPerWeek: $event})"
-                       name="applicantPayingChildPerWeek">
+              <md-input-container>
+                <input mdInput type="number" [ngModel]="(item|async)?.applicantPayingChildPerWeek" (ngModelChange)="item.update({applicantPayingChildPerWeek: $event})"
+                  name="applicantPayingChildPerWeek">
               </md-input-container>
             </div>
             <div>
               <span>
                 Paid to (name)
               </span>
-              <md-input-container >
-                <input mdInput type="text"
-                       [ngModel]="(item|async)?.applicantPayingChildName"
-                       (ngModelChange)="item.update({applicantPayingChildName: $event})"
-                       name="applicantPayingChildName">
+              <md-input-container>
+                <input mdInput type="text" [ngModel]="(item|async)?.applicantPayingChildName" (ngModelChange)="item.update({applicantPayingChildName: $event})"
+                  name="applicantPayingChildName">
               </md-input-container>
             </div>
           </div>
         </div>
         <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
           <div class="group">
-            <md-radio-group [ngModel]="(item|async)?.replicantPayingChildSupport"
-                name="replicantPayingChildSupport"
-                [ngModelOptions]="{standalone: true}"
-                (ngModelChange)="item.update({replicantPayingChildSupport: $event})"
-            >
+            <md-radio-group [ngModel]="(item|async)?.replicantPayingChildSupport" name="replicantPayingChildSupport" [ngModelOptions]="{standalone: true}"
+              (ngModelChange)="item.update({replicantPayingChildSupport: $event})">
               <md-radio-button [value]="false" fxLayout="row">
                 No
               </md-radio-button>
@@ -151,22 +127,18 @@ equitable.
               <span>
                 Amount paid per week  $
               </span>
-              <md-input-container >
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.replicantPayingChildPerWeek"
-                       (ngModelChange)="item.update({replicantPayingChildPerWeek: $event})"
-                       name="replicantPayingChildPerWeek">
+              <md-input-container>
+                <input mdInput type="number" [ngModel]="(item|async)?.replicantPayingChildPerWeek" (ngModelChange)="item.update({replicantPayingChildPerWeek: $event})"
+                  name="replicantPayingChildPerWeek">
               </md-input-container>
             </div>
             <div>
               <span>
                 Paid to (name)
               </span>
-              <md-input-container >
-                <input mdInput type="text"
-                       [ngModel]="(item|async)?.replicantPayingChildName"
-                       (ngModelChange)="item.update({replicantPayingChildName: $event})"
-                       name="replicantPayingChildName">
+              <md-input-container>
+                <input mdInput type="text" [ngModel]="(item|async)?.replicantPayingChildName" (ngModelChange)="item.update({replicantPayingChildName: $event})"
+                  name="replicantPayingChildName">
               </md-input-container>
             </div>
           </div>
@@ -174,52 +146,12 @@ equitable.
       </div>
     </div>
     <div id="40">
-    <span>40. Are you receiving child support?</span>
+      <span>40. Are you receiving child support?</span>
       <div fxLayout="row" fxLayoutAlign="space-between">
         <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
           <div class="group">
-            <md-radio-group [ngModel]="(item|async)?.applicantReceivingChildSupport"
-                name="applicantReceivingChildSupport"
-                [ngModelOptions]="{standalone: true}"
-                (ngModelChange)="item.update({applicantReceivingChildSupport: $event})"
-            >              <md-radio-button [value]="false" fxLayout="row">
-                No
-              </md-radio-button>
-              <md-radio-button [value]="true" fxLayout="row">
-                Yes
-              </md-radio-button>
-            </md-radio-group>
-            <div>
-              <span>
-                Amount paid per week  $
-              </span>
-              <md-input-container >
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.applicantReceivingChildPerWeek"
-                       (ngModelChange)="item.update({applicantReceivingChildPerWeek: $event})"
-                       name="applicantReceivingChildPerWeek">
-              </md-input-container>
-            </div>
-            <div>
-              <span>
-                Paid to (name)
-              </span>
-              <md-input-container >
-                <input mdInput type="text"
-                       [ngModel]="(item|async)?.applicantReceivingChildName"
-                       (ngModelChange)="item.update({applicantReceivingChildName: $event})"
-                       name="applicantReceivingChildName">
-              </md-input-container>
-            </div>
-          </div>
-        </div>
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
-          <div class="group">
-            <md-radio-group [ngModel]="(item|async)?.replicantReceivingChildSupport"
-                name="replicantReceivingChildSupport"
-                [ngModelOptions]="{standalone: true}"
-                (ngModelChange)="item.update({replicantReceivingChildSupport: $event})"
-            >
+            <md-radio-group [ngModel]="(item|async)?.applicantReceivingChildSupport" name="applicantReceivingChildSupport" [ngModelOptions]="{standalone: true}"
+              (ngModelChange)="item.update({applicantReceivingChildSupport: $event})">
               <md-radio-button [value]="false" fxLayout="row">
                 No
               </md-radio-button>
@@ -231,22 +163,49 @@ equitable.
               <span>
                 Amount paid per week  $
               </span>
-              <md-input-container >
-                <input mdInput type="number"
-                       [ngModel]="(item|async)?.replicantReceivingChildPerWeek"
-                       (ngModelChange)="item.update({replicantReceivingChildPerWeek: $event})"
-                       name="replicantReceivingChildPerWeek">
+              <md-input-container>
+                <input mdInput type="number" [ngModel]="(item|async)?.applicantReceivingChildPerWeek" (ngModelChange)="item.update({applicantReceivingChildPerWeek: $event})"
+                  name="applicantReceivingChildPerWeek">
               </md-input-container>
             </div>
             <div>
               <span>
                 Paid to (name)
               </span>
-              <md-input-container >
-                <input mdInput type="text"
-                       [ngModel]="(item|async)?.replicantReceivingChildName"
-                       (ngModelChange)="item.update({replicantReceivingChildName: $event})"
-                       name="replicantReceivingChildName">
+              <md-input-container>
+                <input mdInput type="text" [ngModel]="(item|async)?.applicantReceivingChildName" (ngModelChange)="item.update({applicantReceivingChildName: $event})"
+                  name="applicantReceivingChildName">
+              </md-input-container>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+          <div class="group">
+            <md-radio-group [ngModel]="(item|async)?.replicantReceivingChildSupport" name="replicantReceivingChildSupport" [ngModelOptions]="{standalone: true}"
+              (ngModelChange)="item.update({replicantReceivingChildSupport: $event})">
+              <md-radio-button [value]="false" fxLayout="row">
+                No
+              </md-radio-button>
+              <md-radio-button [value]="true" fxLayout="row">
+                Yes
+              </md-radio-button>
+            </md-radio-group>
+            <div>
+              <span>
+                Amount paid per week  $
+              </span>
+              <md-input-container>
+                <input mdInput type="number" [ngModel]="(item|async)?.replicantReceivingChildPerWeek" (ngModelChange)="item.update({replicantReceivingChildPerWeek: $event})"
+                  name="replicantReceivingChildPerWeek">
+              </md-input-container>
+            </div>
+            <div>
+              <span>
+                Paid to (name)
+              </span>
+              <md-input-container>
+                <input mdInput type="text" [ngModel]="(item|async)?.replicantReceivingChildName" (ngModelChange)="item.update({replicantReceivingChildName: $event})"
+                  name="replicantReceivingChildName">
               </md-input-container>
             </div>
           </div>
@@ -262,17 +221,11 @@ equitable.
       </p>
     </span>
     <!-- 41 -->
-    <app-real-estate
-      [applicantRealEstates]="applicantRealEstates"
-      [respondentRealEstates]="respondentRealEstates"
-    ></app-real-estate>
+    <app-real-estate [applicantRealEstates]="applicantRealEstates" [respondentRealEstates]="respondentRealEstates"></app-real-estate>
     <!-- 42 -->
-    <app-motor-vehicles
-      [applicantMotorVehicles]="applicantMotorVehicles"
-      [respondentMotorVehicles]="respondentMotorVehicles"
-    ></app-motor-vehicles>
+    <app-motor-vehicles [applicantMotorVehicles]="applicantMotorVehicles" [respondentMotorVehicles]="respondentMotorVehicles"></app-motor-vehicles>
     <div id="43">
-    <span>43. Furniture, furnishings and effects</span>
+      <span>43. Furniture, furnishings and effects</span>
       <div fxLayout="row" fxLayoutAlign="space-between">
         <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
           <div fxLayout="row" fxLayoutAlign="center center">
@@ -282,11 +235,9 @@ equitable.
             <span>
               Value of your share $
             </span>
-            <md-input-container >
-              <input mdInput type="number"
-                     [ngModel]="(item|async)?.applicantValueOfFurniture"
-                     (ngModelChange)="item.update({applicantValueOfFurniture: $event})"
-                     name="applicantValueOfFurniture">
+            <md-input-container>
+              <input mdInput type="number" [ngModel]="(item|async)?.applicantValueOfFurniture" (ngModelChange)="item.update({applicantValueOfFurniture: $event})"
+                name="applicantValueOfFurniture">
             </md-input-container>
           </div>
         </div>
@@ -298,43 +249,26 @@ equitable.
             <span>
               Value of your share $
             </span>
-            <md-input-container >
-              <input mdInput type="number"
-                     [ngModel]="(item|async)?.respondentValueOfFurniture"
-                     (ngModelChange)="item.update({respondentValueOfFurniture: $event})"
-                     name="respondentValueOfFurniture">
+            <md-input-container>
+              <input mdInput type="number" [ngModel]="(item|async)?.respondentValueOfFurniture" (ngModelChange)="item.update({respondentValueOfFurniture: $event})"
+                name="respondentValueOfFurniture">
             </md-input-container>
           </div>
         </div>
       </div>
     </div>
     <!-- 44 -->
-    <app-financial-institutions
-      [applicantFincancialInstitutions]="applicantFincancialInstitutions"
-      [respondentFincancialInstitutions]="respondentFincancialInstitutions"
-    ></app-financial-institutions>
+    <app-financial-institutions [applicantFinancialInstitutions]="applicantFinancialInstitutions" [respondentFinancialInstitutions]="respondentFinancialInstitutions"></app-financial-institutions>
     <!-- 45 -->
-    <app-interest-in-business
-      [applicantInterestInBusiness]="applicantInterestInBusiness"
-      [respondentInterestInBusiness]="respondentInterestInBusiness"
-    ></app-interest-in-business>
+    <app-interest-in-business [applicantInterestInBusiness]="applicantInterestInBusiness" [respondentInterestInBusiness]="respondentInterestInBusiness"></app-interest-in-business>
     <!-- 46 -->
-    <app-investments
-      [applicantInvestments]="applicantInvestments"
-      [respondentInvestments]="respondentInvestments"
-    ></app-investments>
+    <app-investments [applicantInvestments]="applicantInvestments" [respondentInvestments]="respondentInvestments"></app-investments>
     <!-- 47 -->
-    <app-life-insurance
-      [applicantLifeInsurance]="applicantLifeInsurance"
-      [respondentLifeInsurance]="respondentLifeInsurance"
-    ></app-life-insurance>
+    <app-life-insurance [applicantLifeInsurance]="applicantLifeInsurance" [respondentLifeInsurance]="respondentLifeInsurance"></app-life-insurance>
     <!-- 48 -->
-    <app-other-interest
-      [applicantOtherInterest]="applicantOtherInterest"
-      [respondentOtherInterest]="respondentOtherInterest"
-    ></app-other-interest>
+    <app-other-interest [applicantOtherInterest]="applicantOtherInterest" [respondentOtherInterest]="respondentOtherInterest"></app-other-interest>
     <div id="49">
-    <span>49. <strong>TOTAL VALUE OF PROPERTY OWNED BY YOU</strong></span>
+      <span>49. <strong>TOTAL VALUE OF PROPERTY OWNED BY YOU</strong></span>
       <div fxLayout="row" fxLayoutAlign="space-between">
         <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
           <div fxLayout="row" fxLayoutAlign="center center">
@@ -344,11 +278,9 @@ equitable.
             <span>
               $
             </span>
-            <md-input-container >
-              <input mdInput type="number"
-                     [ngModel]="(item|async)?.applicantTotalValueOfProperyOwned"
-                     (ngModelChange)="item.update({applicantTotalValueOfProperyOwned: $event})"
-                     name="applicantTotalValueOfProperyOwned">
+            <md-input-container>
+              <input mdInput type="number" [ngModel]="(item|async)?.applicantTotalValueOfProperyOwned" (ngModelChange)="item.update({applicantTotalValueOfProperyOwned: $event})"
+                name="applicantTotalValueOfProperyOwned">
             </md-input-container>
           </div>
         </div>
@@ -360,11 +292,9 @@ equitable.
             <span>
               $
             </span>
-            <md-input-container >
-              <input mdInput type="number"
-                     [ngModel]="(item|async)?.respondentTotalValueOfProperyOwned"
-                     (ngModelChange)="item.update({respondentTotalValueOfProperyOwned: $event})"
-                     name="respondentTotalValueOfProperyOwned">
+            <md-input-container>
+              <input mdInput type="number" [ngModel]="(item|async)?.respondentTotalValueOfProperyOwned" (ngModelChange)="item.update({respondentTotalValueOfProperyOwned: $event})"
+                name="respondentTotalValueOfProperyOwned">
             </md-input-container>
           </div>
         </div>
