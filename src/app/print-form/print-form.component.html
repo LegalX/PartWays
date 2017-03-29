@@ -70,7 +70,6 @@
 
     </div>
 
-
     <div class="part-title-wrapper mb5">
       <div class="part-name fl-left">Part A</div>
       <div class="part-title">About the parties</div>
@@ -112,19 +111,19 @@
         <div class="right-col hgl-light-block">
           <div class="input-group">
             <label>What is your family name as used now?</label>
-            <div class="fake-input"></div>
+            <div class="fake-input">{{appData.respondent.familyName}}</div>
           </div>
           <div class="input-group">
             <label>Given names?</label>
-            <div class="fake-input"></div>
+            <div class="fake-input">{{appData.respondent.givenNames}}</div>
           </div>
 
           <div class="input-group-checkboxes">
             <div class="left-col">
-              <div class="checkbox"></div> Male
+              <div class="checkbox">{{appData.respondent.gender === 'male' ? 'X' : ''}}</div> Male
             </div>
             <div class="right-col">
-              <div class="checkbox"></div> Female
+              <div class="checkbox">{{appData.respondent.gender === 'female' ? 'X' : ''}}</div> Female
             </div>
           </div>
         </div>
@@ -143,7 +142,7 @@
         <div class="right-col hgl-light-block">
           <div class="input-group">
             <label>What is your usual occupation?</label>
-            <div class="fake-input"></div>
+            <div class="fake-input">{{appData.respondent.occupation}}</div>
           </div>
         </div>
       </div>
@@ -157,21 +156,21 @@
               <div class="fake-input"></div>
               <div class="fake-input"></div>
               <div class="fake-input">
-                <div class="left-col">State {{appData.applicant.addressState}}</div>
-                <div class="right-col">Postcode {{appData.applicant.addressPostcode}}</div>
+                <div class="left-col">State</div>
+                <div class="right-col">Postcode</div>
               </div>
               <div class="fake-input">
-                <div class="left-col">Phone {{appData.applicant.phone}}</div>
-                <div class="right-col"><span class="required">Fax {{appData.applicant.fax}}</span></div>
+                <div class="left-col">Phone</div>
+                <div class="right-col"><span class="required">Fax</span></div>
               </div>
               <div class="fake-input">
-                DX {{appData.applicant.dx}}
+                DX
               </div>
               <div class="fake-input">
-                Lawyer's code {{appData.applicant.lawyerCode}}
+                Lawyer's code
               </div>
               <div class="fake-input">
-                <span class="required">Email {{appData.applicant.email}}</span>
+                <span class="required">Email</span>
               </div>
             </div>
           </div>
@@ -268,12 +267,12 @@
               </div>
 
               <div class="fake-input">
-                <input type="text" class="pos-abs l0 w10" value="{{appData.applicant.birthday}}">
+                <input type="text" class="pos-abs l0 w10">
                 <div class="format-delimiter l10">/</div>
                 <input type="text" class="pos-abs w15 l10">
                 <div class="format-delimiter l25">/</div>
                 <input type="text" class="pos-abs w15 l25">
-                <input type="text" class="pos-abs w30 l70" value="{{appData.applicant.birthCountry}}">
+                <input type="text" class="pos-abs w30 l70">
               </div>
             </div>
           </div>
@@ -541,7 +540,7 @@
 
   </div>
 
-  <!-- // PAGE 2 | ^Part C -->
+  <!-- // PAGE 2 -->
 
   <div class="page page3">
     <div class="page-content">
@@ -564,18 +563,18 @@
             or child welfare that involve any of the parties or any of the children listed on this form?<br>
 
             <div class="input-group">
-              <div class="checkbox">{{appData.courtCases.ongoingCases === false ? 'X' : ''}}</div> <b>No</b>
+              <div class="checkbox"></div> <b>No</b>
             </div>
 
             <div class="input-group">
-              <div class="checkbox">{{appData.courtCases.ongoingCases === true ? 'X' : ''}}</div> <b class="mr20">Yes</b> <span class="hgl-details">PLEASE GIVE THE FOLLOWING DETAILS</span>
+              <div class="checkbox"></div> <b class="mr20">Yes</b> <span class="hgl-details">PLEASE GIVE THE FOLLOWING DETAILS</span>
             </div>
 
           </div>
 
           <div class="input-group">
-            Court name and place {{appData.courtCases.ongoingNameAndPlace}}
-            <span class="pos-abs l75">Next Court date {{appData.courtCases.ongoingNextCourtDate}}</span>
+            Court name and place
+            <span class="pos-abs l75">Next Court date</span>
             <div class="fake-input">
               <input type="text" class="l0 w70">
               <input type="text" class=" l70 w10">
@@ -589,9 +588,9 @@
           </div>
 
           <div class="input-group mb20">
-            State the names of the parties 
+            State the names of the parties
             <div class="inputs-list">
-              <div class="fake-input">{{appData.courtCases.namesOfParties}}</div>
+              <div class="fake-input"></div>
               <div class="fake-input"></div>
               <div class="fake-input"></div>
             </div>
@@ -601,7 +600,7 @@
           <div class="input-group">
             State the nature of the orders sought <span class="hgl-details">(NUMBER &nbsp; EACH &nbsp; ORDER &nbsp; SOUGHT)</span>
             <div class="inputs-list mb5">
-              <div class="fake-input">{{appData.courtCases.natureOfOrders}}</div>
+              <div class="fake-input"></div>
               <div class="fake-input"></div>
               <div class="fake-input"></div>
             </div>
@@ -616,11 +615,11 @@
           to a child or a member of the child’s family), or child welfare, concerning any of the parties or children listed
           on this form?
           <div class="input-group">
-            <div class="checkbox mr10">{{appData.courtCases.anyExistingOrders === false ? 'X' : ''}}</div> <b>No</b>
+            <div class="checkbox mr10"></div> <b>No</b>
           </div>
           <div class="input-group">
             <div class="fl-left mr10">
-              <div class="checkbox">{{appData.courtCases.anyExistingOrders === true ? 'X' : ''}}</div>
+              <div class="checkbox"></div>
             </div>
             <b class="mr10">Yes</b>
             <b>EITHER</b> attach a full copy of the order, agreement, parenting plan or undertaking or set out details below
@@ -628,16 +627,16 @@
           </div>
 
           <div class="input-group pl35">
-            <div class="checkbox mr10">{{appData.courtCases.attached === true ? 'X' : ''}}</div> Attached is a copy/copies of the following (mark [<b>X</b>] the boxes that apply):
+            <div class="checkbox mr10"></div> Attached is a copy/copies of the following (mark [<b>X</b>] the boxes that apply):
           </div>
 
           <div class="input-group pl70 overflow">
             <div class="fl-left w35">
-              <div class="checkbox">{{appData.courtCases.attachedOrder === true ? 'X' : ''}}</div> order
+              <div class="checkbox"></div> order
             </div>
 
             <div class="fl-left w35">
-              <div class="checkbox">{{appData.courtCases.attachedUndertaking === true ? 'X' : ''}}</div> undertaking
+              <div class="checkbox"></div> undertaking
             </div>
 
 
@@ -645,11 +644,11 @@
 
           <div class="input-group pl70 overflow">
             <div class="fl-left w35">
-              <div class="checkbox">{{appData.courtCases.attachedParentingPlan === true ? 'X' : ''}}</div> parenting plan
+              <div class="checkbox"></div> parenting plan
             </div>
 
             <div class="fl-left w35">
-              <div class="checkbox">{{appData.courtCases.attachedAgreement === true ? 'X' : ''}}</div> agreement
+              <div class="checkbox"></div> agreement
             </div>
 
 
@@ -661,15 +660,15 @@
           </div>
 
           <div class="input-group pl35">
-            <div class="checkbox mr5">{{appData.courtCases.attached === false ? 'X' : ''}}</div> <span class="hgl-details">GIVE THE FOLLOWING DETAILS</span>
+            <div class="checkbox mr5"></div> <span class="hgl-details">GIVE THE FOLLOWING DETAILS</span>
           </div>
 
           <div class="input-group pl65 mb15">
             Court name and place
             <span class="pos-abs l75">Next Court date</span>
             <div class="fake-input">
-              <input type="text" class="l0 w70">{{appData.courtCases.attached === false ? appData.courtCases.existingNameAndPlace : '' }}
-              <input type="text" class=" l70 w10">{{appData.courtCases.attached === false ? appData.courtCases.existingDate : '' }}
+              <input type="text" class="l0 w70">
+              <input type="text" class=" l70 w10">
               <div class="format-delimiter l80">/</div>
               <input type="text" class=" l80 w10">
               <div class="format-delimiter l90">/</div>
@@ -683,7 +682,7 @@
           <div class="input-group pl65 mb10">
             Names of the parties to the order/agreement/parenting plan/undertaking
             <div class="inputs-list">
-              <div class="fake-input">{{appData.courtCases.attached === false ? appData.courtCases.existingNameAndPlace : '' }}</div>
+              <div class="fake-input"></div>
               <div class="fake-input"></div>
               <div class="fake-input"></div>
             </div>
@@ -745,25 +744,25 @@
           <i class="step-number">12</i>
           <div class="mb10">Is there is a family violence order?</div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.familyViolenceOrder === false ? 'X' : ''}}</div> <b>No</b>
+            <div class="checkbox"></div> <b>No</b>
           </div>
 
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.familyViolenceOrder === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> Are the orders sought in this application consistent with that family violence
+            <div class="checkbox"></div> <b class="mr10">Yes</b> Are the orders sought in this application consistent with that family violence
             order?
           </div>
 
           <div class="input-group pl60">
-            <div class="checkbox">{{appData.courtCases.ordersAreConsistrentFVO === true ? 'X' : ''}}</div> <b>Yes</b>
+            <div class="checkbox"></div> <b>Yes</b>
           </div>
 
           <div class="input-group pl60">
-            <div class="checkbox">{{appData.courtCases.ordersAreConsistrentFVO === false ? 'X' : ''}}</div> <b class="mr5">No</b> <span class="hgl-details">GIVE BRIEF DETAILS (see sections 68P, 68Q, 68R and 68S of the Family Law Act)</span>
+            <div class="checkbox"></div> <b class="mr5">No</b> <span class="hgl-details">GIVE BRIEF DETAILS (see sections 68P, 68Q, 68R and 68S of the Family Law Act)</span>
           </div>
 
           <div class="input-group pl60">
             <div class="inputs-list">
-              <div class="fake-input">{{appData.courtCases.ordersAreConsistrentFVO === false ? appData.courtCases.whyPresumpFalse : ''}}</div>
+              <div class="fake-input"></div>
               <div class="fake-input"></div>
               <div class="fake-input"></div>
             </div>
@@ -778,15 +777,15 @@
           <div class="mb10">Has there been any contact with the department responsible for child safety with respect to the children named
             in this application or any other child of the household?</div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.anyDepContact === false ? 'X' : ''}}</div> <b>No</b>
+            <div class="checkbox"></div> <b>No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.anyDepContact === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> Provide details including the outcome of that contact and any outstanding concerns.
+            <div class="checkbox"></div> <b class="mr10">Yes</b> Provide details including the outcome of that contact and any outstanding concerns.
           </div>
 
           <div class="input-group pl60">
             <div class="inputs-list">
-              <div class="fake-input">{{appData.courtCases.anyDepContact === true ? appData.courtCases.anyDepContactDetails : ''}}</div>
+              <div class="fake-input"></div>
               <div class="fake-input"></div>
               <div class="fake-input"></div>
             </div>
@@ -800,26 +799,26 @@
           <div class="mb10">Are you seeking a parenting order that provides for the child’s parents to have equal shared parental responsibility
             for the child?</div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.seekingParentingResp === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">GO TO ITEM 13A IF APPLICABLE</span>
+            <div class="checkbox"></div> <b class="mr10">Yes</b> <span class="hgl-details">GO TO ITEM 13A IF APPLICABLE</span>
           </div>
           <div class="input-group mb20">
-            <div class="checkbox">{{appData.courtCases.seekingParentingResp === false ? 'X' : ''}}</div> <b class="mr10">No</b> <span class="hgl-details">COMPLETE THE FOLLOWING</span>
+            <div class="checkbox"></div> <b class="mr10">No</b> <span class="hgl-details">COMPLETE THE FOLLOWING</span>
           </div>
 
           <div class="input-group pl60">
             <div class="mb10">Is this a case where all parties accept that the presumption in Section 61DA(1) does not apply?</div>
-            <div class="checkbox mr5">{{appData.courtCases.presumptionDoesNotApply === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> Give brief details of why the presumption does not apply
+            <div class="checkbox mr5"></div> <b class="mr10">Yes</b> Give brief details of why the presumption does not apply
             <div class="inputs-list mt10 mb20">
-              <div class="fake-input">{{appData.courtCases.presumptionDoesNotApply === true ? whyPresumpFalse : ''}}</div>
+              <div class="fake-input"></div>
               <div class="fake-input"></div>
             </div>
 
             <div class="fl-left mr15">
-              <div class="checkbox mr5">{{appData.courtCases.presumptionDoesNotApply === false ? 'X' : ''}}</div> <b>No</b> </div> Briefly explain why it is in the best interests of the child for the Court to make
+              <div class="checkbox mr5"></div> <b>No</b> </div> Briefly explain why it is in the best interests of the child for the Court to make
             the order/s you are seeking rather than order/s which provide for the child’s parents to have equal shared parental
             responsibility for the child.
             <div class="inputs-list mt10 mb20">
-              <div class="fake-input">{{appData.courtCases.presumptionDoesNotApply === false ? whyPresumpTrue : ''}}</div>
+              <div class="fake-input"></div>
               <div class="fake-input"></div>
             </div>
 
@@ -868,20 +867,20 @@
 
           <div class="input-group">
             <div class="fl-left mr15">
-              <div class="checkbox">{{appData.courtCases.presumptionDoesNotApply === false ? appData.courtCases.seekingParentingSpendTime === true ? 'X' : ''}}</div> <b>Yes</b></div> Having regard to s65DAA(5), briefly explain why the child spending equal time or substantial
+              <div class="checkbox"></div> <b>Yes</b></div> Having regard to s65DAA(5), briefly explain why the child spending equal time or substantial
             and significant time with each of the parents is reasonably practicable.
 
             <div class="inputs-list ml60 mt10 mb20">
-              <div class="fake-input">{{appData.courtCases.presumptionDoesNotApply === false ? appData.courtCases.seekingParentingSpendTime === true ? whySeekingParentingRespTrue : ''}}</div>
+              <div class="fake-input"></div>
               <div class="fake-input"></div>
             </div>
           </div>
 
           <div class="input-group">
             <div class="fl-left mr15">
-              <div class="checkbox">{{appData.courtCases.presumptionDoesNotApply === false ? appData.courtCases.seekingParentingSpendTime === false ? 'X' : ''}}</div> <b>No</b></div> Briefly explain why it is not in the child’s best interest to spend time with each parent.
+              <div class="checkbox"></div> <b>No</b></div> Briefly explain why it is not in the child’s best interest to spend time with each parent.
             <div class="inputs-list ml60 mt10">
-              <div class="fake-input">{{appData.courtCases.presumptionDoesNotApply === false ? appData.courtCases.seekingParentingSpendTime === false ? whySeekingParentingRespFalse : ''}}</div>
+              <div class="fake-input"></div>
               <div class="fake-input"></div>
             </div>
           </div>
@@ -892,10 +891,10 @@
           <i class="step-number">14</i>
           <div class="mb10">Have the parties previously entered into a <b>financial agreement,</b> a <b>Part VIIIAB financial agreement</b>            or a <b>superannuation agreement</b> under the Family Law Act or under any relevant State or Territory legislation?</div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.presumptionDoesNotApply === false ? appData.courtCases.previouslyEnteredIntoFA === false ? 'X' : ''}}</div> <b>No</b>
+            <div class="checkbox"></div> <b>No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.presumptionDoesNotApply === false ? appData.courtCases.previouslyEnteredIntoFA === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">PROVIDE A COPY OF THE AGREEMENT/S</span>
+            <div class="checkbox"></div> <b class="mr10">Yes</b> <span class="hgl-details">PROVIDE A COPY OF THE AGREEMENT/S</span>
           </div>
         </div>
 
@@ -905,10 +904,10 @@
             notice on the Trustee of the eligible superannuation plan under section 90MZA of the Act for a payment split
             made in relation to the superannuation interest?</div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.courtCases.presumptionDoesNotApply === false ? appData.courtCases.servedWaiverNotice === false ? 'X' : ''}}</div> <b>No</b>
+            <div class="checkbox mr5"></div> <b>No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.courtCases.presumptionDoesNotApply === false ? appData.courtCases.servedWaiverNotice === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">ATTACH A COPY OF THE NOTICE</span>
+            <div class="checkbox mr5"></div> <b class="mr10">Yes</b> <span class="hgl-details">ATTACH A COPY OF THE NOTICE</span>
           </div>
         </div>
 
@@ -916,10 +915,10 @@
           <i class="step-number">16</i>
           <div class="mb10">If either party has a superannuation interest, is there a payment flag in operation in relation to that interest?</div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.presumptionDoesNotApply === false ? appData.courtCases.paymentFlagExist === false ? 'X' : ''}}</div> <b>No</b>
+            <div class="checkbox"></div> <b>No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.presumptionDoesNotApply === false ? appData.courtCases.paymentFlagExist === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">ATTACH A COPY OF THE ORDER OR AGREEMENT CREATING THE FLAG</span>
+            <div class="checkbox"></div> <b class="mr10">Yes</b> <span class="hgl-details">ATTACH A COPY OF THE ORDER OR AGREEMENT CREATING THE FLAG</span>
           </div>
         </div>
 
@@ -928,10 +927,10 @@
           <div class="mb10">Is any party currently bankrupt or currently a debtor in bankruptcy proceedings started by either a creditor’s
             petition or a debtor’s petition or currently a debtor subject to a personal insolvency agreement?</div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.presumptionDoesNotApply === false ? appData.courtCases.bankruptOrDebtor === false ? 'X' : ''}}</div> <b>No</b>
+            <div class="checkbox"></div> <b>No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.presumptionDoesNotApply === false ? appData.courtCases.bankruptOrDebtor === true ? 'X' : ''}}</div> <b class="mr10">Yes</b>
+            <div class="checkbox"></div> <b class="mr10">Yes</b>
           </div>
         </div>
 
@@ -940,10 +939,10 @@
           <div class="mb10">Is there a proceeds of crime order or current forfeiture application in relation to any of the property of any
             of the parties (see Proceeds of Crime Act 2002 (C’wlth))?</div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.presumptionDoesNotApply === false ? appData.courtCases.proceedsOfConfiscation === false ? 'X' : ''}}</div> <b>No</b>
+            <div class="checkbox"></div> <b>No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.presumptionDoesNotApply === false ? appData.courtCases.proceedsOfConfiscation === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">ATTACH A SEALED COPY OF THE ORDER OR APPLICATION</span>
+            <div class="checkbox"></div> <b class="mr10">Yes</b> <span class="hgl-details">ATTACH A SEALED COPY OF THE ORDER OR APPLICATION</span>
           </div>
         </div>
 
@@ -952,16 +951,16 @@
           <div class="mb10">Is there any person who may be entitled to become a party to the case under Subsection 79(10) or subsection 90SM(10)
             of the Act?</div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.presumptionDoesNotApply === false ? appData.courtCases.partyOfTheCase === false ? 'X' : ''}}</div> <b>No</b>
+            <div class="checkbox"></div> <b>No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.presumptionDoesNotApply === false ? appData.courtCases.partyOfTheCase === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span>Has written notice been given to that person?</span>
+            <div class="checkbox"></div> <b class="mr10">Yes</b> <span>Has written notice been given to that person?</span>
           </div>
           <div class="input-group pl60">
-            <div class="checkbox">{{appData.courtCases.presumptionDoesNotApply === false ? appData.courtCases.partyOfTheCase === true ? appData.courtCases.writtenNotice === true ? 'X' : ''}}</div> <b>Yes</b>
+            <div class="checkbox"></div> <b>Yes</b>
           </div>
           <div class="input-group pl60">
-            <div class="checkbox">{{appData.courtCases.presumptionDoesNotApply === false ? appData.courtCases.partyOfTheCase === true ? appData.courtCases.writtenNotice === false ? 'X' : ''}}</div> <b>No</b>
+            <div class="checkbox"></div> <b>No</b>
           </div>
         </div>
 
