@@ -69,7 +69,7 @@
       </ul>
 
     </div>
-    
+    <pre>{{appData | json}}</pre>
 
     <div class="part-title-wrapper mb5">
       <div class="part-name fl-left">Part A</div>
@@ -157,21 +157,21 @@
               <div class="fake-input"></div>
               <div class="fake-input"></div>
               <div class="fake-input">
-                <div class="left-col">State</div>
-                <div class="right-col">Postcode</div>
+                <div class="left-col">State {{appData.applicant.addressState}}</div>
+                <div class="right-col">Postcode {{appData.applicant.addressPostcode}}</div>
               </div>
               <div class="fake-input">
-                <div class="left-col">Phone</div>
-                <div class="right-col"><span class="required">Fax</span></div>
+                <div class="left-col">Phone {{appData.applicant.phone}}</div>
+                <div class="right-col"><span class="required">Fax {{appData.applicant.fax}}</span></div>
               </div>
               <div class="fake-input">
-                DX
+                DX {{appData.applicant.dx}}
               </div>
               <div class="fake-input">
-                Lawyer's code
+                Lawyer's code {{appData.applicant.lawyerCode}}
               </div>
               <div class="fake-input">
-                <span class="required">Email</span>
+                <span class="required">Email {{appData.applicant.email}}</span>
               </div>
             </div>
           </div>
@@ -268,12 +268,12 @@
               </div>
 
               <div class="fake-input">
-                <input type="text" class="pos-abs l0 w10">
+                <input type="text" class="pos-abs l0 w10" value="{{appData.applicant.birthday}}">
                 <div class="format-delimiter l10">/</div>
                 <input type="text" class="pos-abs w15 l10">
                 <div class="format-delimiter l25">/</div>
                 <input type="text" class="pos-abs w15 l25">
-                <input type="text" class="pos-abs w30 l70">
+                <input type="text" class="pos-abs w30 l70" value="{{appData.applicant.birthCountry}}">
               </div>
             </div>
           </div>
