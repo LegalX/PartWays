@@ -1,8 +1,7 @@
 <div class="doc_container">
   <h1>Part C. About other Court cases and orders</h1>
-  <pre>{{item|async|json}}</pre>
-  <form fxLayout="column" #f="ngForm" class="court_cases">
 
+  <form fxLayout="column" #f="ngForm" class="court_cases">
     <div id="10">
       <div>
         <md-radio-group [ngModel]="(item|async)?.ongoingCases" [ngModelOptions]="{standalone: true}" (ngModelChange)="item.update({ongoingCases: $event})">
