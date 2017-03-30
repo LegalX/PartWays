@@ -43,7 +43,7 @@
       </span>
       <div fxLayout="row">
         <md-input-container fxFlex="100">
-          <textarea mdInput [ngModel]="(item|async)?.namesOfParties" (ngModelChange)="item.update({namesOfParties: $event})" name="nameAndPlace"></textarea>
+          <textarea mdInput [ngModel]="(item|async)?.namesOfParties" (ngModelChange)="item.update({namesOfParties: $event})" name="namesOfParties"></textarea>
         </md-input-container>
       </div>
       <span>
@@ -51,7 +51,7 @@
       </span>
       <div fxLayout="row">
         <md-input-container fxFlex="100">
-          <textarea mdInput [ngModel]="(item|async)?.natureOfOrders" (ngModelChange)="item.update({natureOfOrders: $event})" name="nameAndPlace"></textarea>
+          <textarea mdInput [ngModel]="(item|async)?.natureOfOrders" (ngModelChange)="item.update({natureOfOrders: $event})" name="natureOfOrders"></textarea>
         </md-input-container>
       </div>
     </div>
@@ -114,7 +114,7 @@
               </span>
               <md-input-container>
                 <input mdInput type="text" [ngModel]="(item|async)?.existingNameAndPlace" (ngModelChange)="item.update({existingNameAndPlace: $event})"
-                  name="nameAndPlace">
+                  name="existingNameAndPlace">
               </md-input-container>
             </div>
             <!--should be the datepicker-->
@@ -123,8 +123,8 @@
                 Date
               </span>
               <md-input-container>
-                <input mdInput type="text" [ngModel]="(item|async)?.existingNextCourtDate" (ngModelChange)="item.update({existingDate: $event})"
-                  name="nextCourtDate">
+                <input mdInput type="text" [ngModel]="(item|async)?.existingNextCourtDate" (ngModelChange)="item.update({existingNextCourtDate: $event})"
+                  name="existingNextCourtDate">
               </md-input-container>
             </div>
           </div>
@@ -134,7 +134,7 @@
           <div fxLayout="row">
             <md-input-container fxFlex="100">
               <textarea mdInput [ngModel]="(item|async)?.namesOfPartiesToOrder" (ngModelChange)="item.update({namesOfPartiesToOrder: $event})"
-                name="nameAndPlace"></textarea>
+                name="namesOfPartiesToOrder"></textarea>
             </md-input-container>
           </div>
         </div>
