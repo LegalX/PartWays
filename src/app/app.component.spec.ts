@@ -33,12 +33,14 @@ describe('AppComponent', () => {
 
   it('should create the app', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
 
   it(`should have as title 'PartWays'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('PartWays');
   }));
@@ -47,6 +49,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('PartWays');
+    expect(compiled.querySelector('#title-button').textContent).toContain('PartWays');
   }));
 });

@@ -58,7 +58,7 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.router.events.subscribe((event) => {
+    return this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.title = this.getDeepestTitle(this.router.routerState.snapshot.root);
       }
