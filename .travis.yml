@@ -2,8 +2,13 @@
 
 language: node_js
 sudo: true
+cache:
+  directories:
+  - node
+  - node_modules
+dist: trusty
 node_js:
-  - "6.9.5"
+  - 6.9.5
 
 branches:
   only:
@@ -24,7 +29,6 @@ before_install:
   - sh -e /etc/init.d/xvfb start
 
 script:
-  - ng build --prod
   - ng test --watch false
   - ng e2e
 
