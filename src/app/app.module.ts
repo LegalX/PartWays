@@ -80,7 +80,7 @@ const firebaseAuthConfig = {
   imports: [
     BrowserModule,
     FormsModule,
-    MaterialModule.forRoot(),
+    MaterialModule,
     FlexLayoutModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
     AppRouting,

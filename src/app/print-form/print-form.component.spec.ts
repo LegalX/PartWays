@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PrintFormComponent } from './print-form.component';
+import { PrintDirective } from '../shared/print.directive';
 
 describe('PrintFormComponent', () => {
   let component: PrintFormComponent;
@@ -8,7 +9,10 @@ describe('PrintFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PrintFormComponent ]
+      declarations: [ PrintFormComponent ],
+      imports: [
+        PrintDirective
+      ]
     })
     .compileComponents();
   }));
