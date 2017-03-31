@@ -10,8 +10,9 @@ import {
   NavigationStart,
   Router,
 } from '@angular/router';
-
 import { AngularFire, AuthMethods, AuthProviders, FirebaseListObservable } from 'angularfire2';
+
+import { FeedbackDialogComponent } from './feedback-dialog/feedback-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +26,7 @@ export class AppComponent {
   currentUserEmail: string;
   isLoading = true;
 
-  constructor(public af: AngularFire, private router: Router, iconRegistry: MdIconRegistry, sanitizer: DomSanitizer) {
+  constructor(public af: AngularFire, private router: Router, iconRegistry: MdIconRegistry, public dialog: MdDialog, sanitizer: DomSanitizer) {
     localStorage.removeItem('currentUserId');
     localStorage.removeItem('currentUserName');
     this.currentUserId = null;
@@ -135,6 +136,14 @@ export class AppComponent {
 
   openPrintForm() {
     window.open('/assets/printform/index.html', '_blank');
+  }
+
+  openFeedbackDialog() {
+    const feedbackDialog = this.dialog.open(FeedbackDialogComponent);
+    feedbackDialog.afterClosed().subscribe((result) => {
+      const feedback = result;
+      console.log(feedback);
+    });
   }
 
 }

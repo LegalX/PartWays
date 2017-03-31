@@ -52,9 +52,22 @@
       <md-icon>home</md-icon>
       {{title}}
     </button>
+    <a md-button href="https://wordpress.com/">
+        Learn
+    </a>
+    <button md-button routerLink="/Negotiate">
+      Negotiate
+    </button>
+    <button md-button routerLink="/">
+      Agree
+    </button>
+    <button md-button routerLink="/Resolve">
+      Resolve
+    </button>
     <span class="fill-remaining-space"></span>
     <div>
       <button *ngIf="!currentUserId" md-icon-button [mdMenuTriggerFor]="menu">Login</button>
+      <button md-mini-fab mdTooltip="Feedback" (click)="openFeedbackDialog()"><md-icon>feedback</md-icon></button>
     </div>
   </md-toolbar>
 

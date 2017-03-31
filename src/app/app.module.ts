@@ -18,6 +18,7 @@ import { ChildrenResolver } from './children/children.resolver.service';
 import { CourtCasesComponent } from './court-cases/court-cases.component';
 import { DefactoComponent } from './defacto/defacto.component';
 import { DefactoResolver } from './defacto/defacto.resolver.service';
+import { FeedbackDialogComponent } from './feedback-dialog/feedback-dialog.component';
 import { GenerateConsentOrdersComponent } from './generate-consent-orders/generate-consent-orders.component';
 import { ConsentOrdersResolver } from './generate-consent-orders/generate-consent-orders.resolver.service';
 import { HomeComponent } from './home/home';
@@ -141,7 +142,9 @@ const firebaseAuthConfig = {
     InvestmentsComponent,
     LifeInsuranceComponent,
     OtherInterestComponent,
+    FeedbackDialogComponent,
   ],
+  entryComponents: [FeedbackDialogComponent],
   bootstrap: [AppComponent],
 })
 
