@@ -31,6 +31,7 @@ before_install:
 script:
   - ng test --watch false
   - ng e2e
+  - ng build --prod
 
 after_success:
   - firebase deploy --token $FIREBASE_TOKEN
