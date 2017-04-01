@@ -191,6 +191,17 @@
                         name="namesOfPartiesToOrder"></textarea>
             </md-input-container>
           </div>
+          <span>
+            Details of the order/agreement/parenting plan/undertaking
+          </span>
+          <div fxLayout="row">
+            <md-input-container fxFlex="100">
+              <textarea mdInput
+                        [ngModel]="(item|async)?.detailsOfTheOrder"
+                        (ngModelChange)="item.update({detailsOfTheOrder: $event})"
+                        name="detailsOfTheOrder"></textarea>
+            </md-input-container>
+          </div>
         </div>
       </div>
     </div>
