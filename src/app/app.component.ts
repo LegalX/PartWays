@@ -11,6 +11,7 @@ import {
   Router,
 } from '@angular/router';
 import { AngularFire, AuthMethods, AuthProviders, FirebaseListObservable } from 'angularfire2';
+import * as firebase from 'firebase';
 
 import { FeedbackDialogComponent } from './feedback-dialog/feedback-dialog.component';
 
@@ -24,6 +25,7 @@ export class AppComponent {
   currentUserId: string;
   currentUserName: string;
   currentUserEmail: string;
+  currentApplicationId: string;
   isLoading = true;
 
   constructor(public af: AngularFire, private router: Router, iconRegistry: MdIconRegistry, public dialog: MdDialog, sanitizer: DomSanitizer) {
@@ -47,6 +49,7 @@ export class AppComponent {
       const user = this.af.database.object(`/user/${this.currentUserId}`);
       user.subscribe((item) => {
         if (item.$exists()) {
+          this.currentApplicationId = item.applicationId;
           localStorage.setItem('applicationId', item.applicationId);
         } else {
           this.createNewUserAndApplication();
@@ -116,10 +119,11 @@ export class AppComponent {
     };
     const newApplicationRef = this.af.database.list(`/application`);
     newApplicationRef.push(newApplication).then((application) => {
+      this.currentApplicationId = application.key;
       const userData = {
         authName: this.currentUserName,
         authEmail: this.currentUserEmail,
-        applicationId: application.key,
+        applicationId: this.currentApplicationId,
       };
       const newUser = this.af.database.object(`/user/${this.currentUserId}`);
       newUser.set(userData);
@@ -140,9 +144,15 @@ export class AppComponent {
 
   openFeedbackDialog() {
     const feedbackDialog = this.dialog.open(FeedbackDialogComponent);
-    feedbackDialog.afterClosed().subscribe((result) => {
-      const feedback = result;
-      console.log(feedback);
+    feedbackDialog.afterClosed().subscribe((feedback) => {
+      feedback.userId = this.currentUserId;
+      feedback.applicationId = this.currentApplicationId;
+      feedback.userName = this.currentUserName;
+      feedback.email = this.currentUserEmail;
+      feedback.submittedAt = firebase.database.ServerValue.TIMESTAMP;
+
+      const feedbackRef = this.af.database.list(`/feedback`);
+      feedbackRef.push(feedback);
     });
   }
 

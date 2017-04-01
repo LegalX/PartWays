@@ -17,7 +17,6 @@ export class FeedbackDialogComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('submitted');
     this.feedbackDialog.close(this.feedback);
   }
 }

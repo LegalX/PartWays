@@ -4,20 +4,36 @@
     Thank you for taking the time to give us feedback.
   </p>
   <p>Are you satisfied with your experience?</p>
-  <div fxLayout="row" fxLayoutAlign="center">
-    <button md-raised-button tabindex="-1" (click)="feedback.isPositive=true">
+  <div fxLayout="row"
+       fxLayoutAlign="center">
+    <button md-raised-button
+            [color]="feedback.isPositive===true ? 'accent' : null"
+            tabindex="-1"
+            (click)="feedback.isPositive=true">
       <md-icon>thumb_up</md-icon>
     </button>
-    <button md-raised-button tabindex="-1" (click)="feedback.isPositive=false">
+    <button md-raised-button
+            [color]="feedback.isPositive===false ? 'accent' : null"
+            tabindex="-1"
+            (click)="feedback.isPositive=false">
       <md-icon>thumb_down</md-icon>
     </button>
   </div>
   <md-input-container class="example-full-width">
-    <textarea mdInput placeholder="Tell us about your expirience..." [(ngModel)]="feedback.text" name="text"></textarea>
+    <textarea mdInput
+              placeholder="Tell us about your expirience..."
+              [(ngModel)]="feedback.text"
+              name="text"></textarea>
   </md-input-container>
-  <md-checkbox [(ngModel)]="feedback.isIncludeScreenshot" name="isIncludeScreenshot">Include a screenshot</md-checkbox>
-  <md-checkbox [(ngModel)]="feedback.isEmailAllowed" name="isEmailAllowed">Yes, it's OK to email you about your feedback.</md-checkbox>
-  <md-dialog-actions fxLayout="row" fxLayoutAlign="center">
-    <button md-raised-button color="primary" (click)="onSubmit()">Submit feedback</button>
+  <md-checkbox [(ngModel)]="feedback.isIncludeScreenshot"
+               disabled
+               name="isIncludeScreenshot">Include a screenshot</md-checkbox>
+  <md-checkbox [(ngModel)]="feedback.isEmailAllowed"
+               name="isEmailAllowed">Yes, it's OK to email you about your feedback.</md-checkbox>
+  <md-dialog-actions fxLayout="row"
+                     fxLayoutAlign="center">
+    <button md-raised-button
+            color="primary"
+            (click)="onSubmit()">Submit feedback</button>
   </md-dialog-actions>
 </div>
