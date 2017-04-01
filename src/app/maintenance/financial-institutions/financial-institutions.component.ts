@@ -7,7 +7,6 @@ import { FirebaseArrayProcessingService } from '../../shared/firebaseArrayProces
 @Component({
   selector: 'app-financial-institutions',
   templateUrl: './financial-institutions.component.html',
-  styleUrls: [],
 })
 export class FinancialInstitutionsComponent implements OnInit {
   @Input('applicantFinancialInstitutions') applicantFinancialInstitutions: Array<FirebaseObjectObservable<any>>;

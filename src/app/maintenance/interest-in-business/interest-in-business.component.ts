@@ -1,19 +1,18 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FirebaseObjectObservable } from 'angularfire2';
-import { FirebaseArrayProcessingService } from '../../shared/firebaseArrayProcessing.service';
 import 'rxjs/add/operator/first';
+import { FirebaseArrayProcessingService } from '../../shared/firebaseArrayProcessing.service';
 
 @Component({
   selector: 'app-interest-in-business',
   templateUrl: './interest-in-business.component.html',
-  styleUrls: [],
 })
 export class InterestInBusinessComponent implements OnInit {
   @Input('applicantInterestInBusiness') applicantInterestInBusiness: Array<FirebaseObjectObservable<any>>;
   @Input('respondentInterestInBusiness') respondentInterestInBusiness: Array<FirebaseObjectObservable<any>>;
 
-  constructor(private processingService: FirebaseArrayProcessingService) {}
+  constructor(private processingService: FirebaseArrayProcessingService) { }
 
   addItem(type: string) {
     this.processingService.addItem(type, 'interest-in-business', this.applicantInterestInBusiness, this.respondentInterestInBusiness);
