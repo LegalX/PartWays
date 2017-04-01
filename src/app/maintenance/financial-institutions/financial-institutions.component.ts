@@ -12,6 +12,8 @@ export class FinancialInstitutionsComponent implements OnInit {
   @Input('applicantFinancialInstitutions') applicantFinancialInstitutions: Array<FirebaseObjectObservable<any>>;
   @Input('respondentFinancialInstitutions') respondentFinancialInstitutions: Array<FirebaseObjectObservable<any>>;
 
+  index: number;
+
   constructor(private processingService: FirebaseArrayProcessingService) { }
 
   addItem(type: string) {

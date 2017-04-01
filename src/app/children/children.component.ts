@@ -11,6 +11,7 @@ export class ChildrenComponent implements OnInit {
   items: FirebaseListObservable<any>;
   children: Array<FirebaseObjectObservable<any>>;
   private firebaseDataPath = `/application/${localStorage.getItem('applicationId')}/children`;
+  index: number;
 
   constructor(private route: ActivatedRoute, private af: AngularFire) {
     console.log(this.firebaseDataPath);
@@ -19,7 +20,7 @@ export class ChildrenComponent implements OnInit {
 
   addChild() {
     if (confirm('Do you want to add new child?')) {
-      let obj = new Object();
+      const obj = new Object();
       this.items.push(obj).then((item) => {
         this.children.push(this.af.database.object(`${this.firebaseDataPath}/${item.key}`));
       });
@@ -29,7 +30,7 @@ export class ChildrenComponent implements OnInit {
   removeChild(id: string) {
     if (confirm('Are you sure?')) {
       this.children[id].remove();
-      this.children.splice(parseInt(id), 1);
+      this.children.splice(parseInt(id, 10), 1);
     }
   }
 

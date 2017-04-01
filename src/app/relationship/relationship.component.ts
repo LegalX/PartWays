@@ -11,6 +11,7 @@ import 'rxjs/add/operator/switchMap';
 export class RelationshipComponent implements OnInit {
   dbRef: FirebaseObjectObservable<any>;
   relationship: any;
+  isReadOnly = false;
 
   constructor(private route: ActivatedRoute, private af: AngularFire) { }
 

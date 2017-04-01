@@ -11,6 +11,7 @@ import { FirebaseArrayProcessingService } from '../../shared/firebaseArrayProces
 export class LifeInsuranceComponent implements OnInit {
   @Input('applicantLifeInsurance') applicantLifeInsurance: Array<FirebaseObjectObservable<any>>;
   @Input('respondentLifeInsurance') respondentLifeInsurance: Array<FirebaseObjectObservable<any>>;
+  index: number;
 
   constructor(private processingService: FirebaseArrayProcessingService) { }
 

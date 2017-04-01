@@ -10,6 +10,7 @@ import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 export class ParentingComponent implements OnInit {
   parenting: FirebaseObjectObservable<any>;
   children: Array<FirebaseObjectObservable<any>>;
+  index: number;
 
   constructor(private route: ActivatedRoute, private af: AngularFire) { }
 

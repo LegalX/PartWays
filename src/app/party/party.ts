@@ -12,7 +12,7 @@ import 'rxjs/add/operator/switchMap';
 export class PartyComponent implements OnInit {
     partiesRef: FirebaseObjectObservable<any>;
     parties: any;
-    private isReadOnly = false;
+    isReadOnly = false;
 
     constructor(private route: ActivatedRoute, private af: AngularFire) {
     }
