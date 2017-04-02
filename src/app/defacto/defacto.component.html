@@ -1,3 +1,185 @@
-<p>
-  defacto works!
-</p>
+<div class="doc_container">
+  <h1>Part G
+    De facto relationship jurisdiction – financial causes</h1>
+  <form fxLayout="column" #f="ngForm">
+    <span>
+      Complete all the boxes below as required if relying on the Court’s jurisdiction to make orders for the
+benefit of a party to a de facto relationship that has broken down.
+    </span>
+    <h3>ENTITLEMENT TO APPLY AND GEOGRAPHIC REQUIREMENTS</h3>
+    <div id="25">
+      <span>25. Did your de facto relationship break down on or after 1 March 2009 or if resident in South Australia on or
+after 1 July 2010?</span>
+      <md-radio-group [ngModel]="(item|async)?.relationshipBreakDown" name="relationshipBreakDown" [ngModelOptions]="{standalone: true}"
+                      (ngModelChange)="item.update({relationshipBreakDown: $event})">
+        <md-radio-button [value]="false" fxLayout="column">
+          No //IF NO, COMPLETE ITEMS 26 TO 28 AS REQUIRED
+        </md-radio-button>
+        <md-radio-button [value]="true" fxLayout="column">
+          Yes //IF YES, GO TO ITEM 29
+        </md-radio-button>
+      </md-radio-group>
+    </div>
+    <div id="26">
+      <span>26. Do both parties each choose for Parts VIIIAB and VIIIB, and subsection 114(2A) of the Family Law Act 1975
+to apply in relation to your de facto relationship?</span>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxFlex="48">
+          <h3 fxLayoutAlign="center center">APPLICANT</h3>
+          <md-radio-group [ngModel]="(item|async)?.applicantChooseForParts" name="applicantChooseForParts" [ngModelOptions]="{standalone: true}"
+                          (ngModelChange)="item.update({applicantChooseForParts: $event})">
+            <md-radio-button [value]="false" fxLayout="column">
+              No
+            </md-radio-button>
+            <md-radio-button [value]="true" fxLayout="column">
+              Yes
+            </md-radio-button>
+          </md-radio-group>
+        </div>
+        <div fxLayout="column" fxFlex="48">
+          <h3 fxLayoutAlign="center center">RESPONDENT</h3>
+          <md-radio-group [ngModel]="(item|async)?.respondentChooseForParts" name="respondentChooseForParts" [ngModelOptions]="{standalone: true}"
+                          (ngModelChange)="item.update({respondentChooseForParts: $event})">
+            <md-radio-button [value]="false" fxLayout="column">
+              No
+            </md-radio-button>
+            <md-radio-button [value]="true" fxLayout="column">
+              Yes
+            </md-radio-button>
+          </md-radio-group>
+        </div>
+      </div>
+    </div>
+    <div id="27">
+      <span>27. Have the parties previously entered into a designated State/Territory financial agreement in relation to their
+de facto relationship?</span>
+      <md-radio-group [ngModel]="(item|async)?.enteredIntoDesignatedFA" name="enteredIntoDesignatedFA" [ngModelOptions]="{standalone: true}"
+                      (ngModelChange)="item.update({enteredIntoDesignatedFA: $event})">
+        <md-radio-button [value]="false" fxLayout="column">
+          No //IF NO, GO TO ITEM 29
+        </md-radio-button>
+        <md-radio-button [value]="true" fxLayout="column">
+          Yes //IF YES, GO TO ITEM 28 AND PROVIDE A COPY OF THE AGREEMENT/S
+        </md-radio-button>
+      </md-radio-group>
+    </div>
+    <div id="28">
+      <span>28. Has that agreement ceased to have effect without any property being distributed or any maintenance being
+paid under the agreement?</span>
+      <md-radio-group [ngModel]="(item|async)?.agreementCausedToHaveEffect" name="agreementCausedToHaveEffect" [ngModelOptions]="{standalone: true}"
+                      (ngModelChange)="item.update({agreementCausedToHaveEffect: $event})">
+        <md-radio-button [value]="false" fxLayout="column">
+          No
+        </md-radio-button>
+        <md-radio-button [value]="true" fxLayout="column">
+          Yes
+        </md-radio-button>
+      </md-radio-group>
+    </div>
+    <div id="29">
+      <span>29. Is the period or the total of the periods of the de facto relationship at least 2 years?</span>
+      <md-radio-group [ngModel]="(item|async)?.totalPeriodDefactoRelationship" name="totalPeriodDefactoRelationship" [ngModelOptions]="{standalone: true}"
+                      (ngModelChange)="item.update({totalPeriodDefactoRelationship: $event})">
+        <md-radio-button [value]="false" fxLayout="column">
+          No
+        </md-radio-button>
+        <md-radio-button [value]="true" fxLayout="column">
+          Yes
+        </md-radio-button>
+      </md-radio-group>
+    </div>
+    <div id="30">
+      <span>30. Is there a child of the de facto relationship?</span>
+      <md-radio-group [ngModel]="(item|async)?.childOfTheDefactoRelationship" name="childOfTheDefactoRelationship" [ngModelOptions]="{standalone: true}"
+                      (ngModelChange)="item.update({childOfTheDefactoRelationship: $event})">
+        <md-radio-button [value]="false" fxLayout="column">
+          No
+        </md-radio-button>
+        <md-radio-button [value]="true" fxLayout="column">
+          Yes
+        </md-radio-button>
+      </md-radio-group>
+    </div>
+    <div id="31">
+      <span>31. Has the applicant made substantial contributions of the kind mentioned in paragraph 90SM(4)(a), (b) or (c)
+and a failure to make an order or declaration would result in serious injustice to the applicant?</span>
+      <md-radio-group [ngModel]="(item|async)?.substantialContributionsAndFailure" name="substantialContributionsAndFailure" [ngModelOptions]="{standalone: true}"
+                      (ngModelChange)="item.update({substantialContributionsAndFailure: $event})">
+        <md-radio-button [value]="false" fxLayout="column">
+          No
+        </md-radio-button>
+        <md-radio-button [value]="true" fxLayout="column">
+          Yes
+        </md-radio-button>
+      </md-radio-group>
+    </div>
+    <div id="32">
+      <span>32. Is, or was, the relationship registered under a prescribed law of a State or Territory of Australia?</span>
+      <md-radio-group [ngModel]="(item|async)?.registeredUnderAPrescribedLaw" name="registeredUnderAPrescribedLaw" [ngModelOptions]="{standalone: true}"
+                      (ngModelChange)="item.update({registeredUnderAPrescribedLaw: $event})">
+        <md-radio-button [value]="false" fxLayout="column">
+          No
+        </md-radio-button>
+        <md-radio-button [value]="true" fxLayout="column">
+          Yes //YOU MUST FILE A COPY OF THE CERTIFICATE OF REGISTRATION OR OTHER PROOF
+        </md-radio-button>
+      </md-radio-group>
+    </div>
+    <div id="33">
+      <span>33. Was either or both of the parties to the de facto relationship ordinarily resident in one or more of the Australian
+Territories or New South Wales, Queensland, Victoria, Tasmania or South Australia when the relationship
+broke down?</span>
+      <md-radio-group [ngModel]="(item|async)?.wasInOneOrMoreATBroke" name="wasInOneOrMoreATBroke" [ngModelOptions]="{standalone: true}"
+                      (ngModelChange)="item.update({wasInOneOrMoreATBroke: $event})">
+        <md-radio-button [value]="false" fxLayout="column">
+          No
+        </md-radio-button>
+        <md-radio-button [value]="true" fxLayout="column">
+          Yes
+        </md-radio-button>
+      </md-radio-group>
+    </div>
+    <div id="34">
+      <span>34. Are either or both of the parties to the de facto relationship ordinarily resident in one or more of the Australian
+Territories or New South Wales, Queensland, Victoria, Tasmania or South Australia at the time this application
+is made?</span>
+      <md-radio-group [ngModel]="(item|async)?.InOneOrMoreATMade" name="InOneOrMoreATMade" [ngModelOptions]="{standalone: true}"
+                      (ngModelChange)="item.update({InOneOrMoreATMade: $event})">
+        <md-radio-button [value]="false" fxLayout="column">
+          No
+        </md-radio-button>
+        <md-radio-button [value]="true" fxLayout="column">
+          Yes
+        </md-radio-button>
+      </md-radio-group>
+    </div>
+    <div id="35">
+      <span>35. Were both of the parties to the de facto relationship ordinarily resident in one or more of the Australian
+Territories or New South Wales, Queensland, Victoria, Tasmania or South Australia for at least one third of
+the de facto relationship?</span>
+      <md-radio-group [ngModel]="(item|async)?.InOneOrMoreATOneThird" name="InOneOrMoreATOneThird" [ngModelOptions]="{standalone: true}"
+                      (ngModelChange)="item.update({InOneOrMoreATOneThird: $event})">
+        <md-radio-button [value]="false" fxLayout="column">
+          No
+        </md-radio-button>
+        <md-radio-button [value]="true" fxLayout="column">
+          Yes
+        </md-radio-button>
+      </md-radio-group>
+    </div>
+    <div id="36">
+      <span>36. Did the applicant make substantial contributions of the kind mentioned in paragraph 90SM(4)(a), (b) or
+(c) in relation to the de facto relationship in one or more of the Australian Territories or New South Wales,
+Queensland, Victoria, Tasmania or South Australia?</span>
+      <md-radio-group [ngModel]="(item|async)?.substantialContributionsInOneOrMoreAT" name="substantialContributionsInOneOrMoreAT" [ngModelOptions]="{standalone: true}"
+                      (ngModelChange)="item.update({substantialContributionsInOneOrMoreAT: $event})">
+        <md-radio-button [value]="false" fxLayout="column">
+          No
+        </md-radio-button>
+        <md-radio-button [value]="true" fxLayout="column">
+          Yes
+        </md-radio-button>
+      </md-radio-group>
+    </div>
+  </form>
+</div>

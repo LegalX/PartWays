@@ -17,7 +17,6 @@ import { ChildrenComponent } from './children/children.component';
 import { ChildrenResolver } from './children/children.resolver.service';
 import { CourtCasesComponent } from './court-cases/court-cases.component';
 import { DefactoComponent } from './defacto/defacto.component';
-import { DefactoResolver } from './defacto/defacto.resolver.service';
 import { FeedbackDialogComponent } from './feedback-dialog/feedback-dialog.component';
 import { GenerateConsentOrdersComponent } from './generate-consent-orders/generate-consent-orders.component';
 import { ConsentOrdersResolver } from './generate-consent-orders/generate-consent-orders.resolver.service';
@@ -51,13 +50,11 @@ import { PageNotFoundComponent } from './page.not.found';
 import { ParentingComponent } from './parenting/parenting.component';
 import { ParentingResolver } from './parenting/parenting.resolver.service';
 import { PartyComponent } from './party/party.component';
-import { PartiesResolver } from './party/party.resolver.service';
 import { PrintFormComponent } from './print-form/print-form.component';
 import { PrintFormResolver } from './print-form/print-form.resolver.service';
 import { PropertyComponent } from './property/property.component';
 import { PropertyResolver } from './property/property.resolver.service';
 import { RelationshipComponent } from './relationship/relationship.component';
-import { RelationshipResolver } from './relationship/relationship.resolver.service';
 import { FirebaseArrayProcessingService } from './shared/firebaseArrayProcessing.service';
 import { PrintDirective } from './shared/print.directive';
 import { StatementOfTruthComponent } from './statement-of-truth/statement-of-truth.component';
@@ -89,10 +86,7 @@ const firebaseAuthConfig = {
   providers: [
     AuthGuard,
     ApplicationResolver,
-    PartiesResolver,
-    RelationshipResolver,
     ChildrenResolver,
-    DefactoResolver,
     ConsentOrdersResolver,
     LegalAdviceResolver,
     MaintenanceResolver,

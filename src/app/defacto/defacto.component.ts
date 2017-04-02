@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-defacto',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./defacto.component.css']
 })
 export class DefactoComponent implements OnInit {
+  item: FirebaseObjectObservable<any>;
 
-  constructor() { }
+  constructor(private af: AngularFire) { }
 
   ngOnInit() {
+    this.item = this.af.database.object(`/application/${localStorage.getItem('applicationId')}/defacto`);
   }
 
 }
