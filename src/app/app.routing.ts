@@ -34,7 +34,7 @@ import { RespondentRealEstateResolver } from './maintenance/real-estate/responde
 import { PageNotFoundComponent } from './page.not.found';
 import { ParentingComponent } from './parenting/parenting.component';
 import { ParentingResolver } from './parenting/parenting.resolver.service';
-import { PartyComponent } from './party/party';
+import { PartyComponent } from './party/party.component';
 import { PartiesResolver } from './party/party.resolver.service';
 import { PrintFormComponent } from './print-form/print-form.component';
 import { PrintFormResolver } from './print-form/print-form.resolver.service';
@@ -52,9 +52,6 @@ const appRoutes: Routes = [
         component: PartyComponent,
         canActivate: [AuthGuard],
         data: { title: 'Parties' },
-        resolve: {
-            parties: PartiesResolver,
-        },
     },
     {
         path: 'Parties/:id',
