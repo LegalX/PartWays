@@ -1,91 +1,85 @@
-<h1>Part B. About the relationship of the parties</h1>
-<form fxLayout="column" (ngSubmit)="onSubmit()" #userForm="ngForm">
-  <div fxLayout="row">
-    <div fxFlex></div>
-    <div fxFlex="15">Not Applicable</div>
-    <div fxFlex="10">Agreed</div>
-  </div>
-  <div fxLayout="row">
-    <md-input-container fxFlex>
-      <input mdInput placeholder="When did you begin living together?" type="text" [(ngModel)]="relationship.beganLivingTogether"
-        name="beganLivingTogether">
-    </md-input-container>
-    <md-checkbox fxFlex="10" [(ngModel)]="relationship.beganLivingTogetherNa" name="beganLivingTogetherNa"></md-checkbox>
-    <md-checkbox fxFlex="10" [(ngModel)]="relationship.beganLivingTogetherAgreed" name="beganLivingTogetherAgreed"></md-checkbox>
-  </div>
-  <div *ngIf="!relationship.beganLivingTogetherAgreed" fxLayout="column">
-    <div fxLayout="row">
-      <md-input-container fxFlex>
-        <input mdInput placeholder="My offer" type="text" [(ngModel)]="relationship.beganLivingTogetherCounter" name="beganLivingTogetherCounter">
-      </md-input-container>
-      <button fxFlex="20" md-button>History</button>
+<div class="doc_container">
+  <h1>Part B. About the relationship of the parties</h1>
+
+  <form fxLayout="column"
+        #f="ngForm"
+        class="relationship">
+    <div id="6">
+      <span>6. When did you begin living together?</span>
+      <div fxLayout="row">
+        <div fxFlex></div>
+        <div fxFlex="10">Not Applicable</div>
+      </div>
+      <div fxLayout="row">
+        <md-input-container fxFlex>
+          <input placeholder="DATE	 /	/" mdInput type="text" [ngModel]="(item|async)?.beganLivingTogetherDate" (ngModelChange)="item.update({beganLivingTogetherDate: $event})"
+                 name="beganLivingTogetherDate">
+        </md-input-container>
+        <md-checkbox fxFlex="10" (ngModelChange)="item.update({beganLivingTogetherNA: $event})" [ngModel]="(item|async)?.beganLivingTogetherNA"  name="beganLivingTogetherNA"></md-checkbox>
+      </div>
     </div>
-    <md-input-container>
-      <input mdInput placeholder="Comments" type="text" [(ngModel)]="relationship.beganLivingTogetherComments" name="beganLivingTogetherComments">
-    </md-input-container>
-  </div>
-
-  <div fxLayout="row">
-    <md-input-container fxFlex>
-      <input mdInput placeholder="If married, when and where did you get married?" type="text" [(ngModel)]="relationship.whenAndWhereMarried"
-        name="whenAndWhereMarried">
-    </md-input-container>
-    <md-checkbox fxFlex="10" [(ngModel)]="relationship.whenAndWhereMarriedNa" name="whenAndWhereMarriedNa"></md-checkbox>
-    <md-checkbox fxFlex="10" [(ngModel)]="relationship.whenAndWhereMarriedAgreed" name="whenAndWhereMarriedAgreed"></md-checkbox>
-  </div>
-  <div *ngIf="!relationship.whenAndWhereMarriedAgreed" fxLayout="column">
-    <div fxLayout="row">
-      <md-input-container fxFlex>
-        <input mdInput placeholder="My offer" type="text" [(ngModel)]="relationship.whenAndWhereMarriedCounter" name="whenAndWhereMarriedCounter">
-      </md-input-container>
-      <button fxFlex="20" md-button>History</button>
+    <div id="7">
+      <span>7. If married, when and where did you get married?*</span>
+      <div fxLayout="row">
+        <div fxFlex></div>
+        <div fxFlex></div>
+        <div fxFlex></div>
+        <div fxFlex="10">Not Applicable</div>
+      </div>
+      <div fxLayout="row">
+        <md-input-container fxFlex>
+          <input placeholder="DATE	 /	/" mdInput type="text" [ngModel]="(item|async)?.getMarriedDate" (ngModelChange)="item.update({getMarriedDate: $event})"
+                 name="getMarriedDate">
+        </md-input-container>
+        <md-input-container fxFlex>
+          <input placeholder="TOWN/CITY" mdInput type="text" [ngModel]="(item|async)?.marriedCity" (ngModelChange)="item.update({marriedCity: $event})"
+                 name="marriedCity">
+        </md-input-container>
+        <md-input-container fxFlex>
+          <input placeholder="COUNTRY" mdInput type="text" [ngModel]="(item|async)?.marriedCountry" (ngModelChange)="item.update({marriedCountry: $event})"
+                 name="marriedCountry">
+        </md-input-container>
+        <md-checkbox fxFlex="10" (ngModelChange)="item.update({marriedNA: $event})" [ngModel]="(item|async)?.marriedNA"  name="marriedNA"></md-checkbox>
+      </div>
     </div>
-    <md-input-container>
-      <input mdInput placeholder="Comments" type="text" [(ngModel)]="relationship.whenAndWhereMarriedComments" name="whenAndWhereMarriedComments">
-    </md-input-container>
-  </div>
-
-  <div fxLayout="row">
-    <md-input-container fxFlex>
-      <input mdInput placeholder="When did you finally separate?" type="text" [(ngModel)]="relationship.whenSeparated" name="whenSeparated">
-    </md-input-container>
-    <md-checkbox fxFlex="10" [(ngModel)]="relationship.whenSeparatedNa" name="whenSeparatedNa"></md-checkbox>
-    <md-checkbox fxFlex="10" [(ngModel)]="relationship.whenSeparatedAgreed" name="whenSeparatedAgreed"></md-checkbox>
-  </div>
-  <div *ngIf="!relationship.whenSeparatedAgreed" fxLayout="column">
-    <div fxLayout="row">
-      <md-input-container fxFlex>
-        <input mdInput placeholder="My offer" type="text" [(ngModel)]="relationship.whenSeparatedCounter" name="whenSeparatedCounter">
-      </md-input-container>
-      <button fxFlex="20" md-button>History</button>
+    <div id="8">
+      <span>8. When did you finally separate?</span>
+      <div fxLayout="row">
+        <div fxFlex></div>
+        <div fxFlex="10">Not Applicable</div>
+      </div>
+      <div fxLayout="row">
+        <md-input-container fxFlex>
+          <input placeholder="DATE	 /	/" mdInput type="text" [ngModel]="(item|async)?.separateDate" (ngModelChange)="item.update({separateDate: $event})"
+                 name="separateDate">
+        </md-input-container>
+        <md-checkbox fxFlex="10" (ngModelChange)="item.update({separateNA: $event})" [ngModel]="(item|async)?.separateNA"  name="separateNA"></md-checkbox>
+      </div>
     </div>
-    <md-input-container>
-      <input mdInput placeholder="Comments" type="text" [(ngModel)]="relationship.whenSeparatedComments" name="whenSeparatedComments">
-    </md-input-container>
-  </div>
-
-  <div fxLayout="row">
-    <md-input-container fxFlex>
-      <input mdInput placeholder="When and where did you get divorced?" type="text" [(ngModel)]="relationship.whenAndWhereDivorced"
-        name="whenAndWhereDivorced">
-    </md-input-container>
-    <md-checkbox fxFlex="10" [(ngModel)]="relationship.whenAndWhereDivorcedNa" name="whenAndWhereDivorcedNa"></md-checkbox>
-    <md-checkbox fxFlex="10" [(ngModel)]="relationship.whenAndWhereDivorcedAgreed" name="whenAndWhereDivorcedAgreed"></md-checkbox>
-  </div>
-  <div *ngIf="!relationship.whenAndWhereDivorcedAgreed" fxLayout="column">
-    <div fxLayout="row">
-      <md-input-container fxFlex>
-        <input mdInput placeholder="My offer" type="text" [(ngModel)]="relationship.whenAndWhereDivorcedCounter" name="whenAndWhereDivorcedCounter">
-      </md-input-container>
-      <button fxFlex="20" md-button>History</button>
+    <div id="9">
+      <span>9. When and where did you get divorced?</span>
+      <div fxLayout="row">
+        <div fxFlex></div>
+        <div fxFlex></div>
+        <div fxFlex></div>
+        <div fxFlex="10">Not Applicable</div>
+      </div>
+      <div fxLayout="row">
+        <md-input-container fxFlex>
+          <input placeholder="DATE	 /	/" mdInput type="text" [ngModel]="(item|async)?.divorcedDate" (ngModelChange)="item.update({divorcedDate: $event})"
+                 name="divorcedDate">
+        </md-input-container>
+        <md-input-container fxFlex>
+          <input placeholder="TOWN/CITY" mdInput type="text" [ngModel]="(item|async)?.divorcedCity" (ngModelChange)="item.update({divorcedCity: $event})"
+                 name="divorcedCity">
+        </md-input-container>
+        <md-input-container fxFlex>
+          <input placeholder="COUNTRY" mdInput type="text" [ngModel]="(item|async)?.divorcedCountry" (ngModelChange)="item.update({divorcedCountry: $event})"
+                 name="divorcedCountry">
+        </md-input-container>
+        <md-checkbox fxFlex="10" (ngModelChange)="item.update({divorcedNA: $event})" [ngModel]="(item|async)?.divorcedNA"  name="divorcedNA"></md-checkbox>
+      </div>
     </div>
-    <md-input-container>
-      <input mdInput placeholder="Comments" type="text" [(ngModel)]="relationship.whenAndWhereDivorcedComments" name="whenAndWhereDivorcedComments">
-    </md-input-container>
-  </div>
 
-
-  <div *ngIf="!isReadOnly" fxLayout="row" fxLayoutAlign="end end">
-    <button md-raised-button type="submit">Save</button>
-  </div>
-</form>
+    </form>
+</div>
