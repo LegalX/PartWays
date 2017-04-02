@@ -1,0 +1,95 @@
+<div id="54">
+  <span>54. Hire purchase/lease</span>
+  <div fxLayout="row" fxLayoutAlign="space-between">
+    <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <h3>APPLICANT</h3>
+        <button md-mini-fab mdTooltip="Add item" [mdTooltipPosition]="'left'" (click)="addItem('applicant')"><md-icon>add</md-icon></button>
+      </div>
+      <div *ngFor="let item of applicantHirePurchaseLease; let i=index; trackBy: index" class="group">
+        <button md-mini-fab mdTooltip="Remove item" [mdTooltipPosition]="'left'" (click)="removeItem(i, 'applicant')"><md-icon>remove</md-icon></button>
+        <div>
+            <span>
+              Give details
+            </span>
+          <md-input-container>
+            <input mdInput type="text" [ngModel]="(item|async)?.applicantPurchaseLeaseDetails" (ngModelChange)="item.update({applicantPurchaseLeaseDetails: $event})"
+                   name="applicantPurchaseLeaseDetails_{{i}}">
+          </md-input-container>
+        </div>
+        <div>
+            <span>
+              Name of lender/s
+            </span>
+          <md-input-container>
+            <input mdInput type="text" [ngModel]="(item|async)?.applicantNameOfLender" (ngModelChange)="item.update({applicantNameOfLender: $event})"
+                   name="applicantNameOfLender_{{i}}">
+          </md-input-container>
+        </div>
+        <div>
+            <span>
+              Description of property
+            </span>
+          <md-input-container>
+            <input mdInput type="text" [ngModel]="(item|async)?.applicantPropertyDesc" (ngModelChange)="item.update({applicantPropertyDesc: $event})"
+                   name="applicantPropertyDesc_{{i}}">
+          </md-input-container>
+        </div>
+        <div>
+            <span>
+              Your share of amount owing $
+            </span>
+          <md-input-container>
+            <input mdInput type="text" [ngModel]="(item|async)?.applicantLeaseShare" (ngModelChange)="item.update({applicantLeaseShare: $event})"
+                   name="applicantLeaseShare_{{i}}">
+          </md-input-container>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <h3>RESPONDENT</h3>
+        <button md-mini-fab mdTooltip="Add item" [mdTooltipPosition]="'left'" (click)="addItem('respondent')"><md-icon>add</md-icon></button>
+      </div>
+      <div *ngFor="let item of respondentHirePurchaseLease; let i=index; trackBy: index" class="group">
+        <button md-mini-fab mdTooltip="Remove item" [mdTooltipPosition]="'left'" (click)="removeItem(i, 'respondent')"><md-icon>remove</md-icon></button>
+        <div>
+            <span>
+              Give details
+            </span>
+          <md-input-container>
+            <input mdInput type="text" [ngModel]="(item|async)?.respondentPurchaseLeaseDetails" (ngModelChange)="item.update({respondentPurchaseLeaseDetails: $event})"
+                   name="respondentPurchaseLeaseDetails_{{i}}">
+          </md-input-container>
+        </div>
+        <div>
+            <span>
+              Name of lender/s
+            </span>
+          <md-input-container>
+            <input mdInput type="text" [ngModel]="(item|async)?.respondentNameOfLender" (ngModelChange)="item.update({respondentNameOfLender: $event})"
+                   name="respondentNameOfLender_{{i}}">
+          </md-input-container>
+        </div>
+        <div>
+            <span>
+              Description of property
+            </span>
+          <md-input-container>
+            <input mdInput type="text" [ngModel]="(item|async)?.respondentPropertyDesc" (ngModelChange)="item.update({respondentPropertyDesc: $event})"
+                   name="respondentPropertyDesc_{{i}}">
+          </md-input-container>
+        </div>
+        <div>
+            <span>
+              Your share of amount owing $
+            </span>
+          <md-input-container>
+            <input mdInput type="text" [ngModel]="(item|async)?.respondentLeaseShare" (ngModelChange)="item.update({respondentLeaseShare: $event})"
+                   name="respondentLeaseShare_{{i}}">
+          </md-input-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

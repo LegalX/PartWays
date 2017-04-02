@@ -1,0 +1,59 @@
+<div id="56">
+  <span>56. Any other liabilities</span>
+  <div fxLayout="row" fxLayoutAlign="space-between">
+    <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <h3>APPLICANT</h3>
+        <button md-mini-fab mdTooltip="Add item" [mdTooltipPosition]="'left'" (click)="addItem('applicant')"><md-icon>add</md-icon></button>
+      </div>
+      <div *ngFor="let item of applicantOtherLiabilities; let i=index; trackBy: index" class="group">
+        <button md-mini-fab mdTooltip="Remove item" [mdTooltipPosition]="'left'" (click)="removeItem(i, 'applicant')"><md-icon>remove</md-icon></button>
+        <div>
+            <span>
+              Give details
+            </span>
+          <md-input-container>
+            <input mdInput type="text" [ngModel]="(item|async)?.applicantLiabilitiesDetail" (ngModelChange)="item.update({applicantLiabilitiesDetail: $event})"
+                   name="applicantLiabilitiesDetail_{{i}}">
+          </md-input-container>
+        </div>
+        <div>
+            <span>
+              Your share of amount owing $
+            </span>
+          <md-input-container>
+            <input mdInput type="number" [ngModel]="(item|async)?.applicantLiabilitiesShare" (ngModelChange)="item.update({applicantLiabilitiesShare: $event})"
+                   name="applicantLiabilitiesShare_{{i}}">
+          </md-input-container>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <h3>RESPONDENT</h3>
+        <button md-mini-fab mdTooltip="Add item" [mdTooltipPosition]="'left'" (click)="addItem('respondent')"><md-icon>add</md-icon></button>
+      </div>
+      <div *ngFor="let item of respondentOtherLiabilities; let i=index; trackBy: index" class="group">
+        <button md-mini-fab mdTooltip="Remove item" [mdTooltipPosition]="'left'" (click)="removeItem(i, 'respondent')"><md-icon>remove</md-icon></button>
+        <div>
+            <span>
+              Give details
+            </span>
+          <md-input-container>
+            <input mdInput type="text" [ngModel]="(item|async)?.respondentLiabilitiesDetail" (ngModelChange)="item.update({respondentLiabilitiesDetail: $event})"
+                   name="respondentLiabilitiesDetail_{{i}}">
+          </md-input-container>
+        </div>
+        <div>
+            <span>
+              Your share of amount owing $
+            </span>
+          <md-input-container>
+            <input mdInput type="number" [ngModel]="(item|async)?.respondentLiabilitiesShare" (ngModelChange)="item.update({respondentLiabilitiesShare: $event})"
+                   name="respondentLiabilitiesShare_{{i}}">
+          </md-input-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

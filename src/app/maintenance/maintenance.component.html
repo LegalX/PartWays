@@ -300,5 +300,385 @@
         </div>
       </div>
     </div>
+    <h3>LIABILITIES</h3>
+    <!-- 50 -->
+    <app-home-mortgage [applicantHomeMortgage]="applicantHomeMortgage" [respondentHomeMortgage]="respondentHomeMortgage"></app-home-mortgage>
+    <!-- 51 -->
+    <app-other-mortgage [applicantOtherMortgage]="applicantOtherMortgage" [respondentOtherMortgage]="respondentOtherMortgage"></app-other-mortgage>
+    <!-- 52 -->
+    <app-credit-charge-cards [applicantCreditChargeCards]="applicantCreditChargeCards" [respondentCreditChargeCards]="respondentCreditChargeCards"></app-credit-charge-cards>
+    <!-- 53 -->
+    <app-other-loans [applicantOtherLoans]="applicantOtherLoans" [respondentOtherLoans]="respondentOtherLoans"></app-other-loans>
+    <!-- 54 -->
+    <app-hire-purchase-lease [applicantHirePurchaseLease]="applicantHirePurchaseLease" [respondentHirePurchaseLease]="respondentHirePurchaseLease"></app-hire-purchase-lease>
+    <div id="55">
+      <span>55. Income tax liabilities</span>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxFlex="48">
+          <div>
+            <span>Current financial year $</span>
+            <md-input-container>
+              <input mdInput type="text" [ngModel]="(item|async)?.applicantFinancialYear" (ngModelChange)="item.update({applicantFinancialYear: $event})"
+                     name="applicanFinancialYear">
+            </md-input-container>
+          </div>
+          <div>
+            <span>Amount unpaid from previous financial years $</span>
+            <md-input-container>
+              <input mdInput type="text" [ngModel]="(item|async)?.applicantUnpaidFromPreviousYear" (ngModelChange)="item.update({applicantUnpaidFromPreviousYear: $event})"
+                     name="applicanUnpaidFromPreviousYear">
+            </md-input-container>
+          </div>
+        </div>
+        <div fxLayout="column" fxFlex="48">
+          <div>
+            <span>Current financial year $</span>
+            <md-input-container>
+              <input mdInput type="text" [ngModel]="(item|async)?.replicantFinancialYear" (ngModelChange)="item.update({replicantFinancialYear: $event})"
+                     name="replicantFinancialYear">
+            </md-input-container>
+          </div>
+          <div>
+            <span>Amount unpaid from previous financial years $</span>
+            <md-input-container>
+              <input mdInput type="text" [ngModel]="(item|async)?.replicantUnpaidFromPreviousYear" (ngModelChange)="item.update({replicantUnpaidFromPreviousYear: $event})"
+                     name="replicantUnpaidFromPreviousYear">
+            </md-input-container>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 56 -->
+    <app-other-liabilities [applicantOtherLiabilities]="applicantOtherLiabilities" [respondentOtherLiabilities]="respondentOtherLiabilities"></app-other-liabilities>
+    <div id="57">
+      <span>57. <strong>YOUR TOTAL LIABILITIES</strong></span>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+          <div>
+            <span>
+              $
+            </span>
+            <md-input-container>
+              <input mdInput type="number" [ngModel]="(item|async)?.applicantTotalLiabilities" (ngModelChange)="item.update({applicantTotalLiabilities: $event})"
+                     name="applicantTotalLiabilities">
+            </md-input-container>
+          </div>
+        </div>
+        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+          <div>
+            <span>
+              $
+            </span>
+            <md-input-container>
+              <input mdInput type="number" [ngModel]="(item|async)?.respondentTotalLiabilities" (ngModelChange)="item.update({respondentTotalLiabilities: $event})"
+                     name="respondentTotalLiabilities">
+            </md-input-container>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3><strong>YOUR TOTAL NET WORTH</strong> (NOT INCLUDING SUPERANNUATION)</h3>
+    <div id="58">
+      <span>58. To calculate your total net worth, subtract the amounts at Item 57 from the amounts at item 49.</span>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+          <h3 fxLayoutAlign="center center">APPLICANT</h3>
+          <div>
+            <span>Insert the total from Item 49</span>
+            <md-input-container>
+              <input mdInput type="number" [ngModel]="(item|async)?.applicantTotal49" (ngModelChange)="item.update({applicantTotal49: $event})"
+                     name="applicantTotal49">
+            </md-input-container>
+          </div>
+          <div>
+            <span>Insert the total from Item 57</span>
+            <md-input-container>
+              <input mdInput type="number" [ngModel]="(item|async)?.applicantTotal57" (ngModelChange)="item.update({applicantTotal57: $event})"
+                     name="applicantTotal57">
+            </md-input-container>
+          </div>
+          <div>
+            <span><strong>YOUR TOTAL NET WORTH</strong> (NOT INCLUDING SUPERANNUATION)</span>
+            <md-input-container>
+              <input mdInput type="number" [ngModel]="(item|async)?.applicantTotalNewWorth" (ngModelChange)="item.update({applicantTotalNewWorth: $event})"
+                     name="applicantTotalNewWorth">
+            </md-input-container>
+          </div>
+        </div>
+        <div fxLayout="column" fxFlex="48">
+          <h3 fxLayoutAlign="center center">RESPONDENT</h3>
+          <div>
+            <span>Insert the total from Item 49</span>
+            <md-input-container>
+              <input mdInput type="number" [ngModel]="(item|async)?.respondentTotal49" (ngModelChange)="item.update({respondentTotal49: $event})"
+                     name="respondentTotal49">
+            </md-input-container>
+          </div>
+          <div>
+            <span>Insert the total from Item 57</span>
+            <md-input-container>
+              <input mdInput type="number" [ngModel]="(item|async)?.respondentTotal57" (ngModelChange)="item.update({respondentTotal57: $event})"
+                     name="respondentTotal57">
+            </md-input-container>
+          </div>
+          <div>
+            <span><strong>YOUR TOTAL NET WORTH</strong> (NOT INCLUDING SUPERANNUATION)</span>
+            <md-input-container>
+              <input mdInput type="number" [ngModel]="(item|async)?.respondentTotalNewWorth" (ngModelChange)="item.update({respondentTotalNewWorth: $event})"
+                     name="respondentTotalNewWorth">
+            </md-input-container>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="59">
+      <span>59. Has either party acquired or disposed of any property since the date of separation?</span>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxFlex="48">
+          <div class="group">
+            <md-radio-group [ngModel]="(item|async)?.applicantEitherPartyAcquiredOrDisposed" name="applicantOrdersAffectCapacity" [ngModelOptions]="{standalone: true}"
+                            (ngModelChange)="item.update({applicantEitherPartyAcquiredOrDisposed: $event})">
+              <md-radio-button [value]="false" fxLayout="row">
+                No //GO TO ITEM 60
+              </md-radio-button>
+              <md-radio-button [value]="true" fxLayout="row">
+                Yes //GIVE DETAILS
+              </md-radio-button>
+            </md-radio-group>
+            <div fxLayout="row" *ngIf="(item|async)?.applicantEitherPartyAcquiredOrDisposed">
+              <md-input-container fxFlex="100">
+                <textarea mdInput [ngModel]="(item|async)?.applicantEitherPartyAcquiredOrDisposedDetails" (ngModelChange)="item.update({applicantEitherPartyAcquiredOrDisposedDetails: $event})"
+                          name="applicantEitherPartyAcquiredOrDisposedDetails"></textarea>
+              </md-input-container>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="column" fxFlex="48">
+          <div class="group">
+            <md-radio-group [ngModel]="(item|async)?.respondentEitherPartyAcquiredOrDisposed" name="applicantOrdersAffectCapacity" [ngModelOptions]="{standalone: true}"
+                            (ngModelChange)="item.update({respondentEitherPartyAcquiredOrDisposed: $event})">
+              <md-radio-button [value]="false" fxLayout="row">
+                No //GO TO ITEM 60
+              </md-radio-button>
+              <md-radio-button [value]="true" fxLayout="row">
+                Yes //GIVE DETAILS
+              </md-radio-button>
+            </md-radio-group>
+            <div fxLayout="row" *ngIf="(item|async)?.respondentEitherPartyAcquiredOrDisposed">
+              <md-input-container fxFlex="100">
+                <textarea mdInput [ngModel]="(item|async)?.respondentEitherPartyAcquiredOrDisposedDetails" (ngModelChange)="item.update({respondentEitherPartyAcquiredOrDisposedDetails: $event})"
+                          name="respondentEitherPartyAcquiredOrDisposedDetails"></textarea>
+              </md-input-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3>SUPERANNUATION</h3>
+    <span><strong>If you have a superannuation interest</strong></span>
+    <span>- attach a completed Superannuation Information Form when a splitting order is sought</span>
+    <span><strong>If you have more than one superannuation interest</strong></span>
+    <span>- attach a completed Superannuation Information Form for each interest when a splitting order is sought</span>
+    <span>- attach a list of the interests</span>
+    <span>- include the details required in Items 60–65 for each interest</span>
+    <div id="60">
+      <span>60. Name of eligible superannuation plan</span>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <h3>APPLICANT</h3>
+          </div>
+          <div>
+            <span>
+              Name
+            </span>
+            <md-input-container>
+              <input mdInput type="text" [ngModel]="(item|async)?.applicantSuperannuationName" (ngModelChange)="item.update({applicantSuperannuationName: $event})"
+                     name="applicantSuperannuationName">
+            </md-input-container>
+          </div>
+        </div>
+        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <h3>RESPONDENT</h3>
+          </div>
+          <div>
+            <span>
+              Name
+            </span>
+            <md-input-container>
+              <input mdInput type="text" [ngModel]="(item|async)?.respondentSuperannuationName" (ngModelChange)="item.update({respondentSuperannuationName: $event})"
+                     name="respondentSuperannuationName">
+            </md-input-container>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="61">
+      <span>61. Type of interest</span>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxFlex="48">
+          <div class="group">
+            <div>
+              <md-checkbox (ngModelChange)="item.update({applicantAccumulationInterest: $event})"
+                           [ngModel]="(item|async)?.applicantAccumulationInterest"  name="applicantAccumulationInterest">
+                accumulation interest
+              </md-checkbox>
+            </div>
+            <div>
+              <md-checkbox (ngModelChange)="item.update({applicantPartiallyVested: $event})"
+                           [ngModel]="(item|async)?.applicantPartiallyVested"  name="applicantPartiallyVested">
+                partially vested accumulation interest
+              </md-checkbox>
+            </div>
+            <div>
+              <md-checkbox (ngModelChange)="item.update({applicantDefinedBenefitInterest: $event})"
+                           [ngModel]="(item|async)?.applicantDefinedBenefitInterest"  name="applicantDefinedBenefitInterest">
+                defined benefit interest
+              </md-checkbox>
+            </div>
+            <div>
+              <md-checkbox (ngModelChange)="item.update({applicantSelfManagedFund: $event})"
+                           [ngModel]="(item|async)?.applicantSelfManagedFund"  name="applicantSelfManagedFund">
+                self managed fund
+              </md-checkbox>
+            </div>
+            <div>
+              <md-checkbox (ngModelChange)="item.update({applicantRetirementSavingsAccount: $event})"
+                           [ngModel]="(item|async)?.applicantRetirementSavingsAccount"  name="applicantRetirementSavingsAccount">
+                retirement savings account
+              </md-checkbox>
+            </div>
+            <div>
+              <md-checkbox (ngModelChange)="item.update({applicantSmallSuperannuationAccount: $event})"
+                           [ngModel]="(item|async)?.applicantSmallSuperannuationAccount"  name="applicantSmallSuperannuationAccount">
+                small superannuation account
+              </md-checkbox>
+            </div>
+            <div>
+              <md-checkbox (ngModelChange)="item.update({applicantPercentageOnlyInterest: $event})"
+                           [ngModel]="(item|async)?.applicantPercentageOnlyInterest"  name="applicantPercentageOnlyInterest">
+                percentage only interest
+              </md-checkbox>
+            </div>
+            <div>
+              <md-checkbox (ngModelChange)="item.update({applicantApprovedDepositFund: $event})"
+                           [ngModel]="(item|async)?.applicantApprovedDepositFund"  name="applicantApprovedDepositFund">
+                approved deposit fund
+              </md-checkbox>
+
+            </div>
+            <div>
+              <md-checkbox (ngModelChange)="item.update({applicantEligibleAnnuity: $event})"
+                           [ngModel]="(item|async)?.applicantEligibleAnnuity"  name="applicantEligibleAnnuity">
+                eligible annuity
+              </md-checkbox>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="column" fxFlex="48">
+          <div class="group">
+            <div>
+              <md-checkbox (ngModelChange)="item.update({respondentAccumulationInterest: $event})"
+                           [ngModel]="(item|async)?.respondentAccumulationInterest"  name="respondentAccumulationInterest">
+                accumulation interest
+              </md-checkbox>
+            </div>
+            <div>
+              <md-checkbox (ngModelChange)="item.update({respondentPartiallyVested: $event})"
+                           [ngModel]="(item|async)?.respondentPartiallyVested"  name="respondentPartiallyVested">
+                partially vested accumulation interest
+              </md-checkbox>
+            </div>
+            <div>
+              <md-checkbox (ngModelChange)="item.update({respondentDefinedBenefitInterest: $event})"
+                           [ngModel]="(item|async)?.respondentDefinedBenefitInterest"  name="respondentDefinedBenefitInterest">
+                defined benefit interest
+              </md-checkbox>
+            </div>
+            <div>
+              <md-checkbox (ngModelChange)="item.update({respondentSelfManagedFund: $event})"
+                           [ngModel]="(item|async)?.respondentSelfManagedFund"  name="respondentSelfManagedFund">
+                self managed fund
+              </md-checkbox>
+            </div>
+            <div>
+              <md-checkbox (ngModelChange)="item.update({respondentRetirementSavingsAccount: $event})"
+                           [ngModel]="(item|async)?.respondentRetirementSavingsAccount"  name="respondentRetirementSavingsAccount">
+                retirement savings account
+              </md-checkbox>
+            </div>
+            <div>
+              <md-checkbox (ngModelChange)="item.update({respondentSmallSuperannuationAccount: $event})"
+                           [ngModel]="(item|async)?.respondentSmallSuperannuationAccount"  name="respondentSmallSuperannuationAccount">
+                small superannuation account
+              </md-checkbox>
+            </div>
+            <div>
+              <md-checkbox (ngModelChange)="item.update({respondentPercentageOnlyInterest: $event})"
+                           [ngModel]="(item|async)?.respondentPercentageOnlyInterest"  name="respondentPercentageOnlyInterest">
+                percentage only interest
+              </md-checkbox>
+            </div>
+            <div>
+              <md-checkbox (ngModelChange)="item.update({respondentApprovedDepositFund: $event})"
+                           [ngModel]="(item|async)?.respondentApprovedDepositFund"  name="respondentApprovedDepositFund">
+                approved deposit fund
+              </md-checkbox>
+            </div>
+            <div>
+              <md-checkbox (ngModelChange)="item.update({respondentEligibleAnnuity: $event})"
+                           [ngModel]="(item|async)?.respondentEligibleAnnuity"  name="respondentEligibleAnnuity">
+                eligible annuity
+              </md-checkbox>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="62">
+      <span>62. Specify the current agreed gross value of the interest in superannuation</span>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+          <div>
+            <span>
+              $
+            </span>
+            <md-input-container>
+              <input mdInput type="number" [ngModel]="(item|async)?.applicantCurrentAgreedOfTheInterest" (ngModelChange)="item.update({applicantCurrentAgreedOfTheInterest: $event})"
+                     name="applicantCurrentAgreedOfTheInterest">
+            </md-input-container>
+          </div>
+        </div>
+        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+          <div>
+            <span>
+              $
+            </span>
+            <md-input-container>
+              <input mdInput type="number" [ngModel]="(item|async)?.respondentCurrentAgreedOfTheInterest" (ngModelChange)="item.update({respondentCurrentAgreedOfTheInterest: $event})"
+                     name="respondentCurrentAgreedOfTheInterest">
+            </md-input-container>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="63">
+      <span>63. Has the agreed value in Item 62 been calculated in accordance with the Family Law (Superannuation) Regulations 2001? (Complete only if section 90MT (2)(a) of the Act applies to the superannuation interest)</span>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxFlex="48">
+          <md-checkbox (ngModelChange)="item.update({applicantAgreedIn62: $event})"
+                       [ngModel]="(item|async)?.applicantAgreedIn62"  name="applicantAgreedIn62">
+            Yes
+          </md-checkbox>
+        </div>
+        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+          <md-checkbox (ngModelChange)="item.update({respondentAgreedIn62: $event})"
+                       [ngModel]="(item|async)?.respondentAgreedIn62"  name="respondentAgreedIn62">
+            Yes
+          </md-checkbox>
+        </div>
+      </div>
+    </div>
   </form>
 </div>

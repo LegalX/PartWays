@@ -1,0 +1,59 @@
+<div id="52">
+  <span>52. Amounts owing on any credit/charge cards</span>
+  <div fxLayout="row" fxLayoutAlign="space-between">
+    <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <h3>APPLICANT</h3>
+        <button md-mini-fab mdTooltip="Add item" [mdTooltipPosition]="'left'" (click)="addItem('applicant')"><md-icon>add</md-icon></button>
+      </div>
+      <div *ngFor="let item of applicantCreditChargeCards; let i=index; trackBy: index" class="group">
+        <button md-mini-fab mdTooltip="Remove item" [mdTooltipPosition]="'left'" (click)="removeItem(i, 'applicant')"><md-icon>remove</md-icon></button>
+        <div>
+            <span>
+              Type of card
+            </span>
+          <md-input-container>
+            <input mdInput type="text" [ngModel]="(item|async)?.applicantTypeOfCard" (ngModelChange)="item.update({applicantTypeOfCard: $event})"
+                   name="applicantTypeOfCard_{{i}}">
+          </md-input-container>
+        </div>
+        <div>
+            <span>
+              Your share of amount owing	$
+            </span>
+          <md-input-container>
+            <input mdInput type="number" [ngModel]="(item|async)?.applicantShareOfAmountWing" (ngModelChange)="item.update({applicantAddressOfProperty: $event})"
+                   name="applicantShareOfAmountWing_{{i}}">
+          </md-input-container>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <h3>RESPONDENT</h3>
+        <button md-mini-fab mdTooltip="Add item" [mdTooltipPosition]="'left'" (click)="addItem('respondent')"><md-icon>add</md-icon></button>
+      </div>
+      <div *ngFor="let item of respondentCreditChargeCards; let i=index; trackBy: index" class="group">
+        <button md-mini-fab mdTooltip="Remove item" [mdTooltipPosition]="'left'" (click)="removeItem(i, 'respondent')"><md-icon>remove</md-icon></button>
+        <div>
+            <span>
+              Type of card
+            </span>
+          <md-input-container>
+            <input mdInput type="text" [ngModel]="(item|async)?.respondentTypeOfCard" (ngModelChange)="item.update({respondentTypeOfCard: $event})"
+                   name="respondentTypeOfCard_{{i}}">
+          </md-input-container>
+        </div>
+        <div>
+            <span>
+              Your share of amount owing	$
+            </span>
+          <md-input-container>
+            <input mdInput type="number" [ngModel]="(item|async)?.respondentShareOfAmountWing" (ngModelChange)="item.update({respondentShareOfAmountWing: $event})"
+                   name="respondentShareOfAmountWing_{{i}}">
+          </md-input-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

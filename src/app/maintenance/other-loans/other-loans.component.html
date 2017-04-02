@@ -1,0 +1,77 @@
+<div id="53">
+  <span>53. Amounts owing on any other loans</span>
+  <div fxLayout="row" fxLayoutAlign="space-between">
+    <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <h3>APPLICANT</h3>
+        <button md-mini-fab mdTooltip="Add item" [mdTooltipPosition]="'left'" (click)="addItem('applicant')"><md-icon>add</md-icon></button>
+      </div>
+      <div *ngFor="let item of applicantOtherLoans; let i=index; trackBy: index" class="group">
+        <button md-mini-fab mdTooltip="Remove item" [mdTooltipPosition]="'left'" (click)="removeItem(i, 'applicant')"><md-icon>remove</md-icon></button>
+        <div>
+            <span>
+              Give details
+            </span>
+          <md-input-container>
+            <input mdInput type="text" [ngModel]="(item|async)?.applicantLoanDetail" (ngModelChange)="item.update({applicantLoanDetail: $event})"
+                   name="applicantLoanDetail_{{i}}">
+          </md-input-container>
+        </div>
+        <div>
+            <span>
+              Name of lender/s
+            </span>
+          <md-input-container>
+            <input mdInput type="text" [ngModel]="(item|async)?.applicantLenderName" (ngModelChange)="item.update({applicantLenderName: $event})"
+                   name="applicantLenderName_{{i}}">
+          </md-input-container>
+        </div>
+        <div>
+            <span>
+              Your share of amount owing	$
+            </span>
+          <md-input-container>
+            <input mdInput type="number" [ngModel]="(item|async)?.applicantLoanShare" (ngModelChange)="item.update({applicantLoanShare: $event})"
+                   name="applicantLoanShare_{{i}}">
+          </md-input-container>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <h3>RESPONDENT</h3>
+        <button md-mini-fab mdTooltip="Add item" [mdTooltipPosition]="'left'" (click)="addItem('respondent')"><md-icon>add</md-icon></button>
+      </div>
+      <div *ngFor="let item of respondentOtherLoans; let i=index; trackBy: index" class="group">
+        <button md-mini-fab mdTooltip="Remove item" [mdTooltipPosition]="'left'" (click)="removeItem(i, 'respondent')"><md-icon>remove</md-icon></button>
+        <div>
+            <span>
+              Give details
+            </span>
+          <md-input-container>
+            <input mdInput type="text" [ngModel]="(item|async)?.respondentLoanDetail" (ngModelChange)="item.update({respondentLoanDetail: $event})"
+                   name="respondentLoanDetail_{{i}}">
+          </md-input-container>
+        </div>
+        <div>
+            <span>
+              Name of lender/s
+            </span>
+          <md-input-container>
+            <input mdInput type="text" [ngModel]="(item|async)?.respondentLenderName" (ngModelChange)="item.update({respondentLenderName: $event})"
+                   name="respondentLenderName_{{i}}">
+          </md-input-container>
+        </div>
+        <div>
+            <span>
+              Your share of amount owing	$
+            </span>
+          <md-input-container>
+            <input mdInput type="number" [ngModel]="(item|async)?.respondentLoanShare" (ngModelChange)="item.update({respondentLoanShare: $event})"
+                   name="respondentLoanShare_{{i}}">
+          </md-input-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
