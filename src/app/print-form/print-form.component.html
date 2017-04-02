@@ -90,20 +90,20 @@
 
           <div class="input-group">
             <label>What is your family name as used now?</label>
-            <div class="fake-input">{{appData.applicant.familyName}}</div>
+            <div class="fake-input">{{appData.parties.applicantFamilyName}}</div>
           </div>
 
           <div class="input-group">
             <label>Given names?</label>
-            <div class="fake-input">{{appData.applicant.givenNames}}</div>
+            <div class="fake-input">{{appData.parties.applicantGivenNames}}</div>
           </div>
 
           <div class="input-group-checkboxes">
             <div class="left-col">
-              <div class="checkbox">{{appData.applicant.gender === 'male' ? 'X' : ''}}</div> Male
+              <div class="checkbox">{{appData.parties.applicantSex === 'Male' ? 'X' : ''}}</div> Male
             </div>
             <div class="right-col">
-              <div class="checkbox">{{appData.applicant.gender === 'female' ? 'X' : ''}}</div> Female
+              <div class="checkbox">{{appData.parties.applicantSex === 'Female' ? 'X' : ''}}</div> Female
             </div>
           </div>
 
@@ -112,19 +112,19 @@
         <div class="right-col hgl-light-block">
           <div class="input-group">
             <label>What is your family name as used now?</label>
-            <div class="fake-input"></div>
+            <div class="fake-input">{{appData.parties.respondentFamilyName}}</div>
           </div>
           <div class="input-group">
             <label>Given names?</label>
-            <div class="fake-input"></div>
+            <div class="fake-input">{{appData.parties.respondentGivenNames}}</div>
           </div>
 
           <div class="input-group-checkboxes">
             <div class="left-col">
-              <div class="checkbox"></div> Male
+              <div class="checkbox">{{appData.parties.respondentSex === 'Male' ? 'X' : ''}}</div> Male
             </div>
             <div class="right-col">
-              <div class="checkbox"></div> Female
+              <div class="checkbox">{{appData.parties.respondentSex === 'Female' ? 'X' : ''}}</div> Female
             </div>
           </div>
         </div>
@@ -136,14 +136,14 @@
         <div class="left-col">
           <div class="input-group">
             <label>What is your usual occupation?</label>
-            <div class="fake-input">{{appData.applicant.occupation}}</div>
+            <div class="fake-input">{{appData.parties.applicantUsualAccupation}}</div>
           </div>
         </div>
 
         <div class="right-col hgl-light-block">
           <div class="input-group">
             <label>What is your usual occupation?</label>
-            <div class="fake-input"></div>
+            <div class="fake-input">{{appData.parties.respondentUsualAccupation}}</div>
           </div>
         </div>
       </div>
@@ -154,24 +154,24 @@
           <div class="input-group">
             <label>What is your contact address (address for service) in Australia? If you give a lawyer’s address, include the name of the law firm.</label>
             <div class="inputs-list">
-              <div class="fake-input"></div>
+              <div class="fake-input">{{appData.parties.applicantContactAddress}}</div>
               <div class="fake-input"></div>
               <div class="fake-input">
-                <div class="left-col">State {{appData.applicant.addressState}}</div>
-                <div class="right-col">Postcode {{appData.applicant.addressPostcode}}</div>
+                <div class="left-col">State {{appData.parties.applicantState}}</div>
+                <div class="right-col">Postcode {{appData.parties.applicantPostcode}}</div>
               </div>
               <div class="fake-input">
                 <div class="left-col">Phone {{appData.applicant.phone}}</div>
-                <div class="right-col"><span class="required">Fax {{appData.applicant.fax}}</span></div>
+                <div class="right-col"><span class="required">Fax {{appData.parties.applicantFax}}</span></div>
               </div>
               <div class="fake-input">
-                DX {{appData.applicant.dx}}
+                DX {{appData.parties.applicantDX}}
               </div>
               <div class="fake-input">
-                Lawyer's code {{appData.applicant.lawyerCode}}
+                Lawyer's code {{appData.parties.applicantLawyerCode}}
               </div>
               <div class="fake-input">
-                <span class="required">Email {{appData.applicant.email}}</span>
+                <span class="required">Email {{appData.parties.applicantEmail}}</span>
               </div>
             </div>
           </div>
@@ -182,24 +182,24 @@
           <div class="input-group">
             <label>What is your contact address (address for service) in Australia? If you give a lawyer’s address, include the name of the law firm.</label>
             <div class="inputs-list">
+              <div class="fake-input">{{appData.parties.respondentContactAddress}}</div>
               <div class="fake-input"></div>
-              <div class="fake-input"></div>
               <div class="fake-input">
-                <div class="left-col">State</div>
-                <div class="right-col">Postcode</div>
+                <div class="left-col">State {{appData.parties.respondentState}}</div>
+                <div class="right-col">Postcode {{appData.parties.respondentPostcode}}</div>
               </div>
               <div class="fake-input">
-                <div class="left-col">Phone</div>
-                <div class="right-col"><span class="required">Fax</span></div>
+                <div class="left-col">Phone {{appData.parties.respondentPhone}}</div>
+                <div class="right-col"><span class="required">Fax {{appData.parties.respondentFax}}</span></div>
               </div>
               <div class="fake-input">
-                DX
+                DX {{appData.parties.respondentDX}}
               </div>
               <div class="fake-input">
-                Lawyer's code
+                Lawyer's code {{appData.parties.respondentLawyerCode}}
               </div>
               <div class="fake-input">
-                <span class="required">Email</span>
+                <span class="required">Email {{appData.parties.respondentEmail}}</span>
               </div>
             </div>
           </div>
@@ -268,12 +268,12 @@
               </div>
 
               <div class="fake-input">
-                <input type="text" class="pos-abs l0 w10" value="{{appData.applicant.birthday}}">
+                <input type="text" class="pos-abs l0 w10" value="{{appData.parties.applicantBornDate}}">
                 <div class="format-delimiter l10">/</div>
                 <input type="text" class="pos-abs w15 l10">
                 <div class="format-delimiter l25">/</div>
                 <input type="text" class="pos-abs w15 l25">
-                <input type="text" class="pos-abs w30 l70" value="{{appData.applicant.birthCountry}}">
+                <input type="text" class="pos-abs w30 l70" value="{{appData.parties.applicantCountry}}">
               </div>
             </div>
           </div>
@@ -291,12 +291,12 @@
               </div>
 
               <div class="fake-input">
-                <input type="text" class="pos-abs l0 w10">
+                <input type="text" class="pos-abs l0 w10"  value="{{appData.parties.respondentBornDate}}">
                 <div class="format-delimiter l10">/</div>
                 <input type="text" class="pos-abs w15 l10">
                 <div class="format-delimiter l25">/</div>
                 <input type="text" class="pos-abs w15 l25">
-                <input type="text" class="pos-abs w30 l70">
+                <input type="text" class="pos-abs w30 l70" value="{{appData.parties.respondentCountry}}">
               </div>
             </div>
           </div>
@@ -309,38 +309,38 @@
           <div class="left-col">
             Are you of Aboriginal and/or of Torres Strait Islander origin? <span class="bold fs18">#</span>
             <div class="input-group">
-              <i class="checkbox"></i> <b>No</b>
+              <i class="checkbox">{{appData.parties.applicantOrigin === 'No' ? 'X' : ''}}</i> <b>No</b>
             </div>
 
             <div class="input-group">
-              <i class="checkbox"></i> <b>Yes</b> &nbsp; Aboriginal
+              <i class="checkbox">{{appData.parties.applicantOrigin === 'Aboriginal' ? 'X' : ''}}</i> <b>Yes</b> &nbsp; Aboriginal
             </div>
 
             <div class="input-group">
-              <i class="checkbox"></i> <b>Yes</b> &nbsp; Torres Strait Islander
+              <i class="checkbox">{{appData.parties.applicantOrigin === 'Torres Strait Islander' ? 'X' : ''}}</i> <b>Yes</b> &nbsp; Torres Strait Islander
             </div>
 
             <div class="input-group">
-              <i class="checkbox"></i> <b>Yes</b> &nbsp; Aboriginal and Torres Strait Islander
+              <i class="checkbox">{{appData.parties.applicantOrigin === 'Aboriginal and Torres Strait Islander' ? 'X' : ''}}</i> <b>Yes</b> &nbsp; Aboriginal and Torres Strait Islander
             </div>
           </div>
 
           <div class="right-col hgl-light-block">
             Are you of Aboriginal and/or of Torres Strait Islander origin?
             <div class="input-group">
-              <i class="checkbox"></i> <b>No</b>
+              <i class="checkbox">{{appData.parties.respondentOrigin === 'No' ? 'X' : ''}}</i> <b>No</b>
             </div>
 
             <div class="input-group">
-              <i class="checkbox"></i> <b>Yes</b> &nbsp; Aboriginal
+              <i class="checkbox">{{appData.parties.respondentOrigin === 'Aboriginal' ? 'X' : ''}}</i> <b>Yes</b> &nbsp; Aboriginal
             </div>
 
             <div class="input-group">
-              <i class="checkbox"></i> <b>Yes</b> &nbsp; Torres Strait Islander
+              <i class="checkbox">{{appData.parties.respondentOrigin === 'Torres Strait Islander' ? 'X' : ''}}</i> <b>Yes</b> &nbsp; Torres Strait Islander
             </div>
 
             <div class="input-group">
-              <i class="checkbox"></i> <b>Yes</b> &nbsp; Aboriginal and Torres Strait Islander
+              <i class="checkbox">{{appData.parties.respondentOrigin === 'Aboriginal and Torres Strait Islander' ? 'X' : ''}}</i> <b>Yes</b> &nbsp; Aboriginal and Torres Strait Islander
             </div>
           </div>
 
