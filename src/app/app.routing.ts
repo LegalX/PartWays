@@ -9,7 +9,6 @@ import { ChildrenComponent } from './children/children.component';
 import { ChildrenResolver } from './children/children.resolver.service';
 import { CourtCasesComponent } from './court-cases/court-cases.component';
 import { DefactoComponent } from './defacto/defacto.component';
-import { DefactoResolver } from './defacto/defacto.resolver.service';
 import { GenerateConsentOrdersComponent } from './generate-consent-orders/generate-consent-orders.component';
 import { ConsentOrdersResolver } from './generate-consent-orders/generate-consent-orders.resolver.service';
 import { HomeComponent } from './home/home';
@@ -35,13 +34,11 @@ import { PageNotFoundComponent } from './page.not.found';
 import { ParentingComponent } from './parenting/parenting.component';
 import { ParentingResolver } from './parenting/parenting.resolver.service';
 import { PartyComponent } from './party/party.component';
-import { PartiesResolver } from './party/party.resolver.service';
 import { PrintFormComponent } from './print-form/print-form.component';
 import { PrintFormResolver } from './print-form/print-form.resolver.service';
 import { PropertyComponent } from './property/property.component';
 import { PropertyResolver } from './property/property.resolver.service';
 import { RelationshipComponent } from './relationship/relationship.component';
-import { RelationshipResolver } from './relationship/relationship.resolver.service';
 import { StatementOfTruthComponent } from './statement-of-truth/statement-of-truth.component';
 import { StatementOfTruthResolver } from './statement-of-truth/statement-of-truth.resolver.service';
 
@@ -58,9 +55,6 @@ const appRoutes: Routes = [
         component: PartyComponent,
         canActivate: [AuthGuard],
         data: { title: 'Parties' },
-        resolve: {
-            parties: PartiesResolver,
-        },
     }, {
         path: 'Application',
         component: ApplicationComponent,
@@ -89,10 +83,7 @@ const appRoutes: Routes = [
         path: 'Relationship',
         component: RelationshipComponent,
         canActivate: [AuthGuard],
-        data: { title: 'Relationship' },
-        resolve: {
-            relationship: RelationshipResolver,
-        },
+        data: { title: 'Relationship' }
     }, {
         path: 'CourtCases',
         component: CourtCasesComponent,
@@ -139,10 +130,7 @@ const appRoutes: Routes = [
         path: 'Defacto',
         component: DefactoComponent,
         canActivate: [AuthGuard],
-        data: { title: 'Defacto' },
-        resolve: {
-            relationship: DefactoResolver,
-        },
+        data: { title: 'Defacto' }
     }, {
         path: 'Property',
         component: PropertyComponent,

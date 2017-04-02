@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DefactoComponent } from './defacto.component';
+import { PartyComponent } from './party.component';
 
-describe('DefactoComponent', () => {
-  let component: DefactoComponent;
-  let fixture: ComponentFixture<DefactoComponent>;
+describe('PartyComponent', () => {
+  let component: PartyComponent;
+  let fixture: ComponentFixture<PartyComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DefactoComponent ]
+      declarations: [ PartyComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DefactoComponent);
+    fixture = TestBed.createComponent(PartyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
