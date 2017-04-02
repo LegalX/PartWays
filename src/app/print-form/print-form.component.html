@@ -574,11 +574,11 @@
           </div>
 
           <div class="input-group">
-            Court name and place {{appData.courtCases.ongoingNameAndPlace}}
-            <span class="pos-abs l75">Next Court date {{appData.courtCases.ongoingNextCourtDate}}</span>
+            Court name and place
+            <span class="pos-abs l75">Next Court date</span>
             <div class="fake-input">
-              <input type="text" class="l0 w70">
-              <input type="text" class=" l70 w10">
+              <input type="text" class="l0 w70" value="{{appData.courtCases.ongoingNameAndPlace}}">
+              <input type="text" class=" l70 w10" value="{{appData.courtCases.ongoingNextCourtDate}}">
               <div class="format-delimiter l80">/</div>
               <input type="text" class=" l80 w10">
               <div class="format-delimiter l90">/</div>
@@ -637,7 +637,7 @@
             </div>
 
             <div class="fl-left w35">
-              <div class="checkbox">{{appData.courtCases.attachedUndertaking === true ? 'X' : ''}}</div> undertaking
+              <div class="checkbox">{{appData.courtCases.attachedUndertalking === true ? 'X' : ''}}</div> undertaking
             </div>
 
 
@@ -668,8 +668,8 @@
             Court name and place
             <span class="pos-abs l75">Next Court date</span>
             <div class="fake-input">
-              <input type="text" class="l0 w70">{{ appData.courtCases.existingNameAndPlace  }}
-              <input type="text" class=" l70 w10">{{ appData.courtCases.existingDatE }}
+              <input type="text" class="l0 w70" value="{{ appData.courtCases.existingNameAndPlace  }}">
+              <input type="text" class=" l70 w10" value="{{ appData.courtCases.existingDate }}">
               <div class="format-delimiter l80">/</div>
               <input type="text" class=" l80 w10">
               <div class="format-delimiter l90">/</div>
@@ -683,7 +683,7 @@
           <div class="input-group pl65 mb10">
             Names of the parties to the order/agreement/parenting plan/undertaking
             <div class="inputs-list">
-              <div class="fake-input">{{appData.courtCases.existingNameAndPlace }}</div>
+              <div class="fake-input">{{appData.courtCases.namesOfPartiesToOrder }}</div>
               <div class="fake-input"></div>
               <div class="fake-input"></div>
             </div>
@@ -731,7 +731,7 @@
           <div class="input-group pl60">
             Details of the order/agreement/parenting plan/undertaking
             <div class="inputs-list mb10">
-              <div class="fake-input">1.</div>
+              <div class="fake-input">1. {{appData.courtCases.detailsOfTheOrder}}</div>
               <div class="fake-input"></div>
               <div class="fake-input"></div>
               <div class="fake-input"></div>
