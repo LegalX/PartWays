@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 import 'rxjs/add/operator/switchMap';
 
@@ -9,19 +8,13 @@ import 'rxjs/add/operator/switchMap';
   styleUrls: ['./relationship.component.css'],
 })
 export class RelationshipComponent implements OnInit {
-  dbRef: FirebaseObjectObservable<any>;
+  item: FirebaseObjectObservable<any>;
   relationship: any;
   isReadOnly = false;
 
-  constructor(private route: ActivatedRoute, private af: AngularFire) { }
+  constructor(private af: AngularFire) { }
 
   ngOnInit() {
-    this.relationship = this.route.snapshot.data['relationship'];
-    this.dbRef = this.af.database.object(`/relationship/dev-data`);
+    this.item = this.af.database.object(`/application/${localStorage.getItem('applicationId')}/relationship`);
   }
-
-  onSubmit() {
-    this.dbRef.set(this.relationship);
-  }
-
 }
