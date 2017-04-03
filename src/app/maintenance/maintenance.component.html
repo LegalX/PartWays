@@ -680,5 +680,500 @@
         </div>
       </div>
     </div>
+    <div id="64">
+      <span>64. For each interest, whether or not a splitting order is sought, advise if the interest is subject to an earlier payment split.</span>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxFlex="48">
+          <div class="group">
+            <div>
+              <md-radio-group [ngModel]="(item|async)?.applicantInterestIsSubject" name="applicantInterestIsSubject" [ngModelOptions]="{standalone: true}"
+                              (ngModelChange)="item.update({applicantInterestIsSubject: $event})">
+                <md-radio-button [value]="false" fxLayout="row">
+                  No //GO TO ITEM 65
+                </md-radio-button>
+                <md-radio-button [value]="true" fxLayout="row">
+                  Yes
+                </md-radio-button>
+              </md-radio-group>
+            </div>
+            <div>
+              <span>Are there any further payments to be made?</span>
+              <md-radio-group [ngModel]="(item|async)?.applicantFurtherPaiments" name="applicantFurtherPaiments" [ngModelOptions]="{standalone: true}"
+                              (ngModelChange)="item.update({applicantFurtherPaiments: $event})">
+                <md-radio-button [value]="false" fxLayout="row">
+                  No //GO TO ITEM 65
+                </md-radio-button>
+                <md-radio-button [value]="true" fxLayout="row">
+                  Yes //Provide the following details:
+                </md-radio-button>
+              </md-radio-group>
+            </div>
+            <div class="additional_details" *ngIf="(item|async)?.applicantFurtherPaiments">
+              <span>a) The operative time for the split</span>
+              <div>
+                <md-input-container>
+                  <input mdInput type="number" [ngModel]="(item|async)?.applicantTimeForSplit" (ngModelChange)="item.update({applicantTimeForSplit: $event})"
+                         name="applicantTimeForSplit">
+                </md-input-container>
+              </div>
+              <span>b) The amount of any future payments in respect of a base amount split in the payment phase <strong>(where applicable)</strong></span>
+              <div>
+                <span>$</span>
+                <md-input-container>
+                  <input mdInput type="number" [ngModel]="(item|async)?.applicantAmountOfFuturePayments" (ngModelChange)="item.update({applicantAmountOfFuturePayments: $event})"
+                         name="applicantAmountOfFuturePayments">
+                </md-input-container>
+              </div>
+              <span>c) The adjusted base amount where the interest is in the growth phase <strong>(where applicable)</strong></span>
+              <div>
+                <span>$</span>
+                <md-input-container>
+                  <input mdInput type="number" [ngModel]="(item|async)?.applicantAdjustedBaseAmount" (ngModelChange)="item.update({applicantAdjustedBaseAmount: $event})"
+                         name="applicantAdjustedBaseAmount">
+                </md-input-container>
+              </div>
+              <span>c) d)	 The specified percentage in the case of a percentage split <strong>(where applicable)</strong></span>
+              <div>
+                <span>$</span>
+                <md-input-container>
+                  <input mdInput type="number" [ngModel]="(item|async)?.applicantPercentageSplit" (ngModelChange)="item.update({applicantPercentageSplit: $event})"
+                         name="applicantPercentageSplit">
+                </md-input-container>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="column" fxFlex="48">
+          <div class="group">
+            <div>
+              <md-radio-group [ngModel]="(item|async)?.respondentInterestIsSubject" name="respondentInterestIsSubject" [ngModelOptions]="{standalone: true}"
+                              (ngModelChange)="item.update({respondentInterestIsSubject: $event})">
+                <md-radio-button [value]="false" fxLayout="row">
+                  No //GO TO ITEM 65
+                </md-radio-button>
+                <md-radio-button [value]="true" fxLayout="row">
+                  Yes
+                </md-radio-button>
+              </md-radio-group>
+            </div>
+            <div>
+              <span>Are there any further payments to be made?</span>
+              <md-radio-group [ngModel]="(item|async)?.respondentFurtherPaiments" name="respondentFurtherPaiments" [ngModelOptions]="{standalone: true}"
+                              (ngModelChange)="item.update({respondentFurtherPaiments: $event})">
+                <md-radio-button [value]="false" fxLayout="row">
+                  No //GO TO ITEM 65
+                </md-radio-button>
+                <md-radio-button [value]="true" fxLayout="row">
+                  Yes //Provide the following details:
+                </md-radio-button>
+              </md-radio-group>
+            </div>
+            <div class="additional_details" *ngIf="(item|async)?.respondentFurtherPaiments">
+              <span>a) The operative time for the split</span>
+              <div>
+                <md-input-container>
+                  <input mdInput type="number" [ngModel]="(item|async)?.respondentTimeForSplit" (ngModelChange)="item.update({respondentTimeForSplit: $event})"
+                         name="respondentTimeForSplit">
+                </md-input-container>
+              </div>
+              <span>b) The amount of any future payments in respect of a base amount split in the payment phase <strong>(where applicable)</strong></span>
+              <div>
+                <span>$</span>
+                <md-input-container>
+                  <input mdInput type="number" [ngModel]="(item|async)?.respondentAmountOfFuturePayments" (ngModelChange)="item.update({respondentAmountOfFuturePayments: $event})"
+                         name="respondentAmountOfFuturePayments">
+                </md-input-container>
+              </div>
+              <span>c) The adjusted base amount where the interest is in the growth phase <strong>(where applicable)</strong></span>
+              <div>
+                <span>$</span>
+                <md-input-container>
+                  <input mdInput type="number" [ngModel]="(item|async)?.respondentAdjustedBaseAmount" (ngModelChange)="item.update({respondentAdjustedBaseAmount: $event})"
+                         name="respondentAdjustedBaseAmount">
+                </md-input-container>
+              </div>
+              <span>c) d)	 The specified percentage in the case of a percentage split <strong>(where applicable)</strong></span>
+              <div>
+                <span>$</span>
+                <md-input-container>
+                  <input mdInput type="number" [ngModel]="(item|async)?.respondentPercentageSplit" (ngModelChange)="item.update({respondentPercentageSplit: $event})"
+                         name="respondentPercentageSplit">
+                </md-input-container>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="65">
+      <span>65. For each interest, whether or not a splitting order is sought:</span>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxFlex="48">
+          <div class="group">
+            <span>a) If the interest is a defined benefit interest in the growth phase (not being an interest in a constitutionally protected fund), state the amount of any surcharge debt in the most recent member statement</span>
+            <div>
+              <span>$</span>
+              <div>
+                <md-input-container>
+                  <input mdInput type="number" [ngModel]="(item|async)?.applicantAmountOfAnySurchargeDebt" (ngModelChange)="item.update({applicantAmountOfAnySurchargeDebt: $event})"
+                         name="applicantAmountOfAnySurchargeDebt">
+                </md-input-container>
+              </div>
+            </div>
+            <span>b)	 If the interest is in a constitutionally protected fund, state the amount of any surcharge in the surcharge debt account</span>
+            <div>
+              <span>$</span>
+              <div>
+                <md-input-container>
+                  <input mdInput type="number" [ngModel]="(item|async)?.applicantAmountOfAnySurchargeInSurcharge" (ngModelChange)="item.update({applicantAmountOfAnySurchargeInSurcharge: $event})"
+                         name="applicantAmountOfAnySurchargeInSurcharge">
+                </md-input-container>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="column" fxFlex="48">
+          <div class="group">
+            <span>a) If the interest is a defined benefit interest in the growth phase (not being an interest in a constitutionally protected fund), state the amount of any surcharge debt in the most recent member statement</span>
+            <div>
+              <span>$</span>
+              <div>
+                <md-input-container>
+                  <input mdInput type="number" [ngModel]="(item|async)?.respondentAmountOfAnySurchargeDebt" (ngModelChange)="item.update({respondentAmountOfAnySurchargeDebt: $event})"
+                         name="respondentAmountOfAnySurchargeDebt">
+                </md-input-container>
+              </div>
+            </div>
+            <span>b)	 If the interest is in a constitutionally protected fund, state the amount of any surcharge in the surcharge debt account</span>
+            <div>
+              <span>$</span>
+              <div>
+                <md-input-container>
+                  <input mdInput type="number" [ngModel]="(item|async)?.respondentAmountOfAnySurchargeInSurcharge" (ngModelChange)="item.update({respondentAmountOfAnySurchargeInSurcharge: $event})"
+                         name="respondentAmountOfAnySurchargeInSurcharge">
+                </md-input-container>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3>FINANCIAL RESOURCES</h3>
+    <div id="66">
+      <span>66. Interest in any trust or any other financial resources (for example, do you have an expectation of receiving money from a personal injury claim or court case or property from a deceased estate?)</span>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxFlex="48">
+          <div class="group">
+            <span>GIVE DETAILS</span>
+            <div>
+              <div fxLayout="row">
+                <md-input-container fxFlex="100">
+                <textarea mdInput [ngModel]="(item|async)?.applicantFinancialResourcesTextDetails" (ngModelChange)="item.update({applicantFinancialResourcesTextDetails: $event})"
+                          name="applicantFinancialResourcesTextDetails"></textarea>
+                </md-input-container>
+              </div>
+            </div>
+            <div>
+              <div>
+                <span>$</span>
+                <md-input-container>
+                  <input mdInput type="number" [ngModel]="(item|async)?.applicantFinancialResourcesNumDetails" (ngModelChange)="item.update({applicantFinancialResourcesNumDetails: $event})"
+                         name="applicantFinancialResourcesNumDetails">
+                </md-input-container>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+          <div class="group">
+            <span>GIVE DETAILS</span>
+            <div>
+              <div fxLayout="row">
+                <md-input-container fxFlex="100">
+                <textarea mdInput [ngModel]="(item|async)?.respondentFinancialResourcesTextDetails" (ngModelChange)="item.update({respondentFinancialResourcesTextDetails: $event})"
+                          name="respondentFinancialResourcesTextDetails"></textarea>
+                </md-input-container>
+              </div>
+            </div>
+            <div>
+              <div>
+                <span>$</span>
+                <md-input-container>
+                  <input mdInput type="number" [ngModel]="(item|async)?.respondentFinancialResourcesNumDetails" (ngModelChange)="item.update({respondentFinancialResourcesNumDetails: $event})"
+                         name="respondentFinancialResourcesNumDetails">
+                </md-input-container>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3>PROPOSED DIVISION OF PROPERTY</h3>
+    <div id="67">
+      <span>67. Proposed percentage division of the property (including superannuation)</span>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxFlex="48">
+          <h3 fxLayoutAlign="center center">APPLICANT</h3>
+          <div class="group">
+            <span>GIVE DETAILS</span>
+            <div>
+              <div>
+                <span>Applicant</span>
+                <md-input-container>
+                  <input mdInput type="number" placeholder="%" [ngModel]="(item|async)?.applicantPercentageDivision" (ngModelChange)="item.update({applicantPercentageDivision: $event})"
+                         name="applicantPercentageDivision">
+                </md-input-container>
+              </div>
+            </div>
+            <div>
+              <div>
+                <span>Respondent</span>
+                <md-input-container>
+                  <input mdInput type="number" placeholder="%" [ngModel]="(item|async)?.respondentPercentageDivision" (ngModelChange)="item.update({respondentPercentageDivision: $event})"
+                         name="respondentPercentageDivision">
+                </md-input-container>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+          <h3 fxLayoutAlign="center center">RESPONDENT</h3>
+          <div class="group">
+            <div>
+              <md-radio-group [ngModel]="(item|async)?.applicantDivisionAgreed" name="applicantDivisionAgreed" [ngModelOptions]="{standalone: true}"
+                              (ngModelChange)="item.update({applicantDivisionAgreed: $event})">
+                <md-radio-button [value]="true" fxLayout="column">
+                  Agree
+                </md-radio-button>
+                <md-radio-button [value]="false" fxLayout="column">
+                  Disagree //GO TO ITEM 65
+                </md-radio-button>
+              </md-radio-group>
+            </div>
+            <div class="additional_details" *ngIf="(item|async)?.applicantDivisionAgreed">
+              <span>GIVE BRIEF REASONS WHY YOU DISAGREE AND SPECIFY YOUR ESTIMATE OF THE PROPOSED DIVISION</span>
+              <div fxLayout="row">
+                <md-input-container fxFlex="100">
+                <textarea mdInput [ngModel]="(item|async)?.respondentBriefReasonDivision" (ngModelChange)="item.update({respondentBriefReasonDivision: $event})"
+                          name="respondentBriefReasonDivision"></textarea>
+                </md-input-container>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="68">
+      <span>68. Were the financial contributions of the parties the same? (see s79(4)(a) or if a de facto relationship s90SM(4)(a) of the Family Law Act)</span>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxFlex="48">
+          <div class="group">
+            <div>
+              <md-radio-group [ngModel]="(item|async)?.applicantSameFinContributions" name="applicantSameFinContributions" [ngModelOptions]="{standalone: true}"
+                              (ngModelChange)="item.update({applicantSameFinContributions: $event})">
+                <md-radio-button [value]="true" fxLayout="column">
+                  Yes //GO TO ITEM 69
+                </md-radio-button>
+                <md-radio-button [value]="false" fxLayout="column">
+                  No
+                </md-radio-button>
+              </md-radio-group>
+            </div>
+            <div class="additional_details" *ngIf="(item|async)?.applicantSameFinContributions == false">
+              <span>GIVE BRIEF DETAILS OF WHO MADE THE GREATER CONTRIBUTION</span>
+              <div fxLayout="row">
+                <md-input-container fxFlex="100">
+                <textarea mdInput [ngModel]="(item|async)?.applicantDetailsWhoMadeGreatherContrib" (ngModelChange)="item.update({applicantDetailsWhoMadeGreatherContrib: $event})"
+                          name="respondentBriefReasonDivision"></textarea>
+                </md-input-container>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+          <div class="group">
+            <div>
+              <md-radio-group [ngModel]="(item|async)?.respondentSameFinContributions" name="respondentSameFinContributions" [ngModelOptions]="{standalone: true}"
+                              (ngModelChange)="item.update({respondentSameFinContributions: $event})">
+                <md-radio-button [value]="true" fxLayout="column">
+                  Agree
+                </md-radio-button>
+                <md-radio-button [value]="false" fxLayout="column">
+                  Disagree
+                </md-radio-button>
+              </md-radio-group>
+            </div>
+            <div class="additional_details" *ngIf="(item|async)?.respondentSameFinContributions == false">
+              <span>GIVE BRIEF REASONS WHY YOU DISAGREE</span>
+              <div fxLayout="row">
+                <md-input-container fxFlex="100">
+                <textarea mdInput [ngModel]="(item|async)?.respondentDetailsWhoMadeGreatherContrib" (ngModelChange)="item.update({respondentDetailsWhoMadeGreatherContrib: $event})"
+                          name="respondentDetailsWhoMadeGreatherContrib"></textarea>
+                </md-input-container>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="69">
+      <span>69. Were the non-financial contributions from each of the parties the same? (see s79(4)(b) or if a de facto relationship s90SM(4)(b) of the Family Law Act)</span>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxFlex="48">
+          <div class="group">
+            <div>
+              <md-radio-group [ngModel]="(item|async)?.applicantNonFinancialContributions" name="applicantNonFinancialContributions" [ngModelOptions]="{standalone: true}"
+                              (ngModelChange)="item.update({applicantNonFinancialContributions: $event})">
+                <md-radio-button [value]="true" fxLayout="column">
+                  Yes //GO TO ITEM 70
+                </md-radio-button>
+                <md-radio-button [value]="false" fxLayout="column">
+                  No
+                </md-radio-button>
+              </md-radio-group>
+            </div>
+            <div class="additional_details" *ngIf="(item|async)?.applicantNonFinancialContributions == false">
+              <span>GIVE BRIEF DETAILS OF WHO MADE THE GREATER CONTRIBUTION</span>
+              <div fxLayout="row">
+                <md-input-container fxFlex="100">
+                <textarea mdInput [ngModel]="(item|async)?.applicantNonFinancialContributionsDetails" (ngModelChange)="item.update({applicantNonFinancialContributionsDetails: $event})"
+                          name="applicantNonFinancialContributionsDetails"></textarea>
+                </md-input-container>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+          <div class="group">
+            <div>
+              <md-radio-group [ngModel]="(item|async)?.respondentNonFinancialContributions" name="respondentNonFinancialContributions" [ngModelOptions]="{standalone: true}"
+                              (ngModelChange)="item.update({respondentNonFinancialContributions: $event})">
+                <md-radio-button [value]="true" fxLayout="column">
+                  Agree //GO TO ITEM 70
+                </md-radio-button>
+                <md-radio-button [value]="false" fxLayout="column">
+                  Disagree
+                </md-radio-button>
+              </md-radio-group>
+            </div>
+            <div class="additional_details" *ngIf="(item|async)?.respondentNonFinancialContributions == false">
+              <span>GIVE BRIEF REASONS WHY YOU DISAGREE</span>
+              <div fxLayout="row">
+                <md-input-container fxFlex="100">
+                <textarea mdInput [ngModel]="(item|async)?.respondentNonFinancialContributionsDetails" (ngModelChange)="item.update({respondentNonFinancialContributionsDetails: $event})"
+                          name="respondentNonFinancialContributionsDetails"></textarea>
+                </md-input-container>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="70">
+      <span>70. Were the contributions from each of the parties as homemaker and parent the same? (see s79(4)(c) or if a de facto relationship s90SM(4)(c) of the Family Law Act)</span>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxFlex="48">
+          <div class="group">
+            <div>
+              <md-radio-group [ngModel]="(item|async)?.applicantHomemakerContributions" name="applicantHomemakerContributions" [ngModelOptions]="{standalone: true}"
+                              (ngModelChange)="item.update({applicantHomemakerContributions: $event})">
+                <md-radio-button [value]="true" fxLayout="column">
+                  Yes //GO TO ITEM 71
+                </md-radio-button>
+                <md-radio-button [value]="false" fxLayout="column">
+                  No
+                </md-radio-button>
+              </md-radio-group>
+            </div>
+            <div class="additional_details" *ngIf="(item|async)?.applicantHomemakerContributions == false">
+              <span>GIVE BRIEF DETAILS OF WHO MADE THE GREATER CONTRIBUTION</span>
+              <div fxLayout="row">
+                <md-input-container fxFlex="100">
+                <textarea mdInput [ngModel]="(item|async)?.applicantHomemakerContributionsDetails" (ngModelChange)="item.update({applicantHomemakerContributionsDetails: $event})"
+                          name="applicantHomemakerContributionsDetails"></textarea>
+                </md-input-container>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+          <div class="group">
+            <div>
+              <md-radio-group [ngModel]="(item|async)?.respondentHomemakerContributions" name="respondentHomemakerContributions" [ngModelOptions]="{standalone: true}"
+                              (ngModelChange)="item.update({respondentHomemakerContributions: $event})">
+                <md-radio-button [value]="true" fxLayout="column">
+                  Agree //GO TO ITEM 70
+                </md-radio-button>
+                <md-radio-button [value]="false" fxLayout="column">
+                  Disagree
+                </md-radio-button>
+              </md-radio-group>
+            </div>
+            <div class="additional_details" *ngIf="(item|async)?.respondentHomemakerContributions == false">
+              <span>GIVE BRIEF REASONS WHY YOU DISAGREE</span>
+              <div fxLayout="row">
+                <md-input-container fxFlex="100">
+                <textarea mdInput [ngModel]="(item|async)?.respondentHomemakerContributionsDetails" (ngModelChange)="item.update({respondentHomemakerContributionsDetails: $event})"
+                          name="respondentHomemakerContributionsDetails"></textarea>
+                </md-input-container>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="71">
+      <span>71. Are there any other relevant matters or facts in relation to the division of the property (eg. health, financial resources, income earning ability)? (see s75(2) or if a de facto relationship s90SF(3) of the Family Law Act)</span>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxFlex="48">
+          <div class="group">
+            <div>
+              <md-radio-group [ngModel]="(item|async)?.applicantOtherRelevantFacts" name="applicantOtherRelevantFacts" [ngModelOptions]="{standalone: true}"
+                              (ngModelChange)="item.update({applicantOtherRelevantFacts: $event})">
+                <md-radio-button [value]="false" fxLayout="column">
+                  No //GO TO ITEM 72
+                </md-radio-button>
+                <md-radio-button [value]="true" fxLayout="column">
+                  Yes
+                </md-radio-button>
+              </md-radio-group>
+            </div>
+            <div class="additional_details" *ngIf="(item|async)?.applicantOtherRelevantFacts">
+              <span>GIVE BRIEF DETAILS</span>
+              <div fxLayout="row">
+                <md-input-container fxFlex="100">
+                <textarea mdInput [ngModel]="(item|async)?.applicantOtherRelevantFactsDetails" (ngModelChange)="item.update({applicantOtherRelevantFactsDetails: $event})"
+                          name="applicantOtherRelevantFactsDetails"></textarea>
+                </md-input-container>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+          <div class="group">
+            <div>
+              <md-radio-group [ngModel]="(item|async)?.respondentOtherRelevantFacts" name="respondentOtherRelevantFacts" [ngModelOptions]="{standalone: true}"
+                              (ngModelChange)="item.update({respondentOtherRelevantFacts: $event})">
+                <md-radio-button [value]="true" fxLayout="column">
+                  Agree
+                </md-radio-button>
+                <md-radio-button [value]="false" fxLayout="column">
+                  Disagree
+                </md-radio-button>
+              </md-radio-group>
+            </div>
+            <div class="additional_details" *ngIf="(item|async)?.respondentOtherRelevantFacts == false">
+              <span>GIVE BRIEF REASONS WHY YOU DISAGREE</span>
+              <div fxLayout="row">
+                <md-input-container fxFlex="100">
+                <textarea mdInput [ngModel]="(item|async)?.respondentOtherRelevantFactsDetails" (ngModelChange)="item.update({respondentOtherRelevantFactsDetails: $event})"
+                          name="respondentOtherRelevantFactsDetails"></textarea>
+                </md-input-container>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </form>
 </div>
