@@ -41,6 +41,18 @@ import { PropertyResolver } from './property/property.resolver.service';
 import { RelationshipComponent } from './relationship/relationship.component';
 import { StatementOfTruthComponent } from './statement-of-truth/statement-of-truth.component';
 import { StatementOfTruthResolver } from './statement-of-truth/statement-of-truth.resolver.service';
+import { ApplicantOtherLoansResolver } from './maintenance/other-loans/applicant-other-loans.resolver.service';
+import { RespondentOtherLoansResolver } from './maintenance/other-loans/respondent-other-loans.resolver';
+import { ApplicantOtherLiabilitiesResolver } from './maintenance/other-liabilities/applicant-other-liabilities.resolver.service';
+import { RespondentOtherLiabilitiesResolver } from './maintenance/other-liabilities/respondent-other-liabilities.resolver.service';
+import { ApplicantHomeMortgageResolver } from './maintenance/home-mortgage/applicant-home-mortgage.resolver.service';
+import { RespondentHomeMortgageResolver } from './maintenance/home-mortgage/respondent-home-mortgage.resolver.service';
+import { ApplicantOtherMortgageResolver } from './maintenance/other-mortgage/applicant-other-mortgage.resolver.service';
+import { RespondentOtherMortgageResolver } from './maintenance/other-mortgage/respondent-other-mortgage.resolver.service';
+import { ApplicantHirePurchaseLeaseResolver } from './maintenance/hire-purchase-lease/applicant-hire-purchase-lease.resolver.service';
+import { RespondentHirePurchaseLeaseResolver } from './maintenance/hire-purchase-lease/respondent-hire-purchase-lease.resolver.service';
+import { ApplicantCreditChargeCardsResolver } from './maintenance/credit-charge-cards/applicant-credit-charge-cards.resolver.service';
+import { RespondentCreditChargeCardsResolver } from './maintenance/credit-charge-cards/respondent-credit-charge-cards.resolver.service';
 
 const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -125,6 +137,18 @@ const appRoutes: Routes = [
             respondentLifeInsurance: RespondentLifeInsuranceResolver,
             applicantOtherInterest: ApplicantOtherInterestResolver,
             respondentOtherInterest: RespondentOtherInterestResolver,
+            applicantOtherLoans: ApplicantOtherLoansResolver,
+            respondentOtherLoans: RespondentOtherLoansResolver,
+            applicantOtherLiabilities: ApplicantOtherLiabilitiesResolver,
+            respondentOtherLiabilities: RespondentOtherLiabilitiesResolver,
+            applicantHomeMortgage: ApplicantHomeMortgageResolver,
+            respondentHomeMortgage: RespondentHomeMortgageResolver,
+            applicantOtherMortgage: ApplicantOtherMortgageResolver,
+            respondentOtherMortgage: RespondentOtherMortgageResolver,
+            applicantHirePurchaseLease: ApplicantHirePurchaseLeaseResolver,
+            respondentHirePurchaseLease: RespondentHirePurchaseLeaseResolver,
+            applicantCreditChargeCards: ApplicantCreditChargeCardsResolver,
+            respondentCreditChargeCards: RespondentCreditChargeCardsResolver,
         },
     }, {
         path: 'Defacto',

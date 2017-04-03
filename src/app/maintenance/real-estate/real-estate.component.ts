@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { FirebaseObjectObservable } from 'angularfire2';
 import 'rxjs/add/operator/first';
 import { FirebaseArrayProcessingService } from '../../shared/firebaseArrayProcessing.service';

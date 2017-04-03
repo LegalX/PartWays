@@ -23,6 +23,18 @@ export class MaintenanceComponent implements OnInit {
   respondentLifeInsurance: Array<FirebaseObjectObservable<any>>;
   applicantOtherInterest: Array<FirebaseObjectObservable<any>>;
   respondentOtherInterest: Array<FirebaseObjectObservable<any>>;
+  applicantOtherLoans: Array<FirebaseObjectObservable<any>>;
+  respondentOtherLoans: Array<FirebaseObjectObservable<any>>;
+  applicantOtherLiabilities: Array<FirebaseObjectObservable<any>>;
+  respondentOtherLiabilities: Array<FirebaseObjectObservable<any>>;
+  applicantHomeMortgage: Array<FirebaseObjectObservable<any>>;
+  respondentHomeMortgage: Array<FirebaseObjectObservable<any>>;
+  applicantOtherMortgage: Array<FirebaseObjectObservable<any>>;
+  respondentOtherMortgage: Array<FirebaseObjectObservable<any>>;
+  applicantHirePurchaseLease: Array<FirebaseObjectObservable<any>>;
+  respondentHirePurchaseLease: Array<FirebaseObjectObservable<any>>;
+  applicantCreditChargeCards: Array<FirebaseObjectObservable<any>>;
+  respondentCreditChargeCards: Array<FirebaseObjectObservable<any>>;
 
   constructor(private route: ActivatedRoute, private af: AngularFire) { }
 
@@ -42,6 +54,18 @@ export class MaintenanceComponent implements OnInit {
     this.respondentLifeInsurance = this.route.snapshot.data['respondentLifeInsurance'];
     this.applicantOtherInterest = this.route.snapshot.data['applicantOtherInterest'];
     this.respondentOtherInterest = this.route.snapshot.data['respondentOtherInterest'];
+    this.applicantOtherLoans = this.route.snapshot.data['applicantOtherLoans'];
+    this.respondentOtherLoans = this.route.snapshot.data['respondentOtherLoans'];
+    this.applicantOtherLiabilities = this.route.snapshot.data['applicantOtherLiabilities'];
+    this.respondentOtherLiabilities = this.route.snapshot.data['respondentOtherLiabilities'];
+    this.applicantHomeMortgage = this.route.snapshot.data['applicantHomeMortgage'];
+    this.respondentHomeMortgage = this.route.snapshot.data['respondentHomeMortgage'];
+    this.applicantOtherMortgage = this.route.snapshot.data['applicantOtherMortgage'];
+    this.respondentOtherMortgage = this.route.snapshot.data['respondentOtherMortgage'];
+    this.applicantHirePurchaseLease = this.route.snapshot.data['applicantHirePurchaseLease'];
+    this.respondentHirePurchaseLease = this.route.snapshot.data['respondentHirePurchaseLease'];
+    this.applicantCreditChargeCards = this.route.snapshot.data['applicantCreditChargeCards'];
+    this.respondentCreditChargeCards = this.route.snapshot.data['respondentCreditChargeCards'];
   }
 
 }
