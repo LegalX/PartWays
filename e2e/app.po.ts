@@ -6,6 +6,6 @@ export class PartWaysPage {
   }
 
   getParagraphText() {
-    return element(by.buttonText('Part - Ways')).isPresent();
+    return element(by.buttonText('PartWays')).isPresent();
   }
 }
