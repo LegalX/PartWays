@@ -314,7 +314,11 @@
                           [ngModelOptions]="{standalone: true}"
                           (ngModelChange)="item.update({presumptionDoesNotApply: $event})">
             <label>
-              Is this a case where all parties accept that the presumption in Section 61DA(1) does not apply?
+              Is this a case where all parties accept that the presumption in 
+              <a href="http://www.austlii.edu.au/au/legis/cth/consol_act/fla1975114/s61da.html" target="_blank">
+                Section 61DA(1)
+              </a> 
+              does not apply?
             </label>
             <md-radio-button [value]="true"
                              fxLayout="row">
@@ -433,8 +437,11 @@
                       (ngModelChange)="item.update({servedWaiverNotice: $event})">
         <label>
           If either party has a superannuation interest, has the non-member spouse or former de facto partner
-          served a waiver notice on the Trustee of the eligible superannuation plan under section 90MZA of the
-          Act for a payment split made in relation to the superannuation interest?
+          served a waiver notice on the Trustee of the eligible superannuation plan under
+          <a href="http://www.austlii.edu.au/cgi-bin/sinodisp/au/legis/cth/consol_act/fla1975114/s90mza.html" target="_blank">
+            section 90MZA
+          </a>
+          of the Act for a payment split made in relation to the superannuation interest?
         </label>
         <md-radio-button [value]="false"
                          fxLayout="row">
@@ -508,8 +515,15 @@
                       [ngModelOptions]="{standalone: true}"
                       (ngModelChange)="item.update({partyOfTheCase: $event})">
         <label>
-          Is there any person who may be entitled to become a party to the case under Subsection 79(10) or
-          subsection 90SM(10) of the Act?
+          Is there any person who may be entitled to become a party to the case under
+          <a href="http://www.austlii.edu.au/cgi-bin/sinodisp/au/legis/cth/consol_act/fla1975114/s79.html" target="_blank">
+            Subsection 79(10)
+          </a>
+          or
+          <a href="http://www.austlii.edu.au/au/legis/cth/consol_act/fla1975114/s90sm.html" target="_blank">
+            subsection 90SM(10)
+          </a>
+          of the Act?
         </label>
         <md-radio-button [value]="false"
                          fxLayout="row">
