@@ -14,8 +14,11 @@
         <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
           <h3 fxLayoutAlign="center center">APPLICANT</h3>
           <div>
+            <span>
+              $
+            </span>
             <md-input-container>
-              <input mdInput type="text" [ngModel]="(item|async)?.applicantGrossWeeklyIncome" (ngModelChange)="item.update({applicantGrossWeeklyIncome: $event})"
+              <input mdInput type="number" [ngModel]="(item|async)?.applicantGrossWeeklyIncome" (ngModelChange)="item.update({applicantGrossWeeklyIncome: $event})"
                 name="applicantGrossWeeklyIncome">
             </md-input-container>
           </div>
@@ -24,10 +27,10 @@
           <h3 fxLayoutAlign="center center">RESPONDENT</h3>
           <div>
             <span>
-              Gross weekly income
+              $
             </span>
             <md-input-container>
-              <input mdInput type="text" [ngModel]="(item|async)?.respondentGrossWeeklyIncome" (ngModelChange)="item.update({respondentGrossWeeklyIncome: $event})"
+              <input mdInput type="number" [ngModel]="(item|async)?.respondentGrossWeeklyIncome" (ngModelChange)="item.update({respondentGrossWeeklyIncome: $event})"
                 name="respondentGrossWeeklyIncome">
             </md-input-container>
           </div>
