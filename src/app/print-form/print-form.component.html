@@ -1560,29 +1560,29 @@
           <div class="clear"></div>
           <div class="left-col">
             <div class="input-group">
-              <div class="checkbox mr5"></div> I am present in Australia
+              <div class="checkbox mr5">{{appData.parenting.applicantInAU === true ? 'X' : ''}}</div> I am present in Australia
             </div>
             <div class="input-group">
-              <div class="checkbox mr5"></div> I am ordinarily resident in Australia
+              <div class="checkbox mr5">{{appData.parenting.applicantOrdinaryResInAU === true ? 'X' : ''}}</div> I am ordinarily resident in Australia
             </div>
             <div class="input-group">
-              <div class="checkbox mr5"></div> I am an Australian citizen
+              <div class="checkbox mr5">{{appData.parenting.applicantCitizenAU === true ? 'X' : ''}}</div> I am an Australian citizen
             </div>
             <div class="input-group">
-              <div class="checkbox mr5 fl-left"></div> The child (or children) is present in Australia/ ordinarily resident in Australia/ is an Australian
+              <div class="checkbox mr5 fl-left">{{appData.parenting.applicantChildInAU === true ? 'X' : ''}}</div> The child (or children) is present in Australia/ ordinarily resident in Australia/ is an Australian
               citizen
             </div>
 
           </div>
           <div class="right-col hgl-light-block">
             <div class="input-group">
-              <div class="checkbox mr5"></div> Present in Australia
+              <div class="checkbox mr5">{{appData.parenting.respondentInAU === true ? 'X' : ''}}</div> Present in Australia
             </div>
             <div class="input-group">
-              <div class="checkbox mr5"></div> Ordinarily resident in Australia
+              <div class="checkbox mr5">{{appData.parenting.respondentOrdinaryResInAU === true ? 'X' : ''}}</div> Ordinarily resident in Australia
             </div>
             <div class="input-group">
-              <div class="checkbox mr5"></div> An Australian citizen
+              <div class="checkbox mr5">{{appData.parenting.respondenttCitizenAU === true ? 'X' : ''}}</div> An Australian citizen
             </div>
           </div>
 
