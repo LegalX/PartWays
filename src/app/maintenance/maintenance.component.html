@@ -712,7 +712,7 @@
               <span>a) The operative time for the split</span>
               <div>
                 <md-input-container>
-                  <input mdInput type="number" [ngModel]="(item|async)?.applicantTimeForSplit" (ngModelChange)="item.update({applicantTimeForSplit: $event})"
+                  <input mdInput type="text" [ngModel]="(item|async)?.applicantTimeForSplit" (ngModelChange)="item.update({applicantTimeForSplit: $event})"
                          name="applicantTimeForSplit">
                 </md-input-container>
               </div>
@@ -732,7 +732,7 @@
                          name="applicantAdjustedBaseAmount">
                 </md-input-container>
               </div>
-              <span>c) d)	 The specified percentage in the case of a percentage split <strong>(where applicable)</strong></span>
+              <span>d)	 The specified percentage in the case of a percentage split <strong>(where applicable)</strong></span>
               <div>
                 <span>$</span>
                 <md-input-container>
@@ -772,7 +772,7 @@
               <span>a) The operative time for the split</span>
               <div>
                 <md-input-container>
-                  <input mdInput type="number" [ngModel]="(item|async)?.respondentTimeForSplit" (ngModelChange)="item.update({respondentTimeForSplit: $event})"
+                  <input mdInput type="text" [ngModel]="(item|async)?.respondentTimeForSplit" (ngModelChange)="item.update({respondentTimeForSplit: $event})"
                          name="respondentTimeForSplit">
                 </md-input-container>
               </div>
@@ -792,7 +792,7 @@
                          name="respondentAdjustedBaseAmount">
                 </md-input-container>
               </div>
-              <span>c) d)	 The specified percentage in the case of a percentage split <strong>(where applicable)</strong></span>
+              <span> d)	 The specified percentage in the case of a percentage split <strong>(where applicable)</strong></span>
               <div>
                 <span>$</span>
                 <md-input-container>
