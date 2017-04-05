@@ -11,6 +11,8 @@
       Family Law Rules ~ <b>RULE 10.15</b>
     </div>
 
+    <pre> {{appData | json}} </pre>
+
     <div class="court-use-only hgl-block fl-right">
       <div class="title">court use only</div>
       <div class="body">
@@ -2074,10 +2076,10 @@
           <div class="mb5">Did your de facto relationship break down on or after 1 March 2009 or if resident in South Australia on or after
             1 July 2010?</div>
           <div class="input-group">
-            <div class="checkbox mr5"></div> <b class="mr10">No</b> <span class="hgl-details">IF NO, COMPLETE ITEMS 26 TO 28 AS REQUIRED</span>
+            <div class="checkbox mr5">{{appData.defacto.relationshipBreakDown === false ? 'X' : ''}}</div> <b class="mr10">No</b> <span class="hgl-details">IF NO, COMPLETE ITEMS 26 TO 28 AS REQUIRED</span>
           </div>
           <div class="input-group">
-            <div class="checkbox mr5"></div> <b class="mr10">Yes</b> <span class="hgl-details">IF YES, GO TO ITEM 29</span>
+            <div class="checkbox mr5">{{appData.defacto.relationshipBreakDown === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">IF YES, GO TO ITEM 29</span>
           </div>
         </div>
 
@@ -2091,11 +2093,11 @@
             <div class="bg-brown-light">
               <div class="bold uppercase fs15">Applicant</div>
               <div class="input-group">
-                <div class="checkbox mr5"></div> <b>No</b>
+                <div class="checkbox mr5">{{appData.defacto.applicantChooseForParts === false ? 'X' : ''}}</div> <b>No</b>
               </div>
               <div class="input-group">
                 <div class="fl-left mr10 pb20">
-                  <div class="checkbox mr5"></div> <b>Yes</b></div> <span class="hgl-details">ATTACH COPIES OF YOUR WRITTEN AND &nbsp; SIGNED CONSENT AND STATEMENT OF LEGAL ADVICE BY A &nbsp; LEGAL PRACTITIONER</span>
+                  <div class="checkbox mr5">{{appData.defacto.applicantChooseForParts === true ? 'X' : ''}}</div> <b>Yes</b></div> <span class="hgl-details">ATTACH COPIES OF YOUR WRITTEN AND &nbsp; SIGNED CONSENT AND STATEMENT OF LEGAL ADVICE BY A &nbsp; LEGAL PRACTITIONER</span>
               </div>
             </div>
           </div>
@@ -2104,11 +2106,11 @@
             <div class="bg-brown-light">
               <div class="bold uppercase fs15">Respondent</div>
               <div class="input-group">
-                <div class="checkbox mr5"></div> <b>No</b>
+                <div class="checkbox mr5">{{appData.defacto.respondentChooseForParts === false ? 'X' : ''}}</div> <b>No</b>
               </div>
               <div class="input-group">
                 <div class="fl-left mr10 pb20">
-                  <div class="checkbox mr5"></div> <b>Yes</b></div> <span class="hgl-details">ATTACH COPIES OF YOUR WRITTEN AND &nbsp; SIGNED CONSENT AND STATEMENT OF LEGAL ADVICE BY A &nbsp; LEGAL PRACTITIONER</span>
+                  <div class="checkbox mr5">{{appData.defacto.respondentChooseForParts === true ? 'X' : ''}}</div> <b>Yes</b></div> <span class="hgl-details">ATTACH COPIES OF YOUR WRITTEN AND &nbsp; SIGNED CONSENT AND STATEMENT OF LEGAL ADVICE BY A &nbsp; LEGAL PRACTITIONER</span>
               </div>
             </div>
           </div>
@@ -2122,10 +2124,10 @@
           <div class="mb5">Have the parties previously entered into a designated State/Territory financial agreement in relation to their
             de facto relationship?</div>
           <div class="input-group">
-            <div class="checkbox mr5"></div> <b class="mr5">No</b> <span class="hgl-details">IF NO, GO TO ITEM 29</span>
+            <div class="checkbox mr5">{{appData.defacto.enteredIntoDesignatedFA === false ? 'X' : ''}}</div> <b class="mr5">No</b> <span class="hgl-details">IF NO, GO TO ITEM 29</span>
           </div>
           <div class="input-group">
-            <div class="checkbox mr5"></div> <b class="mr5">Yes</b> <span class="hgl-details">IF YES, GO TO ITEM 28 AND PROVIDE A COPY OF THE AGREEMENT/S</span>
+            <div class="checkbox mr5">{{appData.defacto.enteredIntoDesignatedFA === true ? 'X' : ''}}</div> <b class="mr5">Yes</b> <span class="hgl-details">IF YES, GO TO ITEM 28 AND PROVIDE A COPY OF THE AGREEMENT/S</span>
           </div>
         </div>
 
@@ -2134,10 +2136,10 @@
           <div class="mb5">Has that agreement ceased to have effect without any property being distributed or any maintenance being paid under
             the agreement?</div>
           <div class="input-group">
-            <div class="checkbox mr5"></div> <b class="mr5">No</b>
+            <div class="checkbox mr5">{{appData.defacto.agreementCausedToHaveEffect === false ? 'X' : ''}}</div> <b class="mr5">No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox mr5"></div> <b class="mr5">Yes</b>
+            <div class="checkbox mr5">{{appData.defacto.agreementCausedToHaveEffect === true ? 'X' : ''}}</div> <b class="mr5">Yes</b>
           </div>
         </div>
 
@@ -2145,10 +2147,10 @@
           <i class="step-number">29</i>
           <div class="mb5">Is the period or the total of the periods of the de facto relationship at least 2 years?</div>
           <div class="input-group">
-            <div class="checkbox mr5"></div> <b class="mr5">No</b>
+            <div class="checkbox mr5">{{appData.defacto.totalPeriodDefactoRelationship === false ? 'X' : ''}}</div> <b class="mr5">No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox mr5"></div> <b class="mr5">Yes</b>
+            <div class="checkbox mr5">{{appData.defacto.totalPeriodDefactoRelationship === true ? 'X' : ''}}</div> <b class="mr5">Yes</b>
           </div>
         </div>
 
@@ -2156,10 +2158,10 @@
           <i class="step-number">30</i>
           <div class="mb5">Is there a child of the de facto relationship?</div>
           <div class="input-group">
-            <div class="checkbox mr5"></div> <b class="mr5">No</b>
+            <div class="checkbox mr5">{{appData.defacto.childOfTheDefactoRelationship === false ? 'X' : ''}}</div> <b class="mr5">No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox mr5"></div> <b class="mr5">Yes</b>
+            <div class="checkbox mr5">{{appData.defacto.childOfTheDefactoRelationship === true ? 'X' : ''}}</div> <b class="mr5">Yes</b>
           </div>
         </div>
 
@@ -2168,10 +2170,10 @@
           <div class="mb5">Has the applicant made substantial contributions of the kind mentioned in paragraph 90SM(4)(a), (b) or (c) and
             a failure to make an order or declaration would result in serious injustice to the applicant?</div>
           <div class="input-group">
-            <div class="checkbox mr5"></div> <b class="mr5">No</b>
+            <div class="checkbox mr5">{{appData.defacto.substantialContributionsAndFailure === false ? 'X' : ''}}</div> <b class="mr5">No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox mr5"></div> <b class="mr5">Yes</b>
+            <div class="checkbox mr5">{{appData.defacto.substantialContributionsAndFailure === true ? 'X' : ''}}</div> <b class="mr5">Yes</b>
           </div>
         </div>
 
@@ -2194,10 +2196,10 @@
           <i class="step-number">32</i>
           <div class="mb5">Is, or was, the relationship registered under a prescribed law of a State or Territory of Australia?</div>
           <div class="input-group">
-            <div class="checkbox mr5"></div> <b class="mr5">No</b>
+            <div class="checkbox mr5">{{appData.defacto.registeredUnderAPrescribedLaw === false ? 'X' : ''}}</div> <b class="mr5">No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox mr5"></div> <b class="mr5">Yes</b> <span class="hgl-details">YOU MUST FILE A COPY OF THE CERTIFICATE OF REGISTRATION OR OTHER PROOF</span>
+            <div class="checkbox mr5">{{appData.defacto.registeredUnderAPrescribedLaw === true ? 'X' : ''}}</div> <b class="mr5">Yes</b> <span class="hgl-details">YOU MUST FILE A COPY OF THE CERTIFICATE OF REGISTRATION OR OTHER PROOF</span>
           </div>
         </div>
 
@@ -2208,10 +2210,10 @@
             down?
           </div>
           <div class="input-group">
-            <div class="checkbox mr5"></div> <b class="mr5">No</b>
+            <div class="checkbox mr5">{{appData.defacto.wasInOneOrMoreATBroke === false ? 'X' : ''}}</div> <b class="mr5">No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox mr5"></div> <b class="mr5">Yes</b>
+            <div class="checkbox mr5">{{appData.defacto.wasInOneOrMoreATBroke === true ? 'X' : ''}}</div> <b class="mr5">Yes</b>
           </div>
         </div>
 
@@ -2221,10 +2223,10 @@
             Territories or New South Wales, Queensland, Victoria, Tasmania or South Australia at the time this application
             is made?</div>
           <div class="input-group">
-            <div class="checkbox mr5"></div> <b class="mr5">No</b>
+            <div class="checkbox mr5">{{appData.defacto.InOneOrMoreATMade === false ? 'X' : ''}}</div> <b class="mr5">No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox mr5"></div> <b class="mr5">Yes</b>
+            <div class="checkbox mr5">{{appData.defacto.InOneOrMoreATMade === true ? 'X' : ''}}</div> <b class="mr5">Yes</b>
           </div>
         </div>
 
@@ -2235,10 +2237,10 @@
             relationship?
           </div>
           <div class="input-group">
-            <div class="checkbox mr5"></div> <b class="mr5">No</b>
+            <div class="checkbox mr5">{{appData.defacto.InOneOrMoreATOneThird === false ? 'X' : ''}}</div> <b class="mr5">No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox mr5"></div> <b class="mr5">Yes</b>
+            <div class="checkbox mr5">{{appData.defacto.InOneOrMoreATOneThird === true ? 'X' : ''}}</div> <b class="mr5">Yes</b>
           </div>
         </div>
 
@@ -2248,10 +2250,10 @@
             to the de facto relationship in one or more of the Australian Territories or New South Wales, Queensland, Victoria,
             Tasmania or South Australia?</div>
           <div class="input-group">
-            <div class="checkbox mr5"></div> <b class="mr5">No</b>
+            <div class="checkbox mr5">{{appData.defacto.substantialContributionsInOneOrMoreAT === false ? 'X' : ''}}</div> <b class="mr5">No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox mr5"></div> <b class="mr5">Yes</b>
+            <div class="checkbox mr5">{{appData.defacto.substantialContributionsInOneOrMoreAT === true ? 'X' : ''}}</div> <b class="mr5">Yes</b>
           </div>
         </div>
       </div>
