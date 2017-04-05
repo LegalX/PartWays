@@ -13,6 +13,8 @@ import { ApplicationComponent } from './application/application.component';
 import { ApplicationResolver } from './application/application.resolver.service';
 import { AuthGuard } from './auth/auth-guard.service';
 import { LoginComponent } from './auth/login';
+import { ChatComponent } from './chat/chat.component';
+import { ChatService } from './chat/chat.service';
 import { ChildrenComponent } from './children/children.component';
 import { ChildrenResolver } from './children/children.resolver.service';
 import { CourtCasesComponent } from './court-cases/court-cases.component';
@@ -23,9 +25,18 @@ import { ConsentOrdersResolver } from './generate-consent-orders/generate-consen
 import { HomeComponent } from './home/home';
 import { LegalAdviceComponent } from './legal-advice/legal-advice.component';
 import { LegalAdviceResolver } from './legal-advice/legal-advice.resolver.service';
+import { ApplicantCreditChargeCardsResolver } from './maintenance/credit-charge-cards/applicant-credit-charge-cards.resolver.service';
+import { CreditChargeCardsComponent } from './maintenance/credit-charge-cards/credit-charge-cards.component';
+import { RespondentCreditChargeCardsResolver } from './maintenance/credit-charge-cards/respondent-credit-charge-cards.resolver.service';
 import { ApplicantFinancialInstitutionsResolver } from './maintenance/financial-institutions/applicant-financial-institutions.resolver.service';
 import { FinancialInstitutionsComponent } from './maintenance/financial-institutions/financial-institutions.component';
 import { RespondentFinancialInstitutionsResolver } from './maintenance/financial-institutions/respondent-financial-institutions.resolver.service';
+import { ApplicantHirePurchaseLeaseResolver } from './maintenance/hire-purchase-lease/applicant-hire-purchase-lease.resolver.service';
+import { HirePurchaseLeaseComponent } from './maintenance/hire-purchase-lease/hire-purchase-lease.component';
+import { RespondentHirePurchaseLeaseResolver } from './maintenance/hire-purchase-lease/respondent-hire-purchase-lease.resolver.service';
+import { ApplicantHomeMortgageResolver } from './maintenance/home-mortgage/applicant-home-mortgage.resolver.service';
+import { HomeMortgageComponent } from './maintenance/home-mortgage/home-mortgage.component';
+import { RespondentHomeMortgageResolver } from './maintenance/home-mortgage/respondent-home-mortgage.resolver.service';
 import { ApplicantInterestInBusinessResolver } from './maintenance/interest-in-business/applicant-interest-in-business.resolver.service';
 import { InterestInBusinessComponent } from './maintenance/interest-in-business/interest-in-business.component';
 import { RespondentInterestInBusinessResolver } from './maintenance/interest-in-business/respondent-interest-in-business.resolver.service';
@@ -43,6 +54,15 @@ import { RespondentMotorVehiclesResolver } from './maintenance/motor-vehicles/re
 import { ApplicantOtherInterestResolver } from './maintenance/other-interest/applicant-other-interest.resolver.service';
 import { OtherInterestComponent } from './maintenance/other-interest/other-interest.component';
 import { RespondentOtherInterestResolver } from './maintenance/other-interest/respondent-other-interest.resolver.service';
+import { ApplicantOtherLiabilitiesResolver } from './maintenance/other-liabilities/applicant-other-liabilities.resolver.service';
+import { OtherLiabilitiesComponent } from './maintenance/other-liabilities/other-liabilities.component';
+import { RespondentOtherLiabilitiesResolver } from './maintenance/other-liabilities/respondent-other-liabilities.resolver.service';
+import { ApplicantOtherLoansResolver } from './maintenance/other-loans/applicant-other-loans.resolver.service';
+import { OtherLoansComponent } from './maintenance/other-loans/other-loans.component';
+import { RespondentOtherLoansResolver } from './maintenance/other-loans/respondent-other-loans.resolver';
+import { ApplicantOtherMortgageResolver } from './maintenance/other-mortgage/applicant-other-mortgage.resolver.service';
+import { OtherMortgageComponent } from './maintenance/other-mortgage/other-mortgage.component';
+import { RespondentOtherMortgageResolver } from './maintenance/other-mortgage/respondent-other-mortgage.resolver.service';
 import { ApplicantRealEstateResolver } from './maintenance/real-estate/applicant-real-estate.resolver.service';
 import { RealEstateComponent } from './maintenance/real-estate/real-estate.component';
 import { RespondentRealEstateResolver } from './maintenance/real-estate/respondent-real-estate.resolver.service';
@@ -59,25 +79,6 @@ import { FirebaseArrayProcessingService } from './shared/firebaseArrayProcessing
 import { PrintDirective } from './shared/print.directive';
 import { StatementOfTruthComponent } from './statement-of-truth/statement-of-truth.component';
 import { StatementOfTruthResolver } from './statement-of-truth/statement-of-truth.resolver.service';
-import { ApplicantOtherLoansResolver } from './maintenance/other-loans/applicant-other-loans.resolver.service';
-import { RespondentOtherLoansResolver } from './maintenance/other-loans/respondent-other-loans.resolver';
-import { OtherLoansComponent } from './maintenance/other-loans/other-loans.component';
-import { ApplicantOtherLiabilitiesResolver } from './maintenance/other-liabilities/applicant-other-liabilities.resolver.service';
-import { RespondentOtherLiabilitiesResolver } from './maintenance/other-liabilities/respondent-other-liabilities.resolver.service';
-import { OtherLiabilitiesComponent } from './maintenance/other-liabilities/other-liabilities.component';
-import { ApplicantHomeMortgageResolver } from './maintenance/home-mortgage/applicant-home-mortgage.resolver.service';
-import { RespondentHomeMortgageResolver } from './maintenance/home-mortgage/respondent-home-mortgage.resolver.service';
-import { HomeMortgageComponent } from './maintenance/home-mortgage/home-mortgage.component';
-import { ApplicantOtherMortgageResolver } from './maintenance/other-mortgage/applicant-other-mortgage.resolver.service';
-import { RespondentOtherMortgageResolver } from './maintenance/other-mortgage/respondent-other-mortgage.resolver.service';
-import { OtherMortgageComponent } from './maintenance/other-mortgage/other-mortgage.component';
-import { ApplicantHirePurchaseLeaseResolver } from './maintenance/hire-purchase-lease/applicant-hire-purchase-lease.resolver.service';
-import { RespondentHirePurchaseLeaseResolver } from './maintenance/hire-purchase-lease/respondent-hire-purchase-lease.resolver.service';
-import { HirePurchaseLeaseComponent } from './maintenance/hire-purchase-lease/hire-purchase-lease.component';
-import { ApplicantCreditChargeCardsResolver } from './maintenance/credit-charge-cards/applicant-credit-charge-cards.resolver.service';
-import { RespondentCreditChargeCardsResolver } from './maintenance/credit-charge-cards/respondent-credit-charge-cards.resolver.service';
-import { CreditChargeCardsComponent } from './maintenance/credit-charge-cards/credit-charge-cards.component';
-
 
 // Must export the config
 export const firebaseConfig = {
@@ -139,7 +140,8 @@ const firebaseAuthConfig = {
     ApplicantHirePurchaseLeaseResolver,
     RespondentHirePurchaseLeaseResolver,
     ApplicantCreditChargeCardsResolver,
-    RespondentCreditChargeCardsResolver
+    RespondentCreditChargeCardsResolver,
+    ChatService,
   ],
   declarations: [
     AppComponent,
@@ -173,7 +175,8 @@ const firebaseAuthConfig = {
     HomeMortgageComponent,
     OtherMortgageComponent,
     HirePurchaseLeaseComponent,
-    CreditChargeCardsComponent
+    CreditChargeCardsComponent,
+    ChatComponent,
   ],
   entryComponents: [FeedbackDialogComponent],
   bootstrap: [AppComponent],

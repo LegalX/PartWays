@@ -1,0 +1,13 @@
+<div fxLayout="column">
+  <md-input-container>
+    <textarea mdInput
+              rows="20"
+              [(ngModel)]="text"
+              name="text"></textarea>
+  </md-input-container>
+  <md-input-container>
+    <input mdInput
+           #message
+           (keyup.enter)="send(message.value)">
+  </md-input-container>
+</div>

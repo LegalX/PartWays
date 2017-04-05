@@ -104,6 +104,11 @@
               md-icon-button
               [mdMenuTriggerFor]="menu">Login</button>
       <button md-button
+              mdTooltip="Chat"
+              routerLink="/Chat">
+        <md-icon>chat</md-icon>
+      </button>
+      <button md-button
               mdTooltip="Feedback"
               (click)="openFeedbackDialog()">
         <md-icon>feedback</md-icon>
