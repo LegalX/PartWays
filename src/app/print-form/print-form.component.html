@@ -11,8 +11,6 @@
       Family Law Rules ~ <b>RULE 10.15</b>
     </div>
 
-    <pre> {{appData | json}} </pre>
-
     <div class="court-use-only hgl-block fl-right">
       <div class="title">court use only</div>
       <div class="body">
@@ -393,7 +391,7 @@
               When did you begin living together?
               <div class="fake-input">
                 <div class="format-delimiter">Date</div>
-                <input type="text" class="l10 w19">
+                <input type="text" class="l10 w19" value="{{appData.relationship.beganLivingTogetherDate}}">
                 <div class="format-delimiter l30">/</div>
                 <input type="text" class="l31 w29">
                 <div class="format-delimiter l60">/</div>
@@ -403,7 +401,7 @@
           </div>
 
           <div class="right-col">
-            <i class="checkbox"></i>
+            <i class="checkbox">{{appData.relationship.beganLivingTogetherNA === true ? 'X' : ''}}</i>
           </div>
         </div>
 
@@ -417,7 +415,7 @@
                 <span class="pos-abs l0" style="top: 0; right: -20px;">If married, when and where did you get married? *</span>
                 <div class="fake-input">
                   <div class="format-delimiter">Date</div>
-                  <input type="text" class="l10 w19">
+                  <input type="text" class="l10 w19" value="{{appData.relationship.getMarriedDate}}">
                   <div class="format-delimiter l30">/</div>
                   <input type="text" class="l31 w29">
                   <div class="format-delimiter l60">/</div>
@@ -428,14 +426,14 @@
               <div class="input-group w30">
                 <label>Town/City</label>
                 <div class="fake-input">
-                  <input type="text" class="w90">
+                  <input type="text" class="w90" value="{{appData.relationship.marriedCity}}">
                 </div>
               </div>
 
               <div class="input-group w30">
                 <label>Country</label>
                 <div class="fake-input">
-                  <input type="text" class="w90">
+                  <input type="text" class="w90" value="{{appData.relationship.marriedCountry}}">
                 </div>
               </div>
 
@@ -444,7 +442,7 @@
           </div>
 
           <div class="right-col">
-            <div class="checkbox"></div>
+            <div class="checkbox">{{appData.relationship.marriedNA === true ? 'X' : ''}}</div>
           </div>
 
         </div>
@@ -457,7 +455,7 @@
               When did you finally separate?
               <div class="fake-input">
                 <div class="format-delimiter">Date</div>
-                <input type="text" class="l10 w19">
+                <input type="text" class="l10 w19" value="{{appData.relationship.separateDate}}">
                 <div class="format-delimiter l30">/</div>
                 <input type="text" class="l31 w29">
                 <div class="format-delimiter l60">/</div>
@@ -467,7 +465,7 @@
           </div>
 
           <div class="right-col">
-            <div class="checkbox"></div>
+            <div class="checkbox">{{appData.relationship.separateNA === true ? 'X' : ''}}</div>
           </div>
 
         </div>
@@ -481,7 +479,7 @@
                 When and where did you get divorced?
                 <div class="fake-input">
                   <div class="format-delimiter">Date</div>
-                  <input type="text" class="l10 w19">
+                  <input type="text" class="l10 w19" value="{{appData.relationship.divorcedDate}}">
                   <div class="format-delimiter l30">/</div>
                   <input type="text" class="l31 w29">
                   <div class="format-delimiter l60">/</div>
@@ -492,14 +490,14 @@
               <div class="input-group w30">
                 <label>Town/City</label>
                 <div class="fake-input">
-                  <input type="text" class="w90">
+                  <input type="text" class="w90" value="{{appData.relationship.divorcedCity}}">
                 </div>
               </div>
 
               <div class="input-group w30">
                 <label>Country</label>
                 <div class="fake-input">
-                  <input type="text" class="w90">
+                  <input type="text" class="w90" value="{{appData.relationship.divorcedCountry}}">
                 </div>
               </div>
 
@@ -509,7 +507,7 @@
           </div>
 
           <div class="right-col">
-            <div class="checkbox"></div>
+            <div class="checkbox">{{appData.relationship.divorcedNA === true ? 'X' : ''}}</div>
           </div>
 
         </div>
