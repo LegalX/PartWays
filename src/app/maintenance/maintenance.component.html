@@ -439,10 +439,10 @@
             <md-radio-group [ngModel]="(item|async)?.applicantEitherPartyAcquiredOrDisposed" name="applicantOrdersAffectCapacity" [ngModelOptions]="{standalone: true}"
                             (ngModelChange)="item.update({applicantEitherPartyAcquiredOrDisposed: $event})">
               <md-radio-button [value]="false" fxLayout="row">
-                No //GO TO ITEM 60
+                No <strong>GO TO ITEM 60</strong>
               </md-radio-button>
               <md-radio-button [value]="true" fxLayout="row">
-                Yes //GIVE DETAILS
+                Yes <strong>GIVE DETAILS</strong>
               </md-radio-button>
             </md-radio-group>
             <div fxLayout="row" *ngIf="(item|async)?.applicantEitherPartyAcquiredOrDisposed">
@@ -455,13 +455,13 @@
         </div>
         <div fxLayout="column" fxFlex="48">
           <div class="group">
-            <md-radio-group [ngModel]="(item|async)?.respondentEitherPartyAcquiredOrDisposed" name="applicantOrdersAffectCapacity" [ngModelOptions]="{standalone: true}"
+            <md-radio-group [ngModel]="(item|async)?.respondentEitherPartyAcquiredOrDisposed" name="respondentEitherPartyAcquiredOrDisposed" [ngModelOptions]="{standalone: true}"
                             (ngModelChange)="item.update({respondentEitherPartyAcquiredOrDisposed: $event})">
               <md-radio-button [value]="false" fxLayout="row">
-                No //GO TO ITEM 60
+                No <strong>GO TO ITEM 60</strong>
               </md-radio-button>
               <md-radio-button [value]="true" fxLayout="row">
-                Yes //GIVE DETAILS
+                Yes <strong>GIVE DETAILS</strong>
               </md-radio-button>
             </md-radio-group>
             <div fxLayout="row" *ngIf="(item|async)?.respondentEitherPartyAcquiredOrDisposed">
