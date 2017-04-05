@@ -29,7 +29,6 @@ before_install:
   - sh -e /etc/init.d/xvfb start
 
 script:
-  - ng test --watch false
   - ng build --prod
 
 after_success:
