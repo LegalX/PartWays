@@ -64,10 +64,10 @@
                 No
               </md-radio-button>
               <md-radio-button [value]="true" fxLayout="row">
-                Yes
+                Yes <strong>GIVE DETAILS</strong>
               </md-radio-button>
             </md-radio-group>
-            <div fxLayout="row">
+            <div fxLayout="row" *ngIf="(item|async)?.applicantOrdersAffectCapacity">
               <md-input-container fxFlex="100">
                 <textarea mdInput [ngModel]="(item|async)?.applicantOrdersAffectCapacityText" (ngModelChange)="item.update({applicantOrdersAffectCapacityText: $event})"
                   name="applicantOrdersAffectCapacityText"></textarea>
@@ -83,10 +83,10 @@
                 No
               </md-radio-button>
               <md-radio-button [value]="true" fxLayout="row">
-                Yes
+                Yes <strong>GIVE DETAILS</strong>
               </md-radio-button>
             </md-radio-group>
-            <div fxLayout="row">
+            <div fxLayout="row" *ngIf="(item|async)?.respondentOrdersAffectCapacity">
               <md-input-container fxFlex="100">
                 <textarea mdInput [ngModel]="(item|async)?.respondentOrdersAffectCapacityText" (ngModelChange)="item.update({respondentOrdersAffectCapacityText: $event})"
                   name="respondentOrdersAffectCapacityText"></textarea>
