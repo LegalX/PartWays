@@ -10,8 +10,7 @@ describe('PartWays App', () => {
   it('should have core buttons on landing page', () => {
     page.navigateTo();
     expect(page.getButton('PartWays')).toEqual(true);
-    expect(page.getButton('Google')).toEqual(true);
-    expect(page.getButton('Facebook')).toEqual(true);
+    expect(page.getElementById('login-menu')).toEqual(true);
     expect(page.getElementById('title-button')).toEqual(true);
   });
 });
