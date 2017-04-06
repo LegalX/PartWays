@@ -940,18 +940,18 @@
             <span>GIVE DETAILS</span>
             <div>
               <div>
-                <span>Applicant</span>
+                <span>Applicant %</span>
                 <md-input-container>
-                  <input mdInput type="number" placeholder="%" [ngModel]="(item|async)?.applicantPercentageDivision" (ngModelChange)="item.update({applicantPercentageDivision: $event})"
+                  <input mdInput type="number" [ngModel]="(item|async)?.applicantPercentageDivision" (ngModelChange)="item.update({applicantPercentageDivision: $event})"
                          name="applicantPercentageDivision">
                 </md-input-container>
               </div>
             </div>
             <div>
               <div>
-                <span>Respondent</span>
+                <span>Respondent %</span>
                 <md-input-container>
-                  <input mdInput type="number" placeholder="%" [ngModel]="(item|async)?.respondentPercentageDivision" (ngModelChange)="item.update({respondentPercentageDivision: $event})"
+                  <input mdInput type="number" [ngModel]="(item|async)?.respondentPercentageDivision" (ngModelChange)="item.update({respondentPercentageDivision: $event})"
                          name="respondentPercentageDivision">
                 </md-input-container>
               </div>
@@ -968,11 +968,11 @@
                   Agree
                 </md-radio-button>
                 <md-radio-button [value]="false" fxLayout="column">
-                  Disagree //GO TO ITEM 65
+                  Disagree
                 </md-radio-button>
               </md-radio-group>
             </div>
-            <div class="additional_details" *ngIf="(item|async)?.applicantDivisionAgreed">
+            <div class="additional_details" *ngIf="!(item|async)?.applicantDivisionAgreed">
               <span>GIVE BRIEF REASONS WHY YOU DISAGREE AND SPECIFY YOUR ESTIMATE OF THE PROPOSED DIVISION</span>
               <div fxLayout="row">
                 <md-input-container fxFlex="100">
