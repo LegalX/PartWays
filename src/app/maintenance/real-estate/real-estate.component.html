@@ -66,7 +66,7 @@
               Address
             </span>
             <md-input-container >
-              <input mdInput type="number"
+              <input mdInput type="text"
                      [ngModel]="(item|async)?.respondentAddress"
                      (ngModelChange)="item.update({respondentAddress: $event})"
                      name="respondentAddress_{{i}}">
@@ -77,7 +77,7 @@
               State
             </span>
             <md-input-container >
-              <input mdInput type="number"
+              <input mdInput type="text"
                      [ngModel]="(item|async)?.respondentState"
                      (ngModelChange)="item.update({respondentState: $event})"
                      name="respondentState_{{i}}">
