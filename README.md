@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/LegalX/PartWays.svg?branch=master)](https://travis-ci.org/LegalX/PartWays)
+[![codecov](https://codecov.io/gh/LegalX/PartWays/branch/master/graph/badge.svg)](https://codecov.io/gh/LegalX/PartWays)
+
 # PartWays
 [Demo app](https://partways-dev.firebaseapp.com)
 
