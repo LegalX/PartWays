@@ -22,7 +22,7 @@
               Your share of amount owing	$
             </span>
           <md-input-container>
-            <input mdInput type="number" [ngModel]="(item|async)?.applicantShareOfAmountWing" (ngModelChange)="item.update({applicantAddressOfProperty: $event})"
+            <input mdInput type="number" [ngModel]="(item|async)?.applicantShareOfAmountWing" (ngModelChange)="item.update({applicantShareOfAmountWing: $event})"
                    name="applicantShareOfAmountWing_{{i}}">
           </md-input-container>
         </div>
