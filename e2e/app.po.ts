@@ -1,11 +1,15 @@
-import { browser, element, by } from 'protractor';
+import { browser, by, element } from 'protractor';
 
 export class PartWaysPage {
   navigateTo() {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.buttonText('PartWays')).isPresent();
+  getButton(text: string) {
+    return element(by.buttonText(text)).isPresent();
+  }
+
+  getElementById(id: string) {
+    return element(by.id(id)).isPresent();
   }
 }
