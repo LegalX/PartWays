@@ -8,8 +8,8 @@ import { Observable } from 'rxjs/Observable';
 export class ChatService implements OnInit {
   private baseUrl = 'https://westus.api.cognitive.microsoft.com/qnamaker/v1.0';
   private chatAiUrl: string;
-  private knowledgeBaseId = '27ea9bfa-035c-4c24-8da1-182e9fcd9a46';
-  private subscriptionKey = 'd168e1b7a4154035b701ccf97a18bafc'; // 'c0b1cc9178e34f66a3a5e3192c7aa128';
+  private knowledgeBaseId = '9238af87-221d-4bcd-b66b-b3d4b8a8f561';
+  private subscriptionKey = 'c0b1cc9178e34f66a3a5e3192c7aa128';
 
   constructor(private http: Http) { }
 
@@ -23,7 +23,7 @@ export class ChatService implements OnInit {
       'Content-Type': 'application/json',
     });
     const options = new RequestOptions({ headers });
-    return this.http.post('https://westus.api.cognitive.microsoft.com/qnamaker/v1.0/knowledgebases/27ea9bfa-035c-4c24-8da1-182e9fcd9a46/generateAnswer', { question: message }, options)
+    return this.http.post('https://westus.api.cognitive.microsoft.com/qnamaker/v1.0/knowledgebases/9238af87-221d-4bcd-b66b-b3d4b8a8f561/generateAnswer', { question: message }, options)
       .map(this.extractData)
       .catch(this.handleError);
   }
