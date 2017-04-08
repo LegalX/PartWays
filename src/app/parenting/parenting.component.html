@@ -1,62 +1,90 @@
 <div class="doc_container">
   <h1>Part F Details for parenting orders</h1>
-  <form fxLayout="column" #f="ngForm">
+  <form fxLayout="column"
+        #f="ngForm">
     <span>
       You must attach a completed Annexure to Proposed Consent Parenting Order form if you are applying for parenting orders.
     </span>
     <div id="23">
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
-           <h3 fxLayoutAlign="center center">APPLICANT 1</h3>
-           <span fxLayoutAlign="center center">Which of the following applies?</span>
-           <div fxLayout="row">
-              <md-checkbox class="example-margin" [ngModel]="(parenting|async)?.applicantInAU" (ngModelChange)="parenting.update({applicantInAU: $event})" [ngModelOptions]="{standalone: true}">
-                I am present in Australia
-              </md-checkbox>
-           </div>
-           <div fxLayout="row">
-              <md-checkbox class="example-margin" [ngModel]="(parenting|async)?.applicantOrdinaryResInAU" (ngModelChange)="parenting.update({applicantOrdinaryResInAU: $event})" [ngModelOptions]="{standalone: true}">
-                I am ordinarily resident in Australia
-              </md-checkbox>
-           </div>
-           <div fxLayout="row">
-              <md-checkbox class="example-margin" [ngModel]="(parenting|async)?.applicantCitizenAU" (ngModelChange)="parenting.update({applicantCitizenAU: $event})" [ngModelOptions]="{standalone: true}">
-                I am an Australian citizen
-              </md-checkbox>
-           </div>
-           <div fxLayout="row">
-              <md-checkbox class="example-margin" [ngModel]="(parenting|async)?.applicantChildInAU" (ngModelChange)="parenting.update({applicantChildInAU: $event})" [ngModelOptions]="{standalone: true}">
-                The child (or children) is present in Australia/
-ordinarily resident in Australia/
-is an Australian citizen
-              </md-checkbox>
-           </div>
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
+          <h3 fxLayoutAlign="center center">APPLICANT 1</h3>
+          <span fxLayoutAlign="center center">Which of the following applies?</span>
+          <div fxLayout="row">
+            <md-checkbox class="example-margin"
+                         [ngModel]="(parenting|async)?.applicantInAU"
+                         (ngModelChange)="parenting.update({applicantInAU: $event})"
+                         [ngModelOptions]="{standalone: true}">
+              I am present in Australia
+            </md-checkbox>
+          </div>
+          <div fxLayout="row">
+            <md-checkbox class="example-margin"
+                         [ngModel]="(parenting|async)?.applicantOrdinaryResInAU"
+                         (ngModelChange)="parenting.update({applicantOrdinaryResInAU: $event})"
+                         [ngModelOptions]="{standalone: true}">
+              I am ordinarily resident in Australia
+            </md-checkbox>
+          </div>
+          <div fxLayout="row">
+            <md-checkbox class="example-margin"
+                         [ngModel]="(parenting|async)?.applicantCitizenAU"
+                         (ngModelChange)="parenting.update({applicantCitizenAU: $event})"
+                         [ngModelOptions]="{standalone: true}">
+              I am an Australian citizen
+            </md-checkbox>
+          </div>
+          <div fxLayout="row">
+            <md-checkbox class="example-margin"
+                         [ngModel]="(parenting|async)?.applicantChildInAU"
+                         (ngModelChange)="parenting.update({applicantChildInAU: $event})"
+                         [ngModelOptions]="{standalone: true}">
+              The child (or children) is present in Australia/ ordinarily resident in Australia/ is an Australian citizen
+            </md-checkbox>
+          </div>
         </div>
-        <div fxLayout="column" fxFlex="48">
-           <h3 fxLayoutAlign="center center">RESPONDENT 1</h3>
-           <span fxLayoutAlign="center center">Which of the following applies?</span>
-           <div fxLayout="row">
-              <md-checkbox class="example-margin" [ngModel]="(parenting|async)?.respondentInAU" (ngModelChange)="parenting.update({respondentInAU: $event})" [ngModelOptions]="{standalone: true}">
-                Present in Australia
-              </md-checkbox>
-           </div>
-           <div fxLayout="row">
-              <md-checkbox class="example-margin" [ngModel]="(parenting|async)?.respondentOrdinaryResInAU" (ngModelChange)="parenting.update({respondentOrdinaryResInAU: $event})" [ngModelOptions]="{standalone: true}">
-                Ordinarily resident in Australia
-              </md-checkbox>
-           </div>
-           <div fxLayout="row">
-              <md-checkbox class="example-margin" [ngModel]="(parenting|async)?.respondenttCitizenAU" (ngModelChange)="parenting.update({respondenttCitizenAU: $event})" [ngModelOptions]="{standalone: true}">
-                Ordinarily resident in Australia
-              </md-checkbox>
-           </div>
+        <div fxLayout="column"
+             fxFlex="48">
+          <h3 fxLayoutAlign="center center">RESPONDENT 1</h3>
+          <span fxLayoutAlign="center center">Which of the following applies?</span>
+          <div fxLayout="row">
+            <md-checkbox class="example-margin"
+                         [ngModel]="(parenting|async)?.respondentInAU"
+                         (ngModelChange)="parenting.update({respondentInAU: $event})"
+                         [ngModelOptions]="{standalone: true}">
+              Present in Australia
+            </md-checkbox>
+          </div>
+          <div fxLayout="row">
+            <md-checkbox class="example-margin"
+                         [ngModel]="(parenting|async)?.respondentOrdinaryResInAU"
+                         (ngModelChange)="parenting.update({respondentOrdinaryResInAU: $event})"
+                         [ngModelOptions]="{standalone: true}">
+              Ordinarily resident in Australia
+            </md-checkbox>
+          </div>
+          <div fxLayout="row">
+            <md-checkbox class="example-margin"
+                         [ngModel]="(parenting|async)?.respondentCitizenAU"
+                         (ngModelChange)="parenting.update({respondentCitizenAU: $event})"
+                         [ngModelOptions]="{standalone: true}">
+              An Australian sitizen
+            </md-checkbox>
+          </div>
         </div>
       </div>
     </div>
 
-    <div id="24" fxLayout="row" fxLayoutAlign="space-between" >
-      <div fxLayout="column" fxFlex="48" *ngFor="let child of children; let i=index; trackBy: index">
-        <div >
+    <div id="24"
+         fxLayout="row"
+         fxLayoutAlign="space-between">
+      <div fxLayout="column"
+           fxFlex="48"
+           *ngFor="let child of children; let i=index; trackBy: index">
+        <div>
           <h3>Child {{i + 1}}</h3>
           <span>
             Proposed arrangements for the child:
@@ -68,9 +96,9 @@ is an Australian citizen
             <div fxLayout="row">
               <md-input-container fxFlex="100">
                 <textarea mdInput
-                    [ngModel]="(child|async)?.housing"
-                    (ngModelChange)="child.update({housing: $event})"
-                    name="housing_{{i}}"></textarea>
+                          [ngModel]="(child|async)?.housing"
+                          (ngModelChange)="child.update({housing: $event})"
+                          name="housing_{{i}}"></textarea>
               </md-input-container>
             </div>
           </div>
@@ -81,9 +109,9 @@ is an Australian citizen
             <div fxLayout="row">
               <md-input-container fxFlex="100">
                 <textarea mdInput
-                    [ngModel]="(child|async)?.supervision"
-                    (ngModelChange)="child.update({supervision: $event})"
-                    name="supervision_{{i}}"></textarea>
+                          [ngModel]="(child|async)?.supervision"
+                          (ngModelChange)="child.update({supervision: $event})"
+                          name="supervision_{{i}}"></textarea>
               </md-input-container>
             </div>
           </div>
@@ -94,9 +122,9 @@ is an Australian citizen
             <div fxLayout="row">
               <md-input-container fxFlex="100">
                 <textarea mdInput
-                    [ngModel]="(child|async)?.financialSupport"
-                    (ngModelChange)="child.update({financialSupport: $event})"
-                    name="financialSupport_{{i}}"></textarea>
+                          [ngModel]="(child|async)?.financialSupport"
+                          (ngModelChange)="child.update({financialSupport: $event})"
+                          name="financialSupport_{{i}}"></textarea>
               </md-input-container>
             </div>
           </div>
@@ -107,9 +135,9 @@ is an Australian citizen
             <div fxLayout="row">
               <md-input-container fxFlex="100">
                 <textarea mdInput
-                    [ngModel]="(child|async)?.health"
-                    (ngModelChange)="child.update({health: $event})"
-                    name="health_{{i}}"></textarea>
+                          [ngModel]="(child|async)?.health"
+                          (ngModelChange)="child.update({health: $event})"
+                          name="health_{{i}}"></textarea>
               </md-input-container>
             </div>
           </div>
@@ -120,9 +148,9 @@ is an Australian citizen
             <div fxLayout="row">
               <md-input-container fxFlex="100">
                 <textarea mdInput
-                    [ngModel]="(child|async)?.education"
-                    (ngModelChange)="child.update({education: $event})"
-                    name="education_{{i}}"></textarea>
+                          [ngModel]="(child|async)?.education"
+                          (ngModelChange)="child.update({education: $event})"
+                          name="education_{{i}}"></textarea>
               </md-input-container>
             </div>
           </div>
@@ -133,9 +161,9 @@ is an Australian citizen
             <div fxLayout="row">
               <md-input-container fxFlex="100">
                 <textarea mdInput
-                    [ngModel]="(child|async)?.otherMatters"
-                    (ngModelChange)="child.update({otherMatters: $event})"
-                    name="otherMatters_{{i}}"></textarea>
+                          [ngModel]="(child|async)?.otherMatters"
+                          (ngModelChange)="child.update({otherMatters: $event})"
+                          name="otherMatters_{{i}}"></textarea>
               </md-input-container>
             </div>
           </div>

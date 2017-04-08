@@ -1,6 +1,9 @@
-<button (click)="print()" style="font-size: 20px; height: 30px;width:100px;">Print Form</button>
+<button (click)="print()"
+        style="font-size: 20px; height: 30px;width:100px;">Print Form</button>
 
-<div class="wrapper" print-form [styleFileName]="'print-form.component.css'">
+<div class="wrapper"
+     print-form
+     [styleFileName]="'print-form.component.css'">
   <div class="page page1">
 
     <div class="page-content">
@@ -45,7 +48,8 @@
             <i class="checkbox"></i>
             <span class="checkbox-label">Other (specify)</span>
           </div>
-          <div class="border-bottom-blank" style="height:19px;"></div>
+          <div class="border-bottom-blank"
+               style="height:19px;"></div>
         </div>
 
       </div>
@@ -268,12 +272,18 @@
               </div>
 
               <div class="fake-input">
-                <input type="text" class="pos-abs l0 w10" value="{{appData.parties.applicantBornDate}}">
+                <input type="text"
+                       class="pos-abs l0 w10"
+                       value="{{appData.parties.applicantBornDate}}">
                 <div class="format-delimiter l10">/</div>
-                <input type="text" class="pos-abs w15 l10">
+                <input type="text"
+                       class="pos-abs w15 l10">
                 <div class="format-delimiter l25">/</div>
-                <input type="text" class="pos-abs w15 l25">
-                <input type="text" class="pos-abs w30 l70" value="{{appData.parties.applicantCountry}}">
+                <input type="text"
+                       class="pos-abs w15 l25">
+                <input type="text"
+                       class="pos-abs w30 l70"
+                       value="{{appData.parties.applicantCountry}}">
               </div>
             </div>
           </div>
@@ -291,12 +301,18 @@
               </div>
 
               <div class="fake-input">
-                <input type="text" class="pos-abs l0 w10"  value="{{appData.parties.respondentBornDate}}">
+                <input type="text"
+                       class="pos-abs l0 w10"
+                       value="{{appData.parties.respondentBornDate}}">
                 <div class="format-delimiter l10">/</div>
-                <input type="text" class="pos-abs w15 l10">
+                <input type="text"
+                       class="pos-abs w15 l10">
                 <div class="format-delimiter l25">/</div>
-                <input type="text" class="pos-abs w15 l25">
-                <input type="text" class="pos-abs w30 l70" value="{{appData.parties.respondentCountry}}">
+                <input type="text"
+                       class="pos-abs w15 l25">
+                <input type="text"
+                       class="pos-abs w30 l70"
+                       value="{{appData.parties.respondentCountry}}">
               </div>
             </div>
           </div>
@@ -317,11 +333,11 @@
             </div>
 
             <div class="input-group">
-              <i class="checkbox">{{appData.parties.applicantOrigin === 'Torres Strait Islander' ? 'X' : ''}}</i> <b>Yes</b> &nbsp; Torres Strait Islander
+              <i class="checkbox">{{appData.parties.applicantOrigin === 'Torres Strait Islander' ? 'X' : ''}}</i> <b>Yes</b>              &nbsp; Torres Strait Islander
             </div>
 
             <div class="input-group">
-              <i class="checkbox">{{appData.parties.applicantOrigin === 'Aboriginal and Torres Strait Islander' ? 'X' : ''}}</i> <b>Yes</b> &nbsp; Aboriginal and Torres Strait Islander
+              <i class="checkbox">{{appData.parties.applicantOrigin === 'Aboriginal and Torres Strait Islander' ? 'X' : ''}}</i>              <b>Yes</b> &nbsp; Aboriginal and Torres Strait Islander
             </div>
           </div>
 
@@ -332,15 +348,16 @@
             </div>
 
             <div class="input-group">
-              <i class="checkbox">{{appData.parties.respondentOrigin === 'Aboriginal' ? 'X' : ''}}</i> <b>Yes</b> &nbsp; Aboriginal
+              <i class="checkbox">{{appData.parties.respondentOrigin === 'Aboriginal' ? 'X' : ''}}</i> <b>Yes</b> &nbsp;
+              Aboriginal
             </div>
 
             <div class="input-group">
-              <i class="checkbox">{{appData.parties.respondentOrigin === 'Torres Strait Islander' ? 'X' : ''}}</i> <b>Yes</b> &nbsp; Torres Strait Islander
+              <i class="checkbox">{{appData.parties.respondentOrigin === 'Torres Strait Islander' ? 'X' : ''}}</i> <b>Yes</b>              &nbsp; Torres Strait Islander
             </div>
 
             <div class="input-group">
-              <i class="checkbox">{{appData.parties.respondentOrigin === 'Aboriginal and Torres Strait Islander' ? 'X' : ''}}</i> <b>Yes</b> &nbsp; Aboriginal and Torres Strait Islander
+              <i class="checkbox">{{appData.parties.respondentOrigin === 'Aboriginal and Torres Strait Islander' ? 'X' : ''}}</i>              <b>Yes</b> &nbsp; Aboriginal and Torres Strait Islander
             </div>
           </div>
 
@@ -391,11 +408,15 @@
               When did you begin living together?
               <div class="fake-input">
                 <div class="format-delimiter">Date</div>
-                <input type="text" class="l10 w19" value="{{appData.relationship.beganLivingTogetherDate}}">
+                <input type="text"
+                       class="l10 w19"
+                       value="{{appData.relationship.beganLivingTogetherDate}}">
                 <div class="format-delimiter l30">/</div>
-                <input type="text" class="l31 w29">
+                <input type="text"
+                       class="l31 w29">
                 <div class="format-delimiter l60">/</div>
-                <input type="text" class="l61 w19">
+                <input type="text"
+                       class="l61 w19">
               </div>
             </div>
           </div>
@@ -411,29 +432,39 @@
           <div class="left-col">
 
             <div class="inputs-group">
-              <div class="input-group w40 pos-relative" style="padding-top: 18px;">
-                <span class="pos-abs l0" style="top: 0; right: -20px;">If married, when and where did you get married? *</span>
+              <div class="input-group w40 pos-relative"
+                   style="padding-top: 18px;">
+                <span class="pos-abs l0"
+                      style="top: 0; right: -20px;">If married, when and where did you get married? *</span>
                 <div class="fake-input">
                   <div class="format-delimiter">Date</div>
-                  <input type="text" class="l10 w19" value="{{appData.relationship.getMarriedDate}}">
+                  <input type="text"
+                         class="l10 w19"
+                         value="{{appData.relationship.getMarriedDate}}">
                   <div class="format-delimiter l30">/</div>
-                  <input type="text" class="l31 w29">
+                  <input type="text"
+                         class="l31 w29">
                   <div class="format-delimiter l60">/</div>
-                  <input type="text" class="l61 w19">
+                  <input type="text"
+                         class="l61 w19">
                 </div>
               </div>
 
               <div class="input-group w30">
                 <label>Town/City</label>
                 <div class="fake-input">
-                  <input type="text" class="w90" value="{{appData.relationship.marriedCity}}">
+                  <input type="text"
+                         class="w90"
+                         value="{{appData.relationship.marriedCity}}">
                 </div>
               </div>
 
               <div class="input-group w30">
                 <label>Country</label>
                 <div class="fake-input">
-                  <input type="text" class="w90" value="{{appData.relationship.marriedCountry}}">
+                  <input type="text"
+                         class="w90"
+                         value="{{appData.relationship.marriedCountry}}">
                 </div>
               </div>
 
@@ -455,11 +486,15 @@
               When did you finally separate?
               <div class="fake-input">
                 <div class="format-delimiter">Date</div>
-                <input type="text" class="l10 w19" value="{{appData.relationship.separateDate}}">
+                <input type="text"
+                       class="l10 w19"
+                       value="{{appData.relationship.separateDate}}">
                 <div class="format-delimiter l30">/</div>
-                <input type="text" class="l31 w29">
+                <input type="text"
+                       class="l31 w29">
                 <div class="format-delimiter l60">/</div>
-                <input type="text" class="l61 w19">
+                <input type="text"
+                       class="l61 w19">
               </div>
             </div>
           </div>
@@ -479,25 +514,33 @@
                 When and where did you get divorced?
                 <div class="fake-input">
                   <div class="format-delimiter">Date</div>
-                  <input type="text" class="l10 w19" value="{{appData.relationship.divorcedDate}}">
+                  <input type="text"
+                         class="l10 w19"
+                         value="{{appData.relationship.divorcedDate}}">
                   <div class="format-delimiter l30">/</div>
-                  <input type="text" class="l31 w29">
+                  <input type="text"
+                         class="l31 w29">
                   <div class="format-delimiter l60">/</div>
-                  <input type="text" class="l61 w19">
+                  <input type="text"
+                         class="l61 w19">
                 </div>
               </div>
 
               <div class="input-group w30">
                 <label>Town/City</label>
                 <div class="fake-input">
-                  <input type="text" class="w90" value="{{appData.relationship.divorcedCity}}">
+                  <input type="text"
+                         class="w90"
+                         value="{{appData.relationship.divorcedCity}}">
                 </div>
               </div>
 
               <div class="input-group w30">
                 <label>Country</label>
                 <div class="fake-input">
-                  <input type="text" class="w90" value="{{appData.relationship.divorcedCountry}}">
+                  <input type="text"
+                         class="w90"
+                         value="{{appData.relationship.divorcedCountry}}">
                 </div>
               </div>
 
@@ -577,19 +620,25 @@
             Court name and place
             <span class="pos-abs l75">Next Court date</span>
             <div class="fake-input">
-              <input type="text" class="l0 w70" value="{{appData.courtCases.ongoingNameAndPlace}}">
-              <input type="text" class=" l70 w10" value="{{appData.courtCases.ongoingNextCourtDate}}">
+              <input type="text"
+                     class="l0 w70"
+                     value="{{appData.courtCases.ongoingNameAndPlace}}">
+              <input type="text"
+                     class=" l70 w10"
+                     value="{{appData.courtCases.ongoingNextCourtDate}}">
               <div class="format-delimiter l80">/</div>
-              <input type="text" class=" l80 w10">
+              <input type="text"
+                     class=" l80 w10">
               <div class="format-delimiter l90">/</div>
-              <input type="text" class=" l90 w10">
+              <input type="text"
+                     class=" l90 w10">
 
             </div>
 
           </div>
 
           <div class="input-group mb20">
-            State the names of the parties 
+            State the names of the parties
             <div class="inputs-list">
               <div class="fake-input">{{appData.courtCases.namesOfParties}}</div>
               <div class="fake-input"></div>
@@ -628,7 +677,8 @@
           </div>
 
           <div class="input-group pl35">
-            <div class="checkbox mr10">{{appData.courtCases.attached === true ? 'X' : ''}}</div> Attached is a copy/copies of the following (mark [<b>X</b>] the boxes that apply):
+            <div class="checkbox mr10">{{appData.courtCases.attached === true ? 'X' : ''}}</div> Attached is a copy/copies of the following (mark [<b>X</b>]
+            the boxes that apply):
           </div>
 
           <div class="input-group pl70 overflow">
@@ -668,12 +718,18 @@
             Court name and place
             <span class="pos-abs l75">Next Court date</span>
             <div class="fake-input">
-              <input type="text" class="l0 w70" value="{{ appData.courtCases.existingNameAndPlace  }}">
-              <input type="text" class=" l70 w10" value="{{ appData.courtCases.existingDate }}">
+              <input type="text"
+                     class="l0 w70"
+                     value="{{ appData.courtCases.existingNameAndPlace  }}">
+              <input type="text"
+                     class=" l70 w10"
+                     value="{{ appData.courtCases.existingDate }}">
               <div class="format-delimiter l80">/</div>
-              <input type="text" class=" l80 w10">
+              <input type="text"
+                     class=" l80 w10">
               <div class="format-delimiter l90">/</div>
-              <input type="text" class=" l90 w10">
+              <input type="text"
+                     class=" l90 w10">
 
             </div>
 
@@ -749,8 +805,8 @@
           </div>
 
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.familyViolenceOrder === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> Are the orders sought in this application consistent with that family violence
-            order?
+            <div class="checkbox">{{appData.courtCases.familyViolenceOrder === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> Are the orders sought
+            in this application consistent with that family violence order?
           </div>
 
           <div class="input-group pl60">
@@ -781,7 +837,8 @@
             <div class="checkbox">{{appData.courtCases.anyDepContact === false ? 'X' : ''}}</div> <b>No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.anyDepContact === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> Provide details including the outcome of that contact and any outstanding concerns.
+            <div class="checkbox">{{appData.courtCases.anyDepContact === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> Provide details including
+            the outcome of that contact and any outstanding concerns.
           </div>
 
           <div class="input-group pl60">
@@ -808,16 +865,17 @@
 
           <div class="input-group pl60">
             <div class="mb10">Is this a case where all parties accept that the presumption in Section 61DA(1) does not apply?</div>
-            <div class="checkbox mr5">{{appData.courtCases.presumptionDoesNotApply === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> Give brief details of why the presumption does not apply
+            <div class="checkbox mr5">{{appData.courtCases.presumptionDoesNotApply === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> Give brief details
+            of why the presumption does not apply
             <div class="inputs-list mt10 mb20">
               <div class="fake-input">{{ appData.courtCases.whyPresumpFalse }}</div>
               <div class="fake-input"></div>
             </div>
 
             <div class="fl-left mr15">
-              <div class="checkbox mr5">{{appData.courtCases.presumptionDoesNotApply === false ? 'X' : ''}}</div> <b>No</b> </div> Briefly explain why it is in the best interests of the child for the Court to make
-            the order/s you are seeking rather than order/s which provide for the child’s parents to have equal shared parental
-            responsibility for the child.
+              <div class="checkbox mr5">{{appData.courtCases.presumptionDoesNotApply === false ? 'X' : ''}}</div> <b>No</b> </div> Briefly explain
+            why it is in the best interests of the child for the Court to make the order/s you are seeking rather than order/s
+            which provide for the child’s parents to have equal shared parental responsibility for the child.
             <div class="inputs-list mt10 mb20">
               <div class="fake-input">{{ appData.courtCases.whyPresumpTrue}}</div>
               <div class="fake-input"></div>
@@ -868,18 +926,20 @@
 
           <div class="input-group">
             <div class="fl-left mr15">
-              <div class="checkbox">{{appData.courtCases.seekingParentingSpendTime === true ? 'X' : ''}}</div> <b>Yes</b></div> Having regard to s65DAA(5), briefly explain why the child spending equal time or substantial
-            and significant time with each of the parents is reasonably practicable.
+              <div class="checkbox">{{appData.courtCases.seekingParentingSpendTime === true ? 'X' : ''}}</div> <b>Yes</b></div> Having regard to
+            s65DAA(5), briefly explain why the child spending equal time or substantial and significant time with each of
+            the parents is reasonably practicable.
 
             <div class="inputs-list ml60 mt10 mb20">
-              <div class="fake-input">{{  appData.courtCases.whySeekingParentingRespTrue }}</div>
+              <div class="fake-input">{{ appData.courtCases.whySeekingParentingRespTrue }}</div>
               <div class="fake-input"></div>
             </div>
           </div>
 
           <div class="input-group">
             <div class="fl-left mr15">
-              <div class="checkbox">{{appData.courtCases.seekingParentingSpendTime === false ? 'X' : ''}}</div> <b>No</b></div> Briefly explain why it is not in the child’s best interest to spend time with each parent.
+              <div class="checkbox">{{appData.courtCases.seekingParentingSpendTime === false ? 'X' : ''}}</div> <b>No</b></div> Briefly explain
+            why it is not in the child’s best interest to spend time with each parent.
             <div class="inputs-list ml60 mt10">
               <div class="fake-input">{{ appData.courtCases.whySeekingParentingRespFalse }}</div>
               <div class="fake-input"></div>
@@ -1008,7 +1068,8 @@
         <div class="step mb40">
           <i class="step-number">20</i> Give the following details for each child
 
-          <table class="children-details-table mb10" cellspacing="10">
+          <table class="children-details-table mb10"
+                 cellspacing="10">
             <thead>
               <tr>
 
@@ -1028,11 +1089,14 @@
                 <td></td>
                 <td></td>
                 <td class="date-cell">
-                  <input type="text" class="l0 w30">
+                  <input type="text"
+                         class="l0 w30">
                   <div class="format-delimiter l30">/</div>
-                  <input type="text" class="l31 w30">
+                  <input type="text"
+                         class="l31 w30">
                   <div class="format-delimiter l60">/</div>
-                  <input type="text" class="l62 w30">
+                  <input type="text"
+                         class="l62 w30">
                 </td>
                 <td></td>
 
@@ -1043,11 +1107,14 @@
                 <td></td>
                 <td></td>
                 <td class="date-cell">
-                  <input type="text" class="l0 w30">
+                  <input type="text"
+                         class="l0 w30">
                   <div class="format-delimiter l30">/</div>
-                  <input type="text" class="l31 w30">
+                  <input type="text"
+                         class="l31 w30">
                   <div class="format-delimiter l60">/</div>
-                  <input type="text" class="l62 w30">
+                  <input type="text"
+                         class="l62 w30">
                 </td>
                 <td></td>
 
@@ -1058,11 +1125,14 @@
                 <td></td>
                 <td></td>
                 <td class="date-cell">
-                  <input type="text" class="l0 w30">
+                  <input type="text"
+                         class="l0 w30">
                   <div class="format-delimiter l30">/</div>
-                  <input type="text" class="l31 w30">
+                  <input type="text"
+                         class="l31 w30">
                   <div class="format-delimiter l60">/</div>
-                  <input type="text" class="l62 w30">
+                  <input type="text"
+                         class="l62 w30">
                 </td>
                 <td></td>
 
@@ -1104,7 +1174,8 @@
 
                 <div class="input-group fl-left w45">
                   <div class="fl-left mr5">Age</div>
-                  <input type="text" class="border-bottom-blank light-border">
+                  <input type="text"
+                         class="border-bottom-blank light-border">
                 </div>
 
                 <div class="clear"></div>
@@ -1148,7 +1219,8 @@
 
                 <div class="input-group fl-left w45">
                   <div class="fl-left mr5">Age</div>
-                  <input type="text" class="border-bottom-blank light-border">
+                  <input type="text"
+                         class="border-bottom-blank light-border">
                 </div>
 
                 <div class="clear"></div>
@@ -1199,7 +1271,8 @@
 
                 <div class="input-group fl-left w45">
                   <div class="fl-left mr5">Age</div>
-                  <input type="text" class="border-bottom-blank light-border">
+                  <input type="text"
+                         class="border-bottom-blank light-border">
                 </div>
 
                 <div class="clear"></div>
@@ -1243,7 +1316,8 @@
 
                 <div class="input-group fl-left w45">
                   <div class="fl-left mr5">Age</div>
-                  <input type="text" class="border-bottom-blank light-border">
+                  <input type="text"
+                         class="border-bottom-blank light-border">
                 </div>
 
                 <div class="clear"></div>
@@ -1338,7 +1412,8 @@
 
                 <div class="input-group fl-left w45">
                   <div class="fl-left mr5">Age</div>
-                  <input type="text" class="border-bottom-blank light-border">
+                  <input type="text"
+                         class="border-bottom-blank light-border">
                 </div>
 
                 <div class="clear"></div>
@@ -1382,7 +1457,8 @@
 
                 <div class="input-group fl-left w45">
                   <div class="fl-left mr5">Age</div>
-                  <input type="text" class="border-bottom-blank light-border">
+                  <input type="text"
+                         class="border-bottom-blank light-border">
                 </div>
 
                 <div class="clear"></div>
@@ -1433,7 +1509,8 @@
 
                 <div class="input-group fl-left w45">
                   <div class="fl-left mr5">Age</div>
-                  <input type="text" class="border-bottom-blank light-border">
+                  <input type="text"
+                         class="border-bottom-blank light-border">
                 </div>
 
                 <div class="clear"></div>
@@ -1477,7 +1554,8 @@
 
                 <div class="input-group fl-left w45">
                   <div class="fl-left mr5">Age</div>
-                  <input type="text" class="border-bottom-blank light-border">
+                  <input type="text"
+                         class="border-bottom-blank light-border">
                 </div>
 
                 <div class="clear"></div>
@@ -1552,9 +1630,11 @@
           </div>
 
 
-          <div class="hgl-details pos-relative clear pb10" style="letter-spacing: 1px; font-weight: normal;">
+          <div class="hgl-details pos-relative clear pb10"
+               style="letter-spacing: 1px; font-weight: normal;">
             MARK [X] <b>EVERY</b> BOX THAT APPLIES TO APPLICANT 1 AND <b>EVERY</b> BOX THAT APPLIES TO RESPONDENT 1.
-            <div class="pos-abs r0 t0 b0 w50 hgl-light-block" style="z-index: -1">&nbsp;</div>
+            <div class="pos-abs r0 t0 b0 w50 hgl-light-block"
+                 style="z-index: -1">&nbsp;</div>
           </div>
 
           <div class="clear"></div>
@@ -1569,8 +1649,8 @@
               <div class="checkbox mr5">{{appData.parenting.applicantCitizenAU === true ? 'X' : ''}}</div> I am an Australian citizen
             </div>
             <div class="input-group">
-              <div class="checkbox mr5 fl-left">{{appData.parenting.applicantChildInAU === true ? 'X' : ''}}</div> The child (or children) is present in Australia/ ordinarily resident in Australia/ is an Australian
-              citizen
+              <div class="checkbox mr5 fl-left">{{appData.parenting.applicantChildInAU === true ? 'X' : ''}}</div> The child (or children) is present in Australia/
+              ordinarily resident in Australia/ is an Australian citizen
             </div>
 
           </div>
@@ -1582,7 +1662,7 @@
               <div class="checkbox mr5">{{appData.parenting.respondentOrdinaryResInAU === true ? 'X' : ''}}</div> Ordinarily resident in Australia
             </div>
             <div class="input-group">
-              <div class="checkbox mr5">{{appData.parenting.respondenttCitizenAU === true ? 'X' : ''}}</div> An Australian citizen
+              <div class="checkbox mr5">{{appData.parenting.respondentCitizenAU === true ? 'X' : ''}}</div> An Australian citizen
             </div>
           </div>
 
@@ -3420,7 +3500,8 @@
 
     <div class="page-content">
       <div class="subtitle mb20">
-        <b>Your total net worth</b> <span class="fs16" style="font-weight: normal;">(NOT INCLUDING SUPERANNUATION)</span>
+        <b>Your total net worth</b> <span class="fs16"
+              style="font-weight: normal;">(NOT INCLUDING SUPERANNUATION)</span>
       </div>
 
       <div class="steps-form">
@@ -3845,34 +3926,42 @@ payments to be made?</span>
                   <div class="fl-left w92">The operative time for the split</div>
                   <div class="clear"></div>
                   <div class="fake-input border-bottom-blank">
-                    <input type="text" class="pos-abs b0 l0 w30">
+                    <input type="text"
+                           class="pos-abs b0 l0 w30">
                     <div class="format-delimiter l30">/</div>
-                    <input type="text" class="pos-abs b0 l30 w30">
+                    <input type="text"
+                           class="pos-abs b0 l30 w30">
                     <div class="format-delimiter l60">/</div>
-                    <input type="text" class="pos-abs b0 l60 w30">
+                    <input type="text"
+                           class="pos-abs b0 l60 w30">
                   </div>
                 </div>
                 <div class="input-group pl40 mb10">
                   <div class="fl-left w8">b)</div>
                   <div class="fl-left w92">The amount of any future payments in respect of a base amount split in the payment phase <b>(where applicable)</b></div>
                   <div class="clear"></div>
-                  <div class="fl-left fs17" style="padding: 5px;">$</div>
-                  <div class="fake-input border-bottom-blank fl-left w90" style="height: 20px;"></div>
+                  <div class="fl-left fs17"
+                       style="padding: 5px;">$</div>
+                  <div class="fake-input border-bottom-blank fl-left w90"
+                       style="height: 20px;"></div>
                 </div>
                 <div class="clear mb10"></div>
                 <div class="input-group pl40 mb10">
                   <div class="fl-left w8">c)</div>
                   <div class="fl-left w92">The adjusted base amount where the interest is in the growth phase <b>(where applicable)</b></div>
                   <div class="clear"></div>
-                  <div class="fl-left fs17" style="padding: 5px;">$</div>
-                  <div class="fake-input border-bottom-blank fl-left w90" style="height: 20px;"></div>
+                  <div class="fl-left fs17"
+                       style="padding: 5px;">$</div>
+                  <div class="fake-input border-bottom-blank fl-left w90"
+                       style="height: 20px;"></div>
                 </div>
                 <div class="clear mb10"></div>
                 <div class="input-group pl40 mb10">
                   <div class="fl-left w8">d)</div>
                   <div class="fl-left w92">The specified percentage in the case of a percentage split <b>(where applicable)</b></div>
                   <div class="clear"></div>
-                  <div class="fake-input border-bottom-blank fl-left w40" style="height: 20px;"></div> %
+                  <div class="fake-input border-bottom-blank fl-left w40"
+                       style="height: 20px;"></div> %
                 </div>
                 <div class="clear mb10"></div>
               </div>
@@ -3903,34 +3992,42 @@ payments to be made?</span>
                   <div class="fl-left w92">The operative time for the split</div>
                   <div class="clear"></div>
                   <div class="fake-input border-bottom-blank">
-                    <input type="text" class="pos-abs b0 l0 w30">
+                    <input type="text"
+                           class="pos-abs b0 l0 w30">
                     <div class="format-delimiter l30">/</div>
-                    <input type="text" class="pos-abs b0 l30 w30">
+                    <input type="text"
+                           class="pos-abs b0 l30 w30">
                     <div class="format-delimiter l60">/</div>
-                    <input type="text" class="pos-abs b0 l60 w30">
+                    <input type="text"
+                           class="pos-abs b0 l60 w30">
                   </div>
                 </div>
                 <div class="input-group pl40 mb10">
                   <div class="fl-left w8">b)</div>
                   <div class="fl-left w92">The amount of any future payments in respect of a base amount split in the payment phase <b>(where applicable)</b></div>
                   <div class="clear"></div>
-                  <div class="fl-left fs17" style="padding: 5px;">$</div>
-                  <div class="fake-input border-bottom-blank fl-left w90" style="height: 20px;"></div>
+                  <div class="fl-left fs17"
+                       style="padding: 5px;">$</div>
+                  <div class="fake-input border-bottom-blank fl-left w90"
+                       style="height: 20px;"></div>
                 </div>
                 <div class="clear mb10"></div>
                 <div class="input-group pl40 mb10">
                   <div class="fl-left w8">c)</div>
                   <div class="fl-left w92">The adjusted base amount where the interest is in the growth phase <b>(where applicable)</b></div>
                   <div class="clear"></div>
-                  <div class="fl-left fs17" style="padding: 5px;">$</div>
-                  <div class="fake-input border-bottom-blank fl-left w90" style="height: 20px;"></div>
+                  <div class="fl-left fs17"
+                       style="padding: 5px;">$</div>
+                  <div class="fake-input border-bottom-blank fl-left w90"
+                       style="height: 20px;"></div>
                 </div>
                 <div class="clear mb10"></div>
                 <div class="input-group pl40 mb10">
                   <div class="fl-left w8">d)</div>
                   <div class="fl-left w92">The specified percentage in the case of a percentage split <b>(where applicable)</b></div>
                   <div class="clear"></div>
-                  <div class="fake-input border-bottom-blank fl-left w40" style="height: 20px;"></div> %
+                  <div class="fake-input border-bottom-blank fl-left w40"
+                       style="height: 20px;"></div> %
                 </div>
                 <div class="clear mb10"></div>
               </div>
@@ -3953,8 +4050,10 @@ payments to be made?</span>
                   <div class="fl-left w92">If the interest is a defined benefit interest in the growth phase (not being an interest in a constitutionally
                     protected fund), state the amount of any surcharge debt in the most recent member statement</div>
                   <div class="clear"></div>
-                  <div class="fl-left fs17" style="padding: 5px;">$</div>
-                  <div class="fake-input border-bottom-blank fl-left w90" style="height: 20px;"></div>
+                  <div class="fl-left fs17"
+                       style="padding: 5px;">$</div>
+                  <div class="fake-input border-bottom-blank fl-left w90"
+                       style="height: 20px;"></div>
                   <div class="clear"></div>
                 </div>
                 <div class="input-group pl40 mb10">
@@ -3962,8 +4061,10 @@ payments to be made?</span>
                   <div class="fl-left w92">If the interest is in a constitutionally protected fund, state the amount of any surcharge in the surcharge
                     debt account</div>
                   <div class="clear"></div>
-                  <div class="fl-left fs17" style="padding: 5px;">$</div>
-                  <div class="fake-input border-bottom-blank fl-left w90" style="height: 20px;"></div>
+                  <div class="fl-left fs17"
+                       style="padding: 5px;">$</div>
+                  <div class="fake-input border-bottom-blank fl-left w90"
+                       style="height: 20px;"></div>
                   <div class="clear"></div>
                 </div>
               </div>
@@ -3978,8 +4079,10 @@ payments to be made?</span>
                   <div class="fl-left w92">If the interest is a defined benefit interest in the growth phase (not being an interest in a constitutionally
                     protected fund), state the amount of any surcharge debt in the most recent member statement</div>
                   <div class="clear"></div>
-                  <div class="fl-left fs17" style="padding: 5px;">$</div>
-                  <div class="fake-input border-bottom-blank fl-left w90" style="height: 20px;"></div>
+                  <div class="fl-left fs17"
+                       style="padding: 5px;">$</div>
+                  <div class="fake-input border-bottom-blank fl-left w90"
+                       style="height: 20px;"></div>
                   <div class="clear"></div>
                 </div>
                 <div class="input-group pl40 mb10">
@@ -3987,8 +4090,10 @@ payments to be made?</span>
                   <div class="fl-left w92">If the interest is in a constitutionally protected fund, state the amount of any surcharge in the surcharge
                     debt account</div>
                   <div class="clear"></div>
-                  <div class="fl-left fs17" style="padding: 5px;">$</div>
-                  <div class="fake-input border-bottom-blank fl-left w90" style="height: 20px;"></div>
+                  <div class="fl-left fs17"
+                       style="padding: 5px;">$</div>
+                  <div class="fake-input border-bottom-blank fl-left w90"
+                       style="height: 20px;"></div>
                   <div class="clear"></div>
                 </div>
               </div>
@@ -5021,7 +5126,8 @@ payments to be made?</span>
             <b class="mb5">GROSS VALUE OF THE SUPERANNUATION THE APPLICANT WILL RECEIVE</b>
             <div class="input-group">
               <div class="fake-input huge2x">
-                <span class="pos-abs l10 t50" style="margin-top: -12px;">$</span>
+                <span class="pos-abs l10 t50"
+                      style="margin-top: -12px;">$</span>
                 <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.applicantGrossValue}}</div>
               </div>
             </div>
@@ -5031,7 +5137,8 @@ payments to be made?</span>
             <b class="mb5">GROSS VALUE OF THE SUPERANNUATION THE RESPONDENT WILL RECEIVE</b>
             <div class="input-group">
               <div class="fake-input huge2x">
-                <span class="pos-abs l10 t50" style="margin-top: -12px;">$</span>
+                <span class="pos-abs l10 t50"
+                      style="margin-top: -12px;">$</span>
                 <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.respondentGrossValue}}</div>
               </div>
             </div>
@@ -5234,11 +5341,17 @@ payments to be made?</span>
         <span class="mr5">Signature of applicant or if eFiling, tick box only</span>
         <div class="checkbox mr15"></div>
         Date
-        <input type="text" class="noborder ta-right" style="width: 30px;" />
+        <input type="text"
+               class="noborder ta-right"
+               style="width: 30px;" />
         <span class="ml5 mr5">/</span>
-        <input type="text" class="noborder ta-center " style="width:30px;">
+        <input type="text"
+               class="noborder ta-center "
+               style="width:30px;">
         <span class="ml5 mr5">/</span>
-        <input type="text" class="noborder " style="width:30px;">
+        <input type="text"
+               class="noborder "
+               style="width:30px;">
       </div>
 
       <div class="part-title-wrapper">
@@ -5269,11 +5382,14 @@ payments to be made?</span>
             </div>
             <div class="fake-input">
               <span class="pos-abs l50">Date</span>
-              <input type="text" class="pos-abs t0 l75 w5">
+              <input type="text"
+                     class="pos-abs t0 l75 w5">
               <span class="format-delimiter l80">/</span>
-              <input type="text" class="pos-abs t0 l80 w5">
+              <input type="text"
+                     class="pos-abs t0 l80 w5">
               <span class="format-delimiter l85">/</span>
-              <input type="text" class="pos-abs t0 l85 w5">
+              <input type="text"
+                     class="pos-abs t0 l85 w5">
             </div>
           </div>
         </div>
@@ -5283,7 +5399,8 @@ payments to be made?</span>
           <span class="mr5">
             <div class="checkbox"></div> lawyer</span>
 
-          <div class="w30" style="display: inline-block; vertical-align: top;">
+          <div class="w30"
+               style="display: inline-block; vertical-align: top;">
             <div class="inputs-list mb5">
               <div class="fake-input"></div>
               <div class="fake-input"></div>
@@ -5380,11 +5497,17 @@ payments to be made?</span>
         <span class="mr5">Signature of respondent or if eFiling, tick box only</span>
         <div class="checkbox mr15"></div>
         Date
-        <input type="text" class="noborder ta-right" style="width: 30px;" />
+        <input type="text"
+               class="noborder ta-right"
+               style="width: 30px;" />
         <span class="ml5 mr5">/</span>
-        <input type="text" class="noborder ta-center " style="width:30px;">
+        <input type="text"
+               class="noborder ta-center "
+               style="width:30px;">
         <span class="ml5 mr5">/</span>
-        <input type="text" class="noborder " style="width:30px;">
+        <input type="text"
+               class="noborder "
+               style="width:30px;">
       </div>
 
       <div class="part-title-wrapper">
@@ -5410,11 +5533,14 @@ payments to be made?</span>
           </div>
           <div class="fake-input">
             <span class="pos-abs l50">Date</span>
-            <input type="text" class="pos-abs t0 l75 w5">
+            <input type="text"
+                   class="pos-abs t0 l75 w5">
             <span class="format-delimiter l80">/</span>
-            <input type="text" class="pos-abs t0 l80 w5">
+            <input type="text"
+                   class="pos-abs t0 l80 w5">
             <span class="format-delimiter l85">/</span>
-            <input type="text" class="pos-abs t0 l85 w5">
+            <input type="text"
+                   class="pos-abs t0 l85 w5">
           </div>
         </div>
       </div>
