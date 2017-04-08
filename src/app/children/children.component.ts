@@ -19,12 +19,10 @@ export class ChildrenComponent implements OnInit {
   }
 
   addChild() {
-    if (confirm('Do you want to add new child?')) {
-      const obj = new Object();
-      this.items.push(obj).then((item) => {
-        this.children.push(this.af.database.object(`${this.firebaseDataPath}/${item.key}`));
-      });
-    }
+    const obj = new Object();
+    this.items.push(obj).then((item) => {
+      this.children.push(this.af.database.object(`${this.firebaseDataPath}/${item.key}`));
+    });
   }
 
   removeChild(id: string) {
