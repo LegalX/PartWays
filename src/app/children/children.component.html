@@ -8,6 +8,9 @@
       with both or either of you.
     </span>
     <div id="20">
+      <span>
+        20. Give the following details for each child.
+      </span>
       <div *ngFor="let child of children; let i=index; trackBy: index">
         <div *ngIf="child" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between">
           <div fxLayout="column" fxFlex="9" class="child_block">
@@ -96,7 +99,7 @@ CHILD LIVES MOST OF THE TIME
 
     <div id="21">
       <span>
-        Who else lives in the child’s home when the child is living with the applicant and when the child is living with
+        21. Who else lives in the child’s home when the child is living with the applicant and when the child is living with
 the respondent? <strong>Do not include the other children listed in previous question.</strong>
       </span>
       <div fxLayout="row" fxLayoutAlign="space-between" *ngFor="let child of children; let i=index; trackBy: index">
