@@ -147,6 +147,7 @@ export class AppComponent {
     feedbackDialog.afterClosed().subscribe((feedback) => {
       feedback.userId = this.currentUserId;
       feedback.applicationId = this.currentApplicationId;
+      feedback.url = this.router.routerState.snapshot.url;
       feedback.userName = this.currentUserName;
       feedback.email = this.currentUserEmail;
       feedback.submittedAt = firebase.database.ServerValue.TIMESTAMP;
