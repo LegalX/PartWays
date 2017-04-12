@@ -75,3 +75,7 @@ app-root:empty + .loading h1 {
     text-align: center;
     transform: translate(0, -50%);
 }
+.requires {
+  padding-top: 27px;
+  padding-left: 5px;
+}

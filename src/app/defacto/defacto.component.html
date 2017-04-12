@@ -25,28 +25,43 @@ after 1 July 2010?</span>
 to apply in relation to your de facto relationship?</span>
       <div fxLayout="row" fxLayoutAlign="space-between">
         <div fxLayout="column" fxFlex="48">
-          <h3 fxLayoutAlign="center center">APPLICANT</h3>
-          <md-radio-group [ngModel]="(item|async)?.applicantChooseForParts" name="applicantChooseForParts" [ngModelOptions]="{standalone: true}"
-                          (ngModelChange)="item.update({applicantChooseForParts: $event})">
-            <md-radio-button [value]="false" fxLayout="column">
-              No
-            </md-radio-button>
-            <md-radio-button [value]="true" fxLayout="column">
-              Yes
-            </md-radio-button>
-          </md-radio-group>
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <h3>APPLICANT</h3>
+          </div>
+          <div fxLayout="row">
+            <md-radio-group [ngModel]="(item|async)?.applicantChooseForParts" name="applicantChooseForParts" [ngModelOptions]="{standalone: true}"
+                              (ngModelChange)="item.update({applicantChooseForParts: $event})">
+                <md-radio-button [value]="false" fxLayout="column">
+                  No
+                </md-radio-button>
+                <md-radio-button [value]="true" fxLayout="column">
+                  Yes
+                </md-radio-button>
+            </md-radio-group>
+            <div class="requires">
+              //ATTACH COPIES OF YOUR WRITTEN AND SIGNED CONSENT AND STATEMENT OF LEGAL ADVICE BY A LEGAL PRACTITIONER
+            </div>
+          </div>
         </div>
         <div fxLayout="column" fxFlex="48">
-          <h3 fxLayoutAlign="center center">RESPONDENT</h3>
-          <md-radio-group [ngModel]="(item|async)?.respondentChooseForParts" name="respondentChooseForParts" [ngModelOptions]="{standalone: true}"
-                          (ngModelChange)="item.update({respondentChooseForParts: $event})">
-            <md-radio-button [value]="false" fxLayout="column">
-              No
-            </md-radio-button>
-            <md-radio-button [value]="true" fxLayout="column">
-              Yes
-            </md-radio-button>
-          </md-radio-group>
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <h3>RESPONDENT</h3>
+          </div>
+          <div fxLayout="row">
+            <md-radio-group [ngModel]="(item|async)?.respondentChooseForParts" name="respondentChooseForParts" [ngModelOptions]="{standalone: true}"
+            (ngModelChange)="item.update({respondentChooseForParts: $event})">
+              <md-radio-button [value]="false" fxLayout="column">
+                No
+              </md-radio-button>
+              <md-radio-button [value]="true" fxLayout="column">
+                Yes
+              </md-radio-button>
+            </md-radio-group>
+            <div class="requires">
+              //ATTACH COPIES OF YOUR WRITTEN AND SIGNED CONSENT AND STATEMENT OF LEGAL ADVICE BY A LEGAL PRACTITIONER
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
