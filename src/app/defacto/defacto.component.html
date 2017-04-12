@@ -128,17 +128,20 @@ and a failure to make an order or declaration would result in serious injustice 
         </md-radio-button>
       </md-radio-group>
     </div>
+
     <div id="32">
       <span>32. Is, or was, the relationship registered under a prescribed law of a State or Territory of Australia?</span>
-      <md-radio-group [ngModel]="(item|async)?.registeredUnderAPrescribedLaw" name="registeredUnderAPrescribedLaw" [ngModelOptions]="{standalone: true}"
-                      (ngModelChange)="item.update({registeredUnderAPrescribedLaw: $event})">
-        <md-radio-button [value]="false" fxLayout="column">
-          No
-        </md-radio-button>
-        <md-radio-button [value]="true" fxLayout="column">
-          Yes //YOU MUST FILE A COPY OF THE CERTIFICATE OF REGISTRATION OR OTHER PROOF
-        </md-radio-button>
-      </md-radio-group>
+      <div fxLayout="row">
+        <md-radio-group [ngModel]="(item|async)?.registeredUnderAPrescribedLaw" name="registeredUnderAPrescribedLaw" [ngModelOptions]="{standalone: true}" (ngModelChange)="item.update({registeredUnderAPrescribedLaw: $event})">
+          <md-radio-button [value]="false" fxLayout="column">
+            No
+          </md-radio-button>
+          <md-radio-button [value]="true" fxLayout="column">
+            Yes
+          </md-radio-button>
+        </md-radio-group>
+        <div class="requires">//YOU MUST FILE A COPY OF THE CERTIFICATE OF REGISTRATION OR OTHER PROOF</div>
+      </div>
     </div>
     <div id="33">
       <span>33. Was either or both of the parties to the de facto relationship ordinarily resident in one or more of the Australian
