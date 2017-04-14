@@ -166,7 +166,7 @@
                 <div class="right-col">Postcode {{appData.parties.applicantPostcode}}</div>
               </div>
               <div class="fake-input">
-                <div class="left-col">Phone {{appData.applicant.phone}}</div>
+                <div class="left-col">Phone {{appData.parties.applicant.phone}}</div>
                 <div class="right-col"><span class="required">Fax {{appData.parties.applicantFax}}</span></div>
               </div>
               <div class="fake-input">
@@ -411,7 +411,7 @@
                 <div class="format-delimiter">Date</div>
                 <input type="text"
                        class="l10 w19"
-                       value="{{appData.relationship.beganLivingTogetherDate}}">
+                       value="{{appData.relationship?.beganLivingTogetherDate}}">
                 <div class="format-delimiter l30">/</div>
                 <input type="text"
                        class="l31 w29">
@@ -423,7 +423,7 @@
           </div>
 
           <div class="right-col">
-            <i class="checkbox">{{appData.relationship.beganLivingTogetherNA === true ? 'X' : ''}}</i>
+            <i class="checkbox">{{appData.relationship?.beganLivingTogetherNA === true ? 'X' : ''}}</i>
           </div>
         </div>
 
@@ -441,7 +441,7 @@
                   <div class="format-delimiter">Date</div>
                   <input type="text"
                          class="l10 w19"
-                         value="{{appData.relationship.getMarriedDate}}">
+                         value="{{appData.relationship?.getMarriedDate}}">
                   <div class="format-delimiter l30">/</div>
                   <input type="text"
                          class="l31 w29">
@@ -456,7 +456,7 @@
                 <div class="fake-input">
                   <input type="text"
                          class="w90"
-                         value="{{appData.relationship.marriedCity}}">
+                         value="{{appData.relationship?.marriedCity}}">
                 </div>
               </div>
 
@@ -465,7 +465,7 @@
                 <div class="fake-input">
                   <input type="text"
                          class="w90"
-                         value="{{appData.relationship.marriedCountry}}">
+                         value="{{appData.relationship?.marriedCountry}}">
                 </div>
               </div>
 
@@ -474,7 +474,7 @@
           </div>
 
           <div class="right-col">
-            <div class="checkbox">{{appData.relationship.marriedNA === true ? 'X' : ''}}</div>
+            <div class="checkbox">{{appData.relationship?.marriedNA === true ? 'X' : ''}}</div>
           </div>
 
         </div>
@@ -489,7 +489,7 @@
                 <div class="format-delimiter">Date</div>
                 <input type="text"
                        class="l10 w19"
-                       value="{{appData.relationship.separateDate}}">
+                       value="{{appData.relationship?.separateDate}}">
                 <div class="format-delimiter l30">/</div>
                 <input type="text"
                        class="l31 w29">
@@ -501,7 +501,7 @@
           </div>
 
           <div class="right-col">
-            <div class="checkbox">{{appData.relationship.separateNA === true ? 'X' : ''}}</div>
+            <div class="checkbox">{{appData.relationship?.separateNA === true ? 'X' : ''}}</div>
           </div>
 
         </div>
@@ -517,7 +517,7 @@
                   <div class="format-delimiter">Date</div>
                   <input type="text"
                          class="l10 w19"
-                         value="{{appData.relationship.divorcedDate}}">
+                         value="{{appData.relationship?.divorcedDate}}">
                   <div class="format-delimiter l30">/</div>
                   <input type="text"
                          class="l31 w29">
@@ -532,7 +532,7 @@
                 <div class="fake-input">
                   <input type="text"
                          class="w90"
-                         value="{{appData.relationship.divorcedCity}}">
+                         value="{{appData.relationship?.divorcedCity}}">
                 </div>
               </div>
 
@@ -541,7 +541,7 @@
                 <div class="fake-input">
                   <input type="text"
                          class="w90"
-                         value="{{appData.relationship.divorcedCountry}}">
+                         value="{{appData.relationship?.divorcedCountry}}">
                 </div>
               </div>
 
@@ -551,7 +551,7 @@
           </div>
 
           <div class="right-col">
-            <div class="checkbox">{{appData.relationship.divorcedNA === true ? 'X' : ''}}</div>
+            <div class="checkbox">{{appData.relationship?.divorcedNA === true ? 'X' : ''}}</div>
           </div>
 
         </div>
@@ -608,11 +608,11 @@
             or child welfare that involve any of the parties or any of the children listed on this form?<br>
 
             <div class="input-group">
-              <div class="checkbox">{{appData.courtCases.ongoingCases === false ? 'X' : ''}}</div> <b>No</b>
+              <div class="checkbox">{{appData.courtCases?.ongoingCases === false ? 'X' : ''}}</div> <b>No</b>
             </div>
 
             <div class="input-group">
-              <div class="checkbox">{{appData.courtCases.ongoingCases === true ? 'X' : ''}}</div> <b class="mr20">Yes</b> <span class="hgl-details">PLEASE GIVE THE FOLLOWING DETAILS</span>
+              <div class="checkbox">{{appData.courtCases?.ongoingCases === true ? 'X' : ''}}</div> <b class="mr20">Yes</b> <span class="hgl-details">PLEASE GIVE THE FOLLOWING DETAILS</span>
             </div>
 
           </div>
@@ -623,10 +623,10 @@
             <div class="fake-input">
               <input type="text"
                      class="l0 w70"
-                     value="{{appData.courtCases.ongoingNameAndPlace}}">
+                     value="{{appData.courtCases?.ongoingNameAndPlace}}">
               <input type="text"
                      class=" l70 w10"
-                     value="{{appData.courtCases.ongoingNextCourtDate}}">
+                     value="{{appData.courtCases?.ongoingNextCourtDate}}">
               <div class="format-delimiter l80">/</div>
               <input type="text"
                      class=" l80 w10">
@@ -641,7 +641,7 @@
           <div class="input-group mb20">
             State the names of the parties
             <div class="inputs-list">
-              <div class="fake-input">{{appData.courtCases.namesOfParties}}</div>
+              <div class="fake-input">{{appData.courtCases?.namesOfParties}}</div>
               <div class="fake-input"></div>
               <div class="fake-input"></div>
             </div>
@@ -651,7 +651,7 @@
           <div class="input-group">
             State the nature of the orders sought <span class="hgl-details">(NUMBER &nbsp; EACH &nbsp; ORDER &nbsp; SOUGHT)</span>
             <div class="inputs-list mb5">
-              <div class="fake-input">{{appData.courtCases.natureOfOrders}}</div>
+              <div class="fake-input">{{appData.courtCases?.natureOfOrders}}</div>
               <div class="fake-input"></div>
               <div class="fake-input"></div>
             </div>
@@ -666,11 +666,11 @@
           to a child or a member of the child’s family), or child welfare, concerning any of the parties or children listed
           on this form?
           <div class="input-group">
-            <div class="checkbox mr10">{{appData.courtCases.anyExistingOrders === false ? 'X' : ''}}</div> <b>No</b>
+            <div class="checkbox mr10">{{appData.courtCases?.anyExistingOrders === false ? 'X' : ''}}</div> <b>No</b>
           </div>
           <div class="input-group">
             <div class="fl-left mr10">
-              <div class="checkbox">{{appData.courtCases.anyExistingOrders === true ? 'X' : ''}}</div>
+              <div class="checkbox">{{appData.courtCases?.anyExistingOrders === true ? 'X' : ''}}</div>
             </div>
             <b class="mr10">Yes</b>
             <b>EITHER</b> attach a full copy of the order, agreement, parenting plan or undertaking or set out details below
@@ -678,17 +678,17 @@
           </div>
 
           <div class="input-group pl35">
-            <div class="checkbox mr10">{{appData.courtCases.attached === true ? 'X' : ''}}</div> Attached is a copy/copies of the following (mark [<b>X</b>]
+            <div class="checkbox mr10">{{appData.courtCases?.attached === true ? 'X' : ''}}</div> Attached is a copy/copies of the following (mark [<b>X</b>]
             the boxes that apply):
           </div>
 
           <div class="input-group pl70 overflow">
             <div class="fl-left w35">
-              <div class="checkbox">{{appData.courtCases.attachedOrder === true ? 'X' : ''}}</div> order
+              <div class="checkbox">{{appData.courtCases?.attachedOrder === true ? 'X' : ''}}</div> order
             </div>
 
             <div class="fl-left w35">
-              <div class="checkbox">{{appData.courtCases.attachedUndertalking === true ? 'X' : ''}}</div> undertaking
+              <div class="checkbox">{{appData.courtCases?.attachedUndertalking === true ? 'X' : ''}}</div> undertaking
             </div>
 
 
@@ -696,11 +696,11 @@
 
           <div class="input-group pl70 overflow">
             <div class="fl-left w35">
-              <div class="checkbox">{{appData.courtCases.attachedParentingPlan === true ? 'X' : ''}}</div> parenting plan
+              <div class="checkbox">{{appData.courtCases?.attachedParentingPlan === true ? 'X' : ''}}</div> parenting plan
             </div>
 
             <div class="fl-left w35">
-              <div class="checkbox">{{appData.courtCases.attachedAgreement === true ? 'X' : ''}}</div> agreement
+              <div class="checkbox">{{appData.courtCases?.attachedAgreement === true ? 'X' : ''}}</div> agreement
             </div>
 
 
@@ -712,7 +712,7 @@
           </div>
 
           <div class="input-group pl35">
-            <div class="checkbox mr5">{{appData.courtCases.attached === false ? 'X' : ''}}</div> <span class="hgl-details">GIVE THE FOLLOWING DETAILS</span>
+            <div class="checkbox mr5">{{appData.courtCases?.attached === false ? 'X' : ''}}</div> <span class="hgl-details">GIVE THE FOLLOWING DETAILS</span>
           </div>
 
           <div class="input-group pl65 mb15">
@@ -721,10 +721,10 @@
             <div class="fake-input">
               <input type="text"
                      class="l0 w70"
-                     value="{{ appData.courtCases.existingNameAndPlace  }}">
+                     value="{{ appData.courtCases?.existingNameAndPlace  }}">
               <input type="text"
                      class=" l70 w10"
-                     value="{{ appData.courtCases.existingDate }}">
+                     value="{{ appData.courtCases?.existingDate }}">
               <div class="format-delimiter l80">/</div>
               <input type="text"
                      class=" l80 w10">
@@ -740,7 +740,7 @@
           <div class="input-group pl65 mb10">
             Names of the parties to the order/agreement/parenting plan/undertaking
             <div class="inputs-list">
-              <div class="fake-input">{{appData.courtCases.namesOfPartiesToOrder }}</div>
+              <div class="fake-input">{{appData.courtCases?.namesOfPartiesToOrder }}</div>
               <div class="fake-input"></div>
               <div class="fake-input"></div>
             </div>
@@ -788,7 +788,7 @@
           <div class="input-group pl60">
             Details of the order/agreement/parenting plan/undertaking
             <div class="inputs-list mb10">
-              <div class="fake-input">1. {{appData.courtCases.detailsOfTheOrder}}</div>
+              <div class="fake-input">1. {{appData.courtCases?.detailsOfTheOrder}}</div>
               <div class="fake-input"></div>
               <div class="fake-input"></div>
               <div class="fake-input"></div>
@@ -802,25 +802,25 @@
           <i class="step-number">12</i>
           <div class="mb10">Is there is a family violence order?</div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.familyViolenceOrder === false ? 'X' : ''}}</div> <b>No</b>
+            <div class="checkbox">{{appData.courtCases?.familyViolenceOrder === false ? 'X' : ''}}</div> <b>No</b>
           </div>
 
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.familyViolenceOrder === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> Are the orders sought
-            in this application consistent with that family violence order?
+            <div class="checkbox">{{appData.courtCases?.familyViolenceOrder === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> Are the orders
+            sought in this application consistent with that family violence order?
           </div>
 
           <div class="input-group pl60">
-            <div class="checkbox">{{appData.courtCases.ordersAreConsistrentFVO === true ? 'X' : ''}}</div> <b>Yes</b>
+            <div class="checkbox">{{appData.courtCases?.ordersAreConsistrentFVO === true ? 'X' : ''}}</div> <b>Yes</b>
           </div>
 
           <div class="input-group pl60">
-            <div class="checkbox">{{appData.courtCases.ordersAreConsistrentFVO === false ? 'X' : ''}}</div> <b class="mr5">No</b> <span class="hgl-details">GIVE BRIEF DETAILS (see sections 68P, 68Q, 68R and 68S of the Family Law Act)</span>
+            <div class="checkbox">{{appData.courtCases?.ordersAreConsistrentFVO === false ? 'X' : ''}}</div> <b class="mr5">No</b> <span class="hgl-details">GIVE BRIEF DETAILS (see sections 68P, 68Q, 68R and 68S of the Family Law Act)</span>
           </div>
 
           <div class="input-group pl60">
             <div class="inputs-list">
-              <div class="fake-input">{{ appData.courtCases.whyPresumpFalse }}</div>
+              <div class="fake-input">{{ appData.courtCases?.whyPresumpFalse }}</div>
               <div class="fake-input"></div>
               <div class="fake-input"></div>
             </div>
@@ -835,16 +835,16 @@
           <div class="mb10">Has there been any contact with the department responsible for child safety with respect to the children named
             in this application or any other child of the household?</div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.anyDepContact === false ? 'X' : ''}}</div> <b>No</b>
+            <div class="checkbox">{{appData.courtCases?.anyDepContact === false ? 'X' : ''}}</div> <b>No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.anyDepContact === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> Provide details including
+            <div class="checkbox">{{appData.courtCases?.anyDepContact === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> Provide details including
             the outcome of that contact and any outstanding concerns.
           </div>
 
           <div class="input-group pl60">
             <div class="inputs-list">
-              <div class="fake-input">{{ appData.courtCases.anyDepContactDetails }}</div>
+              <div class="fake-input">{{ appData.courtCases?.anyDepContactDetails }}</div>
               <div class="fake-input"></div>
               <div class="fake-input"></div>
             </div>
@@ -858,27 +858,27 @@
           <div class="mb10">Are you seeking a parenting order that provides for the child’s parents to have equal shared parental responsibility
             for the child?</div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.seekingParentingResp === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">GO TO ITEM 13A IF APPLICABLE</span>
+            <div class="checkbox">{{appData.courtCases?.seekingParentingResp === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">GO TO ITEM 13A IF APPLICABLE</span>
           </div>
           <div class="input-group mb20">
-            <div class="checkbox">{{appData.courtCases.seekingParentingResp === false ? 'X' : ''}}</div> <b class="mr10">No</b> <span class="hgl-details">COMPLETE THE FOLLOWING</span>
+            <div class="checkbox">{{appData.courtCases?.seekingParentingResp === false ? 'X' : ''}}</div> <b class="mr10">No</b> <span class="hgl-details">COMPLETE THE FOLLOWING</span>
           </div>
 
           <div class="input-group pl60">
             <div class="mb10">Is this a case where all parties accept that the presumption in Section 61DA(1) does not apply?</div>
-            <div class="checkbox mr5">{{appData.courtCases.presumptionDoesNotApply === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> Give brief details
-            of why the presumption does not apply
+            <div class="checkbox mr5">{{appData.courtCases?.presumptionDoesNotApply === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> Give brief
+            details of why the presumption does not apply
             <div class="inputs-list mt10 mb20">
-              <div class="fake-input">{{ appData.courtCases.whyPresumpFalse }}</div>
+              <div class="fake-input">{{ appData.courtCases?.whyPresumpFalse }}</div>
               <div class="fake-input"></div>
             </div>
 
             <div class="fl-left mr15">
-              <div class="checkbox mr5">{{appData.courtCases.presumptionDoesNotApply === false ? 'X' : ''}}</div> <b>No</b> </div> Briefly explain
+              <div class="checkbox mr5">{{appData.courtCases?.presumptionDoesNotApply === false ? 'X' : ''}}</div> <b>No</b> </div> Briefly explain
             why it is in the best interests of the child for the Court to make the order/s you are seeking rather than order/s
             which provide for the child’s parents to have equal shared parental responsibility for the child.
             <div class="inputs-list mt10 mb20">
-              <div class="fake-input">{{ appData.courtCases.whyPresumpTrue}}</div>
+              <div class="fake-input">{{ appData.courtCases?.whyPresumpTrue}}</div>
               <div class="fake-input"></div>
             </div>
 
@@ -927,22 +927,22 @@
 
           <div class="input-group">
             <div class="fl-left mr15">
-              <div class="checkbox">{{appData.courtCases.seekingParentingSpendTime === true ? 'X' : ''}}</div> <b>Yes</b></div> Having regard to
-            s65DAA(5), briefly explain why the child spending equal time or substantial and significant time with each of
-            the parents is reasonably practicable.
+              <div class="checkbox">{{appData.courtCases?.seekingParentingSpendTime === true ? 'X' : ''}}</div> <b>Yes</b></div> Having regard
+            to s65DAA(5), briefly explain why the child spending equal time or substantial and significant time with each
+            of the parents is reasonably practicable.
 
             <div class="inputs-list ml60 mt10 mb20">
-              <div class="fake-input">{{ appData.courtCases.whySeekingParentingRespTrue }}</div>
+              <div class="fake-input">{{ appData.courtCases?.whySeekingParentingRespTrue }}</div>
               <div class="fake-input"></div>
             </div>
           </div>
 
           <div class="input-group">
             <div class="fl-left mr15">
-              <div class="checkbox">{{appData.courtCases.seekingParentingSpendTime === false ? 'X' : ''}}</div> <b>No</b></div> Briefly explain
+              <div class="checkbox">{{appData.courtCases?.seekingParentingSpendTime === false ? 'X' : ''}}</div> <b>No</b></div> Briefly explain
             why it is not in the child’s best interest to spend time with each parent.
             <div class="inputs-list ml60 mt10">
-              <div class="fake-input">{{ appData.courtCases.whySeekingParentingRespFalse }}</div>
+              <div class="fake-input">{{ appData.courtCases?.whySeekingParentingRespFalse }}</div>
               <div class="fake-input"></div>
             </div>
           </div>
@@ -953,10 +953,10 @@
           <i class="step-number">14</i>
           <div class="mb10">Have the parties previously entered into a <b>financial agreement,</b> a <b>Part VIIIAB financial agreement</b>            or a <b>superannuation agreement</b> under the Family Law Act or under any relevant State or Territory legislation?</div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.previouslyEnteredIntoFA === false ? 'X' : ''}}</div> <b>No</b>
+            <div class="checkbox">{{appData.courtCases?.previouslyEnteredIntoFA === false ? 'X' : ''}}</div> <b>No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.previouslyEnteredIntoFA === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">PROVIDE A COPY OF THE AGREEMENT/S</span>
+            <div class="checkbox">{{appData.courtCases?.previouslyEnteredIntoFA === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">PROVIDE A COPY OF THE AGREEMENT/S</span>
           </div>
         </div>
 
@@ -966,10 +966,10 @@
             notice on the Trustee of the eligible superannuation plan under section 90MZA of the Act for a payment split
             made in relation to the superannuation interest?</div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.courtCases.servedWaiverNotice === false ? 'X' : ''}}</div> <b>No</b>
+            <div class="checkbox mr5">{{appData.courtCases?.servedWaiverNotice === false ? 'X' : ''}}</div> <b>No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.courtCases.servedWaiverNotice === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">ATTACH A COPY OF THE NOTICE</span>
+            <div class="checkbox mr5">{{appData.courtCases?.servedWaiverNotice === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">ATTACH A COPY OF THE NOTICE</span>
           </div>
         </div>
 
@@ -977,10 +977,10 @@
           <i class="step-number">16</i>
           <div class="mb10">If either party has a superannuation interest, is there a payment flag in operation in relation to that interest?</div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.paymentFlagExist === false ? 'X' : ''}}</div> <b>No</b>
+            <div class="checkbox">{{appData.courtCases?.paymentFlagExist === false ? 'X' : ''}}</div> <b>No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.paymentFlagExist === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">ATTACH A COPY OF THE ORDER OR AGREEMENT CREATING THE FLAG</span>
+            <div class="checkbox">{{appData.courtCases?.paymentFlagExist === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">ATTACH A COPY OF THE ORDER OR AGREEMENT CREATING THE FLAG</span>
           </div>
         </div>
 
@@ -989,10 +989,10 @@
           <div class="mb10">Is any party currently bankrupt or currently a debtor in bankruptcy proceedings started by either a creditor’s
             petition or a debtor’s petition or currently a debtor subject to a personal insolvency agreement?</div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.bankruptOrDebtor === false ? 'X' : ''}}</div> <b>No</b>
+            <div class="checkbox">{{appData.courtCases?.bankruptOrDebtor === false ? 'X' : ''}}</div> <b>No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.bankruptOrDebtor === true ? 'X' : ''}}</div> <b class="mr10">Yes</b>
+            <div class="checkbox">{{appData.courtCases?.bankruptOrDebtor === true ? 'X' : ''}}</div> <b class="mr10">Yes</b>
           </div>
         </div>
 
@@ -1001,10 +1001,10 @@
           <div class="mb10">Is there a proceeds of crime order or current forfeiture application in relation to any of the property of any
             of the parties (see Proceeds of Crime Act 2002 (C’wlth))?</div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.proceedsOfConfiscation === false ? 'X' : ''}}</div> <b>No</b>
+            <div class="checkbox">{{appData.courtCases?.proceedsOfConfiscation === false ? 'X' : ''}}</div> <b>No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.proceedsOfConfiscation === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">ATTACH A SEALED COPY OF THE ORDER OR APPLICATION</span>
+            <div class="checkbox">{{appData.courtCases?.proceedsOfConfiscation === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">ATTACH A SEALED COPY OF THE ORDER OR APPLICATION</span>
           </div>
         </div>
 
@@ -1013,16 +1013,16 @@
           <div class="mb10">Is there any person who may be entitled to become a party to the case under Subsection 79(10) or subsection 90SM(10)
             of the Act?</div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.partyOfTheCase === false ? 'X' : ''}}</div> <b>No</b>
+            <div class="checkbox">{{appData.courtCases?.partyOfTheCase === false ? 'X' : ''}}</div> <b>No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox">{{appData.courtCases.partyOfTheCase === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span>Has written notice been given to that person?</span>
+            <div class="checkbox">{{appData.courtCases?.partyOfTheCase === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span>Has written notice been given to that person?</span>
           </div>
           <div class="input-group pl60">
-            <div class="checkbox">{{appData.courtCases.writtenNotice === true ? 'X' : ''}}</div> <b>Yes</b>
+            <div class="checkbox">{{appData.courtCases?.writtenNotice === true ? 'X' : ''}}</div> <b>Yes</b>
           </div>
           <div class="input-group pl60">
-            <div class="checkbox">{{appData.courtCases.writtenNotice === false ? 'X' : ''}}</div> <b>No</b>
+            <div class="checkbox">{{appData.courtCases?.writtenNotice === false ? 'X' : ''}}</div> <b>No</b>
           </div>
         </div>
 
@@ -1641,29 +1641,29 @@
           <div class="clear"></div>
           <div class="left-col">
             <div class="input-group">
-              <div class="checkbox mr5">{{appData.parenting.applicantInAU === true ? 'X' : ''}}</div> I am present in Australia
+              <div class="checkbox mr5">{{appData.parenting?.applicantInAU === true ? 'X' : ''}}</div> I am present in Australia
             </div>
             <div class="input-group">
-              <div class="checkbox mr5">{{appData.parenting.applicantOrdinaryResInAU === true ? 'X' : ''}}</div> I am ordinarily resident in Australia
+              <div class="checkbox mr5">{{appData.parenting?.applicantOrdinaryResInAU === true ? 'X' : ''}}</div> I am ordinarily resident in Australia
             </div>
             <div class="input-group">
-              <div class="checkbox mr5">{{appData.parenting.applicantCitizenAU === true ? 'X' : ''}}</div> I am an Australian citizen
+              <div class="checkbox mr5">{{appData.parenting?.applicantCitizenAU === true ? 'X' : ''}}</div> I am an Australian citizen
             </div>
             <div class="input-group">
-              <div class="checkbox mr5 fl-left">{{appData.parenting.applicantChildInAU === true ? 'X' : ''}}</div> The child (or children) is present in Australia/
+              <div class="checkbox mr5 fl-left">{{appData.parenting?.applicantChildInAU === true ? 'X' : ''}}</div> The child (or children) is present in Australia/
               ordinarily resident in Australia/ is an Australian citizen
             </div>
 
           </div>
           <div class="right-col hgl-light-block">
             <div class="input-group">
-              <div class="checkbox mr5">{{appData.parenting.respondentInAU === true ? 'X' : ''}}</div> Present in Australia
+              <div class="checkbox mr5">{{appData.parenting?.respondentInAU === true ? 'X' : ''}}</div> Present in Australia
             </div>
             <div class="input-group">
-              <div class="checkbox mr5">{{appData.parenting.respondentOrdinaryResInAU === true ? 'X' : ''}}</div> Ordinarily resident in Australia
+              <div class="checkbox mr5">{{appData.parenting?.respondentOrdinaryResInAU === true ? 'X' : ''}}</div> Ordinarily resident in Australia
             </div>
             <div class="input-group">
-              <div class="checkbox mr5">{{appData.parenting.respondentCitizenAU === true ? 'X' : ''}}</div> An Australian citizen
+              <div class="checkbox mr5">{{appData.parenting?.respondentCitizenAU === true ? 'X' : ''}}</div> An Australian citizen
             </div>
           </div>
 
@@ -2155,10 +2155,10 @@
           <div class="mb5">Did your de facto relationship break down on or after 1 March 2009 or if resident in South Australia on or after
             1 July 2010?</div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.defacto.relationshipBreakDown === false ? 'X' : ''}}</div> <b class="mr10">No</b> <span class="hgl-details">IF NO, COMPLETE ITEMS 26 TO 28 AS REQUIRED</span>
+            <div class="checkbox mr5">{{appData.defacto?.relationshipBreakDown === false ? 'X' : ''}}</div> <b class="mr10">No</b> <span class="hgl-details">IF NO, COMPLETE ITEMS 26 TO 28 AS REQUIRED</span>
           </div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.defacto.relationshipBreakDown === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">IF YES, GO TO ITEM 29</span>
+            <div class="checkbox mr5">{{appData.defacto?.relationshipBreakDown === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">IF YES, GO TO ITEM 29</span>
           </div>
         </div>
 
@@ -2172,11 +2172,11 @@
             <div class="bg-brown-light">
               <div class="bold uppercase fs15">Applicant</div>
               <div class="input-group">
-                <div class="checkbox mr5">{{appData.defacto.applicantChooseForParts === false ? 'X' : ''}}</div> <b>No</b>
+                <div class="checkbox mr5">{{appData.defacto?.applicantChooseForParts === false ? 'X' : ''}}</div> <b>No</b>
               </div>
               <div class="input-group">
                 <div class="fl-left mr10 pb20">
-                  <div class="checkbox mr5">{{appData.defacto.applicantChooseForParts === true ? 'X' : ''}}</div> <b>Yes</b></div> <span class="hgl-details">ATTACH COPIES OF YOUR WRITTEN AND &nbsp; SIGNED CONSENT AND STATEMENT OF LEGAL ADVICE BY A &nbsp; LEGAL PRACTITIONER</span>
+                  <div class="checkbox mr5">{{appData.defacto?.applicantChooseForParts === true ? 'X' : ''}}</div> <b>Yes</b></div> <span class="hgl-details">ATTACH COPIES OF YOUR WRITTEN AND &nbsp; SIGNED CONSENT AND STATEMENT OF LEGAL ADVICE BY A &nbsp; LEGAL PRACTITIONER</span>
               </div>
             </div>
           </div>
@@ -2185,11 +2185,11 @@
             <div class="bg-brown-light">
               <div class="bold uppercase fs15">Respondent</div>
               <div class="input-group">
-                <div class="checkbox mr5">{{appData.defacto.respondentChooseForParts === false ? 'X' : ''}}</div> <b>No</b>
+                <div class="checkbox mr5">{{appData.defacto?.respondentChooseForParts === false ? 'X' : ''}}</div> <b>No</b>
               </div>
               <div class="input-group">
                 <div class="fl-left mr10 pb20">
-                  <div class="checkbox mr5">{{appData.defacto.respondentChooseForParts === true ? 'X' : ''}}</div> <b>Yes</b></div> <span class="hgl-details">ATTACH COPIES OF YOUR WRITTEN AND &nbsp; SIGNED CONSENT AND STATEMENT OF LEGAL ADVICE BY A &nbsp; LEGAL PRACTITIONER</span>
+                  <div class="checkbox mr5">{{appData.defacto?.respondentChooseForParts === true ? 'X' : ''}}</div> <b>Yes</b></div> <span class="hgl-details">ATTACH COPIES OF YOUR WRITTEN AND &nbsp; SIGNED CONSENT AND STATEMENT OF LEGAL ADVICE BY A &nbsp; LEGAL PRACTITIONER</span>
               </div>
             </div>
           </div>
@@ -2203,10 +2203,10 @@
           <div class="mb5">Have the parties previously entered into a designated State/Territory financial agreement in relation to their
             de facto relationship?</div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.defacto.enteredIntoDesignatedFA === false ? 'X' : ''}}</div> <b class="mr5">No</b> <span class="hgl-details">IF NO, GO TO ITEM 29</span>
+            <div class="checkbox mr5">{{appData.defacto?.enteredIntoDesignatedFA === false ? 'X' : ''}}</div> <b class="mr5">No</b> <span class="hgl-details">IF NO, GO TO ITEM 29</span>
           </div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.defacto.enteredIntoDesignatedFA === true ? 'X' : ''}}</div> <b class="mr5">Yes</b> <span class="hgl-details">IF YES, GO TO ITEM 28 AND PROVIDE A COPY OF THE AGREEMENT/S</span>
+            <div class="checkbox mr5">{{appData.defacto?.enteredIntoDesignatedFA === true ? 'X' : ''}}</div> <b class="mr5">Yes</b> <span class="hgl-details">IF YES, GO TO ITEM 28 AND PROVIDE A COPY OF THE AGREEMENT/S</span>
           </div>
         </div>
 
@@ -2215,10 +2215,10 @@
           <div class="mb5">Has that agreement ceased to have effect without any property being distributed or any maintenance being paid under
             the agreement?</div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.defacto.agreementCausedToHaveEffect === false ? 'X' : ''}}</div> <b class="mr5">No</b>
+            <div class="checkbox mr5">{{appData.defacto?.agreementCausedToHaveEffect === false ? 'X' : ''}}</div> <b class="mr5">No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.defacto.agreementCausedToHaveEffect === true ? 'X' : ''}}</div> <b class="mr5">Yes</b>
+            <div class="checkbox mr5">{{appData.defacto?.agreementCausedToHaveEffect === true ? 'X' : ''}}</div> <b class="mr5">Yes</b>
           </div>
         </div>
 
@@ -2226,10 +2226,10 @@
           <i class="step-number">29</i>
           <div class="mb5">Is the period or the total of the periods of the de facto relationship at least 2 years?</div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.defacto.totalPeriodDefactoRelationship === false ? 'X' : ''}}</div> <b class="mr5">No</b>
+            <div class="checkbox mr5">{{appData.defacto?.totalPeriodDefactoRelationship === false ? 'X' : ''}}</div> <b class="mr5">No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.defacto.totalPeriodDefactoRelationship === true ? 'X' : ''}}</div> <b class="mr5">Yes</b>
+            <div class="checkbox mr5">{{appData.defacto?.totalPeriodDefactoRelationship === true ? 'X' : ''}}</div> <b class="mr5">Yes</b>
           </div>
         </div>
 
@@ -2237,10 +2237,10 @@
           <i class="step-number">30</i>
           <div class="mb5">Is there a child of the de facto relationship?</div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.defacto.childOfTheDefactoRelationship === false ? 'X' : ''}}</div> <b class="mr5">No</b>
+            <div class="checkbox mr5">{{appData.defacto?.childOfTheDefactoRelationship === false ? 'X' : ''}}</div> <b class="mr5">No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.defacto.childOfTheDefactoRelationship === true ? 'X' : ''}}</div> <b class="mr5">Yes</b>
+            <div class="checkbox mr5">{{appData.defacto?.childOfTheDefactoRelationship === true ? 'X' : ''}}</div> <b class="mr5">Yes</b>
           </div>
         </div>
 
@@ -2249,10 +2249,10 @@
           <div class="mb5">Has the applicant made substantial contributions of the kind mentioned in paragraph 90SM(4)(a), (b) or (c) and
             a failure to make an order or declaration would result in serious injustice to the applicant?</div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.defacto.substantialContributionsAndFailure === false ? 'X' : ''}}</div> <b class="mr5">No</b>
+            <div class="checkbox mr5">{{appData.defacto?.substantialContributionsAndFailure === false ? 'X' : ''}}</div> <b class="mr5">No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.defacto.substantialContributionsAndFailure === true ? 'X' : ''}}</div> <b class="mr5">Yes</b>
+            <div class="checkbox mr5">{{appData.defacto?.substantialContributionsAndFailure === true ? 'X' : ''}}</div> <b class="mr5">Yes</b>
           </div>
         </div>
 
@@ -2275,10 +2275,10 @@
           <i class="step-number">32</i>
           <div class="mb5">Is, or was, the relationship registered under a prescribed law of a State or Territory of Australia?</div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.defacto.registeredUnderAPrescribedLaw === false ? 'X' : ''}}</div> <b class="mr5">No</b>
+            <div class="checkbox mr5">{{appData.defacto?.registeredUnderAPrescribedLaw === false ? 'X' : ''}}</div> <b class="mr5">No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.defacto.registeredUnderAPrescribedLaw === true ? 'X' : ''}}</div> <b class="mr5">Yes</b> <span class="hgl-details">YOU MUST FILE A COPY OF THE CERTIFICATE OF REGISTRATION OR OTHER PROOF</span>
+            <div class="checkbox mr5">{{appData.defacto?.registeredUnderAPrescribedLaw === true ? 'X' : ''}}</div> <b class="mr5">Yes</b> <span class="hgl-details">YOU MUST FILE A COPY OF THE CERTIFICATE OF REGISTRATION OR OTHER PROOF</span>
           </div>
         </div>
 
@@ -2289,10 +2289,10 @@
             down?
           </div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.defacto.wasInOneOrMoreATBroke === false ? 'X' : ''}}</div> <b class="mr5">No</b>
+            <div class="checkbox mr5">{{appData.defacto?.wasInOneOrMoreATBroke === false ? 'X' : ''}}</div> <b class="mr5">No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.defacto.wasInOneOrMoreATBroke === true ? 'X' : ''}}</div> <b class="mr5">Yes</b>
+            <div class="checkbox mr5">{{appData.defacto?.wasInOneOrMoreATBroke === true ? 'X' : ''}}</div> <b class="mr5">Yes</b>
           </div>
         </div>
 
@@ -2302,10 +2302,10 @@
             Territories or New South Wales, Queensland, Victoria, Tasmania or South Australia at the time this application
             is made?</div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.defacto.InOneOrMoreATMade === false ? 'X' : ''}}</div> <b class="mr5">No</b>
+            <div class="checkbox mr5">{{appData.defacto?.InOneOrMoreATMade === false ? 'X' : ''}}</div> <b class="mr5">No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.defacto.InOneOrMoreATMade === true ? 'X' : ''}}</div> <b class="mr5">Yes</b>
+            <div class="checkbox mr5">{{appData.defacto?.InOneOrMoreATMade === true ? 'X' : ''}}</div> <b class="mr5">Yes</b>
           </div>
         </div>
 
@@ -2316,10 +2316,10 @@
             relationship?
           </div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.defacto.InOneOrMoreATOneThird === false ? 'X' : ''}}</div> <b class="mr5">No</b>
+            <div class="checkbox mr5">{{appData.defacto?.InOneOrMoreATOneThird === false ? 'X' : ''}}</div> <b class="mr5">No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.defacto.InOneOrMoreATOneThird === true ? 'X' : ''}}</div> <b class="mr5">Yes</b>
+            <div class="checkbox mr5">{{appData.defacto?.InOneOrMoreATOneThird === true ? 'X' : ''}}</div> <b class="mr5">Yes</b>
           </div>
         </div>
 
@@ -2329,10 +2329,10 @@
             to the de facto relationship in one or more of the Australian Territories or New South Wales, Queensland, Victoria,
             Tasmania or South Australia?</div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.defacto.substantialContributionsInOneOrMoreAT === false ? 'X' : ''}}</div> <b class="mr5">No</b>
+            <div class="checkbox mr5">{{appData.defacto?.substantialContributionsInOneOrMoreAT === false ? 'X' : ''}}</div> <b class="mr5">No</b>
           </div>
           <div class="input-group">
-            <div class="checkbox mr5">{{appData.defacto.substantialContributionsInOneOrMoreAT === true ? 'X' : ''}}</div> <b class="mr5">Yes</b>
+            <div class="checkbox mr5">{{appData.defacto?.substantialContributionsInOneOrMoreAT === true ? 'X' : ''}}</div> <b class="mr5">Yes</b>
           </div>
         </div>
       </div>
@@ -2409,7 +2409,7 @@
           <div class="fl-left w42">
             <div class="input-group">
               <div class="fake-input bold-border">
-                $ {{ appData.maintenance.applicantGrossWeeklyIncome }}
+                $ {{ appData.maintenance?.applicantGrossWeeklyIncome }}
               </div>
             </div>
           </div>
@@ -2417,7 +2417,7 @@
           <div class="fl-left w42 pb5 hgl-light-block">
             <div class="input-group">
               <div class="fake-input bold-border">
-                $ {{ appData.maintenance.respondentGrossWeeklyIncome }}
+                $ {{ appData.maintenance?.respondentGrossWeeklyIncome }}
               </div>
             </div>
           </div>
@@ -2432,12 +2432,12 @@
             <div class="input-group">
               <div class="inputs-list">
                 <div class="input-group">
-                  <div class="checkbox">{{appData.maintenance.applicantOrdersAffectCapacity === false ? 'X' : ''}}</div> <b class="mr10">No</b> <span class="hgl-details">Go to item 39</span>
+                  <div class="checkbox">{{appData.maintenance?.applicantOrdersAffectCapacity === false ? 'X' : ''}}</div> <b class="mr10">No</b>                  <span class="hgl-details">Go to item 39</span>
                 </div>
                 <div class="input-group">
-                  <div class="checkbox">{{appData.maintenance.applicantOrdersAffectCapacity === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">GIVE DETAILS</span>
+                  <div class="checkbox">{{appData.maintenance?.applicantOrdersAffectCapacity === true ? 'X' : ''}}</div> <b class="mr10">Yes</b>                  <span class="hgl-details">GIVE DETAILS</span>
                 </div>
-                <div class="fake-input">{{ appData.maintenance.applicantOrdersAffectCapacityText }}</div>
+                <div class="fake-input">{{ appData.maintenance?.applicantOrdersAffectCapacityText }}</div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
               </div>
@@ -2449,12 +2449,12 @@
             <div class="input-group">
               <div class="inputs-list">
                 <div class="input-group">
-                  <div class="checkbox">{{appData.maintenance.respondentOrdersAffectCapacity === false ? 'X' : ''}}</div> <b class="mr10">No</b> <span class="hgl-details">Go to item 39</span>
+                  <div class="checkbox">{{appData.maintenance?.respondentOrdersAffectCapacity === false ? 'X' : ''}}</div> <b class="mr10">No</b>                  <span class="hgl-details">Go to item 39</span>
                 </div>
                 <div class="input-group">
-                  <div class="checkbox">{{appData.maintenance.respondentOrdersAffectCapacity === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">GIVE DETAILS</span>
+                  <div class="checkbox">{{appData.maintenance?.respondentOrdersAffectCapacity === true ? 'X' : ''}}</div> <b class="mr10">Yes</b>                  <span class="hgl-details">GIVE DETAILS</span>
                 </div>
-                <div class="fake-input">{{ appData.maintenance.respondentOrdersAffectCapacityText }}</div>
+                <div class="fake-input">{{ appData.maintenance?.respondentOrdersAffectCapacityText }}</div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
               </div>
@@ -2491,19 +2491,21 @@
             <div class="input-group">
               <div class="inputs-list">
                 <div class="input-group">
-                  <div class="checkbox">{{appData.maintenance.applicantPayingChildSupport === false ? 'X' : ''}}</div> <b class="mr10">No</b> <span class="hgl-details">Go to item 40</span>
+                  <div class="checkbox">{{appData.maintenance?.applicantPayingChildSupport === false ? 'X' : ''}}</div> <b class="mr10">No</b>
+                  <span class="hgl-details">Go to item 40</span>
                 </div>
                 <div class="input-group">
-                  <div class="checkbox">{{appData.maintenance.applicantPayingChildSupport === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">GIVE DETAILS</span>
+                  <div class="checkbox">{{appData.maintenance?.applicantPayingChildSupport === true ? 'X' : ''}}</div> <b class="mr10">Yes</b>
+                  <span class="hgl-details">GIVE DETAILS</span>
                 </div>
                 <div class="fake-input">
                   <span class="pos-abs">Amount paid per week</span>
-                  <span class="pos-abs l60">$ {{ appData.maintenance.applicantPayingChildPerWeek }}</span>
+                  <span class="pos-abs l60">$ {{ appData.maintenance?.applicantPayingChildPerWeek }}</span>
                 </div>
                 <div class="fake-input">
                   <span>Paid to (name)</span>
                 </div>
-                <div class="fake-input">{{ appData.maintenance.applicantPayingChildName }}</div>
+                <div class="fake-input">{{ appData.maintenance?.applicantPayingChildName }}</div>
               </div>
             </div>
           </div>
@@ -2514,19 +2516,21 @@
             <div class="input-group">
               <div class="inputs-list">
                 <div class="input-group">
-                  <div class="checkbox">{{appData.maintenance.replicantPayingChildSupport === false ? 'X' : ''}}</div> <b class="mr10">No</b> <span class="hgl-details">Go to item 40</span>
+                  <div class="checkbox">{{appData.maintenance?.replicantPayingChildSupport === false ? 'X' : ''}}</div> <b class="mr10">No</b>
+                  <span class="hgl-details">Go to item 40</span>
                 </div>
                 <div class="input-group">
-                  <div class="checkbox">{{appData.maintenance.replicantPayingChildSupport === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">GIVE DETAILS</span>
+                  <div class="checkbox">{{appData.maintenance?.replicantPayingChildSupport === true ? 'X' : ''}}</div> <b class="mr10">Yes</b>
+                  <span class="hgl-details">GIVE DETAILS</span>
                 </div>
                 <div class="fake-input">
                   <span class="pos-abs">Amount paid per week</span>
-                  <span class="pos-abs l60">$ {{ appData.maintenance.replicantPayingChildPerWeek }}</span>
+                  <span class="pos-abs l60">$ {{ appData.maintenance?.replicantPayingChildPerWeek }}</span>
                 </div>
                 <div class="fake-input">
                   <span>Paid to (name)</span>
                 </div>
-                <div class="fake-input">{{ appData.maintenance.replicantPayingChildName }}</div>
+                <div class="fake-input">{{ appData.maintenance?.replicantPayingChildName }}</div>
               </div>
             </div>
           </div>
@@ -2541,19 +2545,19 @@
             <div class="input-group">
               <div class="inputs-list">
                 <div class="input-group">
-                  <div class="checkbox">{{appData.maintenance.applicantReceivingChildSupport === false ? 'X' : ''}}</div> <b class="mr10">No</b> <span class="hgl-details">Go to item 41</span>
+                  <div class="checkbox">{{appData.maintenance?.applicantReceivingChildSupport === false ? 'X' : ''}}</div> <b class="mr10">No</b>                  <span class="hgl-details">Go to item 41</span>
                 </div>
                 <div class="input-group">
-                  <div class="checkbox">{{appData.maintenance.applicantReceivingChildSupport === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">GIVE DETAILS</span>
+                  <div class="checkbox">{{appData.maintenance?.applicantReceivingChildSupport === true ? 'X' : ''}}</div> <b class="mr10">Yes</b>                  <span class="hgl-details">GIVE DETAILS</span>
                 </div>
                 <div class="fake-input">
                   <span class="pos-abs">Amount received each week</span>
-                  <span class="pos-abs l60">$ {{ appData.maintenance.applicantReceivingChildPerWeek }}</span>
+                  <span class="pos-abs l60">$ {{ appData.maintenance?.applicantReceivingChildPerWeek }}</span>
                 </div>
                 <div class="fake-input">
                   <span>Paid to you by (name)</span>
                 </div>
-                <div class="fake-input">{{ appData.maintenance.applicantReceivingChildName }}</div>
+                <div class="fake-input">{{ appData.maintenance?.applicantReceivingChildName }}</div>
               </div>
             </div>
           </div>
@@ -2564,19 +2568,19 @@
             <div class="input-group">
               <div class="inputs-list">
                 <div class="input-group">
-                  <div class="checkbox">{{appData.maintenance.replicantReceivingChildSupport === false ? 'X' : ''}}</div> <b class="mr10">No</b> <span class="hgl-details">Go to item 40</span>
+                  <div class="checkbox">{{appData.maintenance?.replicantReceivingChildSupport === false ? 'X' : ''}}</div> <b class="mr10">No</b>                  <span class="hgl-details">Go to item 40</span>
                 </div>
                 <div class="input-group">
-                  <div class="checkbox">{{appData.maintenance.replicantReceivingChildSupport === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">GIVE DETAILS</span>
+                  <div class="checkbox">{{appData.maintenance?.replicantReceivingChildSupport === true ? 'X' : ''}}</div> <b class="mr10">Yes</b>                  <span class="hgl-details">GIVE DETAILS</span>
                 </div>
                 <div class="fake-input">
                   <span class="pos-abs">Amount received each week</span>
-                  <span class="pos-abs l60">$ {{ appData.maintenance.replicantReceivingChildPerWeek }}</span>
+                  <span class="pos-abs l60">$ {{ appData.maintenance?.replicantReceivingChildPerWeek }}</span>
                 </div>
                 <div class="fake-input">
                   <span>Paid to you by (name)</span>
                 </div>
-                <div class="fake-input">{{ appData.maintenance.replicantReceivingChildName }}</div>
+                <div class="fake-input">{{ appData.maintenance?.replicantReceivingChildName }}</div>
               </div>
             </div>
           </div>
@@ -2751,7 +2755,7 @@
               <div class="inputs-list">
                 <div class="fake-input">
                   <span class="pos-abs">Value of your share</span>
-                  <span class="pos-abs l60">$ {{ appData.maintenance.applicantValueOfFurniture }}</span>
+                  <span class="pos-abs l60">$ {{ appData.maintenance?.applicantValueOfFurniture }}</span>
                 </div>
               </div>
             </div>
@@ -2762,7 +2766,7 @@
               <div class="inputs-list">
                 <div class="fake-input">
                   <span class="pos-abs">Value of your share</span>
-                  <span class="pos-abs l60">$ {{ appData.maintenance.respondentValueOfFurniture }}</span>
+                  <span class="pos-abs l60">$ {{ appData.maintenance?.respondentValueOfFurniture }}</span>
                 </div>
               </div>
             </div>
@@ -3103,14 +3107,14 @@
 
           <div class="fl-left w42">
             <div class="input-group pb10">
-              <div class="fake-input huge bright-border">$ {{ appData.maintenance.applicantTotalValueOfProperyOwned }}</div>
+              <div class="fake-input huge bright-border">$ {{ appData.maintenance?.applicantTotalValueOfProperyOwned }}</div>
               <div class="ta-right"><b>Write this amount at Item 58A on page 16</b></div>
             </div>
           </div>
           <div class="fl-left w2">&nbsp;</div>
           <div class="fl-left w42 pb50 hgl-light-block">
             <div class="input-group">
-              <div class="fake-input huge bright-border">$ {{ appData.maintenance.respondentTotalValueOfProperyOwned }}</div>
+              <div class="fake-input huge bright-border">$ {{ appData.maintenance?.respondentTotalValueOfProperyOwned }}</div>
             </div>
             <div class="ta-right"><b>Write this amount at Item 58A on page 16</b></div>
           </div>
@@ -3380,12 +3384,12 @@
               <div class="inputs-list">
                 <div class="fake-input">
                   <span class="pos-abs">Current financial year</span>
-                  <span class="pos-abs l60">$ {{ appData.maintenance.applicantFinancialYear }}</span>
+                  <span class="pos-abs l60">$ {{ appData.maintenance?.applicantFinancialYear }}</span>
                 </div>
                 <div class="fake-input noborder">
                   Amount unpaid from previous financial years
                 </div>
-                <div class="fake-input">$ {{ appData.maintenance.applicantUnpaidFromPreviousYear }}</div>
+                <div class="fake-input">$ {{ appData.maintenance?.applicantUnpaidFromPreviousYear }}</div>
               </div>
 
             </div>
@@ -3396,12 +3400,12 @@
               <div class="inputs-list">
                 <div class="fake-input">
                   <span class="pos-abs">Current financial year</span>
-                  <span class="pos-abs l60">$ {{ appData.maintenance.replicantFinancialYear }}</span>
+                  <span class="pos-abs l60">$ {{ appData.maintenance?.replicantFinancialYear }}</span>
                 </div>
                 <div class="fake-input noborder">
                   Amount unpaid from previous financial years
                 </div>
-                <div class="fake-input">$ {{ appData.maintenance.replicantUnpaidFromPreviousYear }}</div>
+                <div class="fake-input">$ {{ appData.maintenance?.replicantUnpaidFromPreviousYear }}</div>
               </div>
 
             </div>
@@ -3459,14 +3463,14 @@
 
           <div class="fl-left w42">
             <div class="input-group">
-              <div class="fake-input huge bright-border">$ {{ appData.maintenance.applicantTotalLiabilities }}</div>
+              <div class="fake-input huge bright-border">$ {{ appData.maintenance?.applicantTotalLiabilities }}</div>
             </div>
             <div class="ta-right"><b>Write this amount at Item 58B on page 16</b></div>
           </div>
           <div class="fl-left w2">&nbsp;</div>
           <div class="fl-left w42 hgl-light-block">
             <div class="input-group">
-              <div class="fake-input huge bright-border">$ {{ appData.maintenance.respondentTotalLiabilities }}</div>
+              <div class="fake-input huge bright-border">$ {{ appData.maintenance?.respondentTotalLiabilities }}</div>
             </div>
             <div class="ta-right"><b>Write this amount at Item 58B on page 16</b></div>
           </div>
@@ -3533,7 +3537,7 @@
             <div class="input-group">
               <div class="fake-input huge">
                 <b class="pos-abs l2">A</b>
-                <b class="pos-abs l30">$ {{ appData.maintenance.applicantTotal49 }}</b>
+                <b class="pos-abs l30">$ {{ appData.maintenance?.applicantTotal49 }}</b>
               </div>
             </div>
           </div>
@@ -3542,7 +3546,7 @@
             <div class="input-group">
               <div class="fake-input huge">
                 <b class="pos-abs l2">C</b>
-                <b class="pos-abs l30">$ {{ appData.maintenance.respondentTotal49 }}</b>
+                <b class="pos-abs l30">$ {{ appData.maintenance?.respondentTotal49 }}</b>
               </div>
             </div>
           </div>
@@ -3557,7 +3561,7 @@
             <div class="input-group">
               <div class="fake-input huge">
                 <b class="pos-abs l2">B</b>
-                <b class="pos-abs l30">$ {{ appData.maintenance.applicantTotal57 }}</b>
+                <b class="pos-abs l30">$ {{ appData.maintenance?.applicantTotal57 }}</b>
               </div>
             </div>
           </div>
@@ -3566,7 +3570,7 @@
             <div class="input-group">
               <div class="fake-input huge">
                 <b class="pos-abs l2">D</b>
-                <b class="pos-abs l30">$ {{ appData.maintenance.respondentTotal57 }}</b>
+                <b class="pos-abs l30">$ {{ appData.maintenance?.respondentTotal57 }}</b>
               </div>
             </div>
           </div>
@@ -3580,7 +3584,7 @@
           <div class="fl-left w42">
             <div class="input-group">
               <div class="fake-input huge">
-                <b class="pos-abs l30">$ {{ appData.maintenance.applicantTotalNewWorth }}</b>
+                <b class="pos-abs l30">$ {{ appData.maintenance?.applicantTotalNewWorth }}</b>
               </div>
             </div>
           </div>
@@ -3588,7 +3592,7 @@
           <div class="fl-left w42 pb65 hgl-light-block">
             <div class="input-group">
               <div class="fake-input huge">
-                <b class="pos-abs l30">$ {{ appData.maintenance.respondentTotalNewWorth }}</b>
+                <b class="pos-abs l30">$ {{ appData.maintenance?.respondentTotalNewWorth }}</b>
               </div>
             </div>
           </div>
@@ -3604,13 +3608,13 @@
             <div class="input-group">
               <div class="inputs-list">
                 <div class="input-group mt10">
-                  <div class="checkbox">{{appData.maintenance.applicantEitherPartyAcquiredOrDisposed === false ? 'X' : ''}}</div> <b class="mr10">No</b> <span class="hgl-details">GO TO ITEM 60</span>
+                  <div class="checkbox">{{appData.maintenance?.applicantEitherPartyAcquiredOrDisposed === false ? 'X' : ''}}</div> <b class="mr10">No</b>                  <span class="hgl-details">GO TO ITEM 60</span>
                 </div>
                 <div class="input-group">
-                  <div class="checkbox">{{appData.maintenance.applicantEitherPartyAcquiredOrDisposed === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">GIVE DETAILS</span>
+                  <div class="checkbox">{{appData.maintenance?.applicantEitherPartyAcquiredOrDisposed === true ? 'X' : ''}}</div> <b class="mr10">Yes</b>                  <span class="hgl-details">GIVE DETAILS</span>
                 </div>
 
-                <div class="fake-input">{{ appData.maintenance.applicantEitherPartyAcquiredOrDisposedDetails }}</div>
+                <div class="fake-input">{{ appData.maintenance?.applicantEitherPartyAcquiredOrDisposedDetails }}</div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
@@ -3628,13 +3632,13 @@
           <div class="fl-left w42 pb15 pt10 hgl-light-block">
             <div class="inputs-list">
               <div class="input-group mt10">
-                <div class="checkbox">{{appData.maintenance.respondentEitherPartyAcquiredOrDisposed === false ? 'X' : ''}}</div> <b class="mr10">No</b> <span class="hgl-details">GO TO ITEM 60</span>
+                <div class="checkbox">{{appData.maintenance?.respondentEitherPartyAcquiredOrDisposed === false ? 'X' : ''}}</div> <b class="mr10">No</b>                <span class="hgl-details">GO TO ITEM 60</span>
               </div>
               <div class="input-group">
-                <div class="checkbox">{{appData.maintenance.respondentEitherPartyAcquiredOrDisposed === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> <span class="hgl-details">GIVE DETAILS</span>
+                <div class="checkbox">{{appData.maintenance?.respondentEitherPartyAcquiredOrDisposed === true ? 'X' : ''}}</div> <b class="mr10">Yes</b>                <span class="hgl-details">GIVE DETAILS</span>
               </div>
 
-              <div class="fake-input">{{ appData.maintenance.respondentEitherPartyAcquiredOrDisposedDetails }}</div>
+              <div class="fake-input">{{ appData.maintenance?.respondentEitherPartyAcquiredOrDisposedDetails }}</div>
               <div class="fake-input"></div>
               <div class="fake-input"></div>
               <div class="fake-input"></div>
@@ -3715,7 +3719,7 @@
           <div class="fl-left w42">
             <div class="input-group">
               <div class="inputs-list">
-                <div class="fake-input noborder">Name {{ appData.maintenance.applicantSuperannuationName }}</div>
+                <div class="fake-input noborder">Name {{ appData.maintenance?.applicantSuperannuationName }}</div>
                 <div class="fake-input noborder"></div>
                 <div class="fake-input noborder"></div>
               </div>
@@ -3725,7 +3729,7 @@
           <div class="fl-left w42 pb15 hgl-light-block">
             <div class="input-group">
               <div class="inputs-list">
-                <div class="fake-input noborder">Name {{ appData.maintenance.respondentSuperannuationName }}</div>
+                <div class="fake-input noborder">Name {{ appData.maintenance?.respondentSuperannuationName }}</div>
                 <div class="fake-input noborder"></div>
                 <div class="fake-input noborder"></div>
               </div>
@@ -3745,31 +3749,34 @@
             <div class="input-group">
               <div class="inputs-list">
                 <div class="input-group">
-                  <div class="checkbox mr5">{{ appData.maintenance.applicantAccumulationInterest  === true ? 'X' : ''}}</div> accumulation interest
+                  <div class="checkbox mr5">{{ appData.maintenance?.applicantAccumulationInterest === true ? 'X' : ''}}</div> accumulation interest
                 </div>
                 <div class="input-group">
-                  <div class="checkbox mr5">{{ appData.maintenance.applicantPartiallyVested  === true ? 'X' : ''}}</div> partially vested accumulation interes
+                  <div class="checkbox mr5">{{ appData.maintenance?.applicantPartiallyVested === true ? 'X' : ''}}</div> partially vested accumulation
+                  interes
                 </div>
                 <div class="input-group">
-                  <div class="checkbox mr5">{{ appData.maintenance.applicantDefinedBenefitInterest  === true ? 'X' : ''}}</div> defined benefit interest
+                  <div class="checkbox mr5">{{ appData.maintenance?.applicantDefinedBenefitInterest === true ? 'X' : ''}}</div> defined benefit interest
                 </div>
                 <div class="input-group">
-                  <div class="checkbox mr5">{{ appData.maintenance.applicantSelfManagedFund  === true ? 'X' : ''}}</div> self managed fund
+                  <div class="checkbox mr5">{{ appData.maintenance?.applicantSelfManagedFund === true ? 'X' : ''}}</div> self managed fund
                 </div>
                 <div class="input-group">
-                  <div class="checkbox mr5">{{ appData.maintenance.applicantRetirementSavingsAccount  === true ? 'X' : ''}}</div> retirement savings account
+                  <div class="checkbox mr5">{{ appData.maintenance?.applicantRetirementSavingsAccount === true ? 'X' : ''}}</div> retirement savings
+                  account
                 </div>
                 <div class="input-group">
-                  <div class="checkbox mr5">{{ appData.maintenance.applicantSmallSuperannuationAccount  === true ? 'X' : ''}}</div> small superannuation account
+                  <div class="checkbox mr5">{{ appData.maintenance?.applicantSmallSuperannuationAccount === true ? 'X' : ''}}</div> small superannuation
+                  account
                 </div>
                 <div class="input-group">
-                  <div class="checkbox mr5">{{ appData.maintenance.applicantPercentageOnlyInterest  === true ? 'X' : ''}}</div> percentage only interest
+                  <div class="checkbox mr5">{{ appData.maintenance?.applicantPercentageOnlyInterest === true ? 'X' : ''}}</div> percentage only interest
                 </div>
                 <div class="input-group">
-                  <div class="checkbox mr5">{{ appData.maintenance.applicantApprovedDepositFund  === true ? 'X' : ''}}</div> approved deposit fund
+                  <div class="checkbox mr5">{{ appData.maintenance?.applicantApprovedDepositFund === true ? 'X' : ''}}</div> approved deposit fund
                 </div>
                 <div class="input-group">
-                  <div class="checkbox mr5">{{ appData.maintenance.applicantEligibleAnnuity  === true ? 'X' : ''}}</div> eligible annuity
+                  <div class="checkbox mr5">{{ appData.maintenance?.applicantEligibleAnnuity === true ? 'X' : ''}}</div> eligible annuity
                 </div>
               </div>
             </div>
@@ -3778,32 +3785,35 @@
           <div class="fl-left w42 pb40 hgl-light-block">
             <div class="input-group">
               <div class="inputs-list">
-				<div class="input-group">
-                  <div class="checkbox mr5">{{ appData.maintenance.respondentAccumulationInterest  === true ? 'X' : ''}}</div> accumulation interest
+                <div class="input-group">
+                  <div class="checkbox mr5">{{ appData.maintenance?.respondentAccumulationInterest === true ? 'X' : ''}}</div> accumulation interest
                 </div>
                 <div class="input-group">
-                  <div class="checkbox mr5">{{ appData.maintenance.respondentPartiallyVested  === true ? 'X' : ''}}</div> partially vested accumulation interes
+                  <div class="checkbox mr5">{{ appData.maintenance?.respondentPartiallyVested === true ? 'X' : ''}}</div> partially vested accumulation
+                  interes
                 </div>
                 <div class="input-group">
-                  <div class="checkbox mr5">{{ appData.maintenance.respondentDefinedBenefitInterest  === true ? 'X' : ''}}</div> defined benefit interest
+                  <div class="checkbox mr5">{{ appData.maintenance?.respondentDefinedBenefitInterest === true ? 'X' : ''}}</div> defined benefit interest
                 </div>
                 <div class="input-group">
-                  <div class="checkbox mr5">{{ appData.maintenance.respondentSelfManagedFund  === true ? 'X' : ''}}</div> self managed fund
+                  <div class="checkbox mr5">{{ appData.maintenance?.respondentSelfManagedFund === true ? 'X' : ''}}</div> self managed fund
                 </div>
                 <div class="input-group">
-                  <div class="checkbox mr5">{{ appData.maintenance.respondentRetirementSavingsAccount  === true ? 'X' : ''}}</div> retirement savings account
+                  <div class="checkbox mr5">{{ appData.maintenance?.respondentRetirementSavingsAccount === true ? 'X' : ''}}</div> retirement savings
+                  account
                 </div>
                 <div class="input-group">
-                  <div class="checkbox mr5">{{ appData.maintenance.respondentSmallSuperannuationAccount  === true ? 'X' : ''}}</div> small superannuation account
+                  <div class="checkbox mr5">{{ appData.maintenance?.respondentSmallSuperannuationAccount === true ? 'X' : ''}}</div> small superannuation
+                  account
                 </div>
                 <div class="input-group">
-                  <div class="checkbox mr5">{{ appData.maintenance.respondentPercentageOnlyInterest  === true ? 'X' : ''}}</div> percentage only interest
+                  <div class="checkbox mr5">{{ appData.maintenance?.respondentPercentageOnlyInterest === true ? 'X' : ''}}</div> percentage only interest
                 </div>
                 <div class="input-group">
-                  <div class="checkbox mr5">{{ appData.maintenance.respondentApprovedDepositFund  === true ? 'X' : ''}}</div> approved deposit fund
+                  <div class="checkbox mr5">{{ appData.maintenance?.respondentApprovedDepositFund === true ? 'X' : ''}}</div> approved deposit fund
                 </div>
                 <div class="input-group">
-                  <div class="checkbox mr5">{{ appData.maintenance.respondentEligibleAnnuity  === true ? 'X' : ''}}</div> eligible annuity
+                  <div class="checkbox mr5">{{ appData.maintenance?.respondentEligibleAnnuity === true ? 'X' : ''}}</div> eligible annuity
                 </div>
 
               </div>
@@ -3822,7 +3832,7 @@
           <div class="fl-left w42">
             <div class="input-group">
               <div class="fake-input huge">
-                <b>$ {{ appData.maintenance.applicantCurrentAgreedOfTheInterest }}</b>
+                <b>$ {{ appData.maintenance?.applicantCurrentAgreedOfTheInterest }}</b>
               </div>
             </div>
           </div>
@@ -3830,7 +3840,7 @@
           <div class="fl-left w42 pb60 hgl-light-block">
             <div class="input-group">
               <div class="fake-input huge">
-                <b>$ {{ appData.maintenance.respondentCurrentAgreedOfTheInterest }}</b>
+                <b>$ {{ appData.maintenance?.respondentCurrentAgreedOfTheInterest }}</b>
               </div>
             </div>
           </div>
@@ -3848,7 +3858,7 @@
           <div class="fl-left w42">
             <div class="input-group">
               <div class="fake-input huge">
-                <div class="checkbox">{{appData.maintenance.applicantAgreedIn62 === true ? 'X' : ''}}</div> <b>Yes</b>
+                <div class="checkbox">{{appData.maintenance?.applicantAgreedIn62 === true ? 'X' : ''}}</div> <b>Yes</b>
               </div>
             </div>
           </div>
@@ -3856,7 +3866,7 @@
           <div class="fl-left w42 pb40 hgl-light-block">
             <div class="input-group">
               <div class="fake-input huge">
-                <div class="checkbox">{{appData.maintenance.respondentAgreedIn62 === true ? 'X' : ''}}</div> <b>Yes</b>
+                <div class="checkbox">{{appData.maintenance?.respondentAgreedIn62 === true ? 'X' : ''}}</div> <b>Yes</b>
               </div>
             </div>
           </div>
@@ -3906,19 +3916,22 @@
             <div class="input-group">
               <div class="inputs-list pr10">
                 <div class="input-group">
-                  <div class="checkbox">{{appData.maintenance.applicantInterestIsSubject === false ? 'X' : ''}}</div> <b class="mr10">No</b> <span class="hgl-details">GO TO ITEM 65</span>
+                  <div class="checkbox">{{appData.maintenance?.applicantInterestIsSubject === false ? 'X' : ''}}</div> <b class="mr10">No</b>
+                  <span class="hgl-details">GO TO ITEM 65</span>
                 </div>
 
                 <div class="input-group mb20">
                   <div class="fl-left mr10">
-                    <div class="checkbox">{{appData.maintenance.applicantInterestIsSubject === true ? 'X' : ''}}</div> <b>Yes</b> </div> <span class="">Are there any further
-payments to be made?</span>
+                    <div class="checkbox">{{appData.maintenance?.applicantInterestIsSubject === true ? 'X' : ''}}</div> <b>Yes</b> </div>
+                  <span class="">Are there any further payments to be made?</span>
                 </div>
                 <div class="input-group">
-                  <div class="checkbox">{{appData.maintenance.applicantFurtherPaiments === false ? 'X' : ''}}</div> <b class="mr10">No</b> <span class="hgl-details">GO TO ITEM 65</span>
+                  <div class="checkbox">{{appData.maintenance?.applicantFurtherPaiments === false ? 'X' : ''}}</div> <b class="mr10">No</b>
+                  <span class="hgl-details">GO TO ITEM 65</span>
                 </div>
                 <div class="input-group mb15">
-                  <div class="checkbox">{{appData.maintenance.applicantFurtherPaiments === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> Provide the following details:
+                  <div class="checkbox">{{appData.maintenance?.applicantFurtherPaiments === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> Provide
+                  the following details:
                 </div>
 
                 <div class="input-group pl40 mb10">
@@ -3927,7 +3940,8 @@ payments to be made?</span>
                   <div class="clear"></div>
                   <div class="fake-input border-bottom-blank">
                     <input type="text"
-                           class="pos-abs b0 l0 w30" value="{{ appData.maintenance.applicantTimeForSplit }}">
+                           class="pos-abs b0 l0 w30"
+                           value="{{ appData.maintenance?.applicantTimeForSplit }}">
                     <div class="format-delimiter l30">/</div>
                     <input type="text"
                            class="pos-abs b0 l30 w30">
@@ -3941,7 +3955,7 @@ payments to be made?</span>
                   <div class="fl-left w92">The amount of any future payments in respect of a base amount split in the payment phase <b>(where applicable)</b></div>
                   <div class="clear"></div>
                   <div class="fl-left fs17"
-                       style="padding: 5px;">$ {{ appData.maintenance.applicantAmountOfFuturePayments }}</div>
+                       style="padding: 5px;">$ {{ appData.maintenance?.applicantAmountOfFuturePayments }}</div>
                   <div class="fake-input border-bottom-blank fl-left w90"
                        style="height: 20px;"></div>
                 </div>
@@ -3951,7 +3965,7 @@ payments to be made?</span>
                   <div class="fl-left w92">The adjusted base amount where the interest is in the growth phase <b>(where applicable)</b></div>
                   <div class="clear"></div>
                   <div class="fl-left fs17"
-                       style="padding: 5px;">$ {{ appData.maintenance.applicantAdjustedBaseAmount }}</div>
+                       style="padding: 5px;">$ {{ appData.maintenance?.applicantAdjustedBaseAmount }}</div>
                   <div class="fake-input border-bottom-blank fl-left w90"
                        style="height: 20px;"></div>
                 </div>
@@ -3961,7 +3975,7 @@ payments to be made?</span>
                   <div class="fl-left w92">The specified percentage in the case of a percentage split <b>(where applicable)</b></div>
                   <div class="clear"></div>
                   <div class="fake-input border-bottom-blank fl-left w40"
-                       style="height: 20px;">{{ appData.maintenance.applicantPercentageSplit }}</div> %
+                       style="height: 20px;">{{ appData.maintenance?.applicantPercentageSplit }}</div> %
                 </div>
                 <div class="clear mb10"></div>
               </div>
@@ -3972,19 +3986,22 @@ payments to be made?</span>
             <div class="input-group">
               <div class="inputs-list pr10">
                 <div class="input-group">
-                  <div class="checkbox">{{appData.maintenance.respondentInterestIsSubject === false ? 'X' : ''}}</div> <b class="mr10">No</b> <span class="hgl-details">GO TO ITEM 65</span>
+                  <div class="checkbox">{{appData.maintenance?.respondentInterestIsSubject === false ? 'X' : ''}}</div> <b class="mr10">No</b>
+                  <span class="hgl-details">GO TO ITEM 65</span>
                 </div>
 
                 <div class="input-group mb20">
                   <div class="fl-left mr10">
-                    <div class="checkbox">{{appData.maintenance.respondentInterestIsSubject === true ? 'X' : ''}}</div> <b>Yes</b> </div> <span class="">Are there any further
-payments to be made?</span>
+                    <div class="checkbox">{{appData.maintenance?.respondentInterestIsSubject === true ? 'X' : ''}}</div> <b>Yes</b> </div>
+                  <span class="">Are there any further payments to be made?</span>
                 </div>
                 <div class="input-group">
-                  <div class="checkbox">{{appData.maintenance.respondentFurtherPaiments === false ? 'X' : ''}}</div> <b class="mr10">No</b> <span class="hgl-details">GO TO ITEM 65</span>
+                  <div class="checkbox">{{appData.maintenance?.respondentFurtherPaiments === false ? 'X' : ''}}</div> <b class="mr10">No</b>
+                  <span class="hgl-details">GO TO ITEM 65</span>
                 </div>
                 <div class="input-group mb15">
-                  <div class="checkbox">{{appData.maintenance.respondentFurtherPaiments === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> Provide the following details:
+                  <div class="checkbox">{{appData.maintenance?.respondentFurtherPaiments === true ? 'X' : ''}}</div> <b class="mr10">Yes</b> Provide
+                  the following details:
                 </div>
 
                 <div class="input-group pl40 mb10">
@@ -3993,7 +4010,8 @@ payments to be made?</span>
                   <div class="clear"></div>
                   <div class="fake-input border-bottom-blank">
                     <input type="text"
-                           class="pos-abs b0 l0 w30" value="{{ appData.maintenance.respondentTimeForSplit }}">
+                           class="pos-abs b0 l0 w30"
+                           value="{{ appData.maintenance?.respondentTimeForSplit }}">
                     <div class="format-delimiter l30">/</div>
                     <input type="text"
                            class="pos-abs b0 l30 w30">
@@ -4007,7 +4025,7 @@ payments to be made?</span>
                   <div class="fl-left w92">The amount of any future payments in respect of a base amount split in the payment phase <b>(where applicable)</b></div>
                   <div class="clear"></div>
                   <div class="fl-left fs17"
-                       style="padding: 5px;">$ {{ appData.maintenance.respondentAmountOfFuturePayments }}</div>
+                       style="padding: 5px;">$ {{ appData.maintenance?.respondentAmountOfFuturePayments }}</div>
                   <div class="fake-input border-bottom-blank fl-left w90"
                        style="height: 20px;"></div>
                 </div>
@@ -4017,7 +4035,7 @@ payments to be made?</span>
                   <div class="fl-left w92">The adjusted base amount where the interest is in the growth phase <b>(where applicable)</b></div>
                   <div class="clear"></div>
                   <div class="fl-left fs17"
-                       style="padding: 5px;">$ {{ appData.maintenance.respondentAdjustedBaseAmount }}</div>
+                       style="padding: 5px;">$ {{ appData.maintenance?.respondentAdjustedBaseAmount }}</div>
                   <div class="fake-input border-bottom-blank fl-left w90"
                        style="height: 20px;"></div>
                 </div>
@@ -4027,7 +4045,7 @@ payments to be made?</span>
                   <div class="fl-left w92">The specified percentage in the case of a percentage split <b>(where applicable)</b></div>
                   <div class="clear"></div>
                   <div class="fake-input border-bottom-blank fl-left w40"
-                       style="height: 20px;">{{ appData.maintenance.respondentPercentageSplit }}</div> %
+                       style="height: 20px;">{{ appData.maintenance?.respondentPercentageSplit }}</div> %
                 </div>
                 <div class="clear mb10"></div>
               </div>
@@ -4051,7 +4069,7 @@ payments to be made?</span>
                     protected fund), state the amount of any surcharge debt in the most recent member statement</div>
                   <div class="clear"></div>
                   <div class="fl-left fs17"
-                       style="padding: 5px;">$ {{ appData.maintenance.applicantAmountOfAnySurchargeDebt }}</div>
+                       style="padding: 5px;">$ {{ appData.maintenance?.applicantAmountOfAnySurchargeDebt }}</div>
                   <div class="fake-input border-bottom-blank fl-left w90"
                        style="height: 20px;"></div>
                   <div class="clear"></div>
@@ -4062,7 +4080,7 @@ payments to be made?</span>
                     debt account</div>
                   <div class="clear"></div>
                   <div class="fl-left fs17"
-                       style="padding: 5px;">$ {{ appData.maintenance.applicantAmountOfAnySurchargeInSurcharge }}</div>
+                       style="padding: 5px;">$ {{ appData.maintenance?.applicantAmountOfAnySurchargeInSurcharge }}</div>
                   <div class="fake-input border-bottom-blank fl-left w90"
                        style="height: 20px;"></div>
                   <div class="clear"></div>
@@ -4080,7 +4098,7 @@ payments to be made?</span>
                     protected fund), state the amount of any surcharge debt in the most recent member statement</div>
                   <div class="clear"></div>
                   <div class="fl-left fs17"
-                       style="padding: 5px;">$ {{ appData.maintenance.respondentAmountOfAnySurchargeDebt }}</div>
+                       style="padding: 5px;">$ {{ appData.maintenance?.respondentAmountOfAnySurchargeDebt }}</div>
                   <div class="fake-input border-bottom-blank fl-left w90"
                        style="height: 20px;"></div>
                   <div class="clear"></div>
@@ -4091,7 +4109,7 @@ payments to be made?</span>
                     debt account</div>
                   <div class="clear"></div>
                   <div class="fl-left fs17"
-                       style="padding: 5px;">$ {{ appData.maintenance.respondentAmountOfAnySurchargeInSurcharge }}</div>
+                       style="padding: 5px;">$ {{ appData.maintenance?.respondentAmountOfAnySurchargeInSurcharge }}</div>
                   <div class="fake-input border-bottom-blank fl-left w90"
                        style="height: 20px;"></div>
                   <div class="clear"></div>
@@ -4133,10 +4151,10 @@ payments to be made?</span>
                 <div class="fake-input noborder">
                   <div class="hgl-details">Give Details</div>
                 </div>
-                <div class="fake-input">{{ appData.maintenance.applicantFinancialResourcesTextDetails }}</div>
+                <div class="fake-input">{{ appData.maintenance?.applicantFinancialResourcesTextDetails }}</div>
                 <div class="fake-input"></div>
                 <div class="fake-input pl20">
-                  <b>$ {{ appData.maintenance.applicantFinancialResourcesNumDetails }}</b>
+                  <b>$ {{ appData.maintenance?.applicantFinancialResourcesNumDetails }}</b>
                 </div>
 
               </div>
@@ -4149,10 +4167,10 @@ payments to be made?</span>
                 <div class="fake-input noborder">
                   <div class="hgl-details">Give Details</div>
                 </div>
-                <div class="fake-input">{{ appData.maintenance.respondentFinancialResourcesTextDetails }}</div>
+                <div class="fake-input">{{ appData.maintenance?.respondentFinancialResourcesTextDetails }}</div>
                 <div class="fake-input"></div>
                 <div class="fake-input pl20">
-                  <b>$ {{ appData.maintenance.respondentFinancialResourcesNumDetails }}</b>
+                  <b>$ {{ appData.maintenance?.respondentFinancialResourcesNumDetails }}</b>
                 </div>
 
               </div>
@@ -4221,13 +4239,13 @@ payments to be made?</span>
                 <div class="fake-input noborder">
                   <span class="pos-abs"><b>Applicant</b></span>
                   <span class="pos-abs l70">
-                                    <span class="checkbox mr5">{{ appData.maintenance.applicantPercentageDivision }}</span> %
+                                    <span class="checkbox mr5">{{ appData.maintenance?.applicantPercentageDivision }}</span>                  %
                   </span>
                 </div>
                 <div class="fake-input noborder mb10">
                   <span class="pos-abs"><b>Respondent</b></span>
                   <span class="pos-abs l70">
-                                    <span class="checkbox mr5">{{ appData.maintenance.respondentPercentageDivision }}</span> %
+                                    <span class="checkbox mr5">{{ appData.maintenance?.respondentPercentageDivision }}</span>                  %
                   </span>
                 </div>
               </div>
@@ -4238,17 +4256,17 @@ payments to be made?</span>
             <div class="input-group">
               <div class="inputs-list">
                 <div class="fake-input noborder">
-                  <div class="checkbox mr5">{{appData.maintenance.applicantDivisionAgreed === true ? 'X' : ''}}</div><b>Agree</b>
+                  <div class="checkbox mr5">{{appData.maintenance?.applicantDivisionAgreed === true ? 'X' : ''}}</div><b>Agree</b>
                 </div>
                 <div class="fake-input noborder multiline mb30">
                   <div class="fl-left pb20 mr5">
-                    <div class="checkbox">{{appData.maintenance.applicantDivisionAgreed === false ? 'X' : ''}}</div>
+                    <div class="checkbox">{{appData.maintenance?.applicantDivisionAgreed === false ? 'X' : ''}}</div>
                   </div>
                   <b class="mr5">Disagree</b>
                   <span class="hgl-details">GIVE BRIEF REASONS WHY YOU DISAGREE AND SPECIFY YOUR &nbsp; ESTIMATE OF THE PROPOSED DIVISION</span>
                   <div class="clear"></div>
                 </div>
-                <div class="fake-input">{{ appData.maintenance.respondentBriefReasonDivision }}</div>
+                <div class="fake-input">{{ appData.maintenance?.respondentBriefReasonDivision }}</div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
@@ -4274,18 +4292,18 @@ payments to be made?</span>
             <div class="input-group">
               <div class="inputs-list">
                 <div class="fake-input noborder">
-                  <div class="checkbox">{{appData.maintenance.applicantSameFinContributions === true ? 'X' : ''}}</div><b class="mr10">Yes</b> <span class="hgl-details">Go to time 69</span>
+                  <div class="checkbox">{{appData.maintenance?.applicantSameFinContributions === true ? 'X' : ''}}</div><b class="mr10">Yes</b>                  <span class="hgl-details">Go to time 69</span>
                 </div>
                 <div class="fake-input noborder multiline mb30">
                   <div class="fl-left pb15 mr5">
-                    <div class="checkbox">{{appData.maintenance.applicantSameFinContributions === false ? 'X' : ''}}</div>
+                    <div class="checkbox">{{appData.maintenance?.applicantSameFinContributions === false ? 'X' : ''}}</div>
                     <b class="mr5">No</b>
                   </div>
 
                   <span class="hgl-details">GIVE BRIEF DETAILS OF WHO MADE THE GREATER CONTRIBUTION</span>
                   <div class="clear"></div>
                 </div>
-                <div class="fake-input">{{ appData.maintenance.applicantDetailsWhoMadeGreatherContrib }}</div>
+                <div class="fake-input">{{ appData.maintenance?.applicantDetailsWhoMadeGreatherContrib }}</div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
@@ -4300,17 +4318,17 @@ payments to be made?</span>
             <div class="input-group">
               <div class="inputs-list">
                 <div class="fake-input noborder">
-                  <div class="checkbox mr5">{{appData.maintenance.applicantNonFinancialContributions === true ? 'X' : ''}}</div><b>Agree</b>
+                  <div class="checkbox mr5">{{appData.maintenance?.applicantNonFinancialContributions === true ? 'X' : ''}}</div><b>Agree</b>
                 </div>
                 <div class="fake-input noborder multiline mb30">
                   <div class="fl-left pb40 mr5">
-                    <div class="checkbox">{{appData.maintenance.applicantNonFinancialContributions === false ? 'X' : ''}}</div>
+                    <div class="checkbox">{{appData.maintenance?.applicantNonFinancialContributions === false ? 'X' : ''}}</div>
                   </div>
                   <b class="mr5">Disagree</b>
                   <span class="hgl-details">GIVE BRIEF REASONS WHY YOU DISAGREE</span>
                   <div class="clear"></div>
                 </div>
-                <div class="fake-input">{{ appData.maintenance.respondentDetailsWhoMadeGreatherContrib }}</div>
+                <div class="fake-input">{{ appData.maintenance?.respondentDetailsWhoMadeGreatherContrib }}</div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
@@ -4334,18 +4352,18 @@ payments to be made?</span>
             <div class="input-group">
               <div class="inputs-list">
                 <div class="fake-input noborder">
-                  <div class="checkbox">{{appData.maintenance.applicantNonFinancialContributions === true ? 'X' : ''}}</div><b class="mr10">Yes</b> <span class="hgl-details">Go to time 70</span>
+                  <div class="checkbox">{{appData.maintenance?.applicantNonFinancialContributions === true ? 'X' : ''}}</div><b class="mr10">Yes</b>                  <span class="hgl-details">Go to time 70</span>
                 </div>
                 <div class="fake-input noborder multiline mb30">
                   <div class="fl-left pb40 mr5">
-                    <div class="checkbox">{{appData.maintenance.applicantNonFinancialContributions === false ? 'X' : ''}}</div>
+                    <div class="checkbox">{{appData.maintenance?.applicantNonFinancialContributions === false ? 'X' : ''}}</div>
                     <b class="mr5">No</b>
                   </div>
 
                   <span class="hgl-details">GIVE BRIEF DETAILS OF WHO MADE THE GREATER CONTRIBUTION</span>
                   <div class="clear"></div>
                 </div>
-                <div class="fake-input">{{ appData.maintenance.applicantNonFinancialContributionsDetails }}</div>
+                <div class="fake-input">{{ appData.maintenance?.applicantNonFinancialContributionsDetails }}</div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
@@ -4360,17 +4378,17 @@ payments to be made?</span>
             <div class="input-group">
               <div class="inputs-list">
                 <div class="fake-input noborder">
-                  <div class="checkbox mr5">{{appData.maintenance.respondentNonFinancialContributions === true ? 'X' : ''}}</div><b>Agree</b>
+                  <div class="checkbox mr5">{{appData.maintenance?.respondentNonFinancialContributions === true ? 'X' : ''}}</div><b>Agree</b>
                 </div>
                 <div class="fake-input noborder multiline mb30">
                   <div class="fl-left pb40 mr5">
-                    <div class="checkbox">{{appData.maintenance.respondentNonFinancialContributions === false ? 'X' : ''}}</div>
+                    <div class="checkbox">{{appData.maintenance?.respondentNonFinancialContributions === false ? 'X' : ''}}</div>
                   </div>
                   <b class="mr5">Disagree</b>
                   <span class="hgl-details">GIVE BRIEF REASONS WHY YOU DISAGREE</span>
                   <div class="clear"></div>
                 </div>
-                <div class="fake-input">{{ appData.maintenance.respondentNonFinancialContributionsDetails }}</div>
+                <div class="fake-input">{{ appData.maintenance?.respondentNonFinancialContributionsDetails }}</div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
@@ -4440,18 +4458,18 @@ payments to be made?</span>
             <div class="input-group">
               <div class="inputs-list">
                 <div class="fake-input noborder">
-                  <div class="checkbox">{{appData.maintenance.applicantHomemakerContributions === true ? 'X' : ''}}</div><b class="mr10">Yes</b> <span class="hgl-details">Go to time 71</span>
+                  <div class="checkbox">{{appData.maintenance?.applicantHomemakerContributions === true ? 'X' : ''}}</div><b class="mr10">Yes</b>                  <span class="hgl-details">Go to time 71</span>
                 </div>
                 <div class="fake-input noborder multiline mb30">
                   <div class="fl-left pb15 mr5">
-                    <div class="checkbox">{{appData.maintenance.applicantHomemakerContributions === false ? 'X' : ''}}</div>
+                    <div class="checkbox">{{appData.maintenance?.applicantHomemakerContributions === false ? 'X' : ''}}</div>
                     <b class="mr5">No</b>
                   </div>
 
                   <span class="hgl-details">GIVE BRIEF DETAILS OF WHO MADE THE GREATER CONTRIBUTION</span>
                   <div class="clear"></div>
                 </div>
-                <div class="fake-input">{{ appData.maintenance.applicantHomemakerContributionsDetails }}</div>
+                <div class="fake-input">{{ appData.maintenance?.applicantHomemakerContributionsDetails }}</div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
@@ -4466,17 +4484,17 @@ payments to be made?</span>
             <div class="input-group">
               <div class="inputs-list">
                 <div class="fake-input noborder">
-                  <div class="checkbox mr5">{{appData.maintenance.respondentHomemakerContributions === true ? 'X' : ''}}</div><b>Agree</b>
+                  <div class="checkbox mr5">{{appData.maintenance?.respondentHomemakerContributions === true ? 'X' : ''}}</div><b>Agree</b>
                 </div>
                 <div class="fake-input noborder multiline mb30">
                   <div class="fl-left pb15 mr5">
-                    <div class="checkbox">{{appData.maintenance.respondentHomemakerContributions === false ? 'X' : ''}}</div>
+                    <div class="checkbox">{{appData.maintenance?.respondentHomemakerContributions === false ? 'X' : ''}}</div>
                   </div>
                   <b class="mr5">Disagree</b>
                   <span class="hgl-details">GIVE BRIEF REASONS WHY YOU DISAGREE</span>
                   <div class="clear"></div>
                 </div>
-                <div class="fake-input">{{ appData.maintenance.respondentHomemakerContributionsDetails }}</div>
+                <div class="fake-input">{{ appData.maintenance?.respondentHomemakerContributionsDetails }}</div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
@@ -4501,18 +4519,19 @@ payments to be made?</span>
             <div class="input-group">
               <div class="inputs-list">
                 <div class="fake-input noborder">
-                  <div class="checkbox">{{appData.maintenance.applicantOtherRelevantFacts === true ? 'X' : ''}}</div><b class="mr10">Yes</b> <span class="hgl-details">Go to time 72</span>
+                  <div class="checkbox">{{appData.maintenance?.applicantOtherRelevantFacts === true ? 'X' : ''}}</div><b class="mr10">Yes</b>
+                  <span class="hgl-details">Go to time 72</span>
                 </div>
                 <div class="fake-input noborder multiline mb30">
                   <div class="fl-left pb15 mr5">
-                    <div class="checkbox">{{appData.maintenance.applicantOtherRelevantFacts === false ? 'X' : ''}}</div>
+                    <div class="checkbox">{{appData.maintenance?.applicantOtherRelevantFacts === false ? 'X' : ''}}</div>
                     <b class="mr5">No</b>
                   </div>
 
                   <span class="hgl-details">GIVE BRIEF DETAILS</span>
                   <div class="clear"></div>
                 </div>
-                <div class="fake-input">{{ appData.maintenance.applicantOtherRelevantFactsDetails }}</div>
+                <div class="fake-input">{{ appData.maintenance?.applicantOtherRelevantFactsDetails }}</div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
@@ -4534,17 +4553,17 @@ payments to be made?</span>
             <div class="input-group">
               <div class="inputs-list">
                 <div class="fake-input noborder">
-                  <div class="checkbox mr5">{{appData.maintenance.respondentOtherRelevantFacts === true ? 'X' : ''}}</div><b>Agree</b>
+                  <div class="checkbox mr5">{{appData.maintenance?.respondentOtherRelevantFacts === true ? 'X' : ''}}</div><b>Agree</b>
                 </div>
                 <div class="fake-input noborder multiline mb30">
                   <div class="fl-left pb15 mr5">
-                    <div class="checkbox">{{appData.maintenance.respondentOtherRelevantFacts === false ? 'X' : ''}}</div>
+                    <div class="checkbox">{{appData.maintenance?.respondentOtherRelevantFacts === false ? 'X' : ''}}</div>
                   </div>
                   <b class="mr5">Disagree</b>
                   <span class="hgl-details">GIVE BRIEF REASONS WHY YOU DISAGREE</span>
                   <div class="clear"></div>
                 </div>
-                <div class="fake-input">{{ appData.maintenance.respondentOtherRelevantFactsDetails }}</div>
+                <div class="fake-input">{{ appData.maintenance?.respondentOtherRelevantFactsDetails }}</div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
@@ -4635,7 +4654,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.applicantRealEstate}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.applicantRealEstate}}</div>
               </div>
             </div>
 
@@ -4647,7 +4666,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.respondentRealEstate}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.respondentRealEstate}}</div>
               </div>
             </div>
           </div>
@@ -4660,7 +4679,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.applicantMotorVehicles}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.applicantMotorVehicles}}</div>
               </div>
             </div>
           </div>
@@ -4671,7 +4690,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.respondentMotorVehicles}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.respondentMotorVehicles}}</div>
               </div>
             </div>
           </div>
@@ -4683,7 +4702,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.applicantFurniture}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.applicantFurniture}}</div>
               </div>
             </div>
 
@@ -4695,7 +4714,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.respondentFurniture}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.respondentFurniture}}</div>
               </div>
             </div>
           </div>
@@ -4707,7 +4726,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.applicantFinancialInstitutions}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.applicantFinancialInstitutions}}</div>
               </div>
             </div>
 
@@ -4719,7 +4738,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.respondentFinancialInstitutions}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.respondentFinancialInstitutions}}</div>
               </div>
             </div>
           </div>
@@ -4731,7 +4750,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.applicantInterestInBusiness}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.applicantInterestInBusiness}}</div>
               </div>
             </div>
 
@@ -4743,7 +4762,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.respondentInterestInBusiness}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.respondentInterestInBusiness}}</div>
               </div>
             </div>
           </div>
@@ -4755,7 +4774,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.applicantInvestments}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.applicantInvestments}}</div>
               </div>
             </div>
 
@@ -4767,7 +4786,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.respondentInvestments}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.respondentInvestments}}</div>
               </div>
             </div>
           </div>
@@ -4779,7 +4798,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.applicantLifeInsurance}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.applicantLifeInsurance}}</div>
               </div>
             </div>
 
@@ -4791,7 +4810,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.respondentLifeInsurance}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.respondentLifeInsurance}}</div>
               </div>
             </div>
           </div>
@@ -4803,7 +4822,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.applicantOtherProperty}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.applicantOtherProperty}}</div>
               </div>
             </div>
 
@@ -4815,7 +4834,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.respondentOtherProperty}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.respondentOtherProperty}}</div>
               </div>
             </div>
           </div>
@@ -4827,7 +4846,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input bright-border big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.applicantTotal}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.applicantTotal}}</div>
               </div>
             </div>
 
@@ -4839,7 +4858,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input bright-border big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.respondentTotal}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.respondentTotal}}</div>
               </div>
             </div>
           </div>
@@ -4869,7 +4888,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.applicantHomeMortrage}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.applicantHomeMortrage}}</div>
               </div>
             </div>
 
@@ -4881,7 +4900,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.respondentHomeMortrage}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.respondentHomeMortrage}}</div>
               </div>
             </div>
           </div>
@@ -4893,7 +4912,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.applicantOtherMortrage}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.applicantOtherMortrage}}</div>
               </div>
             </div>
 
@@ -4905,7 +4924,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.respondentOtherMortrage}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.respondentOtherMortrage}}</div>
               </div>
             </div>
           </div>
@@ -4917,7 +4936,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.applicantLoans}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.applicantLoans}}</div>
               </div>
             </div>
 
@@ -4929,7 +4948,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.respondentLoans}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.respondentLoans}}</div>
               </div>
             </div>
           </div>
@@ -4941,7 +4960,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.applicantCreditCards}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.applicantCreditCards}}</div>
               </div>
             </div>
 
@@ -4953,7 +4972,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.respondentCreditCards}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.respondentCreditCards}}</div>
               </div>
             </div>
           </div>
@@ -4965,7 +4984,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.applicantHirePurchase}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.applicantHirePurchase}}</div>
               </div>
             </div>
 
@@ -4977,7 +4996,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.respondentHirePurchase}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.respondentHirePurchase}}</div>
               </div>
             </div>
           </div>
@@ -4989,7 +5008,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.applicantOtherLiabilities}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.applicantOtherLiabilities}}</div>
               </div>
             </div>
 
@@ -5001,7 +5020,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.respondentOtherLiabilities}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.respondentOtherLiabilities}}</div>
               </div>
             </div>
           </div>
@@ -5013,7 +5032,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input bright-border big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.applicantTotal}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.applicantTotal}}</div>
               </div>
             </div>
 
@@ -5025,7 +5044,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input bright-border big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.respondentTotal}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.respondentTotal}}</div>
               </div>
             </div>
           </div>
@@ -5053,7 +5072,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input bright-border big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.applicantNetValue}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.applicantNetValue}}</div>
               </div>
             </div>
 
@@ -5065,7 +5084,7 @@ payments to be made?</span>
             <div class="input-group">
               <div class="fake-input bright-border big pl40">
                 <span class="fl-left mr10">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.respondentNetValue}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.respondentNetValue}}</div>
               </div>
             </div>
           </div>
@@ -5128,7 +5147,7 @@ payments to be made?</span>
               <div class="fake-input huge2x">
                 <span class="pos-abs l10 t50"
                       style="margin-top: -12px;">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.applicantGrossValue}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.applicantGrossValue}}</div>
               </div>
             </div>
           </div>
@@ -5139,7 +5158,7 @@ payments to be made?</span>
               <div class="fake-input huge2x">
                 <span class="pos-abs l10 t50"
                       style="margin-top: -12px;">$</span>
-                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property.respondentGrossValue}}</div>
+                <div class="fake-input small fl-left border-bottom-blank w80">{{appData.property?.respondentGrossValue}}</div>
               </div>
             </div>
           </div>
@@ -5159,7 +5178,7 @@ payments to be made?</span>
                 <div class="fake-input noborder">
                   <div class="hgl-details">Give details</div>
                 </div>
-                <div class="fake-input noborder">{{appData.property.applicantDetails}}</div>
+                <div class="fake-input noborder">{{appData.property?.applicantDetails}}</div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
@@ -5187,7 +5206,7 @@ payments to be made?</span>
                   <div class="hgl-details">Give details</div>
                 </div>
                 <div class="fake-input noborder"></div>
-                <div class="fake-input">{{appData.property.respondentDetails}}</div>
+                <div class="fake-input">{{appData.property?.respondentDetails}}</div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
                 <div class="fake-input"></div>
