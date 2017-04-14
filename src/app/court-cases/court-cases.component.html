@@ -352,7 +352,8 @@
       </div>
     </div>
 
-    <div id="13A" *ngIf="(item|async)?.seekingParentingResp">
+    <div id="13A"
+         *ngIf="(item|async)?.seekingParentingResp">
       <span>13A. Are you seeking a parenting order that provides for the child’s parent to spend time with the child?</span>
       <div>
         <md-radio-group [ngModel]="(item|async)?.seekingParentingSpendTime"
@@ -532,4 +533,9 @@
     </div>
 
   </form>
+  <div fxLayout="row"
+       fxLayoutAlign="end end">
+    <button md-raised-button
+            routerLink="/Children">Next</button>
+  </div>
 </div>

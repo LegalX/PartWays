@@ -1,6 +1,7 @@
 <div class="doc_container">
   <h1>Part H Details for property or maintenance orders</h1>
-  <form fxLayout="column" #f="ngForm">
+  <form fxLayout="column"
+        #f="ngForm">
     <span>
       Omit all of Part H if no property or maintenance orders are sought.
     </span>
@@ -8,8 +9,7 @@
       - <strong>The Court may refuse to make the property orders you seek if the proposed orders are not just and equitable.</strong>
     </p>
     <p>
-      - The amounts shown for the value of property, superannuation, liabilities and financial resources should be
-      current figures
+      - The amounts shown for the value of property, superannuation, liabilities and financial resources should be current figures
     </p>
     <p>
       - Column 1 should be completed by the <strong>applicant</strong> and must contain details of all property, superannuation,
@@ -20,8 +20,7 @@
       liabilities and financial resources of the respondent.
     </p>
     <p>
-      - If the amount for an item is nil, write NIL. If you can only give an estimate write the letter ‘E’ before the
-      stated amount.
+      - If the amount for an item is nil, write NIL. If you can only give an estimate write the letter ‘E’ before the stated amount.
     </p>
     <p>
       - Use whole dollars.
@@ -29,28 +28,38 @@
     <h3>INCOME</h3>
     <div id="37">
       <span>37. Gross weekly income</span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
           <h3 fxLayoutAlign="center center">APPLICANT</h3>
           <div>
             <span>
               $
             </span>
             <md-input-container>
-              <input mdInput type="number" [ngModel]="(item|async)?.applicantGrossWeeklyIncome" (ngModelChange)="item.update({applicantGrossWeeklyIncome: $event})"
-                name="applicantGrossWeeklyIncome">
+              <input mdInput
+                     type="number"
+                     [ngModel]="(item|async)?.applicantGrossWeeklyIncome"
+                     (ngModelChange)="item.update({applicantGrossWeeklyIncome: $event})"
+                     name="applicantGrossWeeklyIncome">
             </md-input-container>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="48">
+        <div fxLayout="column"
+             fxFlex="48">
           <h3 fxLayoutAlign="center center">RESPONDENT</h3>
           <div>
             <span>
               $
             </span>
             <md-input-container>
-              <input mdInput type="number" [ngModel]="(item|async)?.respondentGrossWeeklyIncome" (ngModelChange)="item.update({respondentGrossWeeklyIncome: $event})"
-                name="respondentGrossWeeklyIncome">
+              <input mdInput
+                     type="number"
+                     [ngModel]="(item|async)?.respondentGrossWeeklyIncome"
+                     (ngModelChange)="item.update({respondentGrossWeeklyIncome: $event})"
+                     name="respondentGrossWeeklyIncome">
             </md-input-container>
           </div>
         </div>
@@ -58,41 +67,59 @@
     </div>
     <div id="38">
       <span>38. Do the orders sought affect your earning capacity? (e.g. are you isposing of or acquiring an investment or business?)</span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
           <div class="group">
-            <md-radio-group [ngModel]="(item|async)?.applicantOrdersAffectCapacity" name="applicantOrdersAffectCapacity" [ngModelOptions]="{standalone: true}"
-              (ngModelChange)="item.update({applicantOrdersAffectCapacity: $event})">
-              <md-radio-button [value]="false" fxLayout="row">
+            <md-radio-group [ngModel]="(item|async)?.applicantOrdersAffectCapacity"
+                            name="applicantOrdersAffectCapacity"
+                            [ngModelOptions]="{standalone: true}"
+                            (ngModelChange)="item.update({applicantOrdersAffectCapacity: $event})">
+              <md-radio-button [value]="false"
+                               fxLayout="row">
                 No
               </md-radio-button>
-              <md-radio-button [value]="true" fxLayout="row">
+              <md-radio-button [value]="true"
+                               fxLayout="row">
                 Yes <strong>GIVE DETAILS</strong>
               </md-radio-button>
             </md-radio-group>
-            <div fxLayout="row" *ngIf="(item|async)?.applicantOrdersAffectCapacity">
+            <div fxLayout="row"
+                 *ngIf="(item|async)?.applicantOrdersAffectCapacity">
               <md-input-container fxFlex="100">
-                <textarea mdInput [ngModel]="(item|async)?.applicantOrdersAffectCapacityText" (ngModelChange)="item.update({applicantOrdersAffectCapacityText: $event})"
-                  name="applicantOrdersAffectCapacityText"></textarea>
+                <textarea mdInput
+                          [ngModel]="(item|async)?.applicantOrdersAffectCapacityText"
+                          (ngModelChange)="item.update({applicantOrdersAffectCapacityText: $event})"
+                          name="applicantOrdersAffectCapacityText"></textarea>
               </md-input-container>
             </div>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="48">
+        <div fxLayout="column"
+             fxFlex="48">
           <div class="group">
-            <md-radio-group [ngModel]="(item|async)?.respondentOrdersAffectCapacity" name="respondentOrdersAffectCapacity" [ngModelOptions]="{standalone: true}"
-              (ngModelChange)="item.update({respondentOrdersAffectCapacity: $event})">
-              <md-radio-button [value]="false" fxLayout="row">
+            <md-radio-group [ngModel]="(item|async)?.respondentOrdersAffectCapacity"
+                            name="respondentOrdersAffectCapacity"
+                            [ngModelOptions]="{standalone: true}"
+                            (ngModelChange)="item.update({respondentOrdersAffectCapacity: $event})">
+              <md-radio-button [value]="false"
+                               fxLayout="row">
                 No
               </md-radio-button>
-              <md-radio-button [value]="true" fxLayout="row">
+              <md-radio-button [value]="true"
+                               fxLayout="row">
                 Yes <strong>GIVE DETAILS</strong>
               </md-radio-button>
             </md-radio-group>
-            <div fxLayout="row" *ngIf="(item|async)?.respondentOrdersAffectCapacity">
+            <div fxLayout="row"
+                 *ngIf="(item|async)?.respondentOrdersAffectCapacity">
               <md-input-container fxFlex="100">
-                <textarea mdInput [ngModel]="(item|async)?.respondentOrdersAffectCapacityText" (ngModelChange)="item.update({respondentOrdersAffectCapacityText: $event})"
-                  name="respondentOrdersAffectCapacityText"></textarea>
+                <textarea mdInput
+                          [ngModel]="(item|async)?.respondentOrdersAffectCapacityText"
+                          (ngModelChange)="item.update({respondentOrdersAffectCapacityText: $event})"
+                          name="respondentOrdersAffectCapacityText"></textarea>
               </md-input-container>
             </div>
           </div>
@@ -102,15 +129,22 @@
     <h3>CHILD SUPPORT</h3>
     <div id="39">
       <span>39. Are you paying child support?</span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
           <div class="group">
-            <md-radio-group [ngModel]="(item|async)?.applicantPayingChildSupport" name="applicantPayingChildSupport" [ngModelOptions]="{standalone: true}"
-              (ngModelChange)="item.update({applicantPayingChildSupport: $event})">
-              <md-radio-button [value]="false" fxLayout="row">
+            <md-radio-group [ngModel]="(item|async)?.applicantPayingChildSupport"
+                            name="applicantPayingChildSupport"
+                            [ngModelOptions]="{standalone: true}"
+                            (ngModelChange)="item.update({applicantPayingChildSupport: $event})">
+              <md-radio-button [value]="false"
+                               fxLayout="row">
                 No
               </md-radio-button>
-              <md-radio-button [value]="true" fxLayout="row">
+              <md-radio-button [value]="true"
+                               fxLayout="row">
                 Yes
               </md-radio-button>
             </md-radio-group>
@@ -119,8 +153,11 @@
                 Amount paid per week  $
               </span>
               <md-input-container>
-                <input mdInput type="number" [ngModel]="(item|async)?.applicantPayingChildPerWeek" (ngModelChange)="item.update({applicantPayingChildPerWeek: $event})"
-                  name="applicantPayingChildPerWeek">
+                <input mdInput
+                       type="number"
+                       [ngModel]="(item|async)?.applicantPayingChildPerWeek"
+                       (ngModelChange)="item.update({applicantPayingChildPerWeek: $event})"
+                       name="applicantPayingChildPerWeek">
               </md-input-container>
             </div>
             <div>
@@ -128,20 +165,29 @@
                 Paid to (name)
               </span>
               <md-input-container>
-                <input mdInput type="text" [ngModel]="(item|async)?.applicantPayingChildName" (ngModelChange)="item.update({applicantPayingChildName: $event})"
-                  name="applicantPayingChildName">
+                <input mdInput
+                       type="text"
+                       [ngModel]="(item|async)?.applicantPayingChildName"
+                       (ngModelChange)="item.update({applicantPayingChildName: $event})"
+                       name="applicantPayingChildName">
               </md-input-container>
             </div>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
           <div class="group">
-            <md-radio-group [ngModel]="(item|async)?.replicantPayingChildSupport" name="replicantPayingChildSupport" [ngModelOptions]="{standalone: true}"
-              (ngModelChange)="item.update({replicantPayingChildSupport: $event})">
-              <md-radio-button [value]="false" fxLayout="row">
+            <md-radio-group [ngModel]="(item|async)?.replicantPayingChildSupport"
+                            name="replicantPayingChildSupport"
+                            [ngModelOptions]="{standalone: true}"
+                            (ngModelChange)="item.update({replicantPayingChildSupport: $event})">
+              <md-radio-button [value]="false"
+                               fxLayout="row">
                 No
               </md-radio-button>
-              <md-radio-button [value]="true" fxLayout="row">
+              <md-radio-button [value]="true"
+                               fxLayout="row">
                 Yes
               </md-radio-button>
             </md-radio-group>
@@ -150,8 +196,11 @@
                 Amount paid per week  $
               </span>
               <md-input-container>
-                <input mdInput type="number" [ngModel]="(item|async)?.replicantPayingChildPerWeek" (ngModelChange)="item.update({replicantPayingChildPerWeek: $event})"
-                  name="replicantPayingChildPerWeek">
+                <input mdInput
+                       type="number"
+                       [ngModel]="(item|async)?.replicantPayingChildPerWeek"
+                       (ngModelChange)="item.update({replicantPayingChildPerWeek: $event})"
+                       name="replicantPayingChildPerWeek">
               </md-input-container>
             </div>
             <div>
@@ -159,8 +208,11 @@
                 Paid to (name)
               </span>
               <md-input-container>
-                <input mdInput type="text" [ngModel]="(item|async)?.replicantPayingChildName" (ngModelChange)="item.update({replicantPayingChildName: $event})"
-                  name="replicantPayingChildName">
+                <input mdInput
+                       type="text"
+                       [ngModel]="(item|async)?.replicantPayingChildName"
+                       (ngModelChange)="item.update({replicantPayingChildName: $event})"
+                       name="replicantPayingChildName">
               </md-input-container>
             </div>
           </div>
@@ -169,15 +221,22 @@
     </div>
     <div id="40">
       <span>40. Are you receiving child support?</span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
           <div class="group">
-            <md-radio-group [ngModel]="(item|async)?.applicantReceivingChildSupport" name="applicantReceivingChildSupport" [ngModelOptions]="{standalone: true}"
-              (ngModelChange)="item.update({applicantReceivingChildSupport: $event})">
-              <md-radio-button [value]="false" fxLayout="row">
+            <md-radio-group [ngModel]="(item|async)?.applicantReceivingChildSupport"
+                            name="applicantReceivingChildSupport"
+                            [ngModelOptions]="{standalone: true}"
+                            (ngModelChange)="item.update({applicantReceivingChildSupport: $event})">
+              <md-radio-button [value]="false"
+                               fxLayout="row">
                 No
               </md-radio-button>
-              <md-radio-button [value]="true" fxLayout="row">
+              <md-radio-button [value]="true"
+                               fxLayout="row">
                 Yes
               </md-radio-button>
             </md-radio-group>
@@ -186,8 +245,11 @@
                 Amount paid per week  $
               </span>
               <md-input-container>
-                <input mdInput type="number" [ngModel]="(item|async)?.applicantReceivingChildPerWeek" (ngModelChange)="item.update({applicantReceivingChildPerWeek: $event})"
-                  name="applicantReceivingChildPerWeek">
+                <input mdInput
+                       type="number"
+                       [ngModel]="(item|async)?.applicantReceivingChildPerWeek"
+                       (ngModelChange)="item.update({applicantReceivingChildPerWeek: $event})"
+                       name="applicantReceivingChildPerWeek">
               </md-input-container>
             </div>
             <div>
@@ -195,20 +257,29 @@
                 Paid to (name)
               </span>
               <md-input-container>
-                <input mdInput type="text" [ngModel]="(item|async)?.applicantReceivingChildName" (ngModelChange)="item.update({applicantReceivingChildName: $event})"
-                  name="applicantReceivingChildName">
+                <input mdInput
+                       type="text"
+                       [ngModel]="(item|async)?.applicantReceivingChildName"
+                       (ngModelChange)="item.update({applicantReceivingChildName: $event})"
+                       name="applicantReceivingChildName">
               </md-input-container>
             </div>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
           <div class="group">
-            <md-radio-group [ngModel]="(item|async)?.replicantReceivingChildSupport" name="replicantReceivingChildSupport" [ngModelOptions]="{standalone: true}"
-              (ngModelChange)="item.update({replicantReceivingChildSupport: $event})">
-              <md-radio-button [value]="false" fxLayout="row">
+            <md-radio-group [ngModel]="(item|async)?.replicantReceivingChildSupport"
+                            name="replicantReceivingChildSupport"
+                            [ngModelOptions]="{standalone: true}"
+                            (ngModelChange)="item.update({replicantReceivingChildSupport: $event})">
+              <md-radio-button [value]="false"
+                               fxLayout="row">
                 No
               </md-radio-button>
-              <md-radio-button [value]="true" fxLayout="row">
+              <md-radio-button [value]="true"
+                               fxLayout="row">
                 Yes
               </md-radio-button>
             </md-radio-group>
@@ -217,8 +288,11 @@
                 Amount paid per week  $
               </span>
               <md-input-container>
-                <input mdInput type="number" [ngModel]="(item|async)?.replicantReceivingChildPerWeek" (ngModelChange)="item.update({replicantReceivingChildPerWeek: $event})"
-                  name="replicantReceivingChildPerWeek">
+                <input mdInput
+                       type="number"
+                       [ngModel]="(item|async)?.replicantReceivingChildPerWeek"
+                       (ngModelChange)="item.update({replicantReceivingChildPerWeek: $event})"
+                       name="replicantReceivingChildPerWeek">
               </md-input-container>
             </div>
             <div>
@@ -226,8 +300,11 @@
                 Paid to (name)
               </span>
               <md-input-container>
-                <input mdInput type="text" [ngModel]="(item|async)?.replicantReceivingChildName" (ngModelChange)="item.update({replicantReceivingChildName: $event})"
-                  name="replicantReceivingChildName">
+                <input mdInput
+                       type="text"
+                       [ngModel]="(item|async)?.replicantReceivingChildName"
+                       (ngModelChange)="item.update({replicantReceivingChildName: $event})"
+                       name="replicantReceivingChildName">
               </md-input-container>
             </div>
           </div>
@@ -243,14 +320,20 @@
       </p>
     </span>
     <!-- 41 -->
-    <app-real-estate [applicantRealEstates]="applicantRealEstates" [respondentRealEstates]="respondentRealEstates"></app-real-estate>
+    <app-real-estate [applicantRealEstates]="applicantRealEstates"
+                     [respondentRealEstates]="respondentRealEstates"></app-real-estate>
     <!-- 42 -->
-    <app-motor-vehicles [applicantMotorVehicles]="applicantMotorVehicles" [respondentMotorVehicles]="respondentMotorVehicles"></app-motor-vehicles>
+    <app-motor-vehicles [applicantMotorVehicles]="applicantMotorVehicles"
+                        [respondentMotorVehicles]="respondentMotorVehicles"></app-motor-vehicles>
     <div id="43">
       <span>43. Furniture, furnishings and effects</span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
-          <div fxLayout="row" fxLayoutAlign="center center">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
+          <div fxLayout="row"
+               fxLayoutAlign="center center">
             <h3>APPLICANT</h3>
           </div>
           <div>
@@ -258,13 +341,19 @@
               Value of your share $
             </span>
             <md-input-container>
-              <input mdInput type="number" [ngModel]="(item|async)?.applicantValueOfFurniture" (ngModelChange)="item.update({applicantValueOfFurniture: $event})"
-                name="applicantValueOfFurniture">
+              <input mdInput
+                     type="number"
+                     [ngModel]="(item|async)?.applicantValueOfFurniture"
+                     (ngModelChange)="item.update({applicantValueOfFurniture: $event})"
+                     name="applicantValueOfFurniture">
             </md-input-container>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
-          <div fxLayout="row" fxLayoutAlign="center center">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
+          <div fxLayout="row"
+               fxLayoutAlign="center center">
             <h3>RESPONDENT</h3>
           </div>
           <div>
@@ -272,28 +361,40 @@
               Value of your share $
             </span>
             <md-input-container>
-              <input mdInput type="number" [ngModel]="(item|async)?.respondentValueOfFurniture" (ngModelChange)="item.update({respondentValueOfFurniture: $event})"
-                name="respondentValueOfFurniture">
+              <input mdInput
+                     type="number"
+                     [ngModel]="(item|async)?.respondentValueOfFurniture"
+                     (ngModelChange)="item.update({respondentValueOfFurniture: $event})"
+                     name="respondentValueOfFurniture">
             </md-input-container>
           </div>
         </div>
       </div>
     </div>
     <!-- 44 -->
-    <app-financial-institutions [applicantFinancialInstitutions]="applicantFinancialInstitutions" [respondentFinancialInstitutions]="respondentFinancialInstitutions"></app-financial-institutions>
+    <app-financial-institutions [applicantFinancialInstitutions]="applicantFinancialInstitutions"
+                                [respondentFinancialInstitutions]="respondentFinancialInstitutions"></app-financial-institutions>
     <!-- 45 -->
-    <app-interest-in-business [applicantInterestInBusiness]="applicantInterestInBusiness" [respondentInterestInBusiness]="respondentInterestInBusiness"></app-interest-in-business>
+    <app-interest-in-business [applicantInterestInBusiness]="applicantInterestInBusiness"
+                              [respondentInterestInBusiness]="respondentInterestInBusiness"></app-interest-in-business>
     <!-- 46 -->
-    <app-investments [applicantInvestments]="applicantInvestments" [respondentInvestments]="respondentInvestments"></app-investments>
+    <app-investments [applicantInvestments]="applicantInvestments"
+                     [respondentInvestments]="respondentInvestments"></app-investments>
     <!-- 47 -->
-    <app-life-insurance [applicantLifeInsurance]="applicantLifeInsurance" [respondentLifeInsurance]="respondentLifeInsurance"></app-life-insurance>
+    <app-life-insurance [applicantLifeInsurance]="applicantLifeInsurance"
+                        [respondentLifeInsurance]="respondentLifeInsurance"></app-life-insurance>
     <!-- 48 -->
-    <app-other-interest [applicantOtherInterest]="applicantOtherInterest" [respondentOtherInterest]="respondentOtherInterest"></app-other-interest>
+    <app-other-interest [applicantOtherInterest]="applicantOtherInterest"
+                        [respondentOtherInterest]="respondentOtherInterest"></app-other-interest>
     <div id="49">
       <span>49. <strong>TOTAL VALUE OF PROPERTY OWNED BY YOU</strong></span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
-          <div fxLayout="row" fxLayoutAlign="center center">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
+          <div fxLayout="row"
+               fxLayoutAlign="center center">
             <h3>APPLICANT</h3>
           </div>
           <div>
@@ -301,13 +402,19 @@
               $
             </span>
             <md-input-container>
-              <input mdInput type="number" [ngModel]="(item|async)?.applicantTotalValueOfProperyOwned" (ngModelChange)="item.update({applicantTotalValueOfProperyOwned: $event})"
-                name="applicantTotalValueOfProperyOwned">
+              <input mdInput
+                     type="number"
+                     [ngModel]="(item|async)?.applicantTotalValueOfProperyOwned"
+                     (ngModelChange)="item.update({applicantTotalValueOfProperyOwned: $event})"
+                     name="applicantTotalValueOfProperyOwned">
             </md-input-container>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
-          <div fxLayout="row" fxLayoutAlign="center center">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
+          <div fxLayout="row"
+               fxLayoutAlign="center center">
             <h3>RESPONDENT</h3>
           </div>
           <div>
@@ -315,8 +422,11 @@
               $
             </span>
             <md-input-container>
-              <input mdInput type="number" [ngModel]="(item|async)?.respondentTotalValueOfProperyOwned" (ngModelChange)="item.update({respondentTotalValueOfProperyOwned: $event})"
-                name="respondentTotalValueOfProperyOwned">
+              <input mdInput
+                     type="number"
+                     [ngModel]="(item|async)?.respondentTotalValueOfProperyOwned"
+                     (ngModelChange)="item.update({respondentTotalValueOfProperyOwned: $event})"
+                     name="respondentTotalValueOfProperyOwned">
             </md-input-container>
           </div>
         </div>
@@ -324,46 +434,66 @@
     </div>
     <h3>LIABILITIES</h3>
     <!-- 50 -->
-    <app-home-mortgage [applicantHomeMortgage]="applicantHomeMortgage" [respondentHomeMortgage]="respondentHomeMortgage"></app-home-mortgage>
+    <app-home-mortgage [applicantHomeMortgage]="applicantHomeMortgage"
+                       [respondentHomeMortgage]="respondentHomeMortgage"></app-home-mortgage>
     <!-- 51 -->
-    <app-other-mortgage [applicantOtherMortgage]="applicantOtherMortgage" [respondentOtherMortgage]="respondentOtherMortgage"></app-other-mortgage>
+    <app-other-mortgage [applicantOtherMortgage]="applicantOtherMortgage"
+                        [respondentOtherMortgage]="respondentOtherMortgage"></app-other-mortgage>
     <!-- 52 -->
-    <app-credit-charge-cards [applicantCreditChargeCards]="applicantCreditChargeCards" [respondentCreditChargeCards]="respondentCreditChargeCards"></app-credit-charge-cards>
+    <app-credit-charge-cards [applicantCreditChargeCards]="applicantCreditChargeCards"
+                             [respondentCreditChargeCards]="respondentCreditChargeCards"></app-credit-charge-cards>
     <!-- 53 -->
-    <app-other-loans [applicantOtherLoans]="applicantOtherLoans" [respondentOtherLoans]="respondentOtherLoans"></app-other-loans>
+    <app-other-loans [applicantOtherLoans]="applicantOtherLoans"
+                     [respondentOtherLoans]="respondentOtherLoans"></app-other-loans>
     <!-- 54 -->
-    <app-hire-purchase-lease [applicantHirePurchaseLease]="applicantHirePurchaseLease" [respondentHirePurchaseLease]="respondentHirePurchaseLease"></app-hire-purchase-lease>
+    <app-hire-purchase-lease [applicantHirePurchaseLease]="applicantHirePurchaseLease"
+                             [respondentHirePurchaseLease]="respondentHirePurchaseLease"></app-hire-purchase-lease>
     <div id="55">
       <span>55. Income tax liabilities</span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48">
           <div>
             <span>Current financial year $</span>
             <md-input-container>
-              <input mdInput type="text" [ngModel]="(item|async)?.applicantFinancialYear" (ngModelChange)="item.update({applicantFinancialYear: $event})"
+              <input mdInput
+                     type="text"
+                     [ngModel]="(item|async)?.applicantFinancialYear"
+                     (ngModelChange)="item.update({applicantFinancialYear: $event})"
                      name="applicanFinancialYear">
             </md-input-container>
           </div>
           <div>
             <span>Amount unpaid from previous financial years $</span>
             <md-input-container>
-              <input mdInput type="text" [ngModel]="(item|async)?.applicantUnpaidFromPreviousYear" (ngModelChange)="item.update({applicantUnpaidFromPreviousYear: $event})"
+              <input mdInput
+                     type="text"
+                     [ngModel]="(item|async)?.applicantUnpaidFromPreviousYear"
+                     (ngModelChange)="item.update({applicantUnpaidFromPreviousYear: $event})"
                      name="applicanUnpaidFromPreviousYear">
             </md-input-container>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="48">
+        <div fxLayout="column"
+             fxFlex="48">
           <div>
             <span>Current financial year $</span>
             <md-input-container>
-              <input mdInput type="text" [ngModel]="(item|async)?.replicantFinancialYear" (ngModelChange)="item.update({replicantFinancialYear: $event})"
+              <input mdInput
+                     type="text"
+                     [ngModel]="(item|async)?.replicantFinancialYear"
+                     (ngModelChange)="item.update({replicantFinancialYear: $event})"
                      name="replicantFinancialYear">
             </md-input-container>
           </div>
           <div>
             <span>Amount unpaid from previous financial years $</span>
             <md-input-container>
-              <input mdInput type="text" [ngModel]="(item|async)?.replicantUnpaidFromPreviousYear" (ngModelChange)="item.update({replicantUnpaidFromPreviousYear: $event})"
+              <input mdInput
+                     type="text"
+                     [ngModel]="(item|async)?.replicantUnpaidFromPreviousYear"
+                     (ngModelChange)="item.update({replicantUnpaidFromPreviousYear: $event})"
                      name="replicantUnpaidFromPreviousYear">
             </md-input-container>
           </div>
@@ -371,28 +501,40 @@
       </div>
     </div>
     <!-- 56 -->
-    <app-other-liabilities [applicantOtherLiabilities]="applicantOtherLiabilities" [respondentOtherLiabilities]="respondentOtherLiabilities"></app-other-liabilities>
+    <app-other-liabilities [applicantOtherLiabilities]="applicantOtherLiabilities"
+                           [respondentOtherLiabilities]="respondentOtherLiabilities"></app-other-liabilities>
     <div id="57">
       <span>57. <strong>YOUR TOTAL LIABILITIES</strong></span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
           <div>
             <span>
               $
             </span>
             <md-input-container>
-              <input mdInput type="number" [ngModel]="(item|async)?.applicantTotalLiabilities" (ngModelChange)="item.update({applicantTotalLiabilities: $event})"
+              <input mdInput
+                     type="number"
+                     [ngModel]="(item|async)?.applicantTotalLiabilities"
+                     (ngModelChange)="item.update({applicantTotalLiabilities: $event})"
                      name="applicantTotalLiabilities">
             </md-input-container>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
           <div>
             <span>
               $
             </span>
             <md-input-container>
-              <input mdInput type="number" [ngModel]="(item|async)?.respondentTotalLiabilities" (ngModelChange)="item.update({respondentTotalLiabilities: $event})"
+              <input mdInput
+                     type="number"
+                     [ngModel]="(item|async)?.respondentTotalLiabilities"
+                     (ngModelChange)="item.update({respondentTotalLiabilities: $event})"
                      name="respondentTotalLiabilities">
             </md-input-container>
           </div>
@@ -402,51 +544,73 @@
     <h3><strong>YOUR TOTAL NET WORTH</strong> (NOT INCLUDING SUPERANNUATION)</h3>
     <div id="58">
       <span>58. To calculate your total net worth, subtract the amounts at Item 57 from the amounts at item 49.</span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
           <h3 fxLayoutAlign="center center">APPLICANT</h3>
           <div>
             <span>Insert the total from Item 49</span>
             <md-input-container>
-              <input mdInput type="number" [ngModel]="(item|async)?.applicantTotal49" (ngModelChange)="item.update({applicantTotal49: $event})"
+              <input mdInput
+                     type="number"
+                     [ngModel]="(item|async)?.applicantTotal49"
+                     (ngModelChange)="item.update({applicantTotal49: $event})"
                      name="applicantTotal49">
             </md-input-container>
           </div>
           <div>
             <span>Insert the total from Item 57</span>
             <md-input-container>
-              <input mdInput type="number" [ngModel]="(item|async)?.applicantTotal57" (ngModelChange)="item.update({applicantTotal57: $event})"
+              <input mdInput
+                     type="number"
+                     [ngModel]="(item|async)?.applicantTotal57"
+                     (ngModelChange)="item.update({applicantTotal57: $event})"
                      name="applicantTotal57">
             </md-input-container>
           </div>
           <div>
             <span><strong>YOUR TOTAL NET WORTH</strong> (NOT INCLUDING SUPERANNUATION)</span>
             <md-input-container>
-              <input mdInput type="number" [ngModel]="(item|async)?.applicantTotalNewWorth" (ngModelChange)="item.update({applicantTotalNewWorth: $event})"
+              <input mdInput
+                     type="number"
+                     [ngModel]="(item|async)?.applicantTotalNewWorth"
+                     (ngModelChange)="item.update({applicantTotalNewWorth: $event})"
                      name="applicantTotalNewWorth">
             </md-input-container>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="48">
+        <div fxLayout="column"
+             fxFlex="48">
           <h3 fxLayoutAlign="center center">RESPONDENT</h3>
           <div>
             <span>Insert the total from Item 49</span>
             <md-input-container>
-              <input mdInput type="number" [ngModel]="(item|async)?.respondentTotal49" (ngModelChange)="item.update({respondentTotal49: $event})"
+              <input mdInput
+                     type="number"
+                     [ngModel]="(item|async)?.respondentTotal49"
+                     (ngModelChange)="item.update({respondentTotal49: $event})"
                      name="respondentTotal49">
             </md-input-container>
           </div>
           <div>
             <span>Insert the total from Item 57</span>
             <md-input-container>
-              <input mdInput type="number" [ngModel]="(item|async)?.respondentTotal57" (ngModelChange)="item.update({respondentTotal57: $event})"
+              <input mdInput
+                     type="number"
+                     [ngModel]="(item|async)?.respondentTotal57"
+                     (ngModelChange)="item.update({respondentTotal57: $event})"
                      name="respondentTotal57">
             </md-input-container>
           </div>
           <div>
             <span><strong>YOUR TOTAL NET WORTH</strong> (NOT INCLUDING SUPERANNUATION)</span>
             <md-input-container>
-              <input mdInput type="number" [ngModel]="(item|async)?.respondentTotalNewWorth" (ngModelChange)="item.update({respondentTotalNewWorth: $event})"
+              <input mdInput
+                     type="number"
+                     [ngModel]="(item|async)?.respondentTotalNewWorth"
+                     (ngModelChange)="item.update({respondentTotalNewWorth: $event})"
                      name="respondentTotalNewWorth">
             </md-input-container>
           </div>
@@ -455,40 +619,57 @@
     </div>
     <div id="59">
       <span>59. Has either party acquired or disposed of any property since the date of separation?</span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48">
           <div class="group">
-            <md-radio-group [ngModel]="(item|async)?.applicantEitherPartyAcquiredOrDisposed" name="applicantOrdersAffectCapacity" [ngModelOptions]="{standalone: true}"
+            <md-radio-group [ngModel]="(item|async)?.applicantEitherPartyAcquiredOrDisposed"
+                            name="applicantOrdersAffectCapacity"
+                            [ngModelOptions]="{standalone: true}"
                             (ngModelChange)="item.update({applicantEitherPartyAcquiredOrDisposed: $event})">
-              <md-radio-button [value]="false" fxLayout="row">
+              <md-radio-button [value]="false"
+                               fxLayout="row">
                 No <strong>GO TO ITEM 60</strong>
               </md-radio-button>
-              <md-radio-button [value]="true" fxLayout="row">
+              <md-radio-button [value]="true"
+                               fxLayout="row">
                 Yes <strong>GIVE DETAILS</strong>
               </md-radio-button>
             </md-radio-group>
-            <div fxLayout="row" *ngIf="(item|async)?.applicantEitherPartyAcquiredOrDisposed">
+            <div fxLayout="row"
+                 *ngIf="(item|async)?.applicantEitherPartyAcquiredOrDisposed">
               <md-input-container fxFlex="100">
-                <textarea mdInput [ngModel]="(item|async)?.applicantEitherPartyAcquiredOrDisposedDetails" (ngModelChange)="item.update({applicantEitherPartyAcquiredOrDisposedDetails: $event})"
+                <textarea mdInput
+                          [ngModel]="(item|async)?.applicantEitherPartyAcquiredOrDisposedDetails"
+                          (ngModelChange)="item.update({applicantEitherPartyAcquiredOrDisposedDetails: $event})"
                           name="applicantEitherPartyAcquiredOrDisposedDetails"></textarea>
               </md-input-container>
             </div>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="48">
+        <div fxLayout="column"
+             fxFlex="48">
           <div class="group">
-            <md-radio-group [ngModel]="(item|async)?.respondentEitherPartyAcquiredOrDisposed" name="respondentEitherPartyAcquiredOrDisposed" [ngModelOptions]="{standalone: true}"
+            <md-radio-group [ngModel]="(item|async)?.respondentEitherPartyAcquiredOrDisposed"
+                            name="respondentEitherPartyAcquiredOrDisposed"
+                            [ngModelOptions]="{standalone: true}"
                             (ngModelChange)="item.update({respondentEitherPartyAcquiredOrDisposed: $event})">
-              <md-radio-button [value]="false" fxLayout="row">
+              <md-radio-button [value]="false"
+                               fxLayout="row">
                 No <strong>GO TO ITEM 60</strong>
               </md-radio-button>
-              <md-radio-button [value]="true" fxLayout="row">
+              <md-radio-button [value]="true"
+                               fxLayout="row">
                 Yes <strong>GIVE DETAILS</strong>
               </md-radio-button>
             </md-radio-group>
-            <div fxLayout="row" *ngIf="(item|async)?.respondentEitherPartyAcquiredOrDisposed">
+            <div fxLayout="row"
+                 *ngIf="(item|async)?.respondentEitherPartyAcquiredOrDisposed">
               <md-input-container fxFlex="100">
-                <textarea mdInput [ngModel]="(item|async)?.respondentEitherPartyAcquiredOrDisposedDetails" (ngModelChange)="item.update({respondentEitherPartyAcquiredOrDisposedDetails: $event})"
+                <textarea mdInput
+                          [ngModel]="(item|async)?.respondentEitherPartyAcquiredOrDisposedDetails"
+                          (ngModelChange)="item.update({respondentEitherPartyAcquiredOrDisposedDetails: $event})"
                           name="respondentEitherPartyAcquiredOrDisposedDetails"></textarea>
               </md-input-container>
             </div>
@@ -505,9 +686,13 @@
     <span>- include the details required in Items 60–65 for each interest</span>
     <div id="60">
       <span>60. Name of eligible superannuation plan</span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
-          <div fxLayout="row" fxLayoutAlign="center center">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
+          <div fxLayout="row"
+               fxLayoutAlign="center center">
             <h3>APPLICANT</h3>
           </div>
           <div>
@@ -515,13 +700,19 @@
               Name
             </span>
             <md-input-container>
-              <input mdInput type="text" [ngModel]="(item|async)?.applicantSuperannuationName" (ngModelChange)="item.update({applicantSuperannuationName: $event})"
+              <input mdInput
+                     type="text"
+                     [ngModel]="(item|async)?.applicantSuperannuationName"
+                     (ngModelChange)="item.update({applicantSuperannuationName: $event})"
                      name="applicantSuperannuationName">
             </md-input-container>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
-          <div fxLayout="row" fxLayoutAlign="center center">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
+          <div fxLayout="row"
+               fxLayoutAlign="center center">
             <h3>RESPONDENT</h3>
           </div>
           <div>
@@ -529,7 +720,10 @@
               Name
             </span>
             <md-input-container>
-              <input mdInput type="text" [ngModel]="(item|async)?.respondentSuperannuationName" (ngModelChange)="item.update({respondentSuperannuationName: $event})"
+              <input mdInput
+                     type="text"
+                     [ngModel]="(item|async)?.respondentSuperannuationName"
+                     (ngModelChange)="item.update({respondentSuperannuationName: $event})"
                      name="respondentSuperannuationName">
             </md-input-container>
           </div>
@@ -538,119 +732,140 @@
     </div>
     <div id="61">
       <span>61. Type of interest</span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48">
           <div class="group">
             <div>
               <md-checkbox (ngModelChange)="item.update({applicantAccumulationInterest: $event})"
-                           [ngModel]="(item|async)?.applicantAccumulationInterest"  name="applicantAccumulationInterest">
+                           [ngModel]="(item|async)?.applicantAccumulationInterest"
+                           name="applicantAccumulationInterest">
                 accumulation interest
               </md-checkbox>
             </div>
             <div>
               <md-checkbox (ngModelChange)="item.update({applicantPartiallyVested: $event})"
-                           [ngModel]="(item|async)?.applicantPartiallyVested"  name="applicantPartiallyVested">
+                           [ngModel]="(item|async)?.applicantPartiallyVested"
+                           name="applicantPartiallyVested">
                 partially vested accumulation interest
               </md-checkbox>
             </div>
             <div>
               <md-checkbox (ngModelChange)="item.update({applicantDefinedBenefitInterest: $event})"
-                           [ngModel]="(item|async)?.applicantDefinedBenefitInterest"  name="applicantDefinedBenefitInterest">
+                           [ngModel]="(item|async)?.applicantDefinedBenefitInterest"
+                           name="applicantDefinedBenefitInterest">
                 defined benefit interest
               </md-checkbox>
             </div>
             <div>
               <md-checkbox (ngModelChange)="item.update({applicantSelfManagedFund: $event})"
-                           [ngModel]="(item|async)?.applicantSelfManagedFund"  name="applicantSelfManagedFund">
+                           [ngModel]="(item|async)?.applicantSelfManagedFund"
+                           name="applicantSelfManagedFund">
                 self managed fund
               </md-checkbox>
             </div>
             <div>
               <md-checkbox (ngModelChange)="item.update({applicantRetirementSavingsAccount: $event})"
-                           [ngModel]="(item|async)?.applicantRetirementSavingsAccount"  name="applicantRetirementSavingsAccount">
+                           [ngModel]="(item|async)?.applicantRetirementSavingsAccount"
+                           name="applicantRetirementSavingsAccount">
                 retirement savings account
               </md-checkbox>
             </div>
             <div>
               <md-checkbox (ngModelChange)="item.update({applicantSmallSuperannuationAccount: $event})"
-                           [ngModel]="(item|async)?.applicantSmallSuperannuationAccount"  name="applicantSmallSuperannuationAccount">
+                           [ngModel]="(item|async)?.applicantSmallSuperannuationAccount"
+                           name="applicantSmallSuperannuationAccount">
                 small superannuation account
               </md-checkbox>
             </div>
             <div>
               <md-checkbox (ngModelChange)="item.update({applicantPercentageOnlyInterest: $event})"
-                           [ngModel]="(item|async)?.applicantPercentageOnlyInterest"  name="applicantPercentageOnlyInterest">
+                           [ngModel]="(item|async)?.applicantPercentageOnlyInterest"
+                           name="applicantPercentageOnlyInterest">
                 percentage only interest
               </md-checkbox>
             </div>
             <div>
               <md-checkbox (ngModelChange)="item.update({applicantApprovedDepositFund: $event})"
-                           [ngModel]="(item|async)?.applicantApprovedDepositFund"  name="applicantApprovedDepositFund">
+                           [ngModel]="(item|async)?.applicantApprovedDepositFund"
+                           name="applicantApprovedDepositFund">
                 approved deposit fund
               </md-checkbox>
 
             </div>
             <div>
               <md-checkbox (ngModelChange)="item.update({applicantEligibleAnnuity: $event})"
-                           [ngModel]="(item|async)?.applicantEligibleAnnuity"  name="applicantEligibleAnnuity">
+                           [ngModel]="(item|async)?.applicantEligibleAnnuity"
+                           name="applicantEligibleAnnuity">
                 eligible annuity
               </md-checkbox>
             </div>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="48">
+        <div fxLayout="column"
+             fxFlex="48">
           <div class="group">
             <div>
               <md-checkbox (ngModelChange)="item.update({respondentAccumulationInterest: $event})"
-                           [ngModel]="(item|async)?.respondentAccumulationInterest"  name="respondentAccumulationInterest">
+                           [ngModel]="(item|async)?.respondentAccumulationInterest"
+                           name="respondentAccumulationInterest">
                 accumulation interest
               </md-checkbox>
             </div>
             <div>
               <md-checkbox (ngModelChange)="item.update({respondentPartiallyVested: $event})"
-                           [ngModel]="(item|async)?.respondentPartiallyVested"  name="respondentPartiallyVested">
+                           [ngModel]="(item|async)?.respondentPartiallyVested"
+                           name="respondentPartiallyVested">
                 partially vested accumulation interest
               </md-checkbox>
             </div>
             <div>
               <md-checkbox (ngModelChange)="item.update({respondentDefinedBenefitInterest: $event})"
-                           [ngModel]="(item|async)?.respondentDefinedBenefitInterest"  name="respondentDefinedBenefitInterest">
+                           [ngModel]="(item|async)?.respondentDefinedBenefitInterest"
+                           name="respondentDefinedBenefitInterest">
                 defined benefit interest
               </md-checkbox>
             </div>
             <div>
               <md-checkbox (ngModelChange)="item.update({respondentSelfManagedFund: $event})"
-                           [ngModel]="(item|async)?.respondentSelfManagedFund"  name="respondentSelfManagedFund">
+                           [ngModel]="(item|async)?.respondentSelfManagedFund"
+                           name="respondentSelfManagedFund">
                 self managed fund
               </md-checkbox>
             </div>
             <div>
               <md-checkbox (ngModelChange)="item.update({respondentRetirementSavingsAccount: $event})"
-                           [ngModel]="(item|async)?.respondentRetirementSavingsAccount"  name="respondentRetirementSavingsAccount">
+                           [ngModel]="(item|async)?.respondentRetirementSavingsAccount"
+                           name="respondentRetirementSavingsAccount">
                 retirement savings account
               </md-checkbox>
             </div>
             <div>
               <md-checkbox (ngModelChange)="item.update({respondentSmallSuperannuationAccount: $event})"
-                           [ngModel]="(item|async)?.respondentSmallSuperannuationAccount"  name="respondentSmallSuperannuationAccount">
+                           [ngModel]="(item|async)?.respondentSmallSuperannuationAccount"
+                           name="respondentSmallSuperannuationAccount">
                 small superannuation account
               </md-checkbox>
             </div>
             <div>
               <md-checkbox (ngModelChange)="item.update({respondentPercentageOnlyInterest: $event})"
-                           [ngModel]="(item|async)?.respondentPercentageOnlyInterest"  name="respondentPercentageOnlyInterest">
+                           [ngModel]="(item|async)?.respondentPercentageOnlyInterest"
+                           name="respondentPercentageOnlyInterest">
                 percentage only interest
               </md-checkbox>
             </div>
             <div>
               <md-checkbox (ngModelChange)="item.update({respondentApprovedDepositFund: $event})"
-                           [ngModel]="(item|async)?.respondentApprovedDepositFund"  name="respondentApprovedDepositFund">
+                           [ngModel]="(item|async)?.respondentApprovedDepositFund"
+                           name="respondentApprovedDepositFund">
                 approved deposit fund
               </md-checkbox>
             </div>
             <div>
               <md-checkbox (ngModelChange)="item.update({respondentEligibleAnnuity: $event})"
-                           [ngModel]="(item|async)?.respondentEligibleAnnuity"  name="respondentEligibleAnnuity">
+                           [ngModel]="(item|async)?.respondentEligibleAnnuity"
+                           name="respondentEligibleAnnuity">
                 eligible annuity
               </md-checkbox>
             </div>
@@ -660,25 +875,36 @@
     </div>
     <div id="62">
       <span>62. Specify the current agreed gross value of the interest in superannuation</span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
           <div>
             <span>
               $
             </span>
             <md-input-container>
-              <input mdInput type="number" [ngModel]="(item|async)?.applicantCurrentAgreedOfTheInterest" (ngModelChange)="item.update({applicantCurrentAgreedOfTheInterest: $event})"
+              <input mdInput
+                     type="number"
+                     [ngModel]="(item|async)?.applicantCurrentAgreedOfTheInterest"
+                     (ngModelChange)="item.update({applicantCurrentAgreedOfTheInterest: $event})"
                      name="applicantCurrentAgreedOfTheInterest">
             </md-input-container>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
           <div>
             <span>
               $
             </span>
             <md-input-container>
-              <input mdInput type="number" [ngModel]="(item|async)?.respondentCurrentAgreedOfTheInterest" (ngModelChange)="item.update({respondentCurrentAgreedOfTheInterest: $event})"
+              <input mdInput
+                     type="number"
+                     [ngModel]="(item|async)?.respondentCurrentAgreedOfTheInterest"
+                     (ngModelChange)="item.update({respondentCurrentAgreedOfTheInterest: $event})"
                      name="respondentCurrentAgreedOfTheInterest">
             </md-input-container>
           </div>
@@ -687,16 +913,22 @@
     </div>
     <div id="63">
       <span>63. Has the agreed value in Item 62 been calculated in accordance with the Family Law (Superannuation) Regulations 2001? (Complete only if section 90MT (2)(a) of the Act applies to the superannuation interest)</span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48">
           <md-checkbox (ngModelChange)="item.update({applicantAgreedIn62: $event})"
-                       [ngModel]="(item|async)?.applicantAgreedIn62"  name="applicantAgreedIn62">
+                       [ngModel]="(item|async)?.applicantAgreedIn62"
+                       name="applicantAgreedIn62">
             Yes
           </md-checkbox>
         </div>
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
           <md-checkbox (ngModelChange)="item.update({respondentAgreedIn62: $event})"
-                       [ngModel]="(item|async)?.respondentAgreedIn62"  name="respondentAgreedIn62">
+                       [ngModel]="(item|async)?.respondentAgreedIn62"
+                       name="respondentAgreedIn62">
             Yes
           </md-checkbox>
         </div>
@@ -704,37 +936,51 @@
     </div>
     <div id="64">
       <span>64. For each interest, whether or not a splitting order is sought, advise if the interest is subject to an earlier payment split.</span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48">
           <div class="group">
             <div>
-              <md-radio-group [ngModel]="(item|async)?.applicantInterestIsSubject" name="applicantInterestIsSubject" [ngModelOptions]="{standalone: true}"
+              <md-radio-group [ngModel]="(item|async)?.applicantInterestIsSubject"
+                              name="applicantInterestIsSubject"
+                              [ngModelOptions]="{standalone: true}"
                               (ngModelChange)="item.update({applicantInterestIsSubject: $event})">
-                <md-radio-button [value]="false" fxLayout="row">
+                <md-radio-button [value]="false"
+                                 fxLayout="row">
                   No //GO TO ITEM 65
                 </md-radio-button>
-                <md-radio-button [value]="true" fxLayout="row">
+                <md-radio-button [value]="true"
+                                 fxLayout="row">
                   Yes
                 </md-radio-button>
               </md-radio-group>
             </div>
             <div>
               <span>Are there any further payments to be made?</span>
-              <md-radio-group [ngModel]="(item|async)?.applicantFurtherPaiments" name="applicantFurtherPaiments" [ngModelOptions]="{standalone: true}"
+              <md-radio-group [ngModel]="(item|async)?.applicantFurtherPaiments"
+                              name="applicantFurtherPaiments"
+                              [ngModelOptions]="{standalone: true}"
                               (ngModelChange)="item.update({applicantFurtherPaiments: $event})">
-                <md-radio-button [value]="false" fxLayout="row">
+                <md-radio-button [value]="false"
+                                 fxLayout="row">
                   No //GO TO ITEM 65
                 </md-radio-button>
-                <md-radio-button [value]="true" fxLayout="row">
+                <md-radio-button [value]="true"
+                                 fxLayout="row">
                   Yes //Provide the following details:
                 </md-radio-button>
               </md-radio-group>
             </div>
-            <div class="additional_details" *ngIf="(item|async)?.applicantFurtherPaiments">
+            <div class="additional_details"
+                 *ngIf="(item|async)?.applicantFurtherPaiments">
               <span>a) The operative time for the split</span>
               <div>
                 <md-input-container>
-                  <input mdInput type="text" [ngModel]="(item|async)?.applicantTimeForSplit" (ngModelChange)="item.update({applicantTimeForSplit: $event})"
+                  <input mdInput
+                         type="text"
+                         [ngModel]="(item|async)?.applicantTimeForSplit"
+                         (ngModelChange)="item.update({applicantTimeForSplit: $event})"
                          name="applicantTimeForSplit">
                 </md-input-container>
               </div>
@@ -742,7 +988,10 @@
               <div>
                 <span>$</span>
                 <md-input-container>
-                  <input mdInput type="number" [ngModel]="(item|async)?.applicantAmountOfFuturePayments" (ngModelChange)="item.update({applicantAmountOfFuturePayments: $event})"
+                  <input mdInput
+                         type="number"
+                         [ngModel]="(item|async)?.applicantAmountOfFuturePayments"
+                         (ngModelChange)="item.update({applicantAmountOfFuturePayments: $event})"
                          name="applicantAmountOfFuturePayments">
                 </md-input-container>
               </div>
@@ -750,7 +999,10 @@
               <div>
                 <span>$</span>
                 <md-input-container>
-                  <input mdInput type="number" [ngModel]="(item|async)?.applicantAdjustedBaseAmount" (ngModelChange)="item.update({applicantAdjustedBaseAmount: $event})"
+                  <input mdInput
+                         type="number"
+                         [ngModel]="(item|async)?.applicantAdjustedBaseAmount"
+                         (ngModelChange)="item.update({applicantAdjustedBaseAmount: $event})"
                          name="applicantAdjustedBaseAmount">
                 </md-input-container>
               </div>
@@ -758,43 +1010,59 @@
               <div>
                 <span>$</span>
                 <md-input-container>
-                  <input mdInput type="number" [ngModel]="(item|async)?.applicantPercentageSplit" (ngModelChange)="item.update({applicantPercentageSplit: $event})"
+                  <input mdInput
+                         type="number"
+                         [ngModel]="(item|async)?.applicantPercentageSplit"
+                         (ngModelChange)="item.update({applicantPercentageSplit: $event})"
                          name="applicantPercentageSplit">
                 </md-input-container>
               </div>
             </div>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="48">
+        <div fxLayout="column"
+             fxFlex="48">
           <div class="group">
             <div>
-              <md-radio-group [ngModel]="(item|async)?.respondentInterestIsSubject" name="respondentInterestIsSubject" [ngModelOptions]="{standalone: true}"
+              <md-radio-group [ngModel]="(item|async)?.respondentInterestIsSubject"
+                              name="respondentInterestIsSubject"
+                              [ngModelOptions]="{standalone: true}"
                               (ngModelChange)="item.update({respondentInterestIsSubject: $event})">
-                <md-radio-button [value]="false" fxLayout="row">
+                <md-radio-button [value]="false"
+                                 fxLayout="row">
                   No //GO TO ITEM 65
                 </md-radio-button>
-                <md-radio-button [value]="true" fxLayout="row">
+                <md-radio-button [value]="true"
+                                 fxLayout="row">
                   Yes
                 </md-radio-button>
               </md-radio-group>
             </div>
             <div>
               <span>Are there any further payments to be made?</span>
-              <md-radio-group [ngModel]="(item|async)?.respondentFurtherPaiments" name="respondentFurtherPaiments" [ngModelOptions]="{standalone: true}"
+              <md-radio-group [ngModel]="(item|async)?.respondentFurtherPaiments"
+                              name="respondentFurtherPaiments"
+                              [ngModelOptions]="{standalone: true}"
                               (ngModelChange)="item.update({respondentFurtherPaiments: $event})">
-                <md-radio-button [value]="false" fxLayout="row">
+                <md-radio-button [value]="false"
+                                 fxLayout="row">
                   No //GO TO ITEM 65
                 </md-radio-button>
-                <md-radio-button [value]="true" fxLayout="row">
+                <md-radio-button [value]="true"
+                                 fxLayout="row">
                   Yes //Provide the following details:
                 </md-radio-button>
               </md-radio-group>
             </div>
-            <div class="additional_details" *ngIf="(item|async)?.respondentFurtherPaiments">
+            <div class="additional_details"
+                 *ngIf="(item|async)?.respondentFurtherPaiments">
               <span>a) The operative time for the split</span>
               <div>
                 <md-input-container>
-                  <input mdInput type="text" [ngModel]="(item|async)?.respondentTimeForSplit" (ngModelChange)="item.update({respondentTimeForSplit: $event})"
+                  <input mdInput
+                         type="text"
+                         [ngModel]="(item|async)?.respondentTimeForSplit"
+                         (ngModelChange)="item.update({respondentTimeForSplit: $event})"
                          name="respondentTimeForSplit">
                 </md-input-container>
               </div>
@@ -802,7 +1070,10 @@
               <div>
                 <span>$</span>
                 <md-input-container>
-                  <input mdInput type="number" [ngModel]="(item|async)?.respondentAmountOfFuturePayments" (ngModelChange)="item.update({respondentAmountOfFuturePayments: $event})"
+                  <input mdInput
+                         type="number"
+                         [ngModel]="(item|async)?.respondentAmountOfFuturePayments"
+                         (ngModelChange)="item.update({respondentAmountOfFuturePayments: $event})"
                          name="respondentAmountOfFuturePayments">
                 </md-input-container>
               </div>
@@ -810,7 +1081,10 @@
               <div>
                 <span>$</span>
                 <md-input-container>
-                  <input mdInput type="number" [ngModel]="(item|async)?.respondentAdjustedBaseAmount" (ngModelChange)="item.update({respondentAdjustedBaseAmount: $event})"
+                  <input mdInput
+                         type="number"
+                         [ngModel]="(item|async)?.respondentAdjustedBaseAmount"
+                         (ngModelChange)="item.update({respondentAdjustedBaseAmount: $event})"
                          name="respondentAdjustedBaseAmount">
                 </md-input-container>
               </div>
@@ -818,7 +1092,10 @@
               <div>
                 <span>$</span>
                 <md-input-container>
-                  <input mdInput type="number" [ngModel]="(item|async)?.respondentPercentageSplit" (ngModelChange)="item.update({respondentPercentageSplit: $event})"
+                  <input mdInput
+                         type="number"
+                         [ngModel]="(item|async)?.respondentPercentageSplit"
+                         (ngModelChange)="item.update({respondentPercentageSplit: $event})"
                          name="respondentPercentageSplit">
                 </md-input-container>
               </div>
@@ -829,15 +1106,20 @@
     </div>
     <div id="65">
       <span>65. For each interest, whether or not a splitting order is sought:</span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48">
           <div class="group">
             <span>a) If the interest is a defined benefit interest in the growth phase (not being an interest in a constitutionally protected fund), state the amount of any surcharge debt in the most recent member statement</span>
             <div>
               <div>
                 <span>$</span>
                 <md-input-container>
-                  <input mdInput type="number" [ngModel]="(item|async)?.applicantAmountOfAnySurchargeDebt" (ngModelChange)="item.update({applicantAmountOfAnySurchargeDebt: $event})"
+                  <input mdInput
+                         type="number"
+                         [ngModel]="(item|async)?.applicantAmountOfAnySurchargeDebt"
+                         (ngModelChange)="item.update({applicantAmountOfAnySurchargeDebt: $event})"
                          name="applicantAmountOfAnySurchargeDebt">
                 </md-input-container>
               </div>
@@ -847,21 +1129,28 @@
               <div>
                 <span>$</span>
                 <md-input-container>
-                  <input mdInput type="number" [ngModel]="(item|async)?.applicantAmountOfAnySurchargeInSurcharge" (ngModelChange)="item.update({applicantAmountOfAnySurchargeInSurcharge: $event})"
+                  <input mdInput
+                         type="number"
+                         [ngModel]="(item|async)?.applicantAmountOfAnySurchargeInSurcharge"
+                         (ngModelChange)="item.update({applicantAmountOfAnySurchargeInSurcharge: $event})"
                          name="applicantAmountOfAnySurchargeInSurcharge">
                 </md-input-container>
               </div>
             </div>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="48">
+        <div fxLayout="column"
+             fxFlex="48">
           <div class="group">
             <span>a) If the interest is a defined benefit interest in the growth phase (not being an interest in a constitutionally protected fund), state the amount of any surcharge debt in the most recent member statement</span>
             <div>
               <div>
                 <span>$</span>
                 <md-input-container>
-                  <input mdInput type="number" [ngModel]="(item|async)?.respondentAmountOfAnySurchargeDebt" (ngModelChange)="item.update({respondentAmountOfAnySurchargeDebt: $event})"
+                  <input mdInput
+                         type="number"
+                         [ngModel]="(item|async)?.respondentAmountOfAnySurchargeDebt"
+                         (ngModelChange)="item.update({respondentAmountOfAnySurchargeDebt: $event})"
                          name="respondentAmountOfAnySurchargeDebt">
                 </md-input-container>
               </div>
@@ -871,7 +1160,10 @@
               <div>
                 <span>$</span>
                 <md-input-container>
-                  <input mdInput type="number" [ngModel]="(item|async)?.respondentAmountOfAnySurchargeInSurcharge" (ngModelChange)="item.update({respondentAmountOfAnySurchargeInSurcharge: $event})"
+                  <input mdInput
+                         type="number"
+                         [ngModel]="(item|async)?.respondentAmountOfAnySurchargeInSurcharge"
+                         (ngModelChange)="item.update({respondentAmountOfAnySurchargeInSurcharge: $event})"
                          name="respondentAmountOfAnySurchargeInSurcharge">
                 </md-input-container>
               </div>
@@ -883,15 +1175,19 @@
     <h3>FINANCIAL RESOURCES</h3>
     <div id="66">
       <span>66. Interest in any trust or any other financial resources (for example, do you have an expectation of receiving money from a personal injury claim or court case or property from a deceased estate?)</span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48">
           <div class="group">
             <span>GIVE DETAILS</span>
             <div>
               <div fxLayout="row">
                 <md-input-container fxFlex="100">
-                <textarea mdInput [ngModel]="(item|async)?.applicantFinancialResourcesTextDetails" (ngModelChange)="item.update({applicantFinancialResourcesTextDetails: $event})"
-                          name="applicantFinancialResourcesTextDetails"></textarea>
+                  <textarea mdInput
+                            [ngModel]="(item|async)?.applicantFinancialResourcesTextDetails"
+                            (ngModelChange)="item.update({applicantFinancialResourcesTextDetails: $event})"
+                            name="applicantFinancialResourcesTextDetails"></textarea>
                 </md-input-container>
               </div>
             </div>
@@ -899,21 +1195,28 @@
               <div>
                 <span>$</span>
                 <md-input-container>
-                  <input mdInput type="number" [ngModel]="(item|async)?.applicantFinancialResourcesNumDetails" (ngModelChange)="item.update({applicantFinancialResourcesNumDetails: $event})"
+                  <input mdInput
+                         type="number"
+                         [ngModel]="(item|async)?.applicantFinancialResourcesNumDetails"
+                         (ngModelChange)="item.update({applicantFinancialResourcesNumDetails: $event})"
                          name="applicantFinancialResourcesNumDetails">
                 </md-input-container>
               </div>
             </div>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
           <div class="group">
             <span>GIVE DETAILS</span>
             <div>
               <div fxLayout="row">
                 <md-input-container fxFlex="100">
-                <textarea mdInput [ngModel]="(item|async)?.respondentFinancialResourcesTextDetails" (ngModelChange)="item.update({respondentFinancialResourcesTextDetails: $event})"
-                          name="respondentFinancialResourcesTextDetails"></textarea>
+                  <textarea mdInput
+                            [ngModel]="(item|async)?.respondentFinancialResourcesTextDetails"
+                            (ngModelChange)="item.update({respondentFinancialResourcesTextDetails: $event})"
+                            name="respondentFinancialResourcesTextDetails"></textarea>
                 </md-input-container>
               </div>
             </div>
@@ -921,7 +1224,10 @@
               <div>
                 <span>$</span>
                 <md-input-container>
-                  <input mdInput type="number" [ngModel]="(item|async)?.respondentFinancialResourcesNumDetails" (ngModelChange)="item.update({respondentFinancialResourcesNumDetails: $event})"
+                  <input mdInput
+                         type="number"
+                         [ngModel]="(item|async)?.respondentFinancialResourcesNumDetails"
+                         (ngModelChange)="item.update({respondentFinancialResourcesNumDetails: $event})"
                          name="respondentFinancialResourcesNumDetails">
                 </md-input-container>
               </div>
@@ -933,8 +1239,10 @@
     <h3>PROPOSED DIVISION OF PROPERTY</h3>
     <div id="67">
       <span>67. Proposed percentage division of the property (including superannuation)</span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48">
           <h3 fxLayoutAlign="center center">APPLICANT</h3>
           <div class="group">
             <span>GIVE DETAILS</span>
@@ -942,7 +1250,10 @@
               <div>
                 <span>Applicant %</span>
                 <md-input-container>
-                  <input mdInput type="number" [ngModel]="(item|async)?.applicantPercentageDivision" (ngModelChange)="item.update({applicantPercentageDivision: $event})"
+                  <input mdInput
+                         type="number"
+                         [ngModel]="(item|async)?.applicantPercentageDivision"
+                         (ngModelChange)="item.update({applicantPercentageDivision: $event})"
                          name="applicantPercentageDivision">
                 </md-input-container>
               </div>
@@ -951,33 +1262,45 @@
               <div>
                 <span>Respondent %</span>
                 <md-input-container>
-                  <input mdInput type="number" [ngModel]="(item|async)?.respondentPercentageDivision" (ngModelChange)="item.update({respondentPercentageDivision: $event})"
+                  <input mdInput
+                         type="number"
+                         [ngModel]="(item|async)?.respondentPercentageDivision"
+                         (ngModelChange)="item.update({respondentPercentageDivision: $event})"
                          name="respondentPercentageDivision">
                 </md-input-container>
               </div>
             </div>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
           <h3 fxLayoutAlign="center center">RESPONDENT</h3>
           <div class="group">
             <div>
-              <md-radio-group [ngModel]="(item|async)?.applicantDivisionAgreed" name="applicantDivisionAgreed" [ngModelOptions]="{standalone: true}"
+              <md-radio-group [ngModel]="(item|async)?.applicantDivisionAgreed"
+                              name="applicantDivisionAgreed"
+                              [ngModelOptions]="{standalone: true}"
                               (ngModelChange)="item.update({applicantDivisionAgreed: $event})">
-                <md-radio-button [value]="true" fxLayout="column">
+                <md-radio-button [value]="true"
+                                 fxLayout="column">
                   Agree
                 </md-radio-button>
-                <md-radio-button [value]="false" fxLayout="column">
+                <md-radio-button [value]="false"
+                                 fxLayout="column">
                   Disagree
                 </md-radio-button>
               </md-radio-group>
             </div>
-            <div class="additional_details" *ngIf="!(item|async)?.applicantDivisionAgreed">
+            <div class="additional_details"
+                 *ngIf="!(item|async)?.applicantDivisionAgreed">
               <span>GIVE BRIEF REASONS WHY YOU DISAGREE AND SPECIFY YOUR ESTIMATE OF THE PROPOSED DIVISION</span>
               <div fxLayout="row">
                 <md-input-container fxFlex="100">
-                <textarea mdInput [ngModel]="(item|async)?.respondentBriefReasonDivision" (ngModelChange)="item.update({respondentBriefReasonDivision: $event})"
-                          name="respondentBriefReasonDivision"></textarea>
+                  <textarea mdInput
+                            [ngModel]="(item|async)?.respondentBriefReasonDivision"
+                            (ngModelChange)="item.update({respondentBriefReasonDivision: $event})"
+                            name="respondentBriefReasonDivision"></textarea>
                 </md-input-container>
               </div>
             </div>
@@ -987,50 +1310,68 @@
     </div>
     <div id="68">
       <span>68. Were the financial contributions of the parties the same? (see s79(4)(a) or if a de facto relationship s90SM(4)(a) of the Family Law Act)</span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48">
           <div class="group">
             <div>
-              <md-radio-group [ngModel]="(item|async)?.applicantSameFinContributions" name="applicantSameFinContributions" [ngModelOptions]="{standalone: true}"
+              <md-radio-group [ngModel]="(item|async)?.applicantSameFinContributions"
+                              name="applicantSameFinContributions"
+                              [ngModelOptions]="{standalone: true}"
                               (ngModelChange)="item.update({applicantSameFinContributions: $event})">
-                <md-radio-button [value]="true" fxLayout="column">
+                <md-radio-button [value]="true"
+                                 fxLayout="column">
                   Yes //GO TO ITEM 69
                 </md-radio-button>
-                <md-radio-button [value]="false" fxLayout="column">
+                <md-radio-button [value]="false"
+                                 fxLayout="column">
                   No
                 </md-radio-button>
               </md-radio-group>
             </div>
-            <div class="additional_details" *ngIf="(item|async)?.applicantSameFinContributions == false">
+            <div class="additional_details"
+                 *ngIf="(item|async)?.applicantSameFinContributions == false">
               <span>GIVE BRIEF DETAILS OF WHO MADE THE GREATER CONTRIBUTION</span>
               <div fxLayout="row">
                 <md-input-container fxFlex="100">
-                <textarea mdInput [ngModel]="(item|async)?.applicantDetailsWhoMadeGreatherContrib" (ngModelChange)="item.update({applicantDetailsWhoMadeGreatherContrib: $event})"
-                          name="respondentBriefReasonDivision"></textarea>
+                  <textarea mdInput
+                            [ngModel]="(item|async)?.applicantDetailsWhoMadeGreatherContrib"
+                            (ngModelChange)="item.update({applicantDetailsWhoMadeGreatherContrib: $event})"
+                            name="respondentBriefReasonDivision"></textarea>
                 </md-input-container>
               </div>
             </div>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
           <div class="group">
             <div>
-              <md-radio-group [ngModel]="(item|async)?.respondentSameFinContributions" name="respondentSameFinContributions" [ngModelOptions]="{standalone: true}"
+              <md-radio-group [ngModel]="(item|async)?.respondentSameFinContributions"
+                              name="respondentSameFinContributions"
+                              [ngModelOptions]="{standalone: true}"
                               (ngModelChange)="item.update({respondentSameFinContributions: $event})">
-                <md-radio-button [value]="true" fxLayout="column">
+                <md-radio-button [value]="true"
+                                 fxLayout="column">
                   Agree
                 </md-radio-button>
-                <md-radio-button [value]="false" fxLayout="column">
+                <md-radio-button [value]="false"
+                                 fxLayout="column">
                   Disagree
                 </md-radio-button>
               </md-radio-group>
             </div>
-            <div class="additional_details" *ngIf="(item|async)?.respondentSameFinContributions == false">
+            <div class="additional_details"
+                 *ngIf="(item|async)?.respondentSameFinContributions == false">
               <span>GIVE BRIEF REASONS WHY YOU DISAGREE</span>
               <div fxLayout="row">
                 <md-input-container fxFlex="100">
-                <textarea mdInput [ngModel]="(item|async)?.respondentDetailsWhoMadeGreatherContrib" (ngModelChange)="item.update({respondentDetailsWhoMadeGreatherContrib: $event})"
-                          name="respondentDetailsWhoMadeGreatherContrib"></textarea>
+                  <textarea mdInput
+                            [ngModel]="(item|async)?.respondentDetailsWhoMadeGreatherContrib"
+                            (ngModelChange)="item.update({respondentDetailsWhoMadeGreatherContrib: $event})"
+                            name="respondentDetailsWhoMadeGreatherContrib"></textarea>
                 </md-input-container>
               </div>
             </div>
@@ -1040,50 +1381,68 @@
     </div>
     <div id="69">
       <span>69. Were the non-financial contributions from each of the parties the same? (see s79(4)(b) or if a de facto relationship s90SM(4)(b) of the Family Law Act)</span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48">
           <div class="group">
             <div>
-              <md-radio-group [ngModel]="(item|async)?.applicantNonFinancialContributions" name="applicantNonFinancialContributions" [ngModelOptions]="{standalone: true}"
+              <md-radio-group [ngModel]="(item|async)?.applicantNonFinancialContributions"
+                              name="applicantNonFinancialContributions"
+                              [ngModelOptions]="{standalone: true}"
                               (ngModelChange)="item.update({applicantNonFinancialContributions: $event})">
-                <md-radio-button [value]="true" fxLayout="column">
+                <md-radio-button [value]="true"
+                                 fxLayout="column">
                   Yes //GO TO ITEM 70
                 </md-radio-button>
-                <md-radio-button [value]="false" fxLayout="column">
+                <md-radio-button [value]="false"
+                                 fxLayout="column">
                   No
                 </md-radio-button>
               </md-radio-group>
             </div>
-            <div class="additional_details" *ngIf="(item|async)?.applicantNonFinancialContributions == false">
+            <div class="additional_details"
+                 *ngIf="(item|async)?.applicantNonFinancialContributions == false">
               <span>GIVE BRIEF DETAILS OF WHO MADE THE GREATER CONTRIBUTION</span>
               <div fxLayout="row">
                 <md-input-container fxFlex="100">
-                <textarea mdInput [ngModel]="(item|async)?.applicantNonFinancialContributionsDetails" (ngModelChange)="item.update({applicantNonFinancialContributionsDetails: $event})"
-                          name="applicantNonFinancialContributionsDetails"></textarea>
+                  <textarea mdInput
+                            [ngModel]="(item|async)?.applicantNonFinancialContributionsDetails"
+                            (ngModelChange)="item.update({applicantNonFinancialContributionsDetails: $event})"
+                            name="applicantNonFinancialContributionsDetails"></textarea>
                 </md-input-container>
               </div>
             </div>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
           <div class="group">
             <div>
-              <md-radio-group [ngModel]="(item|async)?.respondentNonFinancialContributions" name="respondentNonFinancialContributions" [ngModelOptions]="{standalone: true}"
+              <md-radio-group [ngModel]="(item|async)?.respondentNonFinancialContributions"
+                              name="respondentNonFinancialContributions"
+                              [ngModelOptions]="{standalone: true}"
                               (ngModelChange)="item.update({respondentNonFinancialContributions: $event})">
-                <md-radio-button [value]="true" fxLayout="column">
+                <md-radio-button [value]="true"
+                                 fxLayout="column">
                   Agree //GO TO ITEM 70
                 </md-radio-button>
-                <md-radio-button [value]="false" fxLayout="column">
+                <md-radio-button [value]="false"
+                                 fxLayout="column">
                   Disagree
                 </md-radio-button>
               </md-radio-group>
             </div>
-            <div class="additional_details" *ngIf="(item|async)?.respondentNonFinancialContributions == false">
+            <div class="additional_details"
+                 *ngIf="(item|async)?.respondentNonFinancialContributions == false">
               <span>GIVE BRIEF REASONS WHY YOU DISAGREE</span>
               <div fxLayout="row">
                 <md-input-container fxFlex="100">
-                <textarea mdInput [ngModel]="(item|async)?.respondentNonFinancialContributionsDetails" (ngModelChange)="item.update({respondentNonFinancialContributionsDetails: $event})"
-                          name="respondentNonFinancialContributionsDetails"></textarea>
+                  <textarea mdInput
+                            [ngModel]="(item|async)?.respondentNonFinancialContributionsDetails"
+                            (ngModelChange)="item.update({respondentNonFinancialContributionsDetails: $event})"
+                            name="respondentNonFinancialContributionsDetails"></textarea>
                 </md-input-container>
               </div>
             </div>
@@ -1093,50 +1452,68 @@
     </div>
     <div id="70">
       <span>70. Were the contributions from each of the parties as homemaker and parent the same? (see s79(4)(c) or if a de facto relationship s90SM(4)(c) of the Family Law Act)</span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48">
           <div class="group">
             <div>
-              <md-radio-group [ngModel]="(item|async)?.applicantHomemakerContributions" name="applicantHomemakerContributions" [ngModelOptions]="{standalone: true}"
+              <md-radio-group [ngModel]="(item|async)?.applicantHomemakerContributions"
+                              name="applicantHomemakerContributions"
+                              [ngModelOptions]="{standalone: true}"
                               (ngModelChange)="item.update({applicantHomemakerContributions: $event})">
-                <md-radio-button [value]="true" fxLayout="column">
+                <md-radio-button [value]="true"
+                                 fxLayout="column">
                   Yes //GO TO ITEM 71
                 </md-radio-button>
-                <md-radio-button [value]="false" fxLayout="column">
+                <md-radio-button [value]="false"
+                                 fxLayout="column">
                   No
                 </md-radio-button>
               </md-radio-group>
             </div>
-            <div class="additional_details" *ngIf="(item|async)?.applicantHomemakerContributions == false">
+            <div class="additional_details"
+                 *ngIf="(item|async)?.applicantHomemakerContributions == false">
               <span>GIVE BRIEF DETAILS OF WHO MADE THE GREATER CONTRIBUTION</span>
               <div fxLayout="row">
                 <md-input-container fxFlex="100">
-                <textarea mdInput [ngModel]="(item|async)?.applicantHomemakerContributionsDetails" (ngModelChange)="item.update({applicantHomemakerContributionsDetails: $event})"
-                          name="applicantHomemakerContributionsDetails"></textarea>
+                  <textarea mdInput
+                            [ngModel]="(item|async)?.applicantHomemakerContributionsDetails"
+                            (ngModelChange)="item.update({applicantHomemakerContributionsDetails: $event})"
+                            name="applicantHomemakerContributionsDetails"></textarea>
                 </md-input-container>
               </div>
             </div>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
           <div class="group">
             <div>
-              <md-radio-group [ngModel]="(item|async)?.respondentHomemakerContributions" name="respondentHomemakerContributions" [ngModelOptions]="{standalone: true}"
+              <md-radio-group [ngModel]="(item|async)?.respondentHomemakerContributions"
+                              name="respondentHomemakerContributions"
+                              [ngModelOptions]="{standalone: true}"
                               (ngModelChange)="item.update({respondentHomemakerContributions: $event})">
-                <md-radio-button [value]="true" fxLayout="column">
+                <md-radio-button [value]="true"
+                                 fxLayout="column">
                   Agree
                 </md-radio-button>
-                <md-radio-button [value]="false" fxLayout="column">
+                <md-radio-button [value]="false"
+                                 fxLayout="column">
                   Disagree
                 </md-radio-button>
               </md-radio-group>
             </div>
-            <div class="additional_details" *ngIf="(item|async)?.respondentHomemakerContributions == false">
+            <div class="additional_details"
+                 *ngIf="(item|async)?.respondentHomemakerContributions == false">
               <span>GIVE BRIEF REASONS WHY YOU DISAGREE</span>
               <div fxLayout="row">
                 <md-input-container fxFlex="100">
-                <textarea mdInput [ngModel]="(item|async)?.respondentHomemakerContributionsDetails" (ngModelChange)="item.update({respondentHomemakerContributionsDetails: $event})"
-                          name="respondentHomemakerContributionsDetails"></textarea>
+                  <textarea mdInput
+                            [ngModel]="(item|async)?.respondentHomemakerContributionsDetails"
+                            (ngModelChange)="item.update({respondentHomemakerContributionsDetails: $event})"
+                            name="respondentHomemakerContributionsDetails"></textarea>
                 </md-input-container>
               </div>
             </div>
@@ -1146,50 +1523,68 @@
     </div>
     <div id="71">
       <span>71. Are there any other relevant matters or facts in relation to the division of the property (eg. health, financial resources, income earning ability)? (see s75(2) or if a de facto relationship s90SF(3) of the Family Law Act)</span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48">
           <div class="group">
             <div>
-              <md-radio-group [ngModel]="(item|async)?.applicantOtherRelevantFacts" name="applicantOtherRelevantFacts" [ngModelOptions]="{standalone: true}"
+              <md-radio-group [ngModel]="(item|async)?.applicantOtherRelevantFacts"
+                              name="applicantOtherRelevantFacts"
+                              [ngModelOptions]="{standalone: true}"
                               (ngModelChange)="item.update({applicantOtherRelevantFacts: $event})">
-                <md-radio-button [value]="false" fxLayout="column">
+                <md-radio-button [value]="false"
+                                 fxLayout="column">
                   No //GO TO ITEM 72
                 </md-radio-button>
-                <md-radio-button [value]="true" fxLayout="column">
+                <md-radio-button [value]="true"
+                                 fxLayout="column">
                   Yes
                 </md-radio-button>
               </md-radio-group>
             </div>
-            <div class="additional_details" *ngIf="(item|async)?.applicantOtherRelevantFacts">
+            <div class="additional_details"
+                 *ngIf="(item|async)?.applicantOtherRelevantFacts">
               <span>GIVE BRIEF DETAILS</span>
               <div fxLayout="row">
                 <md-input-container fxFlex="100">
-                <textarea mdInput [ngModel]="(item|async)?.applicantOtherRelevantFactsDetails" (ngModelChange)="item.update({applicantOtherRelevantFactsDetails: $event})"
-                          name="applicantOtherRelevantFactsDetails"></textarea>
+                  <textarea mdInput
+                            [ngModel]="(item|async)?.applicantOtherRelevantFactsDetails"
+                            (ngModelChange)="item.update({applicantOtherRelevantFactsDetails: $event})"
+                            name="applicantOtherRelevantFactsDetails"></textarea>
                 </md-input-container>
               </div>
             </div>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
           <div class="group">
             <div>
-              <md-radio-group [ngModel]="(item|async)?.respondentOtherRelevantFacts" name="respondentOtherRelevantFacts" [ngModelOptions]="{standalone: true}"
+              <md-radio-group [ngModel]="(item|async)?.respondentOtherRelevantFacts"
+                              name="respondentOtherRelevantFacts"
+                              [ngModelOptions]="{standalone: true}"
                               (ngModelChange)="item.update({respondentOtherRelevantFacts: $event})">
-                <md-radio-button [value]="true" fxLayout="column">
+                <md-radio-button [value]="true"
+                                 fxLayout="column">
                   Agree
                 </md-radio-button>
-                <md-radio-button [value]="false" fxLayout="column">
+                <md-radio-button [value]="false"
+                                 fxLayout="column">
                   Disagree
                 </md-radio-button>
               </md-radio-group>
             </div>
-            <div class="additional_details" *ngIf="(item|async)?.respondentOtherRelevantFacts == false">
+            <div class="additional_details"
+                 *ngIf="(item|async)?.respondentOtherRelevantFacts == false">
               <span>GIVE BRIEF REASONS WHY YOU DISAGREE</span>
               <div fxLayout="row">
                 <md-input-container fxFlex="100">
-                <textarea mdInput [ngModel]="(item|async)?.respondentOtherRelevantFactsDetails" (ngModelChange)="item.update({respondentOtherRelevantFactsDetails: $event})"
-                          name="respondentOtherRelevantFactsDetails"></textarea>
+                  <textarea mdInput
+                            [ngModel]="(item|async)?.respondentOtherRelevantFactsDetails"
+                            (ngModelChange)="item.update({respondentOtherRelevantFactsDetails: $event})"
+                            name="respondentOtherRelevantFactsDetails"></textarea>
                 </md-input-container>
               </div>
             </div>
@@ -1198,4 +1593,9 @@
       </div>
     </div>
   </form>
+  <div fxLayout="row"
+       fxLayoutAlign="end end">
+    <button md-raised-button
+            routerLink="/Property">Next</button>
+  </div>
 </div>

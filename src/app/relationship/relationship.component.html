@@ -12,10 +12,17 @@
       </div>
       <div fxLayout="row">
         <md-input-container fxFlex>
-          <input placeholder="DATE	 /	/" mdInput type="text" [ngModel]="(item|async)?.beganLivingTogetherDate" (ngModelChange)="item.update({beganLivingTogetherDate: $event})"
+          <input placeholder="DATE	 /	/"
+                 mdInput
+                 type="text"
+                 [ngModel]="(item|async)?.beganLivingTogetherDate"
+                 (ngModelChange)="item.update({beganLivingTogetherDate: $event})"
                  name="beganLivingTogetherDate">
         </md-input-container>
-        <md-checkbox fxFlex="10" (ngModelChange)="item.update({beganLivingTogetherNA: $event})" [ngModel]="(item|async)?.beganLivingTogetherNA"  name="beganLivingTogetherNA"></md-checkbox>
+        <md-checkbox fxFlex="10"
+                     (ngModelChange)="item.update({beganLivingTogetherNA: $event})"
+                     [ngModel]="(item|async)?.beganLivingTogetherNA"
+                     name="beganLivingTogetherNA"></md-checkbox>
       </div>
     </div>
     <div id="7">
@@ -28,18 +35,33 @@
       </div>
       <div fxLayout="row">
         <md-input-container fxFlex>
-          <input placeholder="DATE	 /	/" mdInput type="text" [ngModel]="(item|async)?.getMarriedDate" (ngModelChange)="item.update({getMarriedDate: $event})"
+          <input placeholder="DATE	 /	/"
+                 mdInput
+                 type="text"
+                 [ngModel]="(item|async)?.getMarriedDate"
+                 (ngModelChange)="item.update({getMarriedDate: $event})"
                  name="getMarriedDate">
         </md-input-container>
         <md-input-container fxFlex>
-          <input placeholder="TOWN/CITY" mdInput type="text" [ngModel]="(item|async)?.marriedCity" (ngModelChange)="item.update({marriedCity: $event})"
+          <input placeholder="TOWN/CITY"
+                 mdInput
+                 type="text"
+                 [ngModel]="(item|async)?.marriedCity"
+                 (ngModelChange)="item.update({marriedCity: $event})"
                  name="marriedCity">
         </md-input-container>
         <md-input-container fxFlex>
-          <input placeholder="COUNTRY" mdInput type="text" [ngModel]="(item|async)?.marriedCountry" (ngModelChange)="item.update({marriedCountry: $event})"
+          <input placeholder="COUNTRY"
+                 mdInput
+                 type="text"
+                 [ngModel]="(item|async)?.marriedCountry"
+                 (ngModelChange)="item.update({marriedCountry: $event})"
                  name="marriedCountry">
         </md-input-container>
-        <md-checkbox fxFlex="10" (ngModelChange)="item.update({marriedNA: $event})" [ngModel]="(item|async)?.marriedNA"  name="marriedNA"></md-checkbox>
+        <md-checkbox fxFlex="10"
+                     (ngModelChange)="item.update({marriedNA: $event})"
+                     [ngModel]="(item|async)?.marriedNA"
+                     name="marriedNA"></md-checkbox>
       </div>
     </div>
     <div id="8">
@@ -50,10 +72,17 @@
       </div>
       <div fxLayout="row">
         <md-input-container fxFlex>
-          <input placeholder="DATE	 /	/" mdInput type="text" [ngModel]="(item|async)?.separateDate" (ngModelChange)="item.update({separateDate: $event})"
+          <input placeholder="DATE	 /	/"
+                 mdInput
+                 type="text"
+                 [ngModel]="(item|async)?.separateDate"
+                 (ngModelChange)="item.update({separateDate: $event})"
                  name="separateDate">
         </md-input-container>
-        <md-checkbox fxFlex="10" (ngModelChange)="item.update({separateNA: $event})" [ngModel]="(item|async)?.separateNA"  name="separateNA"></md-checkbox>
+        <md-checkbox fxFlex="10"
+                     (ngModelChange)="item.update({separateNA: $event})"
+                     [ngModel]="(item|async)?.separateNA"
+                     name="separateNA"></md-checkbox>
       </div>
     </div>
     <div id="9">
@@ -66,19 +95,39 @@
       </div>
       <div fxLayout="row">
         <md-input-container fxFlex>
-          <input placeholder="DATE	 /	/" mdInput type="text" [ngModel]="(item|async)?.divorcedDate" (ngModelChange)="item.update({divorcedDate: $event})"
+          <input placeholder="DATE	 /	/"
+                 mdInput
+                 type="text"
+                 [ngModel]="(item|async)?.divorcedDate"
+                 (ngModelChange)="item.update({divorcedDate: $event})"
                  name="divorcedDate">
         </md-input-container>
         <md-input-container fxFlex>
-          <input placeholder="TOWN/CITY" mdInput type="text" [ngModel]="(item|async)?.divorcedCity" (ngModelChange)="item.update({divorcedCity: $event})"
+          <input placeholder="TOWN/CITY"
+                 mdInput
+                 type="text"
+                 [ngModel]="(item|async)?.divorcedCity"
+                 (ngModelChange)="item.update({divorcedCity: $event})"
                  name="divorcedCity">
         </md-input-container>
         <md-input-container fxFlex>
-          <input placeholder="COUNTRY" mdInput type="text" [ngModel]="(item|async)?.divorcedCountry" (ngModelChange)="item.update({divorcedCountry: $event})"
+          <input placeholder="COUNTRY"
+                 mdInput
+                 type="text"
+                 [ngModel]="(item|async)?.divorcedCountry"
+                 (ngModelChange)="item.update({divorcedCountry: $event})"
                  name="divorcedCountry">
         </md-input-container>
-        <md-checkbox fxFlex="10" (ngModelChange)="item.update({divorcedNA: $event})" [ngModel]="(item|async)?.divorcedNA"  name="divorcedNA"></md-checkbox>
+        <md-checkbox fxFlex="10"
+                     (ngModelChange)="item.update({divorcedNA: $event})"
+                     [ngModel]="(item|async)?.divorcedNA"
+                     name="divorcedNA"></md-checkbox>
       </div>
     </div>
-    </form>
+  </form>
+  <div fxLayout="row"
+       fxLayoutAlign="end end">
+    <button md-raised-button
+            routerLink="/CourtCases">Next</button>
+  </div>
 </div>

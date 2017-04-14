@@ -1,6 +1,8 @@
 <div class="doc_container">
   <h1>Part D. About the children</h1>
-  <form fxLayout="column" #f="ngForm" class="children_cases">
+  <form fxLayout="column"
+        #f="ngForm"
+        class="children_cases">
     <span>
       <strong>This part must be completed by all applicants if there are children under the age of 18 years, regardless of
       whether the orders sought are in relation to children, property or maintenance.</strong> You must give details for each
@@ -12,27 +14,33 @@
         20. Give the following details for each child.
       </span>
       <div *ngFor="let child of children; let i=index; trackBy: index">
-        <div *ngIf="child" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between">
-          <div fxLayout="column" fxFlex="9" class="child_block">
-          <h3>
-            Child {{i + 1}}:
-          </h3>
+        <div *ngIf="child"
+             fxLayout="row"
+             fxLayout.xs="column"
+             fxLayoutAlign="space-between">
+          <div fxLayout="column"
+               fxFlex="9"
+               class="child_block">
+            <h3>
+              Child {{i + 1}}:
+            </h3>
           </div>
-          <div fxLayout="column" fxFlex="19">
-          <span>
+          <div fxLayout="column"
+               fxFlex="19">
+            <span>
             Family name
           </span>
             <md-input-container>
               <input mdInput
-                type="text"
-                [ngModel]="(child|async)?.familyName"
-                (ngModelChange)="child.update({familyName: $event})"
-                name="familyName_{{i}}"
-              >
+                     type="text"
+                     [ngModel]="(child|async)?.familyName"
+                     (ngModelChange)="child.update({familyName: $event})"
+                     name="familyName_{{i}}">
             </md-input-container>
           </div>
-          <div fxLayout="column" fxFlex="19">
-          <span>
+          <div fxLayout="column"
+               fxFlex="19">
+            <span>
             Given names
           </span>
             <md-input-container>
@@ -40,12 +48,12 @@
                      type="text"
                      [ngModel]="(child|async)?.givenNames"
                      (ngModelChange)="child.update({givenNames: $event})"
-                     name="givenNames_{{i}}"
-              >
+                     name="givenNames_{{i}}">
             </md-input-container>
           </div>
-          <div fxLayout="column" fxFlex="19">
-          <span>
+          <div fxLayout="column"
+               fxFlex="19">
+            <span>
             Primary care giver*
           </span>
             <md-input-container>
@@ -53,12 +61,12 @@
                      type="text"
                      [ngModel]="(child|async)?.primaryCareGiver"
                      (ngModelChange)="child.update({primaryCareGiver: $event})"
-                     name="primaryCareGiver_{{i}}"
-              >
+                     name="primaryCareGiver_{{i}}">
             </md-input-container>
           </div>
-          <div fxLayout="column" fxFlex="19">
-          <span>
+          <div fxLayout="column"
+               fxFlex="19">
+            <span>
             Date of birth
           </span>
             <md-input-container>
@@ -66,12 +74,12 @@
                      type="text"
                      [ngModel]="(child|async)?.birthday"
                      (ngModelChange)="child.update({birthday: $event})"
-                     name="birthday_{{i}}"
-              >
+                     name="birthday_{{i}}">
             </md-input-container>
           </div>
-          <div fxLayout="column" fxFlex="5">
-          <span>
+          <div fxLayout="column"
+               fxFlex="5">
+            <span>
             M/F
           </span>
             <md-input-container>
@@ -79,17 +87,24 @@
                      type="text"
                      [ngModel]="(child|async)?.sex"
                      (ngModelChange)="child.update({sex: $event})"
-                     name="birthday_1"
-              >
+                     name="birthday_1">
             </md-input-container>
           </div>
-          <div fxLayout="column" fxFlex="3">
-            <button md-mini-fab mdTooltip="Remove child" [mdTooltipPosition]="'left'" (click)="removeChild(i)"><md-icon>remove</md-icon></button>
+          <div fxLayout="column"
+               fxFlex="3">
+            <button md-mini-fab
+                    mdTooltip="Remove child"
+                    [mdTooltipPosition]="'left'"
+                    (click)="removeChild(i)"><md-icon>remove</md-icon></button>
           </div>
         </div>
       </div>
-      <div fxLayout="row" fxLayoutAlign="end end">
-        <button md-mini-fab mdTooltip="Add child" [mdTooltipPosition]="'left'" (click)="addChild()"><md-icon>add</md-icon></button>
+      <div fxLayout="row"
+           fxLayoutAlign="end end">
+        <button md-mini-fab
+                mdTooltip="Add child"
+                [mdTooltipPosition]="'left'"
+                (click)="addChild()"><md-icon>add</md-icon></button>
       </div>
       <span>
         * IF THE CHILD DOES NOT SPEND EQUAL TIME WITH EACH OF THE PARENTS IDENTIFY THE PERSON WITH WHOM THE
@@ -102,44 +117,55 @@ CHILD LIVES MOST OF THE TIME
         21. Who else lives in the child’s home when the child is living with the applicant and when the child is living with
 the respondent? <strong>Do not include the other children listed in previous question.</strong>
       </span>
-      <div fxLayout="row" fxLayoutAlign="space-between" *ngFor="let child of children; let i=index; trackBy: index">
-        <div fxLayout="column" fxFlex="49">
-          <h3 fxLayout="row" fxLayoutAlign="center center">APPLICANT</h3>
+      <div fxLayout="row"
+           fxLayoutAlign="space-between"
+           *ngFor="let child of children; let i=index; trackBy: index">
+        <div fxLayout="column"
+             fxFlex="49">
+          <h3 fxLayout="row"
+              fxLayoutAlign="center center">APPLICANT</h3>
           <h3>Child {{i + 1}}</h3>
           <md-radio-group [ngModel]="(child|async)?.applicantParent"
-            name="applicantParent"
-            (ngModelChange)="child.update({applicantParent: $event})"
-            fxLayout="row" fxLayoutAlign="space-between"
-          >
-            <md-radio-button [value]="'Father'" fxLayout="column">
+                          name="applicantParent"
+                          (ngModelChange)="child.update({applicantParent: $event})"
+                          fxLayout="row"
+                          fxLayoutAlign="space-between">
+            <md-radio-button [value]="'Father'"
+                             fxLayout="column">
               FATHER
             </md-radio-button>
-            <md-radio-button [value]="'Mother'" fxLayout="column" fxLayoutAlign="end end">
+            <md-radio-button [value]="'Mother'"
+                             fxLayout="column"
+                             fxLayoutAlign="end end">
               MOTHER
             </md-radio-button>
           </md-radio-group>
           <div class="other_persons_block">
-            <div fxLayout="row" fxLayoutAlign="space-between">
-              <md-checkbox class="example-margin" fxFlex="48" [ngModel]="(child|async)?.applicantOtherPerson" (ngModelChange)="child.update({applicantOtherPerson: $event})" name="applicantOtherPerson">
+            <div fxLayout="row"
+                 fxLayoutAlign="space-between">
+              <md-checkbox class="example-margin"
+                           fxFlex="48"
+                           [ngModel]="(child|async)?.applicantOtherPerson"
+                           (ngModelChange)="child.update({applicantOtherPerson: $event})"
+                           name="applicantOtherPerson">
                 OTHER PERSON
               </md-checkbox>
               <md-input-container fxFlex="48">
                 <input mdInput
-                   placeholder="Age"
-                   type="number"
-                   [ngModel]="(child|async)?.applicantOtherPersonAge"
-                   (ngModelChange)="child.update({applicantOtherPersonAge: $event})"
-                   name="applicantPersonAge_{{i}}"
-                >
+                       placeholder="Age"
+                       type="number"
+                       [ngModel]="(child|async)?.applicantOtherPersonAge"
+                       (ngModelChange)="child.update({applicantOtherPersonAge: $event})"
+                       name="applicantPersonAge_{{i}}">
               </md-input-container>
             </div>
             <div>
               <md-radio-group [ngModel]="(child|async)?.applicantSex"
-                name="applicantSex"
-                (ngModelChange)="child.update({applicantSex: $event})"
-                fxLayout="row" fxLayoutAlign="space-between"
-              >
-                <md-radio-button [value]="'Male'" >
+                              name="applicantSex"
+                              (ngModelChange)="child.update({applicantSex: $event})"
+                              fxLayout="row"
+                              fxLayoutAlign="space-between">
+                <md-radio-button [value]="'Male'">
                   Male
                 </md-radio-button>
                 <md-radio-button [value]="'Female'">
@@ -154,32 +180,41 @@ the respondent? <strong>Do not include the other children listed in previous que
               <div fxLayout="row">
                 <md-input-container fxFlex="100">
                   <textarea mdInput
-                      [ngModel]="(child|async)?.applicantRelationToChild"
-                      (ngModelChange)="child.update({applicantRelationToChild: $event})"
-                      name="detailsOfFV"></textarea>
+                            [ngModel]="(child|async)?.applicantRelationToChild"
+                            (ngModelChange)="child.update({applicantRelationToChild: $event})"
+                            name="detailsOfFV"></textarea>
                 </md-input-container>
               </div>
             </div>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="49">
+        <div fxLayout="column"
+             fxFlex="49">
           <h3 fxLayoutAlign="center center">RESPONDENT</h3>
           <h3>Child {{i + 1}}</h3>
           <md-radio-group [ngModel]="(child|async)?.respondentParent"
-              name="respondentParent"
-              (ngModelChange)="child.update({respondentParent: $event})"
-              fxLayout="row" fxLayoutAlign="space-between"
-          >
-            <md-radio-button [value]="'Father'" fxLayout="column">
+                          name="respondentParent"
+                          (ngModelChange)="child.update({respondentParent: $event})"
+                          fxLayout="row"
+                          fxLayoutAlign="space-between">
+            <md-radio-button [value]="'Father'"
+                             fxLayout="column">
               FATHER
             </md-radio-button>
-            <md-radio-button [value]="'Mother'" fxLayout="column" fxLayoutAlign="end end">
+            <md-radio-button [value]="'Mother'"
+                             fxLayout="column"
+                             fxLayoutAlign="end end">
               MOTHER
             </md-radio-button>
           </md-radio-group>
           <div class="other_persons_block">
-            <div fxLayout="row" fxLayoutAlign="space-between">
-              <md-checkbox class="example-margin" fxFlex="48" [ngModel]="(child|async)?.respondentOtherPerson" (ngModelChange)="child.update({respondentOtherPerson: $event})" [ngModelOptions]="{standalone: true}">
+            <div fxLayout="row"
+                 fxLayoutAlign="space-between">
+              <md-checkbox class="example-margin"
+                           fxFlex="48"
+                           [ngModel]="(child|async)?.respondentOtherPerson"
+                           (ngModelChange)="child.update({respondentOtherPerson: $event})"
+                           [ngModelOptions]="{standalone: true}">
                 OTHER PERSON
               </md-checkbox>
               <md-input-container fxFlex="48">
@@ -188,17 +223,16 @@ the respondent? <strong>Do not include the other children listed in previous que
                        type="number"
                        [ngModel]="(child|async)?.respondentOtherPersonAge"
                        (ngModelChange)="child.update({respondentOtherPersonAge: $event})"
-                       name="respondentPersonAge_{{i}}"
-                >
+                       name="respondentPersonAge_{{i}}">
               </md-input-container>
             </div>
             <div>
               <md-radio-group [ngModel]="(child|async)?.respondentSex"
-                name="respondentSex"
-                (ngModelChange)="child.update({respondentSex: $event})"
-                fxLayout="row" fxLayoutAlign="space-between"
-              >
-                <md-radio-button [value]="'Male'" >
+                              name="respondentSex"
+                              (ngModelChange)="child.update({respondentSex: $event})"
+                              fxLayout="row"
+                              fxLayoutAlign="space-between">
+                <md-radio-button [value]="'Male'">
                   Male
                 </md-radio-button>
                 <md-radio-button [value]="'Female'">
@@ -213,9 +247,9 @@ the respondent? <strong>Do not include the other children listed in previous que
               <div fxLayout="row">
                 <md-input-container fxFlex="100">
                   <textarea mdInput
-                      [ngModel]="(child|async)?.respondentRelationToChild"
-                      (ngModelChange)="child.update({respondentRelationToChild: $event})"
-                      name="detailsOfFV"></textarea>
+                            [ngModel]="(child|async)?.respondentRelationToChild"
+                            (ngModelChange)="child.update({respondentRelationToChild: $event})"
+                            name="detailsOfFV"></textarea>
                 </md-input-container>
               </div>
             </div>
@@ -224,4 +258,9 @@ the respondent? <strong>Do not include the other children listed in previous que
       </div>
     </div>
   </form>
+  <div fxLayout="row"
+       fxLayoutAlign="end end">
+    <button md-raised-button
+            routerLink="/Parenting">Next</button>
+  </div>
 </div>

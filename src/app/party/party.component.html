@@ -7,13 +7,19 @@
 
     <div id="1">
       <span>1.</span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
           <h3 fxLayoutAlign="center center">APPLICANT</h3>
           <div>
             <span>What is your family name as used now?</span>
             <md-input-container>
-              <input mdInput type="text" [ngModel]="(items|async)?.applicantFamilyName" (ngModelChange)="items.update({applicantFamilyName: $event})"
+              <input mdInput
+                     type="text"
+                     [ngModel]="(items|async)?.applicantFamilyName"
+                     (ngModelChange)="items.update({applicantFamilyName: $event})"
                      name="applicantFamilyName">
             </md-input-container>
           </div>
@@ -22,7 +28,10 @@
               Given names?
             </span>
             <md-input-container>
-              <input mdInput type="text" [ngModel]="(items|async)?.applicantGivenNames" (ngModelChange)="items.update({applicantGivenNames: $event})"
+              <input mdInput
+                     type="text"
+                     [ngModel]="(items|async)?.applicantGivenNames"
+                     (ngModelChange)="items.update({applicantGivenNames: $event})"
                      name="applicantGivenNames">
             </md-input-container>
           </div>
@@ -30,9 +39,9 @@
             <md-radio-group [ngModel]="(items|async)?.applicantSex"
                             name="applicantSex"
                             (ngModelChange)="items.update({applicantSex: $event})"
-                            fxLayout="row" fxLayoutAlign="space-between"
-            >
-              <md-radio-button [value]="'Male'" >
+                            fxLayout="row"
+                            fxLayoutAlign="space-between">
+              <md-radio-button [value]="'Male'">
                 Male
               </md-radio-button>
               <md-radio-button [value]="'Female'">
@@ -41,14 +50,18 @@
             </md-radio-group>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="48">
+        <div fxLayout="column"
+             fxFlex="48">
           <h3 fxLayoutAlign="center center">RESPONDENT</h3>
           <div>
             <span>
               What is your family name as used now?
             </span>
             <md-input-container>
-              <input mdInput type="text" [ngModel]="(items|async)?.respondentFamilyName" (ngModelChange)="items.update({respondentFamilyName: $event})"
+              <input mdInput
+                     type="text"
+                     [ngModel]="(items|async)?.respondentFamilyName"
+                     (ngModelChange)="items.update({respondentFamilyName: $event})"
                      name="respondentFamilyName">
             </md-input-container>
           </div>
@@ -57,7 +70,10 @@
               Given names?
             </span>
             <md-input-container>
-              <input mdInput type="text" [ngModel]="(items|async)?.respondentGivenNames" (ngModelChange)="items.update({respondentGivenNames: $event})"
+              <input mdInput
+                     type="text"
+                     [ngModel]="(items|async)?.respondentGivenNames"
+                     (ngModelChange)="items.update({respondentGivenNames: $event})"
                      name="respondentGivenNames">
             </md-input-container>
           </div>
@@ -65,9 +81,9 @@
             <md-radio-group [ngModel]="(items|async)?.respondentSex"
                             name="respondentSex"
                             (ngModelChange)="items.update({respondentSex: $event})"
-                            fxLayout="row" fxLayoutAlign="space-between"
-            >
-              <md-radio-button [value]="'Male'" >
+                            fxLayout="row"
+                            fxLayoutAlign="space-between">
+              <md-radio-button [value]="'Male'">
                 Male
               </md-radio-button>
               <md-radio-button [value]="'Female'">
@@ -81,27 +97,37 @@
 
     <div id="2">
       <span>2.</span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
           <h3 fxLayoutAlign="center center">APPLICANT</h3>
           <div>
             <span>
               What is your usual occupation?
             </span>
             <md-input-container>
-              <input mdInput type="text" [ngModel]="(items|async)?.applicantUsualAccupation" (ngModelChange)="items.update({applicantUsualAccupation: $event})"
+              <input mdInput
+                     type="text"
+                     [ngModel]="(items|async)?.applicantUsualAccupation"
+                     (ngModelChange)="items.update({applicantUsualAccupation: $event})"
                      name="applicantUsualAccupation">
             </md-input-container>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="48">
+        <div fxLayout="column"
+             fxFlex="48">
           <h3 fxLayoutAlign="center center">RESPONDENT</h3>
           <div>
             <span>
               What is your usual occupation?
             </span>
             <md-input-container>
-              <input mdInput type="text" [ngModel]="(items|async)?.respondentUsualAccupation" (ngModelChange)="items.update({respondentUsualAccupation: $event})"
+              <input mdInput
+                     type="text"
+                     [ngModel]="(items|async)?.respondentUsualAccupation"
+                     (ngModelChange)="items.update({respondentUsualAccupation: $event})"
                      name="respondentUsualAccupation">
             </md-input-container>
           </div>
@@ -112,8 +138,11 @@
     <div id="3">
       <span>3. What is your contact address (address for service) in Australia? If you give a lawyer’s address, include the
 name of the law firm.</span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
           <div class="group">
             <div>
               <div fxLayout="row">
@@ -125,44 +154,58 @@ name of the law firm.</span>
                 </md-input-container>
               </div>
             </div>
-            <div fxLayout="row" fxLayoutAlign="space-between">
+            <div fxLayout="row"
+                 fxLayoutAlign="space-between">
               <div fxFlex="48">
                 <span>
                   State
                 </span>
-                  <md-input-container>
-                    <input mdInput type="text" [ngModel]="(items|async)?.applicantState" (ngModelChange)="items.update({applicantState: $event})"
-                           name="applicantState">
-                  </md-input-container>
+                <md-input-container>
+                  <input mdInput
+                         type="text"
+                         [ngModel]="(items|async)?.applicantState"
+                         (ngModelChange)="items.update({applicantState: $event})"
+                         name="applicantState">
+                </md-input-container>
               </div>
               <div fxFlex="48">
                 <span>
                   Postcode
                 </span>
-                  <md-input-container>
-                    <input mdInput type="text" [ngModel]="(items|async)?.applicantPostcode" (ngModelChange)="items.update({applicantPostcode: $event})"
-                           name="applicantPostcode">
-                  </md-input-container>
+                <md-input-container>
+                  <input mdInput
+                         type="text"
+                         [ngModel]="(items|async)?.applicantPostcode"
+                         (ngModelChange)="items.update({applicantPostcode: $event})"
+                         name="applicantPostcode">
+                </md-input-container>
               </div>
             </div>
-            <div fxLayout="row" fxLayoutAlign="space-between">
+            <div fxLayout="row"
+                 fxLayoutAlign="space-between">
               <div fxFlex="48">
                 <span>
                   Phone
                 </span>
-                  <md-input-container>
-                    <input mdInput type="text" [ngModel]="(items|async)?.applicantPhone" (ngModelChange)="items.update({applicantPhone: $event})"
-                           name="applicantPhone">
-                  </md-input-container>
+                <md-input-container>
+                  <input mdInput
+                         type="text"
+                         [ngModel]="(items|async)?.applicantPhone"
+                         (ngModelChange)="items.update({applicantPhone: $event})"
+                         name="applicantPhone">
+                </md-input-container>
               </div>
               <div fxFlex="48">
                 <span>
                   Fax*
                 </span>
-                  <md-input-container>
-                    <input mdInput type="text" [ngModel]="(items|async)?.applicantFax" (ngModelChange)="items.update({applicantFax: $event})"
-                           name="applicantFax">
-                  </md-input-container>
+                <md-input-container>
+                  <input mdInput
+                         type="text"
+                         [ngModel]="(items|async)?.applicantFax"
+                         (ngModelChange)="items.update({applicantFax: $event})"
+                         name="applicantFax">
+                </md-input-container>
               </div>
             </div>
             <div>
@@ -170,7 +213,10 @@ name of the law firm.</span>
                 DX
               </span>
               <md-input-container>
-                <input mdInput type="text" [ngModel]="(items|async)?.applicantDX" (ngModelChange)="items.update({applicantDX: $event})"
+                <input mdInput
+                       type="text"
+                       [ngModel]="(items|async)?.applicantDX"
+                       (ngModelChange)="items.update({applicantDX: $event})"
                        name="applicantDX">
               </md-input-container>
             </div>
@@ -179,7 +225,10 @@ name of the law firm.</span>
                 Lawyer’s code
               </span>
               <md-input-container>
-                <input mdInput type="text" [ngModel]="(items|async)?.applicantLawyerCode" (ngModelChange)="items.update({applicantLawyerCode: $event})"
+                <input mdInput
+                       type="text"
+                       [ngModel]="(items|async)?.applicantLawyerCode"
+                       (ngModelChange)="items.update({applicantLawyerCode: $event})"
                        name="applicantLawyerCode">
               </md-input-container>
             </div>
@@ -188,13 +237,18 @@ name of the law firm.</span>
                 Email*
               </span>
               <md-input-container>
-                <input mdInput type="text" [ngModel]="(items|async)?.applicantEmail" (ngModelChange)="items.update({applicantEmail: $event})"
+                <input mdInput
+                       type="text"
+                       [ngModel]="(items|async)?.applicantEmail"
+                       (ngModelChange)="items.update({applicantEmail: $event})"
                        name="applicantEmail">
               </md-input-container>
             </div>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
           <div class="group">
             <div>
               <div fxLayout="row">
@@ -206,13 +260,17 @@ name of the law firm.</span>
                 </md-input-container>
               </div>
             </div>
-            <div fxLayout="row" fxLayoutAlign="space-between">
+            <div fxLayout="row"
+                 fxLayoutAlign="space-between">
               <div fxFlex="48">
                 <span>
                   State
                 </span>
                 <md-input-container>
-                  <input mdInput type="text" [ngModel]="(items|async)?.respondentState" (ngModelChange)="items.update({respondentState: $event})"
+                  <input mdInput
+                         type="text"
+                         [ngModel]="(items|async)?.respondentState"
+                         (ngModelChange)="items.update({respondentState: $event})"
                          name="respondentState">
                 </md-input-container>
               </div>
@@ -221,18 +279,25 @@ name of the law firm.</span>
                   Postcode
                 </span>
                 <md-input-container>
-                  <input mdInput type="text" [ngModel]="(items|async)?.respondentPostcode" (ngModelChange)="items.update({respondentPostcode: $event})"
+                  <input mdInput
+                         type="text"
+                         [ngModel]="(items|async)?.respondentPostcode"
+                         (ngModelChange)="items.update({respondentPostcode: $event})"
                          name="respondentPostcode">
                 </md-input-container>
               </div>
             </div>
-            <div fxLayout="row" fxLayoutAlign="space-between">
+            <div fxLayout="row"
+                 fxLayoutAlign="space-between">
               <div fxFlex="48">
                 <span>
                   Phone
                 </span>
                 <md-input-container>
-                  <input mdInput type="text" [ngModel]="(items|async)?.respondentPhone" (ngModelChange)="items.update({respondentPhone: $event})"
+                  <input mdInput
+                         type="text"
+                         [ngModel]="(items|async)?.respondentPhone"
+                         (ngModelChange)="items.update({respondentPhone: $event})"
                          name="respondentPhone">
                 </md-input-container>
               </div>
@@ -241,7 +306,10 @@ name of the law firm.</span>
                   Fax*
                 </span>
                 <md-input-container>
-                  <input mdInput type="text" [ngModel]="(items|async)?.respondentFax" (ngModelChange)="items.update({respondentFax: $event})"
+                  <input mdInput
+                         type="text"
+                         [ngModel]="(items|async)?.respondentFax"
+                         (ngModelChange)="items.update({respondentFax: $event})"
                          name="respondentFax">
                 </md-input-container>
               </div>
@@ -251,7 +319,10 @@ name of the law firm.</span>
                 DX
               </span>
               <md-input-container>
-                <input mdInput type="text" [ngModel]="(items|async)?.respondentDX" (ngModelChange)="items.update({respondentDX: $event})"
+                <input mdInput
+                       type="text"
+                       [ngModel]="(items|async)?.respondentDX"
+                       (ngModelChange)="items.update({respondentDX: $event})"
                        name="respondentDX">
               </md-input-container>
             </div>
@@ -260,7 +331,10 @@ name of the law firm.</span>
                 Lawyer’s code
               </span>
               <md-input-container>
-                <input mdInput type="text" [ngModel]="(items|async)?.respondentLawyerCode" (ngModelChange)="items.update({respondentLawyerCode: $event})"
+                <input mdInput
+                       type="text"
+                       [ngModel]="(items|async)?.respondentLawyerCode"
+                       (ngModelChange)="items.update({respondentLawyerCode: $event})"
                        name="respondentLawyerCode">
               </md-input-container>
             </div>
@@ -269,7 +343,10 @@ name of the law firm.</span>
                 Email*
               </span>
               <md-input-container>
-                <input mdInput type="text" [ngModel]="(items|async)?.respondentEmail" (ngModelChange)="items.update({respondentEmail: $event})"
+                <input mdInput
+                       type="text"
+                       [ngModel]="(items|async)?.respondentEmail"
+                       (ngModelChange)="items.update({respondentEmail: $event})"
                        name="respondentEmail">
               </md-input-container>
             </div>
@@ -280,46 +357,64 @@ name of the law firm.</span>
 
     <div id="4">
       <span>4. When and in what country were you born?	</span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="48" fxFlex.sm="100">
-          <div fxLayout="row" fxLayoutAlign="space-between">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
+          <div fxLayout="row"
+               fxLayoutAlign="space-between">
             <div fxFlex="48">
-                <span>
+              <span>
                   DAY / MONTH / YEAR
                 </span>
               <md-input-container>
-                <input mdInput type="text" [ngModel]="(items|async)?.applicantBornDate" (ngModelChange)="items.update({applicantBornDate: $event})"
+                <input mdInput
+                       type="text"
+                       [ngModel]="(items|async)?.applicantBornDate"
+                       (ngModelChange)="items.update({applicantBornDate: $event})"
                        name="applicantBornDate">
               </md-input-container>
             </div>
             <div fxFlex="48">
-                <span>
+              <span>
                   Country
                 </span>
               <md-input-container>
-                <input mdInput type="text" [ngModel]="(items|async)?.applicantCountry" (ngModelChange)="items.update({applicantCountry: $event})"
+                <input mdInput
+                       type="text"
+                       [ngModel]="(items|async)?.applicantCountry"
+                       (ngModelChange)="items.update({applicantCountry: $event})"
                        name="applicantCountry">
               </md-input-container>
             </div>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="48">
-          <div fxLayout="row" fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48">
+          <div fxLayout="row"
+               fxLayoutAlign="space-between">
             <div fxFlex="48">
-                <span>
+              <span>
                   DAY / MONTH / YEAR
                 </span>
               <md-input-container>
-                <input mdInput type="text" [ngModel]="(items|async)?.respondentBornDate" (ngModelChange)="items.update({respondentBornDate: $event})"
+                <input mdInput
+                       type="text"
+                       [ngModel]="(items|async)?.respondentBornDate"
+                       (ngModelChange)="items.update({respondentBornDate: $event})"
                        name="respondentBornDate">
               </md-input-container>
             </div>
             <div fxFlex="48">
-                <span>
+              <span>
                   Country
                 </span>
               <md-input-container>
-                <input mdInput type="text" [ngModel]="(items|async)?.respondentCountry" (ngModelChange)="items.update({respondentCountry: $event})"
+                <input mdInput
+                       type="text"
+                       [ngModel]="(items|async)?.respondentCountry"
+                       (ngModelChange)="items.update({respondentCountry: $event})"
                        name="respondentCountry">
               </md-input-container>
             </div>
@@ -330,14 +425,14 @@ name of the law firm.</span>
 
     <div id="5">
       <span>5.Are you of Aboriginal and/or of Torres Strait Islander origin?</span>
-      <div fxLayout="row" fxLayoutAlign="space-between">
+      <div fxLayout="row"
+           fxLayoutAlign="space-between">
         <div>
           <md-radio-group [ngModel]="(items|async)?.applicantOrigin"
                           name="applicantOrigin"
                           (ngModelChange)="items.update({applicantOrigin: $event})"
-                          fxLayout="column"
-          >
-            <md-radio-button [value]="'No'" >
+                          fxLayout="column">
+            <md-radio-button [value]="'No'">
               No
             </md-radio-button>
             <md-radio-button [value]="'Aboriginal'">
@@ -351,14 +446,14 @@ name of the law firm.</span>
             </md-radio-button>
           </md-radio-group>
         </div>
-        <div fxLayout="column" fxFlex="48">
+        <div fxLayout="column"
+             fxFlex="48">
           <div>
             <md-radio-group [ngModel]="(items|async)?.respondentOrigin"
                             name="respondentOrigin"
                             (ngModelChange)="items.update({respondentOrigin: $event})"
-                            fxLayout="column"
-            >
-              <md-radio-button [value]="'No'" >
+                            fxLayout="column">
+              <md-radio-button [value]="'No'">
                 No
               </md-radio-button>
               <md-radio-button [value]="'Aboriginal'">
@@ -376,4 +471,9 @@ name of the law firm.</span>
       </div>
     </div>
   </form>
+  <div fxLayout="row"
+       fxLayoutAlign="end end">
+    <button md-raised-button
+            routerLink="/Relationship">Next</button>
+  </div>
 </div>
