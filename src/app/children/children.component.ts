@@ -14,7 +14,6 @@ export class ChildrenComponent implements OnInit {
   index: number;
 
   constructor(private route: ActivatedRoute, private af: AngularFire) {
-    console.log(this.firebaseDataPath);
     this.items = this.af.database.list(this.firebaseDataPath);
   }
 

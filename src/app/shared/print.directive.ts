@@ -17,7 +17,7 @@ export class PrintDirective implements OnInit {
         },
       );
     } else {
-      console.log('print styles is missing');
+      console.error('print styles are missing');
     }
   }
 

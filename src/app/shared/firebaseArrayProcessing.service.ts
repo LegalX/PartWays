@@ -18,7 +18,6 @@ export class FirebaseArrayProcessingService {
         if (!items.hasOwnProperty('$value')) {
           const itemsKeys = Object.keys(items);
           return itemsKeys.map((itemKey) => {
-            console.log(itemKey);
             return this.af.database.object(`${firebaseDataPath}/${itemKey}`)
               .map((it) => {
                 return it;

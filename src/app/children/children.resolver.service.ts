@@ -11,15 +11,13 @@ export class ChildrenResolver implements Resolve<any> {
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> | Promise<any> {
     const firebaseDataPath = `/application/${localStorage.getItem('applicationId')}/children`;
-    console.log(firebaseDataPath);
     const data = this.af.database.object(firebaseDataPath);
     return data
       .map((children) => {
-        //empty database always has an empty $value property
+        // empty database always has an empty $value property
         if (!children.hasOwnProperty('$value')) {
-          let childKeys = Object.keys(children);
+          const childKeys = Object.keys(children);
           return childKeys.map((childKey) => {
-            console.log(childKey);
             return this.af.database.object(`${firebaseDataPath}/${childKey}`)
               .map((it) => {
                 return it;
