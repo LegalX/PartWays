@@ -1335,190 +1335,61 @@
 
     <div class="page-content">
       <div class="steps-form">
-
         <div class="page-comment w50 mb10">
           Where details for Child 2 are the same as Child 1 <br> write 'As for Child 1'
         </div>
 
         <div class="step">
-          <div class="fs18 normalcase bold">
-            <div class="left-col pr15">Child 1</div>
-            <div class="right-col pl15">Child 2</div>
-          </div>
-        </div>
-
-        <div class="step">
           <i class="step-number">24</i>
-          <div class="left-col pr15">
+          <div *ngFor="let child of appData.children | values:'key'; let i=index; trackBy: index">
+
+            <div class="fs18 normalcase bold">
+              <div class="pr15">Child {{i + 1}}</div>
+            </div>
             <div class="input-group">
               <div class="mb5">Proposed arrangements for the child:</div>
               <div class="mb5"><b>Housing</b> (e.g. 3 bedroom house – child has own room).</div>
-              <div class="inputs-list">
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-              </div>
+              <div class="fake-input">{{child.housing}}</div>
             </div>
-          </div>
+            <div class="clear"></div>
 
-          <div class="right-col pl15">
             <div class="input-group">
-              <div class="mb5">Proposed arrangements for the child:</div>
-              <div class="mb5"><b>Housing</b> (e.g. 3 bedroom house – child has own room).</div>
-              <div class="inputs-list">
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
+              <div class="mb5">
+                <b>Supervision</b> (who looks after the child? e.g. If the parent who lives with the child is working outside
+                the home who looks after the child during the parent’s absence).
               </div>
+              <div class="fake-input">{{child.supervision}}</div>
             </div>
-          </div>
+            <div class="clear"></div>
 
-          <div class="clear"></div>
-
-          <div class="mb5">
-            <b>Supervision</b> (who looks after the child? e.g. If the parent who lives with the child is working outside
-            the home who looks after the child during the parent’s absence).
-          </div>
-
-
-          <div class="left-col pr15">
             <div class="input-group">
-              <div class="inputs-list">
-                <div class="fake-input noborder"></div>
-                <div class="fake-input"></div>
-              </div>
+              <div class="mb5"><b>Financial support</b> (details about maintenance and child support, including details of maintenance orders
+                or child support assessments and what is actually being paid or proposed to be paid by any parent or party
+                to the marriage who does not live with the child).</div>
+              <div class="fake-input">{{child.financialSupport}}</div>
             </div>
-          </div>
-          <div class="right-col pl15">
+            <div class="clear"></div>
+
             <div class="input-group">
-              <div class="inputs-list">
-                <div class="fake-input noborder"></div>
-                <div class="fake-input"></div>
-              </div>
+              <div class="mb5"><b>Health</b> (details of the health of the child and any treatment or ongoing medication needs).</div>
+              <div class="fake-input">{{child.health}}</div>
             </div>
-          </div>
+            <div class="clear"></div>
 
-          <div class="clear"></div>
-
-          <div class="mb5"><b>Financial support</b> (details about maintenance and child support, including details of maintenance orders
-            or child support assessments and what is actually being paid or proposed to be paid by any parent or party to
-            the marriage who does not live with the child).</div>
-
-          <div class="clear"></div>
-
-          <div class="left-col pr15">
             <div class="input-group">
-              <div class="inputs-list">
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
+              <div class="mb5"><b>Education</b> (details about what school the child attends, what year he/she is in and what progress is
+                being made).
               </div>
+              <div class="fake-input">{{child.education}}</div>
             </div>
-          </div>
+            <div class="clear"></div>
 
-          <div class="right-col pl15">
             <div class="input-group">
-              <div class="inputs-list">
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-              </div>
+              <div class="mb5"><b>Any other matters</b> (under subsection 60CC of the Family Law Act).</div>
+              <div class="fake-input">{{child.otherMatters}}</div>
             </div>
+            <div class="clear"></div>
           </div>
-
-          <div class="clear"></div>
-
-          <div class="mb5"><b>Health</b> (details of the health of the child and any treatment or ongoing medication needs).</div>
-
-          <div class="left-col pr15">
-            <div class="input-group">
-              <div class="inputs-list">
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="right-col pl15">
-            <div class="input-group">
-              <div class="inputs-list">
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="clear"></div>
-
-          <div class="mb5"><b>Education</b> (details about what school the child attends, what year he/she is in and what progress is being
-            made).
-          </div>
-
-          <div class="left-col pr15">
-            <div class="input-group">
-              <div class="inputs-list">
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="right-col pl15">
-            <div class="input-group">
-              <div class="inputs-list">
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="clear"></div>
-
-          <div class="mb5"><b>Any other matters</b> (under subsection 60CC of the Family Law Act).</div>
-
-          <div class="left-col pr15">
-            <div class="input-group">
-              <div class="inputs-list">
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="right-col pl15">
-            <div class="input-group">
-              <div class="inputs-list">
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="clear"></div>
-
-
-
-
         </div>
       </div>
     </div>
@@ -1541,226 +1412,6 @@
 
       <div class="footer-page-number">
         8
-      </div>
-    </div>
-
-  </div>
-
-  <div class="page page9">
-
-    <div class="page-content">
-      <div class="steps-form">
-
-        <div class="page-comment w50 mb10">
-          Where details for Child 3 & 4 are the same as Child 1 <br> write 'As for Child 1'
-        </div>
-
-        <div class="step">
-          <div class="fs18 normalcase bold">
-            <div class="left-col pr15">Child 3</div>
-            <div class="right-col pl15">Child 4</div>
-          </div>
-        </div>
-
-        <div class="step">
-          <i class="step-number">24</i>
-          <div class="left-col pr15">
-            <div class="input-group">
-              <div class="mb5">Proposed arrangements for the child:</div>
-              <div class="mb5"><b>Housing</b> (e.g. 3 bedroom house – child has own room).</div>
-              <div class="inputs-list">
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="right-col pl15">
-            <div class="input-group">
-              <div class="mb5">Proposed arrangements for the child:</div>
-              <div class="mb5"><b>Housing</b> (e.g. 3 bedroom house – child has own room).</div>
-              <div class="inputs-list">
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="clear"></div>
-
-          <div class="mb5">
-            <b>Supervision</b> (who looks after the child? e.g. If the parent who lives with the child is working outside
-            the home who looks after the child during the parent’s absence).
-          </div>
-
-
-          <div class="left-col pr15">
-            <div class="input-group">
-              <div class="inputs-list">
-                <div class="fake-input noborder"></div>
-                <div class="fake-input"></div>
-              </div>
-            </div>
-          </div>
-          <div class="right-col pl15">
-            <div class="input-group">
-              <div class="inputs-list">
-                <div class="fake-input noborder"></div>
-                <div class="fake-input"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="clear"></div>
-
-          <div class="mb5"><b>Financial support</b> (details about maintenance and child support, including details of maintenance orders
-            or child support assessments and what is actually being paid or proposed to be paid by any parent or party to
-            the marriage who does not live with the child).</div>
-
-          <div class="clear"></div>
-
-          <div class="left-col pr15">
-            <div class="input-group">
-              <div class="inputs-list">
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="right-col pl15">
-            <div class="input-group">
-              <div class="inputs-list">
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="clear"></div>
-
-          <div class="mb5"><b>Health</b> (details of the health of the child and any treatment or ongoing medication needs).</div>
-
-          <div class="left-col pr15">
-            <div class="input-group">
-              <div class="inputs-list">
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="right-col pl15">
-            <div class="input-group">
-              <div class="inputs-list">
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="clear"></div>
-
-          <div class="mb5"><b>Education</b> (details about what school the child attends, what year he/she is in and what progress is being
-            made).
-          </div>
-
-          <div class="left-col pr15">
-            <div class="input-group">
-              <div class="inputs-list">
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="right-col pl15">
-            <div class="input-group">
-              <div class="inputs-list">
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="clear"></div>
-
-          <div class="mb5"><b>Any other matters</b> (under subsection 60CC of the Family Law Act).</div>
-
-          <div class="left-col pr15">
-            <div class="input-group">
-              <div class="inputs-list">
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="right-col pl15">
-            <div class="input-group">
-              <div class="inputs-list">
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-                <div class="fake-input"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="clear"></div>
-
-          <div>
-            If there are no more children and you are not seeking any financial orders: <span class="hgl-details">GO TO PART J, ON PAGE 23.</span>            If you need more space for any other children, attach an extra page, numbering it Item 24, Child 5; Item 24 Child
-            6 and so on.
-          </div>
-
-
-
-
-        </div>
-      </div>
-    </div>
-
-    <div class="page-footer">
-      <div class="footer-signature-block">
-        <div class="row">
-          <div class="col-xs-6">
-            <div class="signature-label fl-left pr5">Signature of applicant </div>
-            <div class="signature-blank"></div>
-          </div>
-          <div class="col-xs-6">
-            <div class="signature-label fl-left pr5">Signature of respondent </div>
-            <div class="signature-blank"></div>
-          </div>
-
-
-        </div>
-      </div>
-
-      <div class="footer-page-number">
-        9
       </div>
     </div>
 
