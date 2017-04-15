@@ -160,9 +160,9 @@ the respondent? <strong>Do not include the other children listed in previous que
               </md-input-container>
             </div>
             <div>
-              <md-radio-group [ngModel]="(child|async)?.applicantSex"
-                              name="applicantSex"
-                              (ngModelChange)="child.update({applicantSex: $event})"
+              <md-radio-group [ngModel]="(child|async)?.applicantOtherPersonSex"
+                              name="applicantOtherPersonSex"
+                              (ngModelChange)="child.update({applicantOtherPersonSex: $event})"
                               fxLayout="row"
                               fxLayoutAlign="space-between">
                 <md-radio-button [value]="'Male'">
@@ -227,9 +227,9 @@ the respondent? <strong>Do not include the other children listed in previous que
               </md-input-container>
             </div>
             <div>
-              <md-radio-group [ngModel]="(child|async)?.respondentSex"
-                              name="respondentSex"
-                              (ngModelChange)="child.update({respondentSex: $event})"
+              <md-radio-group [ngModel]="(child|async)?.respondentOtherPersonSex"
+                              name="respondentOtherPersonSex"
+                              (ngModelChange)="child.update({respondentOtherPersonSex: $event})"
                               fxLayout="row"
                               fxLayoutAlign="space-between">
                 <md-radio-button [value]="'Male'">

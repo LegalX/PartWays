@@ -1064,7 +1064,6 @@
         <b>This part must be completed by all applicants if there are children under the age of 18 years, regardless of whether the orders sought are in relation to children, property or maintenance.</b>        You must give details for each natural or adopted child of both or either of you who is under 18. This is regardless
         of whether the child has lived with both or either of you.
       </div>
-
       <div class="steps-form">
         <div class="step mb40">
           <i class="step-number">20</i> Give the following details for each child
@@ -1073,75 +1072,26 @@
                  cellspacing="10">
             <thead>
               <tr>
-
                 <th class="w10"></th>
                 <th class="w20">Family name</th>
                 <th class="w20">Given names</th>
                 <th class="w20">Primary care giver *</th>
                 <th class="w20">Date of birth</th>
                 <th class="w5">M/F</th>
-
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Child1:</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td class="date-cell">
-                  <input type="text"
-                         class="l0 w30">
-                  <div class="format-delimiter l30">/</div>
-                  <input type="text"
-                         class="l31 w30">
-                  <div class="format-delimiter l60">/</div>
-                  <input type="text"
-                         class="l62 w30">
-                </td>
-                <td></td>
-
-              </tr>
-              <tr>
-                <td>Child2:</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td class="date-cell">
-                  <input type="text"
-                         class="l0 w30">
-                  <div class="format-delimiter l30">/</div>
-                  <input type="text"
-                         class="l31 w30">
-                  <div class="format-delimiter l60">/</div>
-                  <input type="text"
-                         class="l62 w30">
-                </td>
-                <td></td>
-
-              </tr>
-              <tr>
-                <td>Child3:</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td class="date-cell">
-                  <input type="text"
-                         class="l0 w30">
-                  <div class="format-delimiter l30">/</div>
-                  <input type="text"
-                         class="l31 w30">
-                  <div class="format-delimiter l60">/</div>
-                  <input type="text"
-                         class="l62 w30">
-                </td>
-                <td></td>
-
+              <tr *ngFor="let child of appData.children | values:'key'; let i=index; trackBy: index">
+                <td>Child {{i + 1}}:</td>
+                <td>{{child.familyName}}</td>
+                <td>{{child.givenNames}}</td>
+                <td>{{child.primaryCareGiver}}</td>
+                <td>{{child.birthday}}</td>
+                <td>{{child.sex}}</td>
               </tr>
             </tbody>
           </table>
-          * IF THE CHILD CHILD DOES NOT SPEND EQUAL TIME WITH EACH OF THE PARENTS IDENTIFY THE PERSON WITH WHOM THE LIVES MOST OF THE
-          TIME
+          * IF THE CHILD DOES NOT SPEND EQUAL TIME WITH EACH OF THE PARENTS IDENTIFY THE PERSON WITH WHOM THE LIVES MOST OF THE TIME
         </div>
 
         <div class="step">
@@ -1149,97 +1099,96 @@
           <div class="mb20">Who else lives in the child’s home when the child is living with the applicant and when the child is living with
             the respondent? <b>Do not include the other children listed in Item 20.</b></div>
 
-
           <div class="mb10 overflow">
             <div class="left-col uppercase pl10"><b>Applicant</b></div>
             <div class="right-col uppercase pl10"><b>Respondent</b></div>
           </div>
 
-          <div class="child-details">
-            <div class="pl10"><b>Child 1</b></div>
+          <div class="child-details"
+               *ngFor="let child of appData.children | values:'key'; let i=index; trackBy: index">
+            <div class="pl10"><b>Child {{i + 1}}</b></div>
             <div class="left-col pl10">
               <div class="fl-left w50">
-                <div class="checkbox"></div> FATHER
+                <div class="checkbox">{{child.applicantParent === 'Father' ? 'X' : ''}}</div>
+                FATHER
               </div>
-
               <div class="fl-left w50">
-                <div class="checkbox"></div> MOTHER
+                <div class="checkbox">{{child.applicantParent === 'Mother' ? 'X' : ''}}</div>
+                MOTHER
               </div>
-
               <div class="clear mb5"></div>
 
               <div class="bg-brown-light">
                 <div class="input-group fl-left w55">
-                  <div class="checkbox"></div> OTHER PERSON
+                  <div class="checkbox">{{child.applicantOtherPerson === true ? 'X' : ''}}</div>
+                  OTHER PERSON
                 </div>
 
                 <div class="input-group fl-left w45">
                   <div class="fl-left mr5">Age</div>
-                  <input type="text"
-                         class="border-bottom-blank light-border">
+                  <div class="border-bottom-blank light-border">{{child.applicantOtherPersonAge}} </div>
                 </div>
-
                 <div class="clear"></div>
 
                 <div class="input-group fl-left w50">
-                  <div class="checkbox"></div> Male
+                  <div class="checkbox">{{child.applicantOtherPersonSex === 'Male' ? 'X' : ''}}</div>
+                  Male
                 </div>
 
                 <div class="input-group fl-left w50">
-                  <div class="checkbox"></div> Female
+                  <div class="checkbox">{{child.applicantOtherPersonSex === 'Female' ? 'X' : ''}}</div>
+                  Female
                 </div>
                 <div class="clear"></div>
 
                 <div class="input-group">
                   Name and relationship to the child
                   <div class="inputs-list">
-                    <div class="fake-input"></div>
-                    <div class="fake-input"></div>
+                    <div class="fake-input">{{child.applicantRelationToChild}}</div>
                   </div>
                 </div>
-
               </div>
-
             </div>
 
             <div class="right-col pl10">
               <div class="fl-left w50">
-                <div class="checkbox"></div> FATHER
+                <div class="checkbox">{{child.respondentParent === 'Father' ? 'X' : ''}}</div>
+                FATHER
               </div>
 
               <div class="fl-left w50">
-                <div class="checkbox"></div> MOTHER
+                <div class="checkbox">{{child.respondentParent === 'Mother' ? 'X' : ''}}</div>
+                MOTHER
               </div>
 
               <div class="clear mb5"></div>
 
               <div class="bg-brown-light">
                 <div class="input-group fl-left w55">
-                  <div class="checkbox"></div> OTHER PERSON
+                  <div class="checkbox">{{child.respondentOtherPerson === true ? 'X' : ''}}</div>
+                  OTHER PERSON
                 </div>
 
                 <div class="input-group fl-left w45">
                   <div class="fl-left mr5">Age</div>
-                  <input type="text"
-                         class="border-bottom-blank light-border">
+                  <div class="border-bottom-blank light-border">{{child.respondentOtherPersonAge}} </div>
                 </div>
-
                 <div class="clear"></div>
 
                 <div class="input-group fl-left w50">
-                  <div class="checkbox"></div> Male
+                  <div class="checkbox">{{child.respondentOtherPersonSex === 'Male' ? 'X' : ''}}</div>
+                  Male
                 </div>
-
                 <div class="input-group fl-left w50">
-                  <div class="checkbox"></div> Female
+                  <div class="checkbox">{{child.respondentOtherPersonSex === 'Female' ? 'X' : ''}}</div>
+                  Female
                 </div>
                 <div class="clear"></div>
 
                 <div class="input-group">
                   Name and relationship to the child
                   <div class="inputs-list">
-                    <div class="fake-input"></div>
-                    <div class="fake-input"></div>
+                    <div class="fake-input">{{child.respondentRelationToChild}}</div>
                   </div>
                 </div>
 
@@ -1251,112 +1200,9 @@
 
             </div>
           </div>
-
-          <div class="child-details">
-            <div class="pl10"><b>Child 2</b></div>
-            <div class="left-col pl10">
-              <div class="fl-left w50">
-                <div class="checkbox"></div> FATHER
-              </div>
-
-              <div class="fl-left w50">
-                <div class="checkbox"></div> MOTHER
-              </div>
-
-              <div class="clear mb5"></div>
-
-              <div class="bg-brown-light">
-                <div class="input-group fl-left w55">
-                  <div class="checkbox"></div> OTHER PERSON
-                </div>
-
-                <div class="input-group fl-left w45">
-                  <div class="fl-left mr5">Age</div>
-                  <input type="text"
-                         class="border-bottom-blank light-border">
-                </div>
-
-                <div class="clear"></div>
-
-                <div class="input-group fl-left w50">
-                  <div class="checkbox"></div> Male
-                </div>
-
-                <div class="input-group fl-left w50">
-                  <div class="checkbox"></div> Female
-                </div>
-                <div class="clear"></div>
-
-                <div class="input-group">
-                  Name and relationship to the child
-                  <div class="inputs-list">
-                    <div class="fake-input"></div>
-                    <div class="fake-input"></div>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="right-col pl10">
-              <div class="fl-left w50">
-                <div class="checkbox"></div> FATHER
-              </div>
-
-              <div class="fl-left w50">
-                <div class="checkbox"></div> MOTHER
-              </div>
-
-              <div class="clear mb5"></div>
-
-              <div class="bg-brown-light">
-                <div class="input-group fl-left w55">
-                  <div class="checkbox"></div> OTHER PERSON
-                </div>
-
-                <div class="input-group fl-left w45">
-                  <div class="fl-left mr5">Age</div>
-                  <input type="text"
-                         class="border-bottom-blank light-border">
-                </div>
-
-                <div class="clear"></div>
-
-                <div class="input-group fl-left w50">
-                  <div class="checkbox"></div> Male
-                </div>
-
-                <div class="input-group fl-left w50">
-                  <div class="checkbox"></div> Female
-                </div>
-                <div class="clear"></div>
-
-                <div class="input-group">
-                  Name and relationship to the child
-                  <div class="inputs-list">
-                    <div class="fake-input"></div>
-                    <div class="fake-input"></div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-
-            <div class="right-col">
-
-            </div>
-          </div>
-
-
         </div>
-
-
       </div>
-
     </div>
-
 
     <div class="page-footer">
       <div class="footer-signature-block">
@@ -1369,8 +1215,6 @@
             <div class="signature-label fl-left pr5">Signature of respondent </div>
             <div class="signature-blank"></div>
           </div>
-
-
         </div>
       </div>
 
@@ -1378,218 +1222,10 @@
         6
       </div>
     </div>
-
   </div>
 
   <div class="page page7">
     <div class="page-content">
-
-      <div class="steps-form">
-
-        <div class="step">
-
-          <div class="mb10 overflow">
-            <div class="left-col uppercase pl10"><b>Applicant</b></div>
-            <div class="right-col uppercase pl10"><b>Respondent</b></div>
-          </div>
-
-          <div class="child-details">
-            <div class="pl10"><b>Child 3</b></div>
-            <div class="left-col pl10">
-              <div class="fl-left w50">
-                <div class="checkbox"></div> FATHER
-              </div>
-
-              <div class="fl-left w50">
-                <div class="checkbox"></div> MOTHER
-              </div>
-
-              <div class="clear mb5"></div>
-
-              <div class="bg-brown-light">
-                <div class="input-group fl-left w55">
-                  <div class="checkbox"></div> OTHER PERSON
-                </div>
-
-                <div class="input-group fl-left w45">
-                  <div class="fl-left mr5">Age</div>
-                  <input type="text"
-                         class="border-bottom-blank light-border">
-                </div>
-
-                <div class="clear"></div>
-
-                <div class="input-group fl-left w50">
-                  <div class="checkbox"></div> Male
-                </div>
-
-                <div class="input-group fl-left w50">
-                  <div class="checkbox"></div> Female
-                </div>
-                <div class="clear"></div>
-
-                <div class="input-group">
-                  Name and relationship to the child
-                  <div class="inputs-list">
-                    <div class="fake-input"></div>
-                    <div class="fake-input"></div>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="right-col pl10">
-              <div class="fl-left w50">
-                <div class="checkbox"></div> FATHER
-              </div>
-
-              <div class="fl-left w50">
-                <div class="checkbox"></div> MOTHER
-              </div>
-
-              <div class="clear mb5"></div>
-
-              <div class="bg-brown-light">
-                <div class="input-group fl-left w55">
-                  <div class="checkbox"></div> OTHER PERSON
-                </div>
-
-                <div class="input-group fl-left w45">
-                  <div class="fl-left mr5">Age</div>
-                  <input type="text"
-                         class="border-bottom-blank light-border">
-                </div>
-
-                <div class="clear"></div>
-
-                <div class="input-group fl-left w50">
-                  <div class="checkbox"></div> Male
-                </div>
-
-                <div class="input-group fl-left w50">
-                  <div class="checkbox"></div> Female
-                </div>
-                <div class="clear"></div>
-
-                <div class="input-group">
-                  Name and relationship to the child
-                  <div class="inputs-list">
-                    <div class="fake-input"></div>
-                    <div class="fake-input"></div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-
-            <div class="right-col">
-
-            </div>
-          </div>
-
-          <div class="child-details">
-            <div class="pl10"><b>Child 4</b></div>
-            <div class="left-col pl10">
-              <div class="fl-left w50">
-                <div class="checkbox"></div> FATHER
-              </div>
-
-              <div class="fl-left w50">
-                <div class="checkbox"></div> MOTHER
-              </div>
-
-              <div class="clear mb5"></div>
-
-              <div class="bg-brown-light">
-                <div class="input-group fl-left w55">
-                  <div class="checkbox"></div> OTHER PERSON
-                </div>
-
-                <div class="input-group fl-left w45">
-                  <div class="fl-left mr5">Age</div>
-                  <input type="text"
-                         class="border-bottom-blank light-border">
-                </div>
-
-                <div class="clear"></div>
-
-                <div class="input-group fl-left w50">
-                  <div class="checkbox"></div> Male
-                </div>
-
-                <div class="input-group fl-left w50">
-                  <div class="checkbox"></div> Female
-                </div>
-                <div class="clear"></div>
-
-                <div class="input-group">
-                  Name and relationship to the child
-                  <div class="inputs-list">
-                    <div class="fake-input"></div>
-                    <div class="fake-input"></div>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="right-col pl10">
-              <div class="fl-left w50">
-                <div class="checkbox"></div> FATHER
-              </div>
-
-              <div class="fl-left w50">
-                <div class="checkbox"></div> MOTHER
-              </div>
-
-              <div class="clear mb5"></div>
-
-              <div class="bg-brown-light">
-                <div class="input-group fl-left w55">
-                  <div class="checkbox"></div> OTHER PERSON
-                </div>
-
-                <div class="input-group fl-left w45">
-                  <div class="fl-left mr5">Age</div>
-                  <input type="text"
-                         class="border-bottom-blank light-border">
-                </div>
-
-                <div class="clear"></div>
-
-                <div class="input-group fl-left w50">
-                  <div class="checkbox"></div> Male
-                </div>
-
-                <div class="input-group fl-left w50">
-                  <div class="checkbox"></div> Female
-                </div>
-                <div class="clear"></div>
-
-                <div class="input-group">
-                  Name and relationship to the child
-                  <div class="inputs-list">
-                    <div class="fake-input"></div>
-                    <div class="fake-input"></div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-
-            <div class="right-col">
-
-            </div>
-          </div>
-
-        </div>
-
-      </div>
 
       <div class="part-title-wrapper mb10">
         <div class="part-name">Part E</div>

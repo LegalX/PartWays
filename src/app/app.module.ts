@@ -77,6 +77,7 @@ import { PropertyResolver } from './property/property.resolver.service';
 import { RelationshipComponent } from './relationship/relationship.component';
 import { FirebaseArrayProcessingService } from './shared/firebaseArrayProcessing.service';
 import { PrintDirective } from './shared/print.directive';
+import { ValuesPipe } from './shared/values.pipe';
 import { StatementOfTruthComponent } from './statement-of-truth/statement-of-truth.component';
 import { StatementOfTruthResolver } from './statement-of-truth/statement-of-truth.resolver.service';
 
@@ -177,6 +178,7 @@ const firebaseAuthConfig = {
     HirePurchaseLeaseComponent,
     CreditChargeCardsComponent,
     ChatComponent,
+    ValuesPipe,
   ],
   entryComponents: [FeedbackDialogComponent],
   bootstrap: [AppComponent],
