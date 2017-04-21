@@ -13,6 +13,8 @@ export class PrintFormComponent implements OnInit {
   clientID = 123123456;
   firstName = 'Alexander';
   lastName = 'Zhidkov';
+  index: number;
+  key: string;
 
   constructor(private route: ActivatedRoute) { }
 
