@@ -1843,7 +1843,7 @@
                     </div>
                     <div class="fl-left w2">&nbsp;</div>
                     <div class="fl-left w42 pb15 hgl-light-block">
-                        <div class="input-group" *ngFor="let respondent of appData.maintenance.respondent['real-estate'] | values:'key'; let i=index;">
+                        <div class="input-group" *ngFor="let respondent of appData.maintenance.respondent['real-estate'] | values:'key';">
                             <div class="inputs-list">
                                 <div class="fake-input">Address
                                 </div>
@@ -1869,30 +1869,30 @@
                     </div>
 
                     <div class="fl-left w42">
-                        <div class="input-group">
+                        <div class="input-group" *ngFor="let applicant of appData.maintenance.applicant['motor-vehicles'] | values:'key';">
                             <div class="inputs-list">
-                                <div class="fake-input">Make</div>
+                                <div class="fake-input">Make {{ applicant?.applicantMotorVehiclesMake }}</div>
                                 <div class="fake-input">
-                                    <span>Model</span>
+                                    <span>Model {{ applicant?.applicantMotorVehiclesModel }}</span>
                                 </div>
                                 <div class="fake-input">
                                     <span class="pos-abs">Value of your share</span>
-                                    <span class="pos-abs l60">$</span>
+                                    <span class="pos-abs l60">$ {{applicant?.applicantMotorVehiclesValueOfShare }} </span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="fl-left w2">&nbsp;</div>
                     <div class="fl-left w42 pb25 hgl-light-block">
-                        <div class="input-group">
+                        <div class="input-group" *ngFor="let respondent of appData.maintenance.respondent['motor-vehicles'] | values:'key';">
                             <div class="inputs-list">
-                                <div class="fake-input">Make</div>
+                                <div class="fake-input">Make {{ respondent?.respondentMotorVehiclesMake }}</div>
                                 <div class="fake-input">
-                                    <span>Model</span>
+                                    <span>Model {{ respondent?.respondentMotorVehiclesModel }}</span>
                                 </div>
                                 <div class="fake-input">
                                     <span class="pos-abs">Value of your share</span>
-                                    <span class="pos-abs l60">$</span>
+                                    <span class="pos-abs l60">$ {{respondent?.respondentMotorVehiclesValueOfShare }}</span>
                                 </div>
                             </div>
                         </div>
@@ -1935,87 +1935,32 @@
                     </div>
 
                     <div class="fl-left w42">
-                        <div class="input-group mb20">
+                        <div class="input-group mb20" *ngFor="let applicant of appData.maintenance.applicant['financial-institutions'] | values:'key';">
                             <div class="inputs-list">
                                 <div class="fake-input">Name of Institution</div>
-                                <div class="fake-input"></div>
+                                <div class="fake-input">{{applicant?.applicantFinancialInstitutionsName}}</div>
                                 <div class="fake-input">
                                     <span>Your share</span>
-                                    <span class="pos-abs l60">$</span>
+                                    <span class="pos-abs l60">$ {{applicant?.applicantFinancialInstitutionsValueOfShare}}</span>
                                 </div>
                                 <div class="fake-input">
-                                    Account Number
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input-group mb20">
-                            <div class="inputs-list">
-                                <div class="fake-input">Name of Institution</div>
-                                <div class="fake-input"></div>
-                                <div class="fake-input">
-                                    <span>Your share</span>
-                                    <span class="pos-abs l60">$</span>
-                                </div>
-                                <div class="fake-input">
-                                    Account Number
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="input-group mb20">
-                            <div class="inputs-list">
-                                <div class="fake-input">Name of Institution</div>
-                                <div class="fake-input"></div>
-                                <div class="fake-input">
-                                    <span>Your share</span>
-                                    <span class="pos-abs l60">$</span>
-                                </div>
-                                <div class="fake-input">
-                                    Account Number
+                                    Account Number {{applicant?.applicantFinancialInstitutionsAccountNumber}}
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="fl-left w2">&nbsp;</div>
                     <div class="fl-left w42 pb25 hgl-light-block">
-                        <div class="input-group mb20">
+                        <div class="input-group mb20" *ngFor="let respondent of appData.maintenance.respondent['financial-institutions'] | values:'key';">
                             <div class="inputs-list">
                                 <div class="fake-input">Name of Institution</div>
-                                <div class="fake-input"></div>
+                                <div class="fake-input">{{respondent?.respondentFinancialInstitutionsName}}</div>
                                 <div class="fake-input">
                                     <span>Your share</span>
-                                    <span class="pos-abs l60">$</span>
+                                    <span class="pos-abs l60">$ {{respondent?.respondentFinancialInstitutionsValueOfShare}}</span>
                                 </div>
                                 <div class="fake-input">
-                                    Account Number
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="input-group mb20">
-                            <div class="inputs-list">
-                                <div class="fake-input">Name of Institution</div>
-                                <div class="fake-input"></div>
-                                <div class="fake-input">
-                                    <span>Your share</span>
-                                    <span class="pos-abs l60">$</span>
-                                </div>
-                                <div class="fake-input">
-                                    Account Number
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="input-group mb20">
-                            <div class="inputs-list">
-                                <div class="fake-input">Name of Institution</div>
-                                <div class="fake-input"></div>
-                                <div class="fake-input">
-                                    <span>Your share</span>
-                                    <span class="pos-abs l60">$</span>
-                                </div>
-                                <div class="fake-input">
-                                    Account Number
+                                    Account Number {{respondent?.respondentFinancialInstitutionsAccountNumber}}
                                 </div>
                             </div>
                         </div>
@@ -2072,34 +2017,33 @@
                     </div>
 
                     <div class="fl-left w42">
-                        <div class="input-group">
+                        <div class="input-group" *ngFor="let applicant of appData.maintenance.applicant['interest-in-business'] | values:'key';">
                             <div class="inputs-list">
                                 <div class="fake-input">Name of business</div>
-                                <div class="fake-input"></div>
+                                <div class="fake-input"> {{ applicant?.applicantInterestInBusinessName }}</div>
                                 <div class="fake-input">
-                                    <span>Your % share</span>
+                                    <span>Your % share {{ applicant?.applicantInterestInBusinessPercentOfShare }}</span>
                                 </div>
                                 <div class="fake-input">
-                                    <span>Value of your share</span> <span class="pos-abs l60">$</span>
+                                    <span>Value of your share</span> <span class="pos-abs l60">$ {{ applicant?.applicantInterestInBusinessValueOfShare}}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="fl-left w2">&nbsp;</div>
                     <div class="fl-left w42 pb15 hgl-light-block">
-                        <div class="input-group pb30">
+                        <div class="input-group" *ngFor="let respondent of appData.maintenance.respondent['interest-in-business'] | values:'key';">
                             <div class="inputs-list">
                                 <div class="fake-input">Name of business</div>
-                                <div class="fake-input"></div>
+                                <div class="fake-input"> {{ respondent?.respondentInterestInBusinessName }}</div>
                                 <div class="fake-input">
-                                    <span>Your % share</span>
+                                    <span>Your % share {{ respondent?.respondentInterestInBusinessPercentOfShare }}</span>
                                 </div>
                                 <div class="fake-input">
-                                    <span>Value of your share</span> <span class="pos-abs l60">$</span>
+                                    <span>Value of your share</span> <span class="pos-abs l60">$ {{ respondent?.respondentInterestInBusinessValueOfShare}}</span>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
@@ -2110,60 +2054,32 @@
                     </div>
 
                     <div class="fl-left w42">
-                        <div class="input-group pb10">
+                        <div class="input-group pb10" *ngFor="let applicant of appData.maintenance.applicant['investments'] | values:'key';">
                             <div class="inputs-list">
                                 <div class="fake-input">Name and type of investment</div>
-                                <div class="fake-input"></div>
+                                <div class="fake-input"> {{ applicant?.applicantInvestmentsName }}</div>
                                 <div class="fake-input">
-                                    <span>Number shares held/Your % share</span>
+                                    <span>Number shares held/Your % share {{applicant?.applicantInvestmentsShare }}</span>
                                 </div>
                                 <div class="fake-input"></div>
                                 <div class="fake-input">
-                                    <span>Value</span> <span class="pos-abs l60">$</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="input-group">
-                            <div class="inputs-list">
-                                <div class="fake-input">Name and type of investment</div>
-                                <div class="fake-input"></div>
-                                <div class="fake-input">
-                                    <span>Number shares held/Your % share</span>
-                                </div>
-                                <div class="fake-input"></div>
-                                <div class="fake-input">
-                                    <span>Value</span> <span class="pos-abs l60">$</span>
+                                    <span>Value</span> <span class="pos-abs l60">$ {{ applicant?.applicantInvestmentsValue }}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="fl-left w2">&nbsp;</div>
                     <div class="fl-left w42 pb30 hgl-light-block">
-                        <div class="input-group pb10">
+                        <div class="input-group pb10" *ngFor="let respondent of appData.maintenance.respondent['investments'] | values:'key';">
                             <div class="inputs-list">
                                 <div class="fake-input">Name and type of investment</div>
-                                <div class="fake-input"></div>
+                                <div class="fake-input"> {{ respondent?.respondentInvestmentsName }}</div>
                                 <div class="fake-input">
-                                    <span>Number shares held/Your % share</span>
+                                    <span>Number shares held/Your % share {{respondent?.respondentInvestmentsShare }}</span>
                                 </div>
                                 <div class="fake-input"></div>
                                 <div class="fake-input">
-                                    <span>Value</span> <span class="pos-abs l60">$</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="input-group">
-                            <div class="inputs-list">
-                                <div class="fake-input">Name and type of investment</div>
-                                <div class="fake-input"></div>
-                                <div class="fake-input">
-                                    <span>Number shares held/Your % share</span>
-                                </div>
-                                <div class="fake-input"></div>
-                                <div class="fake-input">
-                                    <span>Value</span> <span class="pos-abs l60">$</span>
+                                    <span>Value</span> <span class="pos-abs l60">$ {{ respondent?.respondentInvestmentsValue }}</span>
                                 </div>
                             </div>
                         </div>
@@ -2178,21 +2094,21 @@
 
                     <div class="fl-left w42">
 
-                        <div class="inputs-list">
+                        <div class="inputs-list" *ngFor="let applicant of appData.maintenance.applicant['life-insurance'] | values:'key';">
                             <div class="fake-input">Company</div>
-                            <div class="fake-input"></div>
-                            <div class="fake-input">Policy No.</div>
-                            <div class="fake-input">Surrender value of your share $</div>
+                            <div class="fake-input"> {{ applicant?.applicantLifeInsuranceCompany }}</div>
+                            <div class="fake-input">Policy No. {{ applicant?.applicantLifeInsurancePolicyNumber }}</div>
+                            <div class="fake-input">Surrender value of your share $ {{ applicant?.applicantLifeInsuranceSurrenderValue }}</div>
                         </div>
 
                     </div>
                     <div class="fl-left w2">&nbsp;</div>
                     <div class="fl-left w42 pb30 hgl-light-block">
-                        <div class="inputs-list">
+                        <div class="inputs-list" *ngFor="let respondent of appData.maintenance.respondent['life-insurance'] | values:'key';">
                             <div class="fake-input">Company</div>
-                            <div class="fake-input"></div>
-                            <div class="fake-input">Policy No.</div>
-                            <div class="fake-input">Surrender value of your share $</div>
+                            <div class="fake-input"> {{ respondent?.respondentLifeInsuranceCompany }}</div>
+                            <div class="fake-input">Policy No. {{ respondent?.respondentLifeInsurancePolicyNumber }}</div>
+                            <div class="fake-input">Surrender value of your share $ {{ respondent?.respondentLifeInsuranceSurrenderValue }}</div>
                         </div>
                     </div>
                 </div>
@@ -2204,53 +2120,29 @@
                     </div>
 
                     <div class="fl-left w42">
-                        <div class="input-group pb10">
+                        <div class="input-group pb10" *ngFor="let applicant of appData.maintenance.applicant['other-interest'] | values:'key';">
                             <div class="inputs-list">
                                 <div class="fake-input">Give details</div>
-                                <div class="fake-input noborder"></div>
+                                <div class="fake-input noborder"> {{applicant?.applicantOtherInterestDetails}}</div>
                                 <div class="fake-input">
                                     <span class="pos-abs">Value of your share</span>
-                                    <span class="pos-abs l60">$</span>
+                                    <span class="pos-abs l60">$ {{applicant?.applicantOtherInterestValue}}</span>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="input-group">
-                            <div class="inputs-list">
-                                <div class="fake-input">Give details</div>
-                                <div class="fake-input noborder"></div>
-                                <div class="fake-input">
-                                    <span class="pos-abs">Value of your share</span>
-                                    <span class="pos-abs l60">$</span>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                     <div class="fl-left w2">&nbsp;</div>
                     <div class="fl-left w42 pb15 hgl-light-block">
-                        <div class="input-group pb10">
+                        <div class="input-group pb10" *ngFor="let respondent of appData.maintenance.respondent['other-interest'] | values:'key';">
                             <div class="inputs-list">
                                 <div class="fake-input">Give details</div>
-                                <div class="fake-input noborder"></div>
+                                <div class="fake-input noborder"> {{respondent?.respondentOtherInterestDetails}}</div>
                                 <div class="fake-input">
                                     <span class="pos-abs">Value of your share</span>
-                                    <span class="pos-abs l60">$</span>
+                                    <span class="pos-abs l60">$ {{respondent?.respondentOtherInterestValue}}</span>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="input-group pb10">
-                            <div class="inputs-list">
-                                <div class="fake-input">Give details</div>
-                                <div class="fake-input noborder"></div>
-                                <div class="fake-input">
-                                    <span class="pos-abs">Value of your share</span>
-                                    <span class="pos-abs l60">$</span>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
 
