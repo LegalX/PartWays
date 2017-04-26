@@ -1735,7 +1735,7 @@
                                 </div>
                                 <div class="fake-input">
                                     <span class="pos-abs">Amount received each week</span>
-                                    <span class="pos-abs l60">$ {{ appData.maintenance?.applicantReceivingChildPerWeek }}</span>
+                                    <span class="pos-abs l70">$ {{ appData.maintenance?.applicantReceivingChildPerWeek }}</span>
                                 </div>
                                 <div class="fake-input">
                                     <span>Paid to you by (name)</span>
@@ -1758,7 +1758,7 @@
                                 </div>
                                 <div class="fake-input">
                                     <span class="pos-abs">Amount received each week</span>
-                                    <span class="pos-abs l60">$ {{ appData.maintenance?.replicantReceivingChildPerWeek }}</span>
+                                    <span class="pos-abs l70">$ {{ appData.maintenance?.replicantReceivingChildPerWeek }}</span>
                                 </div>
                                 <div class="fake-input">
                                     <span>Paid to you by (name)</span>
@@ -2222,36 +2222,36 @@
                     </div>
 
                     <div class="fl-left w42">
-                        <div class="input-group">
+                        <div class="input-group" *ngFor="let applicant of appData.maintenance.applicant['home-mortgage'] | values:'key';">
                             <div class="inputs-list">
                                 <div class="fake-input">Name of lender</div>
-                                <div class="fake-input"></div>
+                                <div class="fake-input"> {{ applicant?.applicantNameOfLender }}</div>
                                 <div class="fake-input">
-                                    <span>Address of property</span>
+                                    <span>Address of property {{applicant?.applicantAddressOfProperty}}</span>
                                 </div>
                                 <div class="fake-input">
-                                    <span class="pos-abs l60">State</span>
+                                    <span class="pos-abs l60">State {{applicant?.applicantHomeMortgageState}}</span>
                                 </div>
                                 <div class="fake-input">
-                                    <span>Your share of amount owing</span> <span class="pos-abs l60">$</span>
+                                    <span>Your share of amount owing</span> <span class="pos-abs l70">$ {{applicant?.applicantFinancialInstitutionsAccountNumber}}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="fl-left w2">&nbsp;</div>
                     <div class="fl-left w42 hgl-light-block">
-                        <div class="input-group">
+                        <div class="input-group" *ngFor="let respondent of appData.maintenance.respondent['home-mortgage'] | values:'key';">
                             <div class="inputs-list">
                                 <div class="fake-input">Name of lender</div>
-                                <div class="fake-input"></div>
+                                <div class="fake-input"> {{ respondent?.respondentNameOfLender }}</div>
                                 <div class="fake-input">
-                                    <span>Address of property</span>
+                                    <span>Address of property {{respondent?.respondentAddressOfProperty}}</span>
                                 </div>
                                 <div class="fake-input">
-                                    <span class="pos-abs l60">State</span>
+                                    <span class="pos-abs l60">State {{respondent?.respondentHomeMortgageState}}</span>
                                 </div>
                                 <div class="fake-input">
-                                    <span>Your share of amount owing</span> <span class="pos-abs l60">$</span>
+                                    <span>Your share of amount owing</span> <span class="pos-abs l70">$ {{respondent?.respondentFinancialInstitutionsAccountNumber}}</span>
                                 </div>
                             </div>
                         </div>
@@ -2265,36 +2265,36 @@
                     </div>
 
                     <div class="fl-left w42">
-                        <div class="input-group">
+                        <div class="input-group" *ngFor="let applicant of appData.maintenance.applicant['other-mortgage'] | values:'key';">
                             <div class="inputs-list">
                                 <div class="fake-input">Name of lender</div>
-                                <div class="fake-input"></div>
+                                <div class="fake-input"> {{ applicant?.applicantNameOfLender }}</div>
                                 <div class="fake-input">
-                                    <span>Address of property</span>
+                                    <span>Address of property {{applicant?.applicantAddressOfProperty}}</span>
                                 </div>
                                 <div class="fake-input">
-                                    <span class="pos-abs l60">State</span>
+                                    <span class="pos-abs l60">State {{applicant?.applicantHomeMortgageState}}</span>
                                 </div>
                                 <div class="fake-input">
-                                    <span>Your share of amount owing</span> <span class="pos-abs l60">$</span>
+                                    <span>Your share of amount owing</span> <span class="pos-abs l70">$ {{applicant?.applicantFinancialInstitutionsAccountNumber}}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="fl-left w2">&nbsp;</div>
                     <div class="fl-left w42 hgl-light-block">
-                        <div class="input-group">
+                        <div class="input-group" *ngFor="let respondent of appData.maintenance.respondent['other-mortgage'] | values:'key';">
                             <div class="inputs-list">
                                 <div class="fake-input">Name of lender</div>
-                                <div class="fake-input"></div>
+                                <div class="fake-input"> {{ respondent?.respondentNameOfLender }}</div>
                                 <div class="fake-input">
-                                    <span>Address of property</span>
+                                    <span>Address of property {{respondent?.respondentAddressOfProperty}}</span>
                                 </div>
                                 <div class="fake-input">
-                                    <span class="pos-abs l60">State</span>
+                                    <span class="pos-abs l60">State {{respondent?.respondentHomeMortgageState}}</span>
                                 </div>
                                 <div class="fake-input">
-                                    <span>Your share of amount owing</span> <span class="pos-abs l60">$</span>
+                                    <span>Your share of amount owing</span> <span class="pos-abs l70">$ {{respondent?.respondentFinancialInstitutionsAccountNumber}}</span>
                                 </div>
                             </div>
                         </div>
@@ -2309,16 +2309,11 @@
 
                     <div class="fl-left w42">
                         <div class="input-group">
-                            <div class="inputs-list">
-                                <div class="fake-input noborder">Type of card</div>
+                            <div class="inputs-list" *ngFor="let applicant of appData.maintenance.applicant['credit-charge-cards'] | values:'key';">
+                                <div class="fake-input noborder">Type of card {{applicant?.applicantTypeOfCard}}</div>
                                 <div class="fake-input">
                                     <span class="pos-abs">Your share of amount owing</span>
-                                    <div class="pos-abs l60">$</div>
-                                </div>
-                                <div class="fake-input noborder">Type of card</div>
-                                <div class="fake-input">
-                                    <span class="pos-abs">Your share of amount owing</span>
-                                    <div class="pos-abs l60">$</div>
+                                    <div class="pos-abs l70">$ {{applicant?.applicantShareOfAmountWing}}</div>
                                 </div>
                             </div>
                         </div>
@@ -2326,16 +2321,11 @@
                     <div class="fl-left w2">&nbsp;</div>
                     <div class="fl-left w42 hgl-light-block">
                         <div class="input-group">
-                            <div class="inputs-list">
-                                <div class="fake-input noborder">Type of card</div>
+                            <div class="inputs-list" *ngFor="let respondent of appData.maintenance.respondent['credit-charge-cards'] | values:'key';">
+                                <div class="fake-input noborder">Type of card {{respondent?.respondentTypeOfCard}}</div>
                                 <div class="fake-input">
                                     <span class="pos-abs">Your share of amount owing</span>
-                                    <div class="pos-abs l60">$</div>
-                                </div>
-                                <div class="fake-input noborder">Type of card</div>
-                                <div class="fake-input">
-                                    <span class="pos-abs">Your share of amount owing</span>
-                                    <div class="pos-abs l60">$</div>
+                                    <div class="pos-abs l70">$ {{respondent?.respondentShareOfAmountWing}}</div>
                                 </div>
                             </div>
                         </div>
@@ -2349,30 +2339,30 @@
                     </div>
 
                     <div class="fl-left w42">
-                        <div class="input-group">
+                        <div class="input-group" *ngFor="let applicant of appData.maintenance.applicant['other-loans'] | values:'key';">
                             <div class="inputs-list">
                                 <div class="fake-input noborder">Give details</div>
-                                <div class="fake-input"></div>
+                                <div class="fake-input">{{applicant?.applicantLoanDetail}}</div>
                                 <div class="fake-input">Name of lender/s</div>
-                                <div class="fake-input"></div>
+                                <div class="fake-input">{{applicant?.applicantLenderName}}</div>
                                 <div class="fake-input">
                                     <span class="pos-abs">Your share of amount owing</span>
-                                    <div class="pos-abs l60">$</div>
+                                    <div class="pos-abs l70">$ {{applicant?.applicantLoanShare}}</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="fl-left w2">&nbsp;</div>
                     <div class="fl-left w42 hgl-light-block">
-                        <div class="input-group">
+                        <div class="input-group" *ngFor="let respondent of appData.maintenance.respondent['other-loans'] | values:'key';">
                             <div class="inputs-list">
                                 <div class="fake-input noborder">Give details</div>
-                                <div class="fake-input"></div>
+                                <div class="fake-input">{{respondent?.respondentLoanDetail}}</div>
                                 <div class="fake-input">Name of lender/s</div>
-                                <div class="fake-input"></div>
+                                <div class="fake-input">{{respondent?.respondentLenderName}}</div>
                                 <div class="fake-input">
                                     <span class="pos-abs">Your share of amount owing</span>
-                                    <div class="pos-abs l60">$</div>
+                                    <div class="pos-abs l70">$ {{respondent?.respondentLoanShare}}</div>
                                 </div>
                             </div>
                         </div>
@@ -2386,34 +2376,36 @@
                     </div>
 
                     <div class="fl-left w42">
-                        <div class="input-group">
+                        <div class="input-group" *ngFor="let applicant of appData.maintenance.applicant['hire-purchase-lease'] | values:'key';">
                             <div class="inputs-list">
                                 <div class="fake-input noborder">Give details</div>
-                                <div class="fake-input"></div>
+                                <div class="fake-input">{{applicant?.applicantPurchaseLeaseDetails}}</div>
                                 <div class="fake-input">Name of lender/s</div>
-                                <div class="fake-input"></div>
+                                <div class="fake-input">{{ applicant?.applicantNameOfLender}}</div>
                                 <div class="fake-input">Description of property</div>
-                                <div class="fake-input"></div>
+                                <div class="fake-input">{{applicant?.applicantPropertyDesc }}
+                                </div>
                                 <div class="fake-input">
                                     <span class="pos-abs">Your share of amount owing</span>
-                                    <div class="pos-abs l60">$</div>
+                                    <div class="pos-abs l70">$ {{applicant?.applicantLeaseShare}}</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="fl-left w2">&nbsp;</div>
                     <div class="fl-left w42 hgl-light-block">
-                        <div class="input-group">
+                        <div class="input-group" *ngFor="let respondent of appData.maintenance.respondent['hire-purchase-lease'] | values:'key';">
                             <div class="inputs-list">
                                 <div class="fake-input noborder">Give details</div>
-                                <div class="fake-input"></div>
+                                <div class="fake-input">{{respondent?.respondentPurchaseLeaseDetails}}</div>
                                 <div class="fake-input">Name of lender/s</div>
-                                <div class="fake-input"></div>
+                                <div class="fake-input">{{ respondent?.respondentNameOfLender}}</div>
                                 <div class="fake-input">Description of property</div>
-                                <div class="fake-input"></div>
+                                <div class="fake-input">{{respondent?.respondentPropertyDesc }}
+                                </div>
                                 <div class="fake-input">
                                     <span class="pos-abs">Your share of amount owing</span>
-                                    <div class="pos-abs l60">$</div>
+                                    <div class="pos-abs l70">$ {{respondent?.respondentLeaseShare}}</div>
                                 </div>
                             </div>
                         </div>
@@ -2466,38 +2458,34 @@
                     </div>
 
                     <div class="fl-left w42">
-                        <div class="input-group">
+                        <div class="input-group" *ngFor="let applicant of appData.maintenance.applicant['other-liabilities'] | values:'key';">
                             <div class="inputs-list">
                                 <div class="fake-input noborder">
-                                    <span class="pos-abs">Give details</span>
+                                    <span class="pos-abs">Give details {{applicant?.applicantLiabilitiesDetail}}</span>
                                 </div>
                                 <div class="fake-input"></div>
                                 <div class="fake-input"></div>
                                 <div class="fake-input">
                                     <span class="pos-abs">Your share of amount owing</span>
-                                    <div class="pos-abs l60">$</div>
+                                    <div class="pos-abs l70">$ {{applicant?.applicantLiabilitiesShare}} </div>
                                 </div>
-
                             </div>
-
                         </div>
                     </div>
                     <div class="fl-left w2">&nbsp;</div>
                     <div class="fl-left w42 hgl-light-block">
-                        <div class="input-group">
+                        <div class="input-group" *ngFor="let respondent of appData.maintenance.respondent['other-liabilities'] | values:'key';">
                             <div class="inputs-list">
                                 <div class="fake-input noborder">
-                                    <span class="pos-abs">Give details</span>
+                                    <span class="pos-abs">Give details {{respondent?.respondentLiabilitiesDetail}}</span>
                                 </div>
                                 <div class="fake-input"></div>
                                 <div class="fake-input"></div>
                                 <div class="fake-input">
                                     <span class="pos-abs">Your share of amount owing</span>
-                                    <div class="pos-abs l60">$</div>
+                                    <div class="pos-abs l70">$ {{respondent?.respondentLiabilitiesShare}} </div>
                                 </div>
-
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -2977,10 +2965,6 @@
                                     <div class="clear"></div>
                                     <div class="fake-input border-bottom-blank">
                                         <input type="text" class="pos-abs b0 l0 w30" value="{{ appData.maintenance?.applicantTimeForSplit }}">
-                                        <div class="format-delimiter l30">/</div>
-                                        <input type="text" class="pos-abs b0 l30 w30">
-                                        <div class="format-delimiter l60">/</div>
-                                        <input type="text" class="pos-abs b0 l60 w30">
                                     </div>
                                 </div>
                                 <div class="input-group pl40 mb10">
@@ -3003,7 +2987,7 @@
                                     <div class="fl-left w8">d)</div>
                                     <div class="fl-left w92">The specified percentage in the case of a percentage split <b>(where applicable)</b></div>
                                     <div class="clear"></div>
-                                    <div class="fake-input border-bottom-blank fl-left w40" style="height: 20px;">{{ appData.maintenance?.applicantPercentageSplit }}</div> %
+                                    <div class="fake-input border-bottom-blank fl-left w40">{{ appData.maintenance?.applicantPercentageSplit }}</div> %
                                 </div>
                                 <div class="clear mb10"></div>
                             </div>
@@ -3037,10 +3021,6 @@
                                     <div class="clear"></div>
                                     <div class="fake-input border-bottom-blank">
                                         <input type="text" class="pos-abs b0 l0 w30" value="{{ appData.maintenance?.respondentTimeForSplit }}">
-                                        <div class="format-delimiter l30">/</div>
-                                        <input type="text" class="pos-abs b0 l30 w30">
-                                        <div class="format-delimiter l60">/</div>
-                                        <input type="text" class="pos-abs b0 l60 w30">
                                     </div>
                                 </div>
                                 <div class="input-group pl40 mb10">
@@ -3048,7 +3028,7 @@
                                     <div class="fl-left w92">The amount of any future payments in respect of a base amount split in the payment phase <b>(where applicable)</b></div>
                                     <div class="clear"></div>
                                     <div class="fl-left fs17" style="padding: 5px;">$ {{ appData.maintenance?.respondentAmountOfFuturePayments }}</div>
-                                    <div class="fake-input border-bottom-blank fl-left w90" style="height: 20px;"></div>
+                                    <div class="fake-input border-bottom-blank fl-left w90"></div>
                                 </div>
                                 <div class="clear mb10"></div>
                                 <div class="input-group pl40 mb10">
