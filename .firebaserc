@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "partways-dev"
+    "default": "partways-dev",
+    "prod": "partways-7deaf"
   }
 }
