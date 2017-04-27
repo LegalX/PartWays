@@ -3043,7 +3043,7 @@
                                     <div class="fl-left w8">d)</div>
                                     <div class="fl-left w92">The specified percentage in the case of a percentage split <b>(where applicable)</b></div>
                                     <div class="clear"></div>
-                                    <div class="fake-input border-bottom-blank fl-left w40" style="height: 20px;">{{ appData.maintenance?.respondentPercentageSplit }}</div> %
+                                    <div class="fake-input border-bottom-blank fl-left w40">{{ appData.maintenance?.respondentPercentageSplit }}</div> %
                                 </div>
                                 <div class="clear mb10"></div>
                             </div>
@@ -3500,13 +3500,13 @@
                         <div class="input-group">
                             <div class="inputs-list">
                                 <div class="fake-input noborder">
-                                    <div class="checkbox">{{appData.maintenance?.applicantOtherRelevantFacts === true ? 'X' : ''}}</div><b class="mr10">Yes</b>
+                                    <div class="checkbox">{{appData.maintenance?.applicantOtherRelevantFacts === false ? 'X' : ''}}</div><b class="mr10">No</b>
                                     <span class="hgl-details">Go to time 72</span>
                                 </div>
                                 <div class="fake-input noborder multiline mb30">
                                     <div class="fl-left pb15 mr5">
-                                        <div class="checkbox">{{appData.maintenance?.applicantOtherRelevantFacts === false ? 'X' : ''}}</div>
-                                        <b class="mr5">No</b>
+                                        <div class="checkbox">{{appData.maintenance?.applicantOtherRelevantFacts === true ? 'X' : ''}}</div>
+                                        <b class="mr5">Yes</b>
                                     </div>
 
                                     <span class="hgl-details">GIVE BRIEF DETAILS</span>
