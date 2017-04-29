@@ -43,6 +43,7 @@ export class AppComponent {
       if (!auth) {
         return;
       }
+      this.router.navigate([(localStorage.getItem('redirect')? localStorage.getItem('redirect') : '/')]);
       this.currentUserId = auth.uid;
       this.currentUserName = auth.auth.displayName;
       this.currentUserEmail = auth.auth.email;
