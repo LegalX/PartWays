@@ -32,7 +32,6 @@ export class AppComponent {
     localStorage.removeItem('currentUserId');
     localStorage.removeItem('currentUserName');
     this.currentUserId = null;
-
     iconRegistry.addSvgIcon('A', sanitizer.bypassSecurityTrustResourceUrl('assets/img/a.svg'));
 
     router.events.subscribe((event: RouterEvent) => {
@@ -92,13 +91,15 @@ export class AppComponent {
   }
 
   loginGoogle() {
-    this.af.auth.login();
+    this.af.auth.login({
+      method: AuthMethods.Popup,
+    });
   }
 
   loginFacebook() {
     this.af.auth.login({
       provider: AuthProviders.Facebook,
-      method: AuthMethods.Redirect,
+      method: AuthMethods.Popup,
     });
   }
 
@@ -106,6 +107,7 @@ export class AppComponent {
     this.af.auth.logout();
     this.currentUserId = null;
     localStorage.removeItem('currentUserId');
+    localStorage.removeItem('redirect');
     this.router.navigate(['/']);
   }
 
