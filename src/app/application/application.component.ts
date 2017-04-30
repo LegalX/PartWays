@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
@@ -6,7 +6,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
     templateUrl: './application.html',
 })
 
-export class ApplicationComponent {
+export class ApplicationComponent implements OnInit {
     application: any;
     parties: any;
 

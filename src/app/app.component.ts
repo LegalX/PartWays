@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MdDialog, MdDialogRef, MdIconRegistry, MdSnackBar } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import {
@@ -22,7 +22,7 @@ import { FeedbackDialogComponent } from './feedback-dialog/feedback-dialog.compo
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'PartWays';
   currentUserId: string;
   currentUserName: string;
