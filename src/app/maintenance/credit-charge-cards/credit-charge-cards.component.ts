@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FirebaseObjectObservable } from 'angularfire2/database';
 import 'rxjs/add/operator/first';
 import { FirebaseArrayProcessingService } from '../../shared/firebaseArrayProcessing.service';
-import { FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-credit-charge-cards',

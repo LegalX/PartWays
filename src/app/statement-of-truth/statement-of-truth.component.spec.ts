@@ -8,7 +8,7 @@ describe('StatementOfTruthComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StatementOfTruthComponent ]
+      declarations: [ StatementOfTruthComponent ],
     })
     .compileComponents();
   }));

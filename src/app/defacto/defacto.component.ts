@@ -4,7 +4,7 @@ import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/data
 @Component({
   selector: 'app-defacto',
   templateUrl: './defacto.component.html',
-  styleUrls: ['./defacto.component.css']
+  styleUrls: ['./defacto.component.css'],
 })
 export class DefactoComponent implements OnInit {
   item: FirebaseObjectObservable<any>;

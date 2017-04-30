@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
+import { MdDialog } from '@angular/material';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
 import 'rxjs/add/operator/first';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
-import { MdDialog } from '@angular/material';
 import { LoginComponent } from './login';
 
 @Injectable()

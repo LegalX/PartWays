@@ -11,8 +11,8 @@ import {
   Router,
 } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 
 import { FeedbackDialogComponent } from './feedback-dialog/feedback-dialog.component';

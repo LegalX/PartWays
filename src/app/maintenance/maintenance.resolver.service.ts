@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, Params, Resolve } from '@angular/router';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/first';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class MaintenanceResolver implements Resolve<any> {

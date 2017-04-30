@@ -1,13 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MaintenanceComponent } from './maintenance.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AngularFireModule } from 'angularfire2';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { MaintenanceComponent } from './maintenance.component';
 
 import 'hammerjs';
 
@@ -33,7 +33,7 @@ describe('MaintenanceComponent', () => {
         AngularFireModule.initializeApp(firebaseConfig),
         AngularFireDatabaseModule,
       ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
       .compileComponents();
   }));

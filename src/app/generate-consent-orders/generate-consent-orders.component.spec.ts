@@ -8,7 +8,7 @@ describe('GenerateConsentOrdersComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GenerateConsentOrdersComponent ]
+      declarations: [ GenerateConsentOrdersComponent ],
     })
     .compileComponents();
   }));

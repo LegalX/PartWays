@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
-import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database';
 
 import 'hammerjs';
 
@@ -80,8 +80,8 @@ import { PropertyResolver } from './property/property.resolver.service';
 import { RelationshipComponent } from './relationship/relationship.component';
 import { FirebaseArrayProcessingService } from './shared/firebaseArrayProcessing.service';
 import { PrintDirective } from './shared/print.directive';
-import { ValuesPipe } from './shared/values.pipe';
 import { SafeNavigationPipe } from './shared/safe.pipe';
+import { ValuesPipe } from './shared/values.pipe';
 import { StatementOfTruthComponent } from './statement-of-truth/statement-of-truth.component';
 import { StatementOfTruthResolver } from './statement-of-truth/statement-of-truth.resolver.service';
 
@@ -189,7 +189,7 @@ const firebaseAuthConfig = {
     CreditChargeCardsComponent,
     ChatComponent,
     ValuesPipe,
-    SafeNavigationPipe
+    SafeNavigationPipe,
   ],
   entryComponents: [FeedbackDialogComponent],
   bootstrap: [AppComponent],

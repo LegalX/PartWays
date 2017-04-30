@@ -1,12 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PropertyComponent } from './property.component';
-import { MaterialModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
+import { MaterialModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PropertyComponent } from './property.component';
 
 import 'hammerjs';
 
@@ -31,7 +31,7 @@ describe('PropertyComponent', () => {
         RouterTestingModule,
         AngularFireModule.initializeApp(firebaseConfig),
         AngularFireDatabaseModule,
-      ]
+      ],
     })
       .compileComponents();
   }));

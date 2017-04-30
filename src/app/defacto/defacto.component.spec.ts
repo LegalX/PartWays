@@ -8,7 +8,7 @@ describe('DefactoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DefactoComponent ]
+      declarations: [ DefactoComponent ],
     })
     .compileComponents();
   }));

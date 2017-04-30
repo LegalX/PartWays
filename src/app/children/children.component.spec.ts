@@ -1,11 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChildrenComponent } from './children.component';
-import { MaterialModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
+import { MaterialModule } from '@angular/material';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { ChildrenComponent } from './children.component';
 
 import 'hammerjs';
 
@@ -29,7 +29,7 @@ describe('ChildrenComponent', () => {
         RouterTestingModule,
         AngularFireModule.initializeApp(firebaseConfig),
         AngularFireDatabaseModule,
-      ]
+      ],
     })
       .compileComponents();
   }));

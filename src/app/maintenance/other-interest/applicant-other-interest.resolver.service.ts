@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
-import { FirebaseArrayProcessingService } from '../../shared/firebaseArrayProcessing.service';
-import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/first';
+import { Observable } from 'rxjs/Observable';
+import { FirebaseArrayProcessingService } from '../../shared/firebaseArrayProcessing.service';
 
 @Injectable()
 export class ApplicantOtherInterestResolver implements Resolve<any> {

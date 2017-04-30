@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PrintFormComponent } from './print-form.component';
 import { PrintDirective } from '../shared/print.directive';
+import { PrintFormComponent } from './print-form.component';
 
 describe('PrintFormComponent', () => {
   let component: PrintFormComponent;
@@ -11,8 +11,8 @@ describe('PrintFormComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ PrintFormComponent ],
       imports: [
-        PrintDirective
-      ]
+        PrintDirective,
+      ],
     })
     .compileComponents();
   }));

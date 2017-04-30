@@ -1,11 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LegalAdviceComponent } from './legal-advice.component';
-import { MaterialModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
+import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { LegalAdviceComponent } from './legal-advice.component';
 
 import 'hammerjs';
 
@@ -29,7 +29,7 @@ describe('LegalAdviceComponent', () => {
         BrowserAnimationsModule,
         AngularFireModule.initializeApp(firebaseConfig),
         AngularFireDatabaseModule,
-      ]
+      ],
     })
       .compileComponents();
   }));

@@ -8,7 +8,7 @@ describe('PartyComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PartyComponent ]
+      declarations: [ PartyComponent ],
     })
       .compileComponents();
   }));

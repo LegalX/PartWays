@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
 import { MdDialogRef } from '@angular/material';
+import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 
 @Component({
