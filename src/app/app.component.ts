@@ -34,7 +34,7 @@ export class AppComponent {
     localStorage.removeItem('currentUserId');
     localStorage.removeItem('currentUserName');
     this.currentUserId = null;
-
+    // ToDo do we need this?
     iconRegistry.addSvgIcon('A', sanitizer.bypassSecurityTrustResourceUrl('assets/img/a.svg'));
 
     router.events.subscribe((event: RouterEvent) => {
@@ -95,18 +95,19 @@ export class AppComponent {
 
   loginGoogle() {
     const provider = new firebase.auth.GoogleAuthProvider();
-    this.afAuth.auth.signInWithRedirect(provider);
+    this.afAuth.auth.signInWithPopup(provider);
   }
 
   loginFacebook() {
     const provider = new firebase.auth.FacebookAuthProvider();
-    this.afAuth.auth.signInWithRedirect(provider);
+    this.afAuth.auth.signInWithPopup(provider);
   }
 
   logout() {
     this.afAuth.auth.signOut();
     this.currentUserId = null;
     localStorage.removeItem('currentUserId');
+    localStorage.removeItem('redirect');
     this.router.navigate(['/']);
   }
 
