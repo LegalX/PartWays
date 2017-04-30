@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { AngularFire, AuthMethods, AuthProviders, FirebaseListObservable } from 'angularfire2';
-import {MdDialogRef} from '@angular/material';
 
 @Component({
     selector: 'app-login',
@@ -9,19 +8,15 @@ import {MdDialogRef} from '@angular/material';
 
 export class LoginComponent {
 
-  constructor(public af: AngularFire, public dialogRef: MdDialogRef<LoginComponent>) { }
+  constructor(public af: AngularFire) { }
   loginGoogle() {
-    this.af.auth.login({
-        method: AuthMethods.Popup,
-    });
-    this.dialogRef.close();
+    this.af.auth.login();
   }
 
   loginFacebook() {
     this.af.auth.login({
       provider: AuthProviders.Facebook,
-      method: AuthMethods.Popup,
+      method: AuthMethods.Redirect,
     });
-    this.dialogRef.close();
   }
 }
