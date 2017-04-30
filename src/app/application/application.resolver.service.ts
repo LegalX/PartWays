@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRoute, Resolve } from '@angular/router';
-import { AngularFire, FirebaseAuthState, FirebaseObjectObservable } from 'angularfire2';
+import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 import 'rxjs/add/operator/first';
 import { Observable } from 'rxjs/Observable';
 
@@ -8,7 +8,7 @@ import { Observable } from 'rxjs/Observable';
 export class ApplicationResolver implements Resolve<any> {
     application: FirebaseObjectObservable<any>;
 
-    constructor(private route: ActivatedRoute, private af: AngularFire) { }
+    constructor(private route: ActivatedRoute, private db: AngularFireDatabase) { }
 
     resolve(): Observable<any> | Promise<any> {
         const currentUserId = localStorage.getItem('currentUserId');
@@ -16,12 +16,12 @@ export class ApplicationResolver implements Resolve<any> {
 
         const applicationId = this.route.params['id'];
         if (applicationId) {
-            this.application = this.af.database.object(`/application/${applicationId}`);
+            this.application = this.db.object(`/application/${applicationId}`);
             return this.application.map((item) => {
                 return item;
             }).first();
         } else {
-            const res = this.af.database.list(`/application/`, {
+            const res = this.db.list(`/application/`, {
                 query: {
                     orderByChild: 'applicant/id',
                     equalTo: currentUserId,

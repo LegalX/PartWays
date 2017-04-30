@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
+import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-legal-advice',
@@ -9,8 +9,9 @@ import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 
 export class LegalAdviceComponent implements OnInit {
   item: FirebaseObjectObservable<any>;
-  constructor(af: AngularFire) {
-    this.item = af.database.object('/relationship/dev-data');
+  constructor(private db: AngularFireDatabase) {
+    // ToDo refactor
+    this.item = db.object('/relationship/dev-data');
   }
 
   ngOnInit() {

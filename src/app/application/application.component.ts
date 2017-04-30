@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
     selector: 'app-application',
@@ -8,11 +8,13 @@ import { ActivatedRoute } from '@angular/router';
 
 export class ApplicationComponent {
     application: any;
+    parties: any;
 
-    constructor(private route: ActivatedRoute) {
+    constructor(private db: AngularFireDatabase) {
     }
 
     ngOnInit() {
-        this.application = this.route.snapshot.data['applicationData'];
+        this.application = this.db.object(`/application/${localStorage.getItem('applicationId')}`);
+        this.parties = this.db.object(`/application/${localStorage.getItem('applicationId')}/parties`);
     }
 }

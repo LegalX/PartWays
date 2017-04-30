@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
+import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
@@ -12,9 +12,9 @@ export class RelationshipComponent implements OnInit {
   relationship: any;
   isReadOnly = false;
 
-  constructor(private af: AngularFire) { }
+  constructor(private db: AngularFireDatabase) { }
 
   ngOnInit() {
-    this.item = this.af.database.object(`/application/${localStorage.getItem('applicationId')}/relationship`);
+    this.item = this.db.object(`/application/${localStorage.getItem('applicationId')}/relationship`);
   }
 }

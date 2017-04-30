@@ -1,14 +1,477 @@
 <div>
     Applicant:
-    <a md-button [routerLink]="['/Parties', application.applicant.id]">{{application.applicant.name}}</a>
+    <a md-button
+       routerLink="/Parties">{{(application|async)?.parties.applicant.name}}</a>
 </div>
+
 <div>
     Respondent:
-    <a md-button *ngIf="application.respondent" [routerLink]="['/Parties', application.respondent.id]">{{application.respondent.name}}</a>
-    <a md-button *ngIf="!application.respondent" href="mailto:?Subject=PartWays%20invitation&body=Please%20click%20to%20join%20https://partways-dev.firebaseapp.com/respondent/test" target="_top">Invite respondent</a>
+    <a md-button
+       *ngIf="application.respondent"
+       routerLink="/Parties">{{(application|async)?.parties.respondent?.name}}</a>
+    <a md-button
+       *ngIf="!(application|async)?.parties.respondent"
+       href="mailto:?Subject=PartWays%20invitation&body=Please%20click%20to%20join%20https://partways-dev.firebaseapp.com/respondent/test"
+
+       target="_top">Invite respondent</a>
 </div>
+<!--
 <div>
     Mediator:
-    <a md-button *ngIf="application.mediator" [routerLink]="['/Parties', application.mediator.id]">{{application.mediator.name}}</a>
-    <a md-button *ngIf="!application.mediator" href="mailto:?Subject=PartWays%20invitation&body=Please%20click%20to%20join%20https://partways-dev.firebaseapp.com/mediator/test" target="_top">Invite mediator</a>
+    <a md-button
+       *ngIf="application.mediator"
+       [routerLink]="['/Parties', application.parties.mediator.id]">{{application.parties.mediator?.name}}</a>
+    <a md-button
+       *ngIf="!application.mediator"
+       href="mailto:?Subject=PartWays%20invitation&body=Please%20click%20to%20join%20https://partways-dev.firebaseapp.com/mediator/test"
+
+       target="_top">Invite mediator</a>
 </div>
+-->
+<div id="1">
+    <div fxLayout="row"
+         fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
+            <h3 fxLayoutAlign="center center">APPLICANT</h3>
+            <div>
+                <span>What is your family name as used now?</span>
+                <md-input-container>
+                    <input mdInput
+                           type="text"
+                           [ngModel]="(parties|async)?.applicantFamilyName"
+                           (ngModelChange)="parties.update({applicantFamilyName: $event})"
+                           name="applicantFamilyName">
+                </md-input-container>
+            </div>
+            <div>
+                <span>
+              Given names?
+            </span>
+                <md-input-container>
+                    <input mdInput
+                           type="text"
+                           [ngModel]="(parties|async)?.applicantGivenNames"
+                           (ngModelChange)="parties.update({applicantGivenNames: $event})"
+                           name="applicantGivenNames">
+                </md-input-container>
+            </div>
+            <div>
+                <md-radio-group [ngModel]="(parties|async)?.applicantSex"
+                                name="applicantSex"
+                                (ngModelChange)="parties.update({applicantSex: $event})"
+                                fxLayout="row"
+                                fxLayoutAlign="space-between">
+                    <md-radio-button [value]="'Male'">
+                        Male
+                    </md-radio-button>
+                    <md-radio-button [value]="'Female'">
+                        Female
+                    </md-radio-button>
+                </md-radio-group>
+            </div>
+        </div>
+        <div fxLayout="column"
+             fxFlex="48">
+            <h3 fxLayoutAlign="center center">RESPONDENT</h3>
+            <div>
+                <span>
+              What is your family name as used now?
+            </span>
+                <md-input-container>
+                    <input mdInput
+                           type="text"
+                           [ngModel]="(parties|async)?.respondentFamilyName"
+                           (ngModelChange)="parties.update({respondentFamilyName: $event})"
+                           name="respondentFamilyName">
+                </md-input-container>
+            </div>
+            <div>
+                <span>
+              Given names?
+            </span>
+                <md-input-container>
+                    <input mdInput
+                           type="text"
+                           [ngModel]="(parties|async)?.respondentGivenNames"
+                           (ngModelChange)="parties.update({respondentGivenNames: $event})"
+                           name="respondentGivenNames">
+                </md-input-container>
+            </div>
+            <div>
+                <md-radio-group [ngModel]="(parties|async)?.respondentSex"
+                                name="respondentSex"
+                                (ngModelChange)="parties.update({respondentSex: $event})"
+                                fxLayout="row"
+                                fxLayoutAlign="space-between">
+                    <md-radio-button [value]="'Male'">
+                        Male
+                    </md-radio-button>
+                    <md-radio-button [value]="'Female'">
+                        Female
+                    </md-radio-button>
+                </md-radio-group>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="4">
+    <span>When and in what country were you born?	</span>
+    <div fxLayout="row"
+         fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
+            <div fxLayout="row"
+                 fxLayoutAlign="space-between">
+                <div fxFlex="48">
+                    <span>
+                  DAY / MONTH / YEAR
+                </span>
+                    <md-input-container>
+                        <input mdInput
+                               type="text"
+                               [ngModel]="(parties|async)?.applicantBornDate"
+                               (ngModelChange)="parties.update({applicantBornDate: $event})"
+                               name="applicantBornDate">
+                    </md-input-container>
+                </div>
+                <div fxFlex="48">
+                    <span>
+                  Country
+                </span>
+                    <md-input-container>
+                        <input mdInput
+                               type="text"
+                               [ngModel]="(parties|async)?.applicantCountry"
+                               (ngModelChange)="parties.update({applicantCountry: $event})"
+                               name="applicantCountry">
+                    </md-input-container>
+                </div>
+            </div>
+        </div>
+        <div fxLayout="column"
+             fxFlex="48">
+            <div fxLayout="row"
+                 fxLayoutAlign="space-between">
+                <div fxFlex="48">
+                    <span>
+                  DAY / MONTH / YEAR
+                </span>
+                    <md-input-container>
+                        <input mdInput
+                               type="text"
+                               [ngModel]="(parties|async)?.respondentBornDate"
+                               (ngModelChange)="parties.update({respondentBornDate: $event})"
+                               name="respondentBornDate">
+                    </md-input-container>
+                </div>
+                <div fxFlex="48">
+                    <span>
+                  Country
+                </span>
+                    <md-input-container>
+                        <input mdInput
+                               type="text"
+                               [ngModel]="(parties|async)?.respondentCountry"
+                               (ngModelChange)="parties.update({respondentCountry: $event})"
+                               name="respondentCountry">
+                    </md-input-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="5">
+    <span>Are you of Aboriginal and/or of Torres Strait Islander origin?</span>
+    <div fxLayout="row"
+         fxLayoutAlign="space-between">
+        <div>
+            <md-radio-group [ngModel]="(parties|async)?.applicantOrigin"
+                            name="applicantOrigin"
+                            (ngModelChange)="parties.update({applicantOrigin: $event})"
+                            fxLayout="column">
+                <md-radio-button [value]="'No'">
+                    No
+                </md-radio-button>
+                <md-radio-button [value]="'Aboriginal'">
+                    Yes
+                </md-radio-button>
+
+            </md-radio-group>
+        </div>
+        <div fxLayout="column"
+             fxFlex="48">
+            <div>
+                <md-radio-group [ngModel]="(parties|async)?.respondentOrigin"
+                                name="respondentOrigin"
+                                (ngModelChange)="parties.update({respondentOrigin: $event})"
+                                fxLayout="column">
+                    <md-radio-button [value]="'No'">
+                        No
+                    </md-radio-button>
+                    <md-radio-button [value]="'Aboriginal'">
+                        Yes
+                    </md-radio-button>
+                </md-radio-group>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <span>What is your Email</span>
+    <md-input-container>
+        <input mdInput
+               type="text"
+               [ngModel]="(parties|async)?.applicantEmail"
+               (ngModelChange)="parties.update({applicantEmail: $event})"
+               name="applicantEmail">
+    </md-input-container>
+</div>
+<div>
+    <span>What is your phone number</span>
+    <md-input-container>
+        <input mdInput
+               type="text"
+               [ngModel]="(parties|async)?.applicantPhone"
+               (ngModelChange)="parties.update({applicantPhone: $event})"
+               name="applicantPhone">
+    </md-input-container>
+</div>
+<div>
+    <span>Are you represented by a lawyer in these matters?</span>
+    <md-radio-group [ngModel]="(parties|async)?.isRepresentedByLawer"
+                    name="isRepresentedByLawer"
+                    (ngModelChange)="parties.update({isRepresentedByLawer: $event})"
+                    fxLayout="column">
+        <md-radio-button [value]=true>
+            Yes
+        </md-radio-button>
+        <md-radio-button [value]=false>
+            No
+        </md-radio-button>
+    </md-radio-group>
+</div>
+<div id="3">
+    <span>3. What is your contact address (address for service) in Australia? If you give a lawyer’s address, include the
+name of the law firm.</span>
+    <div fxLayout="row"
+         fxLayoutAlign="space-between">
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
+            <div class="group">
+                <div>
+                    <div fxLayout="row">
+                        <md-input-container fxFlex="100">
+                            <textarea mdInput
+                                      [ngModel]="(parties|async)?.applicantContactAddress "
+                                      (ngModelChange)="parties.update({applicantContactAddress: $event})"
+                                      name="applicantContactAddress"></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div fxLayout="row"
+                     fxLayoutAlign="space-between">
+                    <div fxFlex="48">
+                        <span>
+                  State
+                </span>
+                        <md-input-container>
+                            <input mdInput
+                                   type="text"
+                                   [ngModel]="(parties|async)?.applicantState"
+                                   (ngModelChange)="parties.update({applicantState: $event})"
+                                   name="applicantState">
+                        </md-input-container>
+                    </div>
+                    <div fxFlex="48">
+                        <span>
+                  Postcode
+                </span>
+                        <md-input-container>
+                            <input mdInput
+                                   type="text"
+                                   [ngModel]="(parties|async)?.applicantPostcode"
+                                   (ngModelChange)="parties.update({applicantPostcode: $event})"
+                                   name="applicantPostcode">
+                        </md-input-container>
+                    </div>
+                </div>
+                <div fxLayout="row"
+                     fxLayoutAlign="space-between">
+                    <div fxFlex="48">
+                        <span>
+                  Phone
+                </span>
+                        <md-input-container>
+                            <input mdInput
+                                   type="text"
+                                   [ngModel]="(parties|async)?.applicantPhone"
+                                   (ngModelChange)="parties.update({applicantPhone: $event})"
+                                   name="applicantPhone">
+                        </md-input-container>
+                    </div>
+                    <div fxFlex="48">
+                        <span>
+                  Fax*
+                </span>
+                        <md-input-container>
+                            <input mdInput
+                                   type="text"
+                                   [ngModel]="(parties|async)?.applicantFax"
+                                   (ngModelChange)="parties.update({applicantFax: $event})"
+                                   name="applicantFax">
+                        </md-input-container>
+                    </div>
+                </div>
+                <div>
+                    <span>
+                DX
+              </span>
+                    <md-input-container>
+                        <input mdInput
+                               type="text"
+                               [ngModel]="(parties|async)?.applicantDX"
+                               (ngModelChange)="parties.update({applicantDX: $event})"
+                               name="applicantDX">
+                    </md-input-container>
+                </div>
+                <div>
+                    <span>
+                Lawyer’s code
+              </span>
+                    <md-input-container>
+                        <input mdInput
+                               type="text"
+                               [ngModel]="(parties|async)?.applicantLawyerCode"
+                               (ngModelChange)="parties.update({applicantLawyerCode: $event})"
+                               name="applicantLawyerCode">
+                    </md-input-container>
+                </div>
+                <div>
+                    <span>
+                Email*
+              </span>
+                    <md-input-container>
+                        <input mdInput
+                               type="text"
+                               [ngModel]="(parties|async)?.applicantEmail"
+                               (ngModelChange)="parties.update({applicantEmail: $event})"
+                               name="applicantEmail">
+                    </md-input-container>
+                </div>
+            </div>
+        </div>
+        <div fxLayout="column"
+             fxFlex="48"
+             fxFlex.sm="100">
+            <div class="group">
+                <div>
+                    <div fxLayout="row">
+                        <md-input-container fxFlex="100">
+                            <textarea mdInput
+                                      [ngModel]="(parties|async)?.respondentContactAddress "
+                                      (ngModelChange)="parties.update({respondentContactAddress: $event})"
+                                      name="respondentContactAddress"></textarea>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div fxLayout="row"
+                     fxLayoutAlign="space-between">
+                    <div fxFlex="48">
+                        <span>
+                  State
+                </span>
+                        <md-input-container>
+                            <input mdInput
+                                   type="text"
+                                   [ngModel]="(parties|async)?.respondentState"
+                                   (ngModelChange)="parties.update({respondentState: $event})"
+                                   name="respondentState">
+                        </md-input-container>
+                    </div>
+                    <div fxFlex="48">
+                        <span>
+                  Postcode
+                </span>
+                        <md-input-container>
+                            <input mdInput
+                                   type="text"
+                                   [ngModel]="(parties|async)?.respondentPostcode"
+                                   (ngModelChange)="parties.update({respondentPostcode: $event})"
+                                   name="respondentPostcode">
+                        </md-input-container>
+                    </div>
+                </div>
+                <div fxLayout="row"
+                     fxLayoutAlign="space-between">
+                    <div fxFlex="48">
+                        <span>
+                  Phone
+                </span>
+                        <md-input-container>
+                            <input mdInput
+                                   type="text"
+                                   [ngModel]="(parties|async)?.respondentPhone"
+                                   (ngModelChange)="parties.update({respondentPhone: $event})"
+                                   name="respondentPhone">
+                        </md-input-container>
+                    </div>
+                    <div fxFlex="48">
+                        <span>
+                  Fax*
+                </span>
+                        <md-input-container>
+                            <input mdInput
+                                   type="text"
+                                   [ngModel]="(parties|async)?.respondentFax"
+                                   (ngModelChange)="parties.update({respondentFax: $event})"
+                                   name="respondentFax">
+                        </md-input-container>
+                    </div>
+                </div>
+                <div>
+                    <span>
+                DX
+              </span>
+                    <md-input-container>
+                        <input mdInput
+                               type="text"
+                               [ngModel]="(parties|async)?.respondentDX"
+                               (ngModelChange)="parties.update({respondentDX: $event})"
+                               name="respondentDX">
+                    </md-input-container>
+                </div>
+                <div>
+                    <span>
+                Lawyer’s code
+              </span>
+                    <md-input-container>
+                        <input mdInput
+                               type="text"
+                               [ngModel]="(parties|async)?.respondentLawyerCode"
+                               (ngModelChange)="parties.update({respondentLawyerCode: $event})"
+                               name="respondentLawyerCode">
+                    </md-input-container>
+                </div>
+                <div>
+                    <span>
+                Email*
+              </span>
+                    <md-input-container>
+                        <input mdInput
+                               type="text"
+                               [ngModel]="(parties|async)?.respondentEmail"
+                               (ngModelChange)="parties.update({respondentEmail: $event})"
+                               name="respondentEmail">
+                    </md-input-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<pre>{{application|async|json}}</pre>-->

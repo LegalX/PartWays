@@ -1,22 +1,24 @@
 import { Component } from '@angular/core';
-import { AngularFire, AuthMethods, AuthProviders, FirebaseListObservable } from 'angularfire2';
+import { AngularFireAuth } from 'angularfire2/auth';
+
+import * as firebase from 'firebase/app';
 
 @Component({
-    selector: 'app-login',
-    templateUrl: './login.html',
+  selector: 'app-login',
+  templateUrl: './login.html',
 })
 
 export class LoginComponent {
 
-  constructor(public af: AngularFire) { }
+  constructor(public afAuth: AngularFireAuth) { }
+
   loginGoogle() {
-    this.af.auth.login();
+    const provider = new firebase.auth.GoogleAuthProvider();
+    this.afAuth.auth.signInWithRedirect(provider);
   }
 
   loginFacebook() {
-    this.af.auth.login({
-      provider: AuthProviders.Facebook,
-      method: AuthMethods.Redirect,
-    });
+    const provider = new firebase.auth.FacebookAuthProvider();
+    this.afAuth.auth.signInWithRedirect(provider);
   }
 }

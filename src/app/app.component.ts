@@ -10,8 +10,10 @@ import {
   NavigationStart,
   Router,
 } from '@angular/router';
-import { AngularFire, AuthMethods, AuthProviders, FirebaseListObservable } from 'angularfire2';
-import * as firebase from 'firebase';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
 
 import { FeedbackDialogComponent } from './feedback-dialog/feedback-dialog.component';
 
@@ -28,7 +30,7 @@ export class AppComponent {
   currentApplicationId: string;
   isLoading = true;
 
-  constructor(public af: AngularFire, private router: Router, iconRegistry: MdIconRegistry, public dialog: MdDialog, sanitizer: DomSanitizer) {
+  constructor(private afAuth: AngularFireAuth, public db: AngularFireDatabase, private router: Router, iconRegistry: MdIconRegistry, public dialog: MdDialog, sanitizer: DomSanitizer) {
     localStorage.removeItem('currentUserId');
     localStorage.removeItem('currentUserName');
     this.currentUserId = null;
@@ -39,15 +41,15 @@ export class AppComponent {
       this.navigationInterceptor(event);
     });
 
-    this.af.auth.subscribe((auth) => {
+    this.afAuth.authState.subscribe((auth) => {
       if (!auth) {
         return;
       }
-      this.router.navigate([(localStorage.getItem('redirect')? localStorage.getItem('redirect') : '/')]);
+      this.router.navigate([(localStorage.getItem('redirect') ? localStorage.getItem('redirect') : '/')]);
       this.currentUserId = auth.uid;
-      this.currentUserName = auth.auth.displayName;
-      this.currentUserEmail = auth.auth.email;
-      const user = this.af.database.object(`/user/${this.currentUserId}`);
+      this.currentUserName = auth.displayName;
+      this.currentUserEmail = auth.email;
+      const user = this.db.object(`/user/${this.currentUserId}`);
       user.subscribe((item) => {
         if (item.$exists()) {
           this.currentApplicationId = item.applicationId;
@@ -58,7 +60,7 @@ export class AppComponent {
       });
 
       localStorage.setItem('currentUserId', this.currentUserId);
-      localStorage.setItem('currentUserName', auth.auth.displayName);
+      localStorage.setItem('currentUserName', auth.displayName);
     });
   }
 
@@ -92,18 +94,17 @@ export class AppComponent {
   }
 
   loginGoogle() {
-    this.af.auth.login();
+    const provider = new firebase.auth.GoogleAuthProvider();
+    this.afAuth.auth.signInWithRedirect(provider);
   }
 
   loginFacebook() {
-    this.af.auth.login({
-      provider: AuthProviders.Facebook,
-      method: AuthMethods.Redirect,
-    });
+    const provider = new firebase.auth.FacebookAuthProvider();
+    this.afAuth.auth.signInWithRedirect(provider);
   }
 
   logout() {
-    this.af.auth.logout();
+    this.afAuth.auth.signOut();
     this.currentUserId = null;
     localStorage.removeItem('currentUserId');
     this.router.navigate(['/']);
@@ -118,7 +119,7 @@ export class AppComponent {
         },
       },
     };
-    const newApplicationRef = this.af.database.list(`/application`);
+    const newApplicationRef = this.db.list(`/application`);
     newApplicationRef.push(newApplication).then((application) => {
       this.currentApplicationId = application.key;
       const userData = {
@@ -126,7 +127,7 @@ export class AppComponent {
         authEmail: this.currentUserEmail,
         applicationId: this.currentApplicationId,
       };
-      const newUser = this.af.database.object(`/user/${this.currentUserId}`);
+      const newUser = this.db.object(`/user/${this.currentUserId}`);
       newUser.set(userData);
     });
   }
@@ -153,7 +154,7 @@ export class AppComponent {
       feedback.email = this.currentUserEmail;
       feedback.submittedAt = firebase.database.ServerValue.TIMESTAMP;
 
-      const feedbackRef = this.af.database.list(`/feedback`);
+      const feedbackRef = this.db.list(`/feedback`);
       feedbackRef.push(feedback);
     });
   }

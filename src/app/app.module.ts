@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
-import { AngularFireModule, AuthMethods, AuthProviders } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 
 import 'hammerjs';
 
@@ -91,19 +94,25 @@ export const firebaseConfig = {
   messagingSenderId: '1727367456',
 };
 
+/*
 const firebaseAuthConfig = {
   provider: AuthProviders.Google,
   method: AuthMethods.Redirect,
 };
+*/
 
 @NgModule({
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     MaterialModule,
-    FlexLayoutModule.forRoot(),
-    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
+    FlexLayoutModule,
     AppRouting,
+
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
   ],
   providers: [
     AuthGuard,

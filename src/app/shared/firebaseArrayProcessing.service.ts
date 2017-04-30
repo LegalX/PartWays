@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabase } from 'angularfire2/database';
 import 'rxjs/add/operator/first';
 import { Observable } from 'rxjs/Observable';
 
@@ -7,18 +8,18 @@ import { Observable } from 'rxjs/Observable';
 export class FirebaseArrayProcessingService {
 
   constructor(
-    private af: AngularFire,
+    private db: AngularFireDatabase,
   ) { }
 
   getArray(firebaseDataPath: string): Observable<any> | Promise<any> {
-    const data = this.af.database.object(firebaseDataPath);
+    const data = this.db.object(firebaseDataPath);
     return data
       .map((items) => {
         // empty database always has an empty $value property
         if (!items.hasOwnProperty('$value')) {
           const itemsKeys = Object.keys(items);
           return itemsKeys.map((itemKey) => {
-            return this.af.database.object(`${firebaseDataPath}/${itemKey}`)
+            return this.db.object(`${firebaseDataPath}/${itemKey}`)
               .map((it) => {
                 return it;
               }).first();
@@ -32,18 +33,18 @@ export class FirebaseArrayProcessingService {
   addItem(
     type: string,
     entity: string,
-    applicantItems: Array<FirebaseObjectObservable<any>>,
-    respondentItems: Array<FirebaseObjectObservable<any>>,
+    applicantItems: Array<Observable<any>>,
+    respondentItems: Array<Observable<any>>,
   ) {
     const path = `/application/${localStorage.getItem('applicationId')}/maintenance/${type}/${entity}`;
-    const items = this.af.database.list(path);
+    const items = this.db.list(path);
     items.push({}).then((item) => {
       switch (type) {
         case 'applicant':
-          applicantItems.push(this.af.database.object(`${path}/${item.key}`));
+          applicantItems.push(this.db.object(`${path}/${item.key}`));
           break;
         case 'respondent':
-          respondentItems.push(this.af.database.object(`${path}/${item.key}`));
+          respondentItems.push(this.db.object(`${path}/${item.key}`));
           break;
         default:
           throw Error('Unknown party type. Only applicant or respondent allowed');
@@ -54,8 +55,8 @@ export class FirebaseArrayProcessingService {
   removeItem(
     id: string,
     type: string,
-    applicantItems: Array<FirebaseObjectObservable<any>>,
-    respondentItems: Array<FirebaseObjectObservable<any>>,
+    applicantItems: Array<Observable<any>>,
+    respondentItems: Array<Observable<any>>,
   ) {
     switch (type) {
       case 'applicant':

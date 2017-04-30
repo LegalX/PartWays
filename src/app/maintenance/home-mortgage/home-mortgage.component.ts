@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FirebaseObjectObservable } from 'angularfire2';
+import { FirebaseObjectObservable } from 'angularfire2/database';
 import 'rxjs/add/operator/first';
 import { FirebaseArrayProcessingService } from '../../shared/firebaseArrayProcessing.service';
 

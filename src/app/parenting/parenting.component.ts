@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
+import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-parenting',
@@ -12,10 +12,10 @@ export class ParentingComponent implements OnInit {
   children: Array<FirebaseObjectObservable<any>>;
   index: number;
 
-  constructor(private route: ActivatedRoute, private af: AngularFire) { }
+  constructor(private route: ActivatedRoute, private db: AngularFireDatabase) { }
 
   ngOnInit() {
     this.children = this.route.snapshot.data['children'];
-    this.parenting = this.af.database.object(`/application/${localStorage.getItem('applicationId')}/parenting`);
+    this.parenting = this.db.object(`/application/${localStorage.getItem('applicationId')}/parenting`);
   }
 }

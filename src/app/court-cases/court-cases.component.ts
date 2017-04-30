@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
+import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-court-cases',
@@ -10,11 +10,11 @@ import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 export class CourtCasesComponent implements OnInit {
   item: FirebaseObjectObservable<any>;
 
-  constructor(private af: AngularFire) {
+  constructor(private db: AngularFireDatabase) {
   }
 
   ngOnInit() {
-    this.item = this.af.database.object(`/application/${localStorage.getItem('applicationId')}/courtCases`);
+    this.item = this.db.object(`/application/${localStorage.getItem('applicationId')}/courtCases`);
   }
 
 }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AngularFire } from 'angularfire2';
-import { FirebaseObjectObservable } from 'angularfire2';
+import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
@@ -10,12 +9,12 @@ import 'rxjs/add/operator/switchMap';
 })
 
 export class PartyComponent implements OnInit {
-  items: FirebaseObjectObservable<any>;
+    items: FirebaseObjectObservable<any>;
 
-    constructor(private af: AngularFire) {
+    constructor(private db: AngularFireDatabase) {
     }
 
     ngOnInit() {
-        this.items = this.af.database.object(`/application/${localStorage.getItem('applicationId')}/parties`);
+        this.items = this.db.object(`/application/${localStorage.getItem('applicationId')}/parties`);
     }
 }

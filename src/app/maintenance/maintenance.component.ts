@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
+import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-maintenance',
@@ -36,10 +36,10 @@ export class MaintenanceComponent implements OnInit {
   applicantCreditChargeCards: Array<FirebaseObjectObservable<any>>;
   respondentCreditChargeCards: Array<FirebaseObjectObservable<any>>;
 
-  constructor(private route: ActivatedRoute, private af: AngularFire) { }
+  constructor(private route: ActivatedRoute, private db: AngularFireDatabase) { }
 
   ngOnInit() {
-    this.item = this.af.database.object(`/application/${localStorage.getItem('applicationId')}/maintenance`);
+    this.item = this.db.object(`/application/${localStorage.getItem('applicationId')}/maintenance`);
     this.applicantRealEstates = this.route.snapshot.data['applicantRealEstates'];
     this.respondentRealEstates = this.route.snapshot.data['respondentRealEstates'];
     this.applicantMotorVehicles = this.route.snapshot.data['applicantMotorVehicles'];
