@@ -3,7 +3,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { LegalAdviceComponent } from './legal-advice.component';
 import { MaterialModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import 'hammerjs';
 
@@ -20,14 +22,16 @@ describe('LegalAdviceComponent', () => {
       messagingSenderId: '1727367456',
     };
     TestBed.configureTestingModule({
-      declarations: [ LegalAdviceComponent ],
+      declarations: [LegalAdviceComponent],
       imports: [
         MaterialModule,
         FormsModule,
-        AngularFireModule.initializeApp(firebaseConfig)
+        BrowserAnimationsModule,
+        AngularFireModule.initializeApp(firebaseConfig),
+        AngularFireDatabaseModule,
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -2,6 +2,9 @@ import { async, TestBed } from '@angular/core/testing';
 import { MaterialModule } from '@angular/material';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
 import 'hammerjs';
 import { Observable } from 'rxjs/Observable';
 import { AppComponent } from './app.component';
@@ -27,6 +30,8 @@ describe('AppComponent', () => {
         MaterialModule.forRoot(),
         RouterTestingModule,
         AngularFireModule.initializeApp(firebaseConfig),
+        AngularFireAuthModule,
+        AngularFireDatabaseModule,
       ],
     }).compileComponents();
   }));

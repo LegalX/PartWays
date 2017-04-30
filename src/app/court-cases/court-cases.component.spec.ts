@@ -1,10 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AngularFireModule } from 'angularfire2';
 import { CourtCasesComponent } from './court-cases.component';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import 'hammerjs';
 
@@ -21,15 +23,17 @@ describe('CourtCasesComponent', () => {
       messagingSenderId: '1727367456',
     };
     TestBed.configureTestingModule({
-      declarations: [ CourtCasesComponent ],
+      declarations: [CourtCasesComponent],
       imports: [
         MaterialModule,
         FormsModule,
+        BrowserAnimationsModule,
         RouterTestingModule,
         AngularFireModule.initializeApp(firebaseConfig),
+        AngularFireDatabaseModule,
       ],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

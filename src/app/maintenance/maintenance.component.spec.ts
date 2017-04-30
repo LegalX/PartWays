@@ -2,10 +2,12 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MaintenanceComponent } from './maintenance.component';
 import { MaterialModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AngularFireModule } from 'angularfire2';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import 'hammerjs';
 
@@ -22,16 +24,18 @@ describe('MaintenanceComponent', () => {
       messagingSenderId: '1727367456',
     };
     TestBed.configureTestingModule({
-      declarations: [ MaintenanceComponent ],
+      declarations: [MaintenanceComponent],
       imports: [
         MaterialModule,
         FormsModule,
+        BrowserAnimationsModule,
         RouterTestingModule,
-        AngularFireModule.initializeApp(firebaseConfig)
+        AngularFireModule.initializeApp(firebaseConfig),
+        AngularFireDatabaseModule,
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -5,6 +5,8 @@ import { MaterialModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import 'hammerjs';
 
@@ -21,15 +23,17 @@ describe('PropertyComponent', () => {
       messagingSenderId: '1727367456',
     };
     TestBed.configureTestingModule({
-      declarations: [ PropertyComponent ],
+      declarations: [PropertyComponent],
       imports: [
         MaterialModule,
         FormsModule,
+        BrowserAnimationsModule,
         RouterTestingModule,
-        AngularFireModule.initializeApp(firebaseConfig)
+        AngularFireModule.initializeApp(firebaseConfig),
+        AngularFireDatabaseModule,
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

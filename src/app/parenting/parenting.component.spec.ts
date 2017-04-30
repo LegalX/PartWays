@@ -5,6 +5,7 @@ import { MaterialModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import 'hammerjs';
 
@@ -21,15 +22,16 @@ describe('ParentingComponent', () => {
       messagingSenderId: '1727367456',
     };
     TestBed.configureTestingModule({
-      declarations: [ ParentingComponent ],
+      declarations: [ParentingComponent],
       imports: [
         MaterialModule,
         FormsModule,
         RouterTestingModule,
-        AngularFireModule.initializeApp(firebaseConfig)
+        AngularFireModule.initializeApp(firebaseConfig),
+        AngularFireDatabaseModule,
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
