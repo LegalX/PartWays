@@ -54,6 +54,7 @@ import { PropertyResolver } from './property/property.resolver.service';
 import { RelationshipComponent } from './relationship/relationship.component';
 import { StatementOfTruthComponent } from './statement-of-truth/statement-of-truth.component';
 import { StatementOfTruthResolver } from './statement-of-truth/statement-of-truth.resolver.service';
+import { CourtCasesResolver } from './court-cases/court-cases.resolver.service';
 
 const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -102,6 +103,9 @@ const appRoutes: Routes = [
         component: CourtCasesComponent,
         canActivate: [AuthGuard],
         data: { title: 'Court Cases' },
+        resolve: {
+          courtCases: CourtCasesResolver
+        }
     }, {
         path: 'Children',
         component: ChildrenComponent,
