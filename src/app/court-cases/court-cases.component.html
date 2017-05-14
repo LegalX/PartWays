@@ -4,51 +4,55 @@
     <form fxLayout="column" #f="ngForm" class="court_cases">
         <div id="10">
             <span>10. Are there any <strong>ongoing</strong> cases in this or any other court about family law, child support, family violence or child welfare that involve any of the parties or any of the children listed on this form?</span>
+            <button md-mini-fab mdTooltip="Add item" [mdTooltipPosition]="'left'" (click)="addItem()"><md-icon>add</md-icon></button>
             <div *ngFor="let item of courtCases; let i=index; trackBy: index">
                 <div>
-                    <md-radio-group [ngModel]="(item|async)?.ongoingCases" [ngModelOptions]="{standalone: true}" (ngModelChange)="item.update({ongoingCases: $event})">
-                        <md-radio-button [value]="false" fxLayout="row">
-                            No
-                        </md-radio-button>
-                        <md-radio-button [value]="true" fxLayout="row">
-                            Yes
-                        </md-radio-button>
-                    </md-radio-group>
-                </div>
-                <div fxLayout="row" fxLayoutAlign="space-between">
-                    <div fxLayout="column" fxFlex="48">
-                        <span>
+                    <button md-mini-fab mdTooltip="Remove item" [mdTooltipPosition]="'left'" (click)="removeItem(i)"><md-icon>remove</md-icon></button>
+                    <div>
+                        <md-radio-group [ngModel]="(item|async)?.ongoingCases" [ngModelOptions]="{standalone: true}" (ngModelChange)="item.update({ongoingCases: $event})">
+                            <md-radio-button [value]="false" fxLayout="row">
+                                No
+                            </md-radio-button>
+                            <md-radio-button [value]="true" fxLayout="row">
+                                Yes
+                            </md-radio-button>
+                        </md-radio-group>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between">
+                        <div fxLayout="column" fxFlex="48">
+                            <span>
             Court name and place
           </span>
-                        <md-input-container>
-                            <input mdInput type="text" [ngModel]="(item|async)?.ongoingNameAndPlace" (ngModelChange)="item.update({ongoingNameAndPlace: $event})" name="nameAndPlace">
-                        </md-input-container>
-                    </div>
-                    <!--should be the datepicker-->
-                    <div fxLayout="column" fxFlex="48">
-                        <span>
+                            <md-input-container>
+                                <input mdInput type="text" [ngModel]="(item|async)?.ongoingNameAndPlace" (ngModelChange)="item.update({ongoingNameAndPlace: $event})" name="nameAndPlace_{{i}}">
+                            </md-input-container>
+                        </div>
+                        <!--should be the datepicker-->
+                        <div fxLayout="column" fxFlex="48">
+                            <span>
             Next Court date
           </span>
-                        <md-input-container>
-                            <input mdInput type="text" [ngModel]="(item|async)?.ongoingNextCourtDate" (ngModelChange)="item.update({ongoingNextCourtDate: $event})" name="nextCourtDate">
-                        </md-input-container>
+                            <md-input-container>
+                                <input mdInput type="text" [ngModel]="(item|async)?.ongoingNextCourtDate" (ngModelChange)="item.update({ongoingNextCourtDate: $event})" name="nextCourtDate_{{i}}">
+                            </md-input-container>
+                        </div>
                     </div>
-                </div>
-                <span>
+                    <span>
         State the names of the parties
       </span>
-                <div fxLayout="row">
-                    <md-input-container fxFlex="100">
-                        <textarea mdInput [ngModel]="(item|async)?.namesOfParties" (ngModelChange)="item.update({namesOfParties: $event})" name="namesOfParties"></textarea>
-                    </md-input-container>
-                </div>
-                <span>
+                    <div fxLayout="row">
+                        <md-input-container fxFlex="100">
+                            <textarea mdInput [ngModel]="(item|async)?.namesOfParties" (ngModelChange)="item.update({namesOfParties: $event})" name="namesOfParties_{{i}}"></textarea>
+                        </md-input-container>
+                    </div>
+                    <span>
         State the nature of the orders sought (NUMBER EACH ORDER SOUGHT)
       </span>
-                <div fxLayout="row">
-                    <md-input-container fxFlex="100">
-                        <textarea mdInput [ngModel]="(item|async)?.natureOfOrders" (ngModelChange)="item.update({natureOfOrders: $event})" name="natureOfOrders"></textarea>
-                    </md-input-container>
+                    <div fxLayout="row">
+                        <md-input-container fxFlex="100">
+                            <textarea mdInput [ngModel]="(item|async)?.natureOfOrders" (ngModelChange)="item.update({natureOfOrders: $event})" name="natureOfOrders_{{i}}"></textarea>
+                        </md-input-container>
+                    </div>
                 </div>
             </div>
         </div>

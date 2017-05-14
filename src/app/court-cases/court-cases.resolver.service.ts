@@ -17,6 +17,7 @@ export class CourtCasesResolver implements Resolve<any> {
         // empty database always has an empty $value property
         if (!items.hasOwnProperty('$value')) {
           const itemsKeys = Object.keys(items);
+          // console.log(itemsKeys);
           return itemsKeys.map((itemKey) => {
             return this.db.object(`${firebaseDataPath}/${itemKey}`)
               .map((it) => {
