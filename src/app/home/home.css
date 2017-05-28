@@ -1,0 +1,21 @@
+.containerBox {
+  position: relative;
+  display: inline-block;
+}
+
+.text-box {
+  position: absolute;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+}
+
+h1 {
+  display: inline-block;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
