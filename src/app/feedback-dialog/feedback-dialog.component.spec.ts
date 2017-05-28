@@ -18,7 +18,7 @@ describe('FeedbackDialogComponent', () => {
     TestBed.configureTestingModule({
       declarations: [FeedbackDialogComponent],
       imports: [
-        MaterialModule.forRoot(),
+        MaterialModule,
         FormsModule,
       ],
     })

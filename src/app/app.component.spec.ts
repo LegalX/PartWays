@@ -28,7 +28,7 @@ describe('AppComponent', () => {
         AppComponent,
       ],
       imports: [
-        MaterialModule.forRoot(),
+        MaterialModule,
         RouterTestingModule,
         AngularFireModule.initializeApp(firebaseConfig),
         AngularFireAuthModule,
@@ -50,5 +50,4 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('PartWays');
   }));
-
 });
