@@ -12,6 +12,7 @@ import { CourtCasesComponent } from './court-cases/court-cases.component';
 import { DefactoComponent } from './defacto/defacto.component';
 import { GenerateConsentOrdersComponent } from './generate-consent-orders/generate-consent-orders.component';
 import { ConsentOrdersResolver } from './generate-consent-orders/generate-consent-orders.resolver.service';
+import { HelpComponent } from './help/help.component';
 import { HomeComponent } from './home/home';
 import { LegalAdviceComponent } from './legal-advice/legal-advice.component';
 import { LegalAdviceResolver } from './legal-advice/legal-advice.resolver.service';
@@ -180,6 +181,10 @@ const appRoutes: Routes = [
         path: 'Chat',
         component: ChatComponent,
         data: { title: 'Chat' },
+    }, {
+        path: 'Help',
+        component: HelpComponent,
+        data: { title: 'Help' },
     }, {
         path: '',
         component: HomeComponent,

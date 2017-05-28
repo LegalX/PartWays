@@ -84,6 +84,7 @@ import { SafeNavigationPipe } from './shared/safe.pipe';
 import { ValuesPipe } from './shared/values.pipe';
 import { StatementOfTruthComponent } from './statement-of-truth/statement-of-truth.component';
 import { StatementOfTruthResolver } from './statement-of-truth/statement-of-truth.resolver.service';
+import { HelpComponent } from './help/help.component';
 
 // Must export the config
 export const firebaseConfig = {
@@ -190,6 +191,7 @@ const firebaseAuthConfig = {
     ChatComponent,
     ValuesPipe,
     SafeNavigationPipe,
+    HelpComponent,
   ],
   entryComponents: [FeedbackDialogComponent],
   bootstrap: [AppComponent],
