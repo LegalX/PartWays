@@ -11,7 +11,6 @@ describe('PartWays App', () => {
     page.navigateTo();
     // ToDo remove <any> after migrating to Angular 4
     // https://github.com/AngularClass/angular2-webpack-starter/issues/1628
-    expect<any>(page.getButton('PartWays')).toEqual(true);
     expect<any>(page.getElementById('login-menu')).toEqual(true);
     expect<any>(page.getElementById('title-button')).toEqual(true);
   });
