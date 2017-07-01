@@ -1,6 +1,9 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    //https://stackoverflow.com/questions/44810195/how-do-i-get-around-this-subject-incorrectly-extends-observable-error-in-types
+    //Workaround. Remove after upgrading to RxJS 6. 
+    "noStrictGenericChecks": true,
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
