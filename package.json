@@ -36,6 +36,7 @@
     "@angular/compiler-cli": "^4.2.5",
     "@types/hammerjs": "^2.0.34",
     "@types/jasmine": "^2.5.53",
+    "@types/core-js": "^0.9.42",
     "@types/node": "~8.0.7",
     "codelyzer": "^3.1.1",
     "jasmine-core": "2.6.4",
