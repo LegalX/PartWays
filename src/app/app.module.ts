@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,6 +26,7 @@ import { DefactoComponent } from './defacto/defacto.component';
 import { FeedbackDialogComponent } from './feedback-dialog/feedback-dialog.component';
 import { GenerateConsentOrdersComponent } from './generate-consent-orders/generate-consent-orders.component';
 import { ConsentOrdersResolver } from './generate-consent-orders/generate-consent-orders.resolver.service';
+import { HelpComponent } from './help/help.component';
 import { HomeComponent } from './home/home';
 import { LegalAdviceComponent } from './legal-advice/legal-advice.component';
 import { LegalAdviceResolver } from './legal-advice/legal-advice.resolver.service';
@@ -84,7 +86,6 @@ import { SafeNavigationPipe } from './shared/safe.pipe';
 import { ValuesPipe } from './shared/values.pipe';
 import { StatementOfTruthComponent } from './statement-of-truth/statement-of-truth.component';
 import { StatementOfTruthResolver } from './statement-of-truth/statement-of-truth.resolver.service';
-import { HelpComponent } from './help/help.component';
 
 // Must export the config
 export const firebaseConfig = {
@@ -110,6 +111,7 @@ const firebaseAuthConfig = {
     MaterialModule,
     FlexLayoutModule,
     AppRouting,
+    HttpModule,
 
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
