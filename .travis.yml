@@ -33,7 +33,8 @@ before_install:
 script:
  # - ng test --code-coverage --watch false
  # - ng e2e
-  - ng build --prod
+ # - ng build --prod
+  - ng build
 
 after_success:
   - npm install -g firebase-tools
