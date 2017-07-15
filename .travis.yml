@@ -31,8 +31,8 @@ before_install:
  - npm install -g @angular/cli
  
 script:
- # - ng test --code-coverage --watch false
- # - ng e2e
+  - ng test --code-coverage --watch false
+  - ng e2e
   - ng build --prod
 
 after_success:
