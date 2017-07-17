@@ -10,7 +10,7 @@
       "dom"
     ],
     "outDir": "../out-tsc/app",
-    "target": "es6",
+    "target": "es5",
     "module": "es2015",
     "baseUrl": "",
     "types": []

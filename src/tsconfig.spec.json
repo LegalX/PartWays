@@ -10,7 +10,7 @@
       "dom"
     ],
     "outDir": "../out-tsc/spec",
-    "target": "es6",
+    "target": "es5",
     "module": "commonjs",
     "baseUrl": "",
     "types": [
