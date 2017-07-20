@@ -86,6 +86,7 @@ import { SafeNavigationPipe } from './shared/safe.pipe';
 import { ValuesPipe } from './shared/values.pipe';
 import { StatementOfTruthComponent } from './statement-of-truth/statement-of-truth.component';
 import { StatementOfTruthResolver } from './statement-of-truth/statement-of-truth.resolver.service';
+import { CourtCasesResolver } from './court-cases/court-cases.resolver.service';
 
 // Must export the config
 export const firebaseConfig = {
@@ -155,6 +156,7 @@ const firebaseAuthConfig = {
     RespondentHirePurchaseLeaseResolver,
     ApplicantCreditChargeCardsResolver,
     RespondentCreditChargeCardsResolver,
+    CourtCasesResolver,
     ChatService,
   ],
   declarations: [
